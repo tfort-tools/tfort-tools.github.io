@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Transfort Timetable</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            .list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .routeItem,
+            .stopItem {
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .routeButton,
+            .stopButton {
+                width: 100%;
+                padding: 14px;
+                border: none;
+                text-align: left;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+
+            .routeButton:hover,
+            .stopButton:hover {
+                filter: brightness(0.95);
+            }
+
+            .stopButton {
+                background: white;
+                border: 1px solid #ddd;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">Transfort Timetable</div>
+
+        <div id="container">
+            <button id="backButton">← Back</button>
+
+            <h2 id="title"></h2>
+
+            <div id="content" class="list"></div>
+        </div>
+
+        <script>
+            const contentElem = document.getElementById("content");
+            const titleElem = document.getElementById("title");
+            const backButton = document.getElementById("backButton");
+
+            const params = new URLSearchParams(location.search);
+            const company = params.get("company");
+
+            let routeData = [];
+
+            async function loadData() {
+                const response = await fetch(`./gtfs_parsed/${company}/route-list.json`);
+                routeData = await response.json();
+
+                const routeId = params.get("route_id");
+
+                if (routeId) {
+                    const route = routeData.find((route) => route.route_id === routeId);
+
+                    if (route) {
+                        showStops(route);
+                        return;
+                    }
+                }
+
+                showRoutes();
+            }
+
+            function showRoutes() {
+                titleElem.textContent = "Select a Route";
+                backButton.style.display = "none";
+
+                contentElem.innerHTML = "";
+
+                routeData.sort((a, b) => {
+                    const nameA = a.route_long_name || a.route_id;
+                    const nameB = b.route_long_name || b.route_id;
+
+                    const regex = /^ROUTE (\d+)$/i;
+                    const matchA = nameA.match(regex);
+                    const matchB = nameB.match(regex);
+                    if (matchA && matchB) {
+                        return parseInt(matchA[1]) - parseInt(matchB[1]);
+                    } else if (matchA) {
+                        return -1;
+                    } else if (matchB) {
+                        return 1;
+                    } else {
+                        return nameA.localeCompare(nameB, "ja");
+                    }
+                });
+
+                for (const route of routeData) {
+                    if (!route.stops || route.stops.length === 0) {
+                        continue;
+                    }
+                    const wrapper = document.createElement("div");
+                    wrapper.className = "routeItem";
+
+                    const button = document.createElement("button");
+                    button.className = "routeButton";
+
+                    button.textContent = route.route_long_name || route.route_id;
+
+                    button.style.background = "#" + (route.route_color || "cccccc");
+
+                    button.style.color = "#" + (route.route_text_color || "000000");
+
+                    button.addEventListener("click", () => {
+                        location.href = `./gtfs_viewer_routes.html?company=${encodeURIComponent(company)}&route_id=${encodeURIComponent(route.route_id)}`;
+                    });
+
+                    wrapper.appendChild(button);
+                    contentElem.appendChild(wrapper);
+                }
+            }
+
+            function showStops(route) {
+                titleElem.textContent = `Select stop from ${route.route_long_name || route.route_id}`;
+
+                contentElem.innerHTML = "";
+
+                if (!new URLSearchParams(location.search).has("route_id")) {
+                    backButton.style.display = "inline-block";
+                }
+
+                for (const stop of route.stops) {
+                    const wrapper = document.createElement("div");
+                    wrapper.className = "stopItem";
+
+                    const button = document.createElement("button");
+                    button.className = "stopButton";
+
+                    button.textContent = stop.stop_name;
+
+                    button.addEventListener("click", () => {
+                        location.href = `./gtfs_viewer_stops.html?company=${encodeURIComponent(company)}&stop_key=${encodeURIComponent(stop.stop_key)}`;
+                    });
+
+                    wrapper.appendChild(button);
+                    contentElem.appendChild(wrapper);
+                }
+            }
+
+            backButton.addEventListener("click", () => {
+                location.href = `./gtfs_viewer_routes.html?company=${encodeURIComponent(company)}`;
+            });
+
+            loadData();
+        </script>
+    </body>
+</html>

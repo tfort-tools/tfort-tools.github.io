@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Transfort Timetable</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            #title {
+                margin-top: 0;
+            }
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .patternButton {
+                width: 100%;
+                border: none;
+                border-radius: 8px;
+                padding: 14px;
+                cursor: pointer;
+                text-align: left;
+            }
+
+            .patternButton:hover {
+                filter: brightness(0.95);
+            }
+
+            .patternName {
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+            .routeName {
+                margin-top: 4px;
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+
+            .empty {
+                background: white;
+                border-radius: 8px;
+                padding: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">Transfort Timetable</div>
+
+        <div id="container">
+            <button id="backButton">← Back</button>
+
+            <h2 id="title"></h2>
+
+            <div id="content" class="list"></div>
+        </div>
+
+        <script>
+            const params = new URLSearchParams(location.search);
+            const stopKey = params.get("stop_key");
+            const company = params.get("company");
+
+            const contentElem = document.getElementById("content");
+            const titleElem = document.getElementById("title");
+
+            document.getElementById("backButton").onclick = () => history.back();
+
+            function isPrefix(longer, shorter) {
+                if (shorter.length > longer.length) {
+                    return false;
+                }
+
+                for (let i = 0; i < shorter.length; i++) {
+                    if (longer[i] !== shorter[i]) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            function makeDestinationGroups(groups) {
+                const destinationCount = {};
+
+                for (const group of groups) {
+                    const destination = group.suffix.at(-1);
+                    group.label = `For ${destination}`;
+                }
+            }
+
+            (async () => {
+                const [stopPatterns, patterns, routeList] = await Promise.all([
+                    fetch(`./gtfs_parsed/${company}/stop-patterns.json`).then((r) => r.json()),
+
+                    fetch(`./gtfs_parsed/${company}/patterns.json`).then((r) => r.json()),
+
+                    fetch(`./gtfs_parsed/${company}/route-list.json`).then((r) => r.json()),
+                ]);
+
+                titleElem.textContent = `Select service from ${stopKey}`;
+
+                const patternIds = stopPatterns[stopKey] || [];
+
+                const suffixEntries = [];
+
+                for (const patternId of patternIds) {
+                    const pattern = patterns[patternId];
+
+                    if (!pattern) {
+                        continue;
+                    }
+
+                    const idx = pattern.stops.indexOf(stopKey);
+
+                    if (idx < 0) {
+                        continue;
+                    }
+
+                    const suffix = pattern.stops.slice(idx);
+
+                    if (suffix.length <= 1) {
+                        continue;
+                    }
+
+                    suffixEntries.push({
+                        patternId,
+
+                        routeId: pattern.route_id,
+
+                        suffix,
+                    });
+                }
+
+                suffixEntries.sort((a, b) => b.suffix.length - a.suffix.length);
+
+                const groups = [];
+
+                for (const entry of suffixEntries) {
+                    let found = null;
+
+                    for (const group of groups) {
+                        if (isPrefix(group.suffix, entry.suffix)) {
+                            found = group;
+                            break;
+                        }
+                    }
+
+                    if (!found) {
+                        found = {
+                            suffix: entry.suffix,
+
+                            patternIds: [],
+
+                            routeIds: new Set(),
+                        };
+
+                        groups.push(found);
+                    }
+
+                    found.patternIds.push(entry.patternId);
+
+                    found.routeIds.add(entry.routeId);
+                }
+
+                makeDestinationGroups(groups);
+
+                const allButton = document.createElement("button");
+
+                allButton.className = "patternButton";
+
+                allButton.textContent = "All Services";
+
+                allButton.onclick = () => {
+                    location.href =
+                        "./gtfs_viewer_times.html?" +
+                        new URLSearchParams({
+                            stop_key: stopKey,
+                            company: company,
+                            pattern_ids: "all",
+                            label: "All Services",
+                        });
+                };
+
+                contentElem.appendChild(allButton);
+
+                for (const group of groups) {
+                    group.routeNames = [...group.routeIds]
+                        .map((routeId) => {
+                            const route = routeList.find((r) => r.route_id === routeId);
+
+                            return route?.route_id ?? routeId;
+                        })
+                        .sort()
+                        .join(", ");
+                }
+
+                groups.sort((a, b) => {
+                    const regex = /^(\d+)$/;
+                    const matchA = a.routeNames.match(regex);
+                    const matchB = b.routeNames.match(regex);
+                    if (matchA && matchB) {
+                        return parseInt(matchA[1]) - parseInt(matchB[1]);
+                    } else if (matchA) {
+                        return -1;
+                    } else if (matchB) {
+                        return 1;
+                    } else {
+                        return a.routeNames.localeCompare(b.routeNames, "ja");
+                    }
+                });
+
+                for (const group of groups) {
+                    const button = document.createElement("button");
+
+                    button.className = "patternButton";
+
+                    button.textContent = `[${group.routeNames}] ${group.label}`;
+
+                    button.onclick = () => {
+                        location.href =
+                            "./gtfs_viewer_times.html?" +
+                            new URLSearchParams({
+                                stop_key: stopKey,
+
+                                company: company,
+
+                                pattern_ids: group.patternIds.join(","),
+
+                                label: `[${group.routeNames}] ${group.label}`,
+                            });
+                    };
+
+                    contentElem.appendChild(button);
+                }
+            })();
+        </script>
+    </body>
+</html>

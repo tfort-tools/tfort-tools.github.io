@@ -1,0 +1,2 @@
+agency_id,agency_official_name,agency_zip_number,agency_address,agency_president_pos,agency_president_name
+3000020231002,名古屋市交通局,460-8508,愛知県名古屋市中区三の丸三丁目1番1号,,

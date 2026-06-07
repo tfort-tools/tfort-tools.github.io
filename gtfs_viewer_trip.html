@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+        <title>Transfort Timetable</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            .stationListContainer {
+                height: calc(100vh - 16rem);
+                overflow-y: auto;
+                padding: 0 2em;
+                border: 1px solid grey;
+                border-radius: 8px;
+            }
+            .stationList {
+                padding: 1.4em 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .station {
+                position: relative;
+                border-radius: 8px;
+                height: 4em;
+                line-height: 1.6em;
+                padding: 1.2em;
+            }
+
+            .station.current {
+                background: gainsboro;
+            }
+
+            .stationTime {
+                position: absolute;
+                left: 2em;
+            }
+            .stationDot {
+                position: absolute;
+                left: 6em;
+                top: 2em;
+                transform: translate(-50%, -47%);
+                z-index: 2;
+                width: 1em;
+                height: 1em;
+                background: var(--line-color);
+                border-radius: 50%;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 0.5em;
+                    height: 0.5em;
+                    background: white;
+                    border-radius: 50%;
+                }
+            }
+            .stationBetweenLine {
+                position: absolute;
+                left: 6em;
+                top: 0;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                width: 0.4em;
+                height: 100%;
+                background: var(--line-color);
+            }
+            .stationName {
+                position: absolute;
+                left: 8em;
+                color: unset;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">Transfort Timetable</div>
+
+        <div id="container">
+            <button id="backButton">← Back</button>
+
+            <h2>
+                <div id="depTime"></div>
+                <div id="dest"></div>
+            </h2>
+
+            <div class="stationListContainer">
+                <div id="stationList" class="stationList"></div>
+            </div>
+        </div>
+
+        <script>
+            (async () => {
+                const params = new URLSearchParams(location.search);
+
+                const tripId = params.get("trip_id");
+                const currentStopSequence = params.get("stop_sequence");
+                const company = params.get("company");
+
+                const depTimeElem = document.getElementById("depTime");
+                const destElem = document.getElementById("dest");
+                const stationListElem = document.getElementById("stationList");
+
+                document.getElementById("backButton").onclick = () => history.back();
+
+                const [tripTimes, patterns, routeList] = await Promise.all([
+                    fetch(`./gtfs_parsed/${company}/trip-times.json`).then((r) => r.json()),
+                    fetch(`./gtfs_parsed/${company}/patterns.json`).then((r) => r.json()),
+                    fetch(`./gtfs_parsed/${company}/route-list.json`).then((r) => r.json()),
+                ]);
+
+                let route = null;
+                for (const pattern of Object.values(patterns)) {
+                    if (pattern.trip_ids.includes(tripId)) {
+                        route = routeList.find((r) => r.route_id === pattern.route_id);
+                        break;
+                    }
+                }
+                if (route) {
+                    document.documentElement.style.setProperty("--line-color", "#" + route.route_color);
+                }
+
+                const tripStops = tripTimes.filter((entry) => entry.trip_id === tripId).sort((a, b) => a.stop_sequence - b.stop_sequence);
+
+                const destination = tripStops.at(-1)?.stop_key;
+
+                depTimeElem.textContent = `At ${tripStops[currentStopSequence - 1]?.departure_time}`;
+                destElem.textContent = destination ? `For ${destination}` : tripId;
+
+                for (const stop of tripStops) {
+                    const elem = document.createElement("div");
+
+                    elem.className = "station";
+
+                    if (stop.stop_sequence == currentStopSequence) elem.classList.add("current");
+
+                    elem.innerHTML = `
+                    <div class="stationTime">${stop.departure_time}</div>
+                    <div class="stationDot"></div>
+                    ${stop.stop_sequence == 1 ? `` : `<div class="stationBetweenLine"></div>`}
+                    <a class="stationName" href="./gtfs_viewer_stops.html?stop_key=${encodeURIComponent(stop.stop_key)}&company=${encodeURIComponent(company)}">${stop.stop_key}</a>`;
+
+                    stationListElem.appendChild(elem);
+                }
+
+                // Scroll stationList to show current stop in top of the stationListContainer
+                const currentStopElem = stationListElem.querySelector(".station.current");
+                if (currentStopElem) {
+                    const container = document.querySelector(".stationListContainer");
+                    container.scrollTo({
+                        top: currentStopElem.offsetTop - 250,
+                        behavior: "smooth",
+                    });
+                }
+            })();
+        </script>
+    </body>
+</html>

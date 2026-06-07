@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Transfort Timetable</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            #title {
+                margin-top: 0;
+            }
+
+            .timeButton {
+                width: 100%;
+                border: none;
+                border-radius: 8px;
+                padding: 14px;
+                margin-bottom: 8px;
+                text-align: left;
+                cursor: pointer;
+            }
+
+            .timeButton:hover {
+                filter: brightness(0.95);
+            }
+
+            .departureTime {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .destination {
+                margin-top: 4px;
+                opacity: 0.9;
+            }
+
+            .empty {
+                background: white;
+                padding: 16px;
+                border-radius: 8px;
+            }
+
+            .timetable {
+                width: 100%;
+                border-collapse: collapse;
+                background: white;
+            }
+
+            .timetable th {
+                width: 4em;
+                text-align: right;
+                padding-right: 1.5em;
+                background: gainsboro;
+                font-size: 1.2rem;
+                border: 1px solid black;
+            }
+
+            .timetable td {
+                padding-left: 0.5em;
+                font-size: 1.2rem;
+                border: 1px solid black;
+            }
+
+            .timeCell {
+                display: inline-block;
+                min-width: 2.5em;
+                margin: 0.15em;
+                padding: 0.2em 0.4em;
+                border-radius: 4px;
+                cursor: pointer;
+                text-align: center;
+            }
+
+            .timeCell:hover {
+                background: #eee;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">Transfort Timetable</div>
+
+        <div id="container">
+            <button id="backButton">← Back</button>
+
+            <h2 id="title"></h2>
+
+            <div style="margin-bottom: 16px">
+                <input type="date" id="dateInput" />
+            </div>
+
+            <div id="content"></div>
+        </div>
+
+        <script>
+            const params = new URLSearchParams(location.search);
+
+            const stopKey = params.get("stop_key");
+            const patternIds = (params.get("pattern_ids") || "").split(",").filter(Boolean);
+            const allPatterns = patternIds.length === 1 && patternIds[0] === "all";
+            const label = params.get("label") || "";
+            const company = params.get("company");
+
+            const titleElem = document.getElementById("title");
+            const contentElem = document.getElementById("content");
+            const dateInput = document.getElementById("dateInput");
+
+            document.getElementById("backButton").onclick = () => history.back();
+
+            dateInput.value = new Date().toISOString().slice(0, 10);
+
+            let patterns;
+            let tripTimes;
+            let calendar;
+            let calendarDates;
+
+            function isServiceRunning(serviceId, date) {
+                const service = calendar[serviceId];
+
+                if (!service) {
+                    return false;
+                }
+
+                const yyyymmdd = date.replaceAll("-", "");
+
+                const exceptions = calendarDates[serviceId] || [];
+
+                const exception = exceptions.find((entry) => entry.date === yyyymmdd);
+
+                if (exception) {
+                    if (exception.exception_type === "1") {
+                        return true;
+                    }
+
+                    if (exception.exception_type === "2") {
+                        return false;
+                    }
+                }
+
+                if (yyyymmdd < service.start_date) {
+                    return false;
+                }
+
+                if (yyyymmdd > service.end_date) {
+                    return false;
+                }
+
+                const weekdayNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+
+                const weekday = weekdayNames[new Date(date).getDay()];
+
+                return service[weekday] === "1";
+            }
+
+            function renderTimes() {
+                contentElem.innerHTML = "";
+
+                const tripSet = new Set();
+
+                const tripDestination = new Map();
+
+                if (allPatterns) {
+                    for (const pattern of Object.values(patterns)) {
+                        const destination = pattern.stops.at(-1);
+
+                        for (const tripId of pattern.trip_ids) {
+                            tripSet.add(tripId);
+
+                            tripDestination.set(tripId, destination);
+                        }
+                    }
+                } else {
+                    for (const patternId of patternIds) {
+                        const pattern = patterns[patternId];
+
+                        if (!pattern) {
+                            continue;
+                        }
+
+                        const destination = pattern.stops.at(-1);
+
+                        for (const tripId of pattern.trip_ids) {
+                            tripSet.add(tripId);
+
+                            tripDestination.set(tripId, destination);
+                        }
+                    }
+                }
+
+                const tripMaxSequence = new Map();
+
+                for (const entry of tripTimes) {
+                    const current = tripMaxSequence.get(entry.trip_id) || 0;
+
+                    if (entry.stop_sequence > current) {
+                        tripMaxSequence.set(entry.trip_id, entry.stop_sequence);
+                    }
+                }
+
+                const departures = tripTimes.filter(
+                    (entry) =>
+                        tripSet.has(entry.trip_id) && entry.stop_key === stopKey && entry.stop_sequence < tripMaxSequence.get(entry.trip_id) && isServiceRunning(entry.service_id, dateInput.value),
+                );
+
+                departures.sort((a, b) => a.departure_time.localeCompare(b.departure_time));
+
+                if (!departures.length) {
+                    contentElem.innerHTML = '<div class="empty">No Operations for this date</div>';
+
+                    return;
+                }
+
+                const destinationCount = {};
+
+                for (const dep of departures) {
+                    const destination = tripDestination.get(dep.trip_id);
+
+                    if (!destination) {
+                        continue;
+                    }
+
+                    destinationCount[destination] ??= 0;
+                    destinationCount[destination]++;
+                }
+
+                const destinations = Object.keys(destinationCount).sort((a, b) => destinationCount[b] - destinationCount[a]);
+
+                const destinationCodes = new Map();
+
+                const usedCodes = new Set();
+
+                destinations.forEach((destination, index) => {
+                    if (index === 0) {
+                        destinationCodes.set(destination, "");
+
+                        return;
+                    }
+
+                    let code = destination.trim().charAt(0).toUpperCase();
+
+                    if (!code) {
+                        code = String(index);
+                    }
+
+                    if (usedCodes.has(code) || code.match(/\d+|I|O|-|&|\s/)) {
+                        // if code is already used or is a confusing character, try next one
+                        for (const char of destination.trim().slice(1)) {
+                            code = char.toUpperCase();
+
+                            if (!usedCodes.has(code) && !code.match(/\d+|I|O|-|&|\s/)) {
+                                break;
+                            }
+                        }
+                        if (usedCodes.has(code) || code.match(/\d+|I|O|-|&|\s/)) {
+                            throw new Error(`Cannot assign code for destination: ${destination}`);
+                        }
+                    }
+
+                    usedCodes.add(code);
+
+                    destinationCodes.set(destination, code);
+                });
+
+                const hourMap = {};
+
+                for (const dep of departures) {
+                    const [hour, minute] = dep.departure_time.split(":");
+
+                    hourMap[hour] ??= [];
+
+                    hourMap[hour].push({
+                        minute,
+
+                        trip_id: dep.trip_id,
+
+                        stop_sequence: dep.stop_sequence,
+
+                        code: destinationCodes.get(tripDestination.get(dep.trip_id)) || "",
+                    });
+                }
+
+                const table = document.createElement("table");
+
+                table.className = "timetable";
+
+                for (const hour of Object.keys(hourMap).sort()) {
+                    const tr = document.createElement("tr");
+
+                    const th = document.createElement("th");
+
+                    th.textContent = Number(hour);
+
+                    tr.appendChild(th);
+
+                    const td = document.createElement("td");
+
+                    for (const entry of hourMap[hour]) {
+                        const span = document.createElement("span");
+
+                        span.className = "timeCell";
+
+                        span.innerHTML = `${entry.minute}<span style="font-size: 0.75em;">${entry.code || "&ensp;"}</span>`;
+
+                        span.onclick = () => {
+                            location.href =
+                                "./gtfs_viewer_trip.html?" +
+                                new URLSearchParams({
+                                    company: company,
+                                    trip_id: entry.trip_id,
+                                    stop_sequence: entry.stop_sequence,
+                                });
+                        };
+
+                        td.appendChild(span);
+                    }
+
+                    tr.appendChild(td);
+
+                    table.appendChild(tr);
+                }
+
+                contentElem.appendChild(table);
+
+                const legend = document.createElement("div");
+
+                legend.className = "legend";
+
+                legend.innerHTML = destinations
+                    .map((destination) => {
+                        const code = destinationCodes.get(destination);
+                        return `<div>${code || "Unmarked"} : ${destination}</div>`;
+                    })
+                    .join("");
+
+                contentElem.appendChild(legend);
+            }
+
+            (async () => {
+                [patterns, tripTimes, calendar, calendarDates] = await Promise.all([
+                    fetch(`./gtfs_parsed/${company}/patterns.json`).then((r) => r.json()),
+
+                    fetch(`./gtfs_parsed/${company}/trip-times.json`).then((r) => r.json()),
+
+                    fetch(`./gtfs_parsed/${company}/calendar.json`).then((r) => r.json()),
+
+                    fetch(`./gtfs_parsed/${company}/calendar-dates.json`)
+                        .then((r) => r.json())
+                        .catch(() => ({})),
+                ]);
+
+                titleElem.textContent = `Timetable on ${stopKey} - ${label}`;
+
+                renderTimes();
+
+                dateInput.addEventListener("change", renderTimes);
+            })();
+        </script>
+    </body>
+</html>

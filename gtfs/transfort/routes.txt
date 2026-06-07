@@ -1,0 +1,25 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+10,80011,10,ROUTE 10,,3,http://www.ridetransfort.com/routes/route-10,665d1e,FFFFFF
+11,80011,11,ROUTE 11,,3,http://www.ridetransfort.com/routes/route-11,665d1e,FFFFFF
+12,80011,12,ROUTE 12,,3,http://www.ridetransfort.com/routes/route-12,ab274f,FFFFFF
+14,80011,14,ROUTE 14,,3,http://www.ridetransfort.com/routes/route-14,a4c639,000000
+16,80011,16,ROUTE 16,,3,http://www.ridetransfort.com/routes/route-16,7cb9e8,000000
+18,80011,18,ROUTE 18,,3,http://www.ridetransfort.com/routes/route-18,c9ffe5,000000
+19,80011,19,ROUTE 19,,3,http://www.ridetransfort.com/routes/route-19,a8bb19,000000
+2,80011,2,ROUTE 2,,3,http://www.ridetransfort.com/routes/route-2,00ffff,000000
+3,80011,3,ROUTE 3,,3,http://www.ridetransfort.com/routes/route-3,72a0c1,000000
+31,80011,31,ROUTE 31,,3,http://www.ridetransfort.com/routes/route-31,762210,FFFFFF
+32,80011,32,ROUTE 32,,3,http://www.ridetransfort.com/routes/route-32,2f1bc4,FFFFFF
+FHS,80011,FHS,FOOTHILLS SHUTTLE,,3,http://www.ridetransfort.com/routes/foothills-shuttle,496745,FFFFFF
+5,80011,5,ROUTE 5,,3,http://www.ridetransfort.com/routes/route-5,ffbf00,000000
+6,80011,6,ROUTE 6,,3,http://www.ridetransfort.com/routes/route-6,9966cc,000000
+7,80011,7,ROUTE 7,,3,http://www.ridetransfort.com/routes/route-7,e32636,FFFFFF
+8,80011,8,ROUTE 8,,3,http://www.ridetransfort.com/routes/route-8,568203,FFFFFF
+81,80011,81,ROUTE 81,,3,http://www.ridetransfort.com/routes/route-81,007fff,000000
+9,80011,9,ROUTE 9,,3,http://www.ridetransfort.com/routes/route-9,b284be,000000
+92,80011,92,ROUTE 92,,3,http://www.ridetransfort.com/routes/92,c46210,000000
+ADA,80011,ADA,ADA SHUTTLE,,3,http://www.ridetransfort.com/gameday,cd9575,000000
+FLEX,80011,FLEX,FLEX ROUTE,,3,http://www.ridetransfort.com/routes/flex,00308f,FFFFFF
+GOLD,80011,GOLD,GOLD ROUTE,,3,http://www.ridetransfort.com/routes/gold,e9d66b,000000
+HORN,80011,HORN,THE HORN,,3,http://www.ridetransfort.com/routes/horn,cd9575,000000
+MAX,80011,MAX,MAX ROUTE,,3,http://www.ridetransfort.com/routes/max,3bb14a,000000
