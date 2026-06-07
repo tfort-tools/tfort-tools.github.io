@@ -82,6 +82,14 @@
 
             tripConnections.sort((a, b) => timeToSeconds(a.departure_time) - timeToSeconds(b.departure_time));
 
+            console.log(
+                tripConnections.slice(0, 20).map((c) => ({
+                    dep: c.departure_time,
+                    from: c.from,
+                    to: c.to,
+                })),
+            );
+
             function isServiceRunning(serviceId, date) {
                 const service = calendar[serviceId];
                 if (!service) {
@@ -105,51 +113,64 @@
                 return service[weekday] === "1";
             }
             function searchRoute(fromStop, toStop, date, startTime) {
-                console.log(timeToSeconds(startTime));
-                const earliest = new Map();
+                const startSeconds = timeToSeconds(startTime);
+
+                const states = new Map();
                 const previous = new Map();
 
-                earliest.set(fromStop, timeToSeconds(startTime));
+                states.set(fromStop, {
+                    arrivalTime: startSeconds,
+                    tripId: null,
+                    transfers: 0,
+                });
 
                 for (const conn of tripConnections) {
                     if (!isServiceRunning(conn.service_id, date)) {
-                        //continue;
+                        continue;
                     }
 
-                    const fromArrival = earliest.get(conn.from);
+                    const state = states.get(conn.from);
 
-                    if (fromArrival == null) {
+                    if (!state) {
                         continue;
                     }
 
                     const dep = timeToSeconds(conn.departure_time);
+                    const arr = timeToSeconds(conn.arrival_time);
 
-                    // required if previous trip exists (not first ride) and previous trip id is different from current trip id (transfer)
-                    const transferRequired = previous.get(conn.from) && previous.get(conn.from).trip_id !== conn.trip_id;
-                    const transferTime = transferRequired ? 60 : 0;
-                    if (dep < fromArrival + transferTime) {
+                    const isTransfer = state.tripId !== null && state.tripId !== conn.trip_id;
+
+                    const transferTime = isTransfer ? 60 : 0;
+
+                    if (dep < state.arrivalTime + transferTime) {
                         continue;
                     }
 
-                    const arr = timeToSeconds(conn.arrival_time);
+                    const newTransfers = state.transfers + (isTransfer ? 1 : 0);
 
-                    const currentBest = earliest.get(conn.to);
+                    const best = states.get(conn.to);
 
-                    if (currentBest == null || arr < currentBest) {
-                        earliest.set(conn.to, arr);
+                    const shouldUpdate = !best || arr < best.arrivalTime || (arr === best.arrivalTime && newTransfers < best.transfers);
 
-                        previous.set(conn.to, {
-                            from: conn.from,
-
-                            trip_id: conn.trip_id,
-
-                            departure_time: conn.departure_time,
-                            arrival_time: conn.arrival_time,
-                        });
+                    if (!shouldUpdate) {
+                        continue;
                     }
+
+                    states.set(conn.to, {
+                        arrivalTime: arr,
+                        tripId: conn.trip_id,
+                        transfers: newTransfers,
+                    });
+
+                    previous.set(conn.to, {
+                        from: conn.from,
+                        trip_id: conn.trip_id,
+                        departure_time: conn.departure_time,
+                        arrival_time: conn.arrival_time,
+                    });
                 }
 
-                if (!earliest.has(toStop)) {
+                if (!states.has(toStop)) {
                     return null;
                 }
 
@@ -166,12 +187,9 @@
 
                     path.push({
                         stop: current,
-
                         trip_id: prev.trip_id,
-
                         from: prev.from,
                         to: current,
-
                         departure_time: prev.departure_time,
                         arrival_time: prev.arrival_time,
                     });
@@ -187,7 +205,6 @@
 
                 return path;
             }
-
             document.getElementById("searchButton").onclick = () => {
                 const from = fromInput.value.trim();
                 const to = toInput.value.trim();
