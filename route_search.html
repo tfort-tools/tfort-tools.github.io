@@ -183,6 +183,9 @@
                 if (a.transfers !== b.transfers) {
                     return a.transfers < b.transfers;
                 }
+                if (a.walkCount !== b.walkCount) {
+                    return a.walkCount < b.walkCount;
+                }
                 if (preferLateDeparture) {
                     return a.firstDeparture > b.firstDeparture;
                 }
@@ -238,6 +241,7 @@
                     arrivalTime: startSeconds,
                     tripId: null,
                     transfers: 0,
+                    walkCount: 0,
                     firstDeparture: null,
                     prev: null,
                     connection: null,
@@ -251,6 +255,9 @@
                         }
                         if (a.transfers !== b.transfers) {
                             return a.transfers - b.transfers;
+                        }
+                        if (a.walkCount !== b.walkCount) {
+                            return a.walkCount - b.walkCount;
                         }
                         if (a.firstDeparture != null && b.firstDeparture != null) {
                             return preferLateDeparture ? b.firstDeparture - a.firstDeparture : a.firstDeparture - b.firstDeparture;
@@ -313,6 +320,7 @@
                             arrivalTime: arr,
                             tripId: conn.trip_id,
                             transfers: state.transfers + (isTransfer ? 1 : 0),
+                            walkCount: state.walkCount,
                             firstDeparture: state.firstDeparture ?? dep,
                             prev: state,
                             connection: conn,
@@ -333,6 +341,7 @@
                                     arrivalTime: state.arrivalTime + minutes * 60,
                                     tripId: state.tripId,
                                     transfers: state.transfers,
+                                    walkCount: state.walkCount + 1,
                                     firstDeparture: state.firstDeparture,
                                     prev: state,
                                     connection: {
@@ -362,6 +371,7 @@
                     departureTime: targetSeconds,
                     tripId: null,
                     transfers: 0,
+                    walkCount: 0,
                     prev: null,
                     connection: null,
                 });
@@ -428,6 +438,7 @@
                             departureTime: dep,
                             tripId: conn.trip_id,
                             transfers: state.transfers + (isTransfer ? 1 : 0),
+                            walkCount: state.walkCount,
                             prev: state,
                             connection: conn,
                         });
@@ -445,6 +456,7 @@
                                     tripId: state.tripId,
 
                                     transfers: state.transfers,
+                                    walkCount: state.walkCount + 1,
 
                                     lastArrival: state.lastArrival,
 

@@ -17,17 +17,6 @@
         "Harmony Station": 5
     },
 
-    "University Station": {
-        "University & Libbie Coy": 5,
-        "University & Mason": 3
-    },
-    "University & Libbie Coy": {
-        "University Station": 5
-    },
-    "University & Mason": {
-        "University Station": 3
-    },
-
     "Laurel Station": {
         "Tilt & Oval": 8,
         "Oval & Ammons": 7,
@@ -41,5 +30,16 @@
     },
     "CSU Transit Center": {
         "Laurel Station": 12
+    },
+
+    "University Station": {
+        "University & Libbie Coy": 5,
+        "University & Mason": 3
+    },
+    "University & Libbie Coy": {
+        "University Station": 5
+    },
+    "University & Mason": {
+        "University Station": 3
     }
 }
