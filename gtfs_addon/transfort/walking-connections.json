@@ -1,0 +1,45 @@
+{
+    "Drake Station": {
+        "Drake & MAX Guideway (Eastbound)": 3,
+        "Drake & MAX Guideway (Westbound)": 2
+    },
+    "Drake & MAX Guideway (Eastbound)": {
+        "Drake Station": 3
+    },
+    "Drake & MAX Guideway (Westbound)": {
+        "Drake Station": 2
+    },
+
+    "Harmony Station": {
+        "Harmony & Mason": 5
+    },
+    "Harmony & Mason": {
+        "Harmony Station": 5
+    },
+
+    "University Station": {
+        "University & Libbie Coy": 5,
+        "University & Mason": 3
+    },
+    "University & Libbie Coy": {
+        "University Station": 5
+    },
+    "University & Mason": {
+        "University Station": 3
+    },
+
+    "Laurel Station": {
+        "Tilt & Oval": 8,
+        "Oval & Ammons": 7,
+        "CSU Transit Center": 12
+    },
+    "Tilt & Oval": {
+        "Laurel Station": 8
+    },
+    "Oval & Ammons": {
+        "Laurel Station": 7
+    },
+    "CSU Transit Center": {
+        "Laurel Station": 12
+    }
+}

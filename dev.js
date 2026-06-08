@@ -57,6 +57,17 @@ function regularizeName(name) {
     name = name.replace(/\(EB\)+$/i, "(Eastbound)");
     name = name.replace(/\(WB\)+$/i, "(Westbound)");
     name = name.replace(/\(SB\)+$/i, "(Southbound)");
+
+    // fix provider's mistake
+    if (directoryName === "transfort" && name.match(/\bcenter\b/i)) {
+        // for some reason, street name "centre" is misspelled as "center" in the source data
+        // test if it's likely a street name (matches "center &" or "& center")
+        if (name.match(/\bcenter\s*&/i) || name.match(/&\s*center\b/i)) {
+            console.log(`before: ${name}`);
+            name = name.replace(/\bcenter\b/i, "Centre");
+            console.log(`after: ${name}`);
+        }
+    }
     return name;
 }
 
@@ -366,6 +377,10 @@ for (const tripId in tripStopTimes) {
 //
 // write
 //
+
+if (!fs.existsSync(`./gtfs_parsed/${directoryName}`)) {
+    fs.mkdirSync(`./gtfs_parsed/${directoryName}`, { recursive: true });
+}
 
 fs.writeFileSync(`./gtfs_parsed/${directoryName}/route-list.json`, JSON.stringify(routeList, null, 2));
 fs.writeFileSync(`./gtfs_parsed/${directoryName}/stop-patterns.json`, JSON.stringify(stopPatterns, null, 2));
