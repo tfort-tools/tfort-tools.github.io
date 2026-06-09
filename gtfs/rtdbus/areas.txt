@@ -1,0 +1,5 @@
+area_id,area_name
+local_fare_zone,Local Fare Zone
+denver_bustang,Denver
+free_service,Free Service
+airport_fare_zone,Airport

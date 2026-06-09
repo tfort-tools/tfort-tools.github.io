@@ -2,6 +2,40 @@ const fs = require("fs");
 
 const company = "transfort";
 
+const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
+const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));
+const stops = parseCsv(fs.readFileSync(`./gtfs/${company}/stops.txt`, "utf8"));
+const stopTimes = parseCsv(fs.readFileSync(`./gtfs/${company}/stop_times.txt`, "utf8"));
+const calendar = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar.txt`, "utf8"));
+let calendarDates = [];
+if (fs.existsSync(`./gtfs/${company}/calendar_dates.txt`)) {
+    calendarDates = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar_dates.txt`, "utf8"));
+}
+
+// if additionally directory present, load and concat them
+for (let i = 2; ; i++) {
+    if (!fs.existsSync(`./gtfs/${company}-${i}`)) {
+        break;
+    }
+    console.log(`loading additional directory: ${company}-${i}`);
+    const routes_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/routes.txt`, "utf8"));
+    const trips_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/trips.txt`, "utf8"));
+    const stops_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/stops.txt`, "utf8"));
+    const stopTimes_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/stop_times.txt`, "utf8"));
+    const calendar_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/calendar.txt`, "utf8"));
+    let calendarDates_add = [];
+    if (fs.existsSync(`./gtfs/${company}-${i}/calendar_dates.txt`)) {
+        calendarDates_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/calendar_dates.txt`, "utf8"));
+    }
+    routes.push(...routes_add);
+    trips.push(...trips_add);
+    stops.push(...stops_add);
+    stopTimes.push(...stopTimes_add);
+    calendar.push(...calendar_add);
+    calendarDates.push(...calendarDates_add);
+}
+
+// helper functions
 function parseCsv(text) {
     const lines = text.trim().split(/\r?\n/);
     const headers = parseCsvLine(lines[0]);
@@ -83,38 +117,7 @@ function regularizeName(name) {
     return name;
 }
 
-const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
-const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));
-const stops = parseCsv(fs.readFileSync(`./gtfs/${company}/stops.txt`, "utf8"));
-const stopTimes = parseCsv(fs.readFileSync(`./gtfs/${company}/stop_times.txt`, "utf8"));
-const calendar = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar.txt`, "utf8"));
-let calendarDates = [];
-if (fs.existsSync(`./gtfs/${company}/calendar_dates.txt`)) {
-    calendarDates = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar_dates.txt`, "utf8"));
-}
-
-// if additionally directory present, load and concat them
-for (let i = 2; ; i++) {
-    if (!fs.existsSync(`./gtfs/${company}-${i}`)) {
-        break;
-    }
-    console.log(`loading additional directory: ${company}-${i}`);
-    const routes_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/routes.txt`, "utf8"));
-    const trips_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/trips.txt`, "utf8"));
-    const stops_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/stops.txt`, "utf8"));
-    const stopTimes_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/stop_times.txt`, "utf8"));
-    const calendar_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/calendar.txt`, "utf8"));
-    let calendarDates_add = [];
-    if (fs.existsSync(`./gtfs/${company}-${i}/calendar_dates.txt`)) {
-        calendarDates_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/calendar_dates.txt`, "utf8"));
-    }
-    routes.push(...routes_add);
-    trips.push(...trips_add);
-    stops.push(...stops_add);
-    stopTimes.push(...stopTimes_add);
-    calendar.push(...calendar_add);
-    calendarDates.push(...calendarDates_add);
-}
+// start processing
 
 const tripMap = new Map(trips.map((trip) => [trip.trip_id, trip]));
 const stopMap = new Map(stops.map((stop) => [stop.stop_id, stop]));
