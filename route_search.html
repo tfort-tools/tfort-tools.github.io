@@ -34,7 +34,7 @@
                 .stationBetween {
                     position: relative;
                     &:has(.rideLine) {
-                        transition: min-height 0.4s ease;
+                        transition: min-height 0.3s;
                         &:has(.hiddenStationsContainer.isHidden),
                         &:not(:has(.hiddenStationsContainer)) {
                             min-height: 6em;
@@ -123,11 +123,11 @@
                     .hiddenStationsContainer {
                         position: relative;
                         z-index: 2;
-                        top: 5em;
+                        top: 6.2em;
                         max-height: calc(var(--hidden-count) * 3em);
                         transform: scaleY(1);
                         transform-origin: top;
-                        transition: all 0.4s ease;
+                        transition: all 0.3s;
                         &.isHidden {
                             max-height: 0;
                             transform: scaleY(0);
@@ -201,22 +201,21 @@
         <div id="result"></div>
     </body>
     <script>
-        const params = new URLSearchParams(location.search);
-        const company = params.get("company");
+        const $ = (e) => document.querySelector(e);
+        const company = new URLSearchParams(location.search).get("company");
         if (!company) window.location.href = "index.html";
-        const resultElem = document.getElementById("result");
+        const resultElem = $("#result");
         // fix midnight operation, user input 0:00 to 2:59 is considered as yesterday 24:00 to 26:59
         const dayBoundaryHour = 3;
-        function getServiceDateAndSeconds(dateStr, timeStr) {
-            const [year, month, day] = dateStr.split("-").map(Number);
-            const [hour, minute] = timeStr.split(":").map(Number);
-            const serviceDate = new Date(year, month - 1, day);
-            let serviceSeconds;
-            if (hour < dayBoundaryHour) {
+
+        function getServiceDateAndSeconds(date, time) {
+            const [Y, M, D] = date.split("-").map(Number);
+            const [h, m] = time.split(":").map(Number);
+            const serviceDate = new Date(Y, M - 1, D);
+            let serviceSeconds = h * 3600 + m * 60;
+            if (h < dayBoundaryHour) {
                 serviceDate.setDate(serviceDate.getDate() - 1);
-                serviceSeconds = (hour + 24) * 3600 + minute * 60;
-            } else {
-                serviceSeconds = hour * 3600 + minute * 60;
+                serviceSeconds += 86400;
             }
             return { serviceDate, serviceSeconds };
         }
@@ -240,49 +239,34 @@
             return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
         }
         (async () => {
-            // prefill station list for datalist
             const stationList = await fetch(`./gtfs_parsed/${company}/station-list.json`).then((r) => r.json());
-            const dl = document.getElementById("stations");
+            const dl = $("#stations");
             for (const station of stationList) {
                 const option = document.createElement("option");
                 option.value = station;
                 dl.appendChild(option);
             }
-            // prefill date and time with current date and time
             const now = new Date();
             const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-            document.getElementById("dateInput").value = localDate;
-            document.getElementById("timeInput").value = now.toTimeString().slice(0, 5);
-            document.getElementById("swapButton").onclick = () => {
-                const from = document.getElementById("fromInput").value;
-                const to = document.getElementById("toInput").value;
-                document.getElementById("fromInput").value = to;
-                document.getElementById("toInput").value = from;
+            $("#dateInput").value = localDate;
+            $("#timeInput").value = now.toTimeString().slice(0, 5);
+            $("#swapButton").onclick = () => {
+                [$("#fromInput").value, $("#toInput").value] = [$("#toInput").value, $("#fromInput").value];
             };
 
-            document.getElementById("incrementTime").onclick = () => {
-                const timeInput = document.getElementById("timeInput");
+            const changeTime = (m) => {
+                const timeInput = $("#timeInput");
                 const time = timeInput.value;
-                if (!time) {
-                    return;
-                }
+                if (!time) return;
                 const seconds = timeToSeconds(time);
-                const newTime = secondsToTime(seconds + 60);
+                const newTime = secondsToTime(seconds + m * 60);
                 timeInput.value = newTime;
             };
-            document.getElementById("decrementTime").onclick = () => {
-                const timeInput = document.getElementById("timeInput");
-                const time = timeInput.value;
-                if (!time) {
-                    return;
-                }
-                const seconds = timeToSeconds(time);
-                const newTime = secondsToTime(seconds - 60);
-                timeInput.value = newTime;
-            };
+            $("#incrementTime").onclick = () => changeTime(1);
+            $("#decrementTime").onclick = () => changeTime(-1);
 
             // load
-            const [connections, calendar, calendarDates, tripInfo, tripStopTimes, routeList] = await Promise.all([
+            const [connections, calendar, calendarDates, tripInfo, tripStopTimes, routeList, walkingConnections] = await Promise.all([
                 fetch(`./gtfs_parsed/${company}/connections.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/calendar.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/calendar-dates.json`)
@@ -291,12 +275,11 @@
                 fetch(`./gtfs_parsed/${company}/trip-info.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/trip-stop-times.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/route-list.json`).then((r) => r.json()),
+                fetch(`./gtfs_addon/${company}/walking-connections.json`)
+                    .then((r) => r.json())
+                    .catch(() => ({})),
             ]);
 
-            // load walking connections if exists
-            const walkingConnections = await fetch(`./gtfs_addon/${company}/walking-connections.json`)
-                .then((r) => r.json())
-                .catch(() => alert("No walking connection file."));
             // search
             const tripConnections = [];
             for (const conn of connections) {
@@ -328,7 +311,6 @@
                 departuresFrom[stop].sort((a, b) => timeToSeconds(a.departure_time) - timeToSeconds(b.departure_time));
             }
             for (const stop in arrivalsTo) {
-                // a - b or b - a ? (need confirmation)
                 arrivalsTo[stop].sort((a, b) => timeToSeconds(b.arrival_time) - timeToSeconds(a.arrival_time));
             }
             function isBetterForward(a, b, preferLateDeparture) {
@@ -359,6 +341,9 @@
                 if (a.transfers !== b.transfers) {
                     return a.transfers < b.transfers;
                 }
+                if (a.walkCount !== b.walkCount) {
+                    return a.walkCount < b.walkCount;
+                }
                 return false;
             }
             function getTransferTime(stop) {
@@ -370,22 +355,11 @@
             }
             function isServiceRunning(serviceId, date) {
                 const service = calendar[serviceId];
-                if (!service) {
-                    return false;
-                }
+                if (!service) return false;
                 const yyyymmdd = date.replaceAll("-", "");
                 const exceptions = (calendarDates[serviceId] || []).find((e) => e.date === yyyymmdd);
-                if (exceptions) {
-                    if (exceptions.exception_type === "1") {
-                        return true;
-                    }
-                    if (exceptions.exception_type === "2") {
-                        return false;
-                    }
-                }
-                if (yyyymmdd < service.start_date || yyyymmdd > service.end_date) {
-                    return false;
-                }
+                if (exceptions) return 2 - exceptions.exception_type;
+                if (yyyymmdd < service.start_date || yyyymmdd > service.end_date) return false;
                 const weekdayNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
                 const weekday = weekdayNames[new Date(date).getDay()];
                 return service[weekday] === "1";
@@ -646,40 +620,36 @@
                 return null;
             }
 
-            document.getElementById("timeIsForWhat").onchange = () => {
-                const timeIsForWhat = document.getElementById("timeIsForWhat").value;
-                const timeInputElem = document.querySelector("label:has(> #timeInput)");
-                const preferLateDepartureElem = document.querySelector("label:has(> #preferLateDeparture)");
-                const incrementElem = document.getElementById("incrementTime");
-                const decrementElem = document.getElementById("decrementTime");
+            $("#timeIsForWhat").onchange = () => {
+                const timeIsForWhat = $("#timeIsForWhat").value;
+                const timeInputElem = $("label:has(> #timeInput)");
+                const preferLateDepartureElem = $("label:has(> #preferLateDeparture)");
+                const incrementElem = $("#incrementTime");
+                const decrementElem = $("#decrementTime");
                 if (timeIsForWhat === "first" || timeIsForWhat === "last") {
                     timeInputElem.style.display = "none";
-                    timeInputElem.disabled = true;
                     incrementElem.style.display = "none";
                     decrementElem.style.display = "none";
                 } else {
                     timeInputElem.style.display = "inline-block";
-                    timeInputElem.disabled = false;
                     incrementElem.style.display = "inline-block";
                     decrementElem.style.display = "inline-block";
                 }
                 if (timeIsForWhat === "departure" || timeIsForWhat === "first") {
                     preferLateDepartureElem.style.display = "inline-block";
-                    preferLateDepartureElem.disabled = false;
                 } else {
                     preferLateDepartureElem.style.display = "none";
-                    preferLateDepartureElem.disabled = true;
                 }
             };
 
-            document.getElementById("searchButton").onclick = () => {
+            $("#searchButton").onclick = () => {
                 const from = fromInput.value.trim();
                 const to = toInput.value.trim();
-                const timeIsForWhat = document.getElementById("timeIsForWhat").value;
+                const timeIsForWhat = $("#timeIsForWhat").value;
                 const date = dateInput.value;
                 const time = timeInput.value;
-                const preferLateDeparture = document.getElementById("preferLateDeparture").checked;
-                const noWalk = document.getElementById("noWalk").checked;
+                const preferLateDeparture = $("#preferLateDeparture").checked;
+                const noWalk = $("#noWalk").checked;
                 let result;
                 let resultRenderMethod;
                 switch (timeIsForWhat) {
@@ -707,19 +677,13 @@
 
             function processPath(path) {
                 if (!path || path.length === 0) return path;
-
-                // 元の配列を汚さないようコピー
                 const result = path.map((item) => ({ ...item }));
-
                 let currentTrip = null;
                 let startIndex = -1;
 
                 for (let i = 0; i < result.length; i++) {
                     const item = result[i];
-
-                    // 徒歩、または最初の要素（出発地など trip_id がない場合）
                     if (item.type === "walk" || !item.trip_id) {
-                        // 直前まで乗っていた便の「降車駅の1つ手前」までを hidden に確定させる
                         if (currentTrip !== null && i - 1 > startIndex) {
                             for (let k = startIndex + 1; k < i - 1; k++) {
                                 result[k].hidden = true;
@@ -730,28 +694,23 @@
                         continue;
                     }
 
-                    // 新しい乗車区間の開始
                     if (currentTrip === null) {
                         currentTrip = item.trip_id;
-                        startIndex = i; // 乗車駅のインデックスを記録
+                        startIndex = i;
                         continue;
                     }
 
-                    // 別の便に乗り換えた場合（途中で trip_id が変わった）
                     if (item.trip_id !== currentTrip) {
-                        // 直前の便の途中駅（startIndex + 1 から i - 2 まで）を hidden にする
                         if (i - 1 > startIndex) {
                             for (let k = startIndex + 1; k < i - 1; k++) {
                                 result[k].hidden = true;
                             }
                         }
-                        // 新しい便の情報をセット
                         currentTrip = item.trip_id;
                         startIndex = i;
                     }
                 }
 
-                // ループ終了後、最後に乗っていた便の処理（後処理）
                 if (currentTrip !== null && result.length - 1 > startIndex) {
                     for (let k = startIndex + 1; k < result.length - 1; k++) {
                         result[k].hidden = true;
@@ -776,7 +735,7 @@
                     .reverse()
                     .find((p) => p.arrival_time)?.arrival_time;
                 if (!depOverall || !arrOverall) {
-                    const timeInput = document.getElementById("timeInput").value;
+                    const timeInput = $("#timeInput").value;
                     depOverall = timeInput;
                     arrOverall = timeInput;
                 }
@@ -884,12 +843,12 @@
                                     rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops ▽`;
                                     rideNstopsElem.style.cursor = "pointer";
                                     const hiddenStationsContainer = document.createElement("div");
-                                    hiddenStationsContainer.className = "hiddenStationsContainer isHidden"; // DEBUG
+                                    hiddenStationsContainer.className = "hiddenStationsContainer isHidden";
                                     for (let j = i; j <= i + hiddenCount; j++) {
                                         const hiddenStationElem = document.createElement("div");
                                         hiddenStationElem.className = "hiddenStation";
                                         hiddenStationElem.style.position = "absolute";
-                                        hiddenStationElem.style.top = `${(j - i + 1) * 3}em`;
+                                        hiddenStationElem.style.top = `${(j - i + 1) * 3 - 1.2}em`;
                                         hiddenStationElem.style.width = "stretch";
                                         hiddenStationElem.setAttribute("--route-color", `#${route_color}`);
                                         hiddenStationElem.innerHTML = `
