@@ -34,7 +34,9 @@
                 .stationBetween {
                     position: relative;
                     &:has(.rideLine) {
-                        &:has(.hiddenStationsContainer.isHidden), &:not(:has(.hiddenStationsContainer)) {
+                        transition: min-height 0.4s ease;
+                        &:has(.hiddenStationsContainer.isHidden),
+                        &:not(:has(.hiddenStationsContainer)) {
                             min-height: 6em;
                         }
                         &:has(.hiddenStationsContainer:not(.isHidden)) {
@@ -91,6 +93,12 @@
                         font-weight: bold;
                         left: 0.5em;
                     }
+                    .isOriginal {
+                        position: absolute;
+                        font-size: 0.8em;
+                        left: 1.4em;
+                        top: 1.5em;
+                    }
                     .arrTime {
                         bottom: 0;
                     }
@@ -110,12 +118,19 @@
                         position: absolute;
                         left: 6em;
                         top: 4.5em;
+                        user-select: none;
                     }
                     .hiddenStationsContainer {
                         position: relative;
+                        z-index: 2;
                         top: 5em;
+                        max-height: calc(var(--hidden-count) * 3em);
+                        transform: scaleY(1);
+                        transform-origin: top;
+                        transition: all 0.4s ease;
                         &.isHidden {
-                            display: none;
+                            max-height: 0;
+                            transform: scaleY(0);
                         }
                         .hiddenDepTime {
                             position: absolute;
@@ -143,6 +158,7 @@
                                 height: 0.5em;
                                 background: white;
                                 border-radius: 50%;
+                                z-index: 3;
                             }
                         }
                         .hiddenStationName {
@@ -160,10 +176,9 @@
     </head>
     <body>
         <div class="inputContainer">
-            <!-- add value for easier debug, remove before deployment -->
-            <label>From: <input id="fromInput" list="stations" value="Littleton / Mineral Ave Station" /></label>
+            <label>From: <input id="fromInput" list="stations" /></label>
             <button id="swapButton">Swap</button>
-            <label>To: <input id="toInput" list="stations" value="Denver Airport Station" /> </label>
+            <label>To: <input id="toInput" list="stations" /> </label>
             <datalist id="stations"></datalist>
             <br /><br />
             <label>
@@ -171,7 +186,7 @@
                     <option value="departure">Depart at</option>
                     <option value="arrival">Arrive by</option>
                     <option value="first">Use First Bus</option>
-                    <option value="last" selected>Use Last Bus</option>
+                    <option value="last">Use Last Bus</option>
                 </select>
             </label>
             <label>Date:<input id="dateInput" type="date" /></label>
@@ -552,6 +567,7 @@
                             path.push({
                                 stop: current.connection.to,
                                 trip_id: current.connection.trip_id,
+                                isOriginal: current.connection.departure_sequence === 1, // 当駅始発
                                 from: current.connection.from,
                                 to: current.connection.to,
                                 departure_time: current.connection.departure_time,
@@ -634,12 +650,18 @@
                 const timeIsForWhat = document.getElementById("timeIsForWhat").value;
                 const timeInputElem = document.querySelector("label:has(> #timeInput)");
                 const preferLateDepartureElem = document.querySelector("label:has(> #preferLateDeparture)");
+                const incrementElem = document.getElementById("incrementTime");
+                const decrementElem = document.getElementById("decrementTime");
                 if (timeIsForWhat === "first" || timeIsForWhat === "last") {
                     timeInputElem.style.display = "none";
                     timeInputElem.disabled = true;
+                    incrementElem.style.display = "none";
+                    decrementElem.style.display = "none";
                 } else {
                     timeInputElem.style.display = "inline-block";
                     timeInputElem.disabled = false;
+                    incrementElem.style.display = "inline-block";
+                    decrementElem.style.display = "inline-block";
                 }
                 if (timeIsForWhat === "departure" || timeIsForWhat === "first") {
                     preferLateDepartureElem.style.display = "inline-block";
@@ -686,6 +708,7 @@
             function processPath(path) {
                 if (!path || path.length === 0) return path;
 
+                // 元の配列を汚さないようコピー
                 const result = path.map((item) => ({ ...item }));
 
                 let currentTrip = null;
@@ -693,23 +716,48 @@
 
                 for (let i = 0; i < result.length; i++) {
                     const item = result[i];
+
+                    // 徒歩、または最初の要素（出発地など trip_id がない場合）
                     if (item.type === "walk" || !item.trip_id) {
+                        // 直前まで乗っていた便の「降車駅の1つ手前」までを hidden に確定させる
+                        if (currentTrip !== null && i - 1 > startIndex) {
+                            for (let k = startIndex + 1; k < i - 1; k++) {
+                                result[k].hidden = true;
+                            }
+                        }
                         currentTrip = null;
                         startIndex = -1;
                         continue;
                     }
+
+                    // 新しい乗車区間の開始
                     if (currentTrip === null) {
                         currentTrip = item.trip_id;
+                        startIndex = i; // 乗車駅のインデックスを記録
+                        continue;
+                    }
+
+                    // 別の便に乗り換えた場合（途中で trip_id が変わった）
+                    if (item.trip_id !== currentTrip) {
+                        // 直前の便の途中駅（startIndex + 1 から i - 2 まで）を hidden にする
+                        if (i - 1 > startIndex) {
+                            for (let k = startIndex + 1; k < i - 1; k++) {
+                                result[k].hidden = true;
+                            }
+                        }
+                        // 新しい便の情報をセット
+                        currentTrip = item.trip_id;
                         startIndex = i;
-                        continue;
                     }
-                    if (item.trip_id === currentTrip) {
-                        if (i - startIndex > 1) result[i - 1].hidden = true;
-                        continue;
-                    }
-                    currentTrip = item.trip_id;
-                    startIndex = i;
                 }
+
+                // ループ終了後、最後に乗っていた便の処理（後処理）
+                if (currentTrip !== null && result.length - 1 > startIndex) {
+                    for (let k = startIndex + 1; k < result.length - 1; k++) {
+                        result[k].hidden = true;
+                    }
+                }
+
                 return result;
             }
 
@@ -760,16 +808,26 @@
                 routeContainerElem.className = "routeContainer";
                 for (let i = 0; i < path.length; i++) {
                     if (i === 0) {
-                        routeContainerElem.innerHTML += `
-                            <div class="station"><a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a></div>`;
+                        const stationElem = document.createElement("div");
+                        stationElem.className = "station";
+                        stationElem.innerHTML += `
+                            <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a>`;
+                        routeContainerElem.appendChild(stationElem);
                     } else {
                         if (path[i].type === "walk") {
-                            routeContainerElem.innerHTML += `
-                            <div class="stationBetween">
+                            const stationBetweenElem = document.createElement("div");
+                            stationBetweenElem.className = "stationBetween";
+                            stationBetweenElem.innerHTML = `
                                 <div class="walkLine"></div>
                                 <div class="walkInfo"><b>Walk</b><br />${path[i].duration} min</div>
-                            </div>
-                            <div class="station"><a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a></div>`;
+                            </div>`;
+                            routeContainerElem.appendChild(stationBetweenElem);
+
+                            const stationElem = document.createElement("div");
+                            stationElem.className = "station";
+                            stationElem.innerHTML += `
+                                <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a>`;
+                            routeContainerElem.appendChild(stationElem);
                         } else {
                             let { route_id, destination } = tripInfo[path[i].trip_id];
                             const { route_color, route_text_color } = routeList.find((r) => r.route_id === route_id) || { route_color: "aaaaaa", route_text_color: "000000" };
@@ -779,7 +837,7 @@
                             stationBetweenElem.className = "stationBetween";
                             stationBetweenElem.style.setProperty("--route-color", `#${route_color}`);
                             stationBetweenElem.style.setProperty("--route-text-color", `#${route_text_color}`);
-                            stationBetweenElem.style.setProperty("--route-id", `"${route_id}"`);
+                            stationBetweenElem.style.setProperty("--route-id", `"${route_id.slice(0, 2)}"`);
 
                             let lineNameDisplay;
                             if (company == "rtd") {
@@ -797,8 +855,10 @@
                                 }
                             }
 
+                            // isOriginalは鉄道でのみ意味があるのでRTD以外では表示しない
                             stationBetweenElem.innerHTML = `
                                 <div class="depTime">${path[i].departure_time}</div>
+                                <div class="isOriginal">${path[i].isOriginal && company == "rtd" ? "Dep." : ""}</div>
                                 <div class="rideIcon"></div>
                                 <div class="rideLine"></div>
                                 <div class="rideInfo">
@@ -806,7 +866,7 @@
                                     <div class="dest">For ${destination}</div>
                                 </div>`;
 
-                            if (i + 1 < path.length && path[i + 1].hidden) {
+                            if ((i + 1 < path.length && path[i + 1].hidden) || path[i]?.trip_id === path[i + 1]?.trip_id) {
                                 let hiddenCount = 0;
                                 for (let j = i + 1; j < path.length; j++) {
                                     if (path[j].hidden) {
@@ -815,13 +875,16 @@
                                         break;
                                     }
                                 }
-                                if (hiddenCount > 0) {
+
+                                // hiddenCountでは2駅以上の通過しか判定できないのでtrip_idを評価する
+                                if (hiddenCount > 0 || path[i].trip_id === path[i + 1].trip_id) {
+                                    // 通過駅2個以上
                                     const rideNstopsElem = document.createElement("div");
                                     rideNstopsElem.className = "rideNstops";
                                     rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops ▽`;
                                     rideNstopsElem.style.cursor = "pointer";
                                     const hiddenStationsContainer = document.createElement("div");
-                                    hiddenStationsContainer.className = "hiddenStationsContainer isHidde"; // DEBUG
+                                    hiddenStationsContainer.className = "hiddenStationsContainer isHidden"; // DEBUG
                                     for (let j = i; j <= i + hiddenCount; j++) {
                                         const hiddenStationElem = document.createElement("div");
                                         hiddenStationElem.className = "hiddenStation";
