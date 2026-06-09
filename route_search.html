@@ -22,7 +22,10 @@
             }
             .routeContainer {
                 .station {
-                    font-weight: bold;
+                    padding: 0.5em 0 0.5em 3em;
+                    margin: 0.5em 0 1em 0;
+                    border-top: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
                     a {
                         color: unset;
                         text-decoration: none;
@@ -30,10 +33,20 @@
                 }
                 .stationBetween {
                     position: relative;
-                    height: 6em;
+                    &:has(.rideLine) {
+                        &:has(.hiddenStationsContainer.isHidden), &:not(:has(.hiddenStationsContainer)) {
+                            min-height: 6em;
+                        }
+                        &:has(.hiddenStationsContainer:not(.isHidden)) {
+                            min-height: calc(6em + var(--hidden-count) * 3em);
+                        }
+                    }
+                    &:has(.walkLine) {
+                        min-height: 4em;
+                    }
                     .rideIcon {
                         position: absolute;
-                        left: 1em;
+                        left: 4.25em;
                         top: 0.75em;
                         border-radius: 50%;
                         text-align: center;
@@ -53,15 +66,16 @@
                             border-radius: 50%;
                             width: 1.5em;
                             height: 1.5em;
-                            line-height: 1.5em;
+                            line-height: 1.4em; /* somehow this is better than 1.5em */
                             background: white;
                             transform: translate(-50%, -50%);
                             z-index: 3;
                         }
                     }
-                    .rideLine {
+                    .rideLine,
+                    .walkLine {
                         position: absolute;
-                        left: 0.75em;
+                        left: 4em;
                         top: 0.1em;
                         bottom: 0;
                         width: 0.5em;
@@ -69,38 +83,76 @@
                         z-index: 1;
                     }
                     .walkLine {
-                        position: absolute;
-                        left: 0.75em;
-                        top: 0.1em;
-                        bottom: 0;
-                        width: 0.5em;
-                        background: repeating-linear-gradient(
-                            to bottom,
-                            gray 0,
-                            gray 0.25em,
-                            transparent 0.25em,
-                            transparent 0.5em
-                        );
-                        z-index: 1;
+                        background: repeating-linear-gradient(to bottom, gray 0, gray 0.25em, transparent 0.25em, transparent 0.5em);
                     }
-                    .depTime {
-                        position: absolute;
-                        right: 0;
-                    }
-                    .rideInfo {
-                        position: absolute;
-                        left: 2.5em;
-                        top: 0;
-                    }
-                    .walkInfo {
-                        position: absolute;
-                        left: 2.5em;
-                        top: 0;
-                    }
+                    .depTime,
                     .arrTime {
                         position: absolute;
-                        right: 0;
+                        font-weight: bold;
+                        left: 0.5em;
+                    }
+                    .arrTime {
                         bottom: 0;
+                    }
+                    .rideInfo,
+                    .walkInfo {
+                        position: absolute;
+                        left: 6em;
+                        top: 0;
+                        .line {
+                            font-weight: bold;
+                        }
+                        .dest {
+                            font-size: 0.9em;
+                        }
+                    }
+                    .rideNstops {
+                        position: absolute;
+                        left: 6em;
+                        top: 4.5em;
+                    }
+                    .hiddenStationsContainer {
+                        position: relative;
+                        top: 5em;
+                        &.isHidden {
+                            display: none;
+                        }
+                        .hiddenDepTime {
+                            position: absolute;
+                            left: 1.2em;
+                            top: 0.25em;
+                            font-size: 0.8em;
+                        }
+                        .hiddenStaDot {
+                            position: absolute;
+                            left: 4.25em;
+                            top: 0.7em;
+                            transform: translate(-50%, -47%);
+                            z-index: 2;
+                            width: 1em;
+                            height: 1em;
+                            background: var(--route-color);
+                            border-radius: 50%;
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 0.5em;
+                                height: 0.5em;
+                                background: white;
+                                border-radius: 50%;
+                            }
+                        }
+                        .hiddenStationName {
+                            position: absolute;
+                            left: 6em;
+                            a {
+                                text-decoration: none;
+                                color: unset;
+                            }
+                        }
                     }
                 }
             }
@@ -382,6 +434,7 @@
                                 trip_id: current.connection.trip_id,
                                 from: current.connection.from,
                                 to: current.connection.to,
+                                isOriginal: current.connection.departure_sequence === 1, // 当駅始発
                                 departure_time: current.connection.departure_time,
                                 arrival_time: current.connection.arrival_time,
                             });
@@ -576,6 +629,7 @@
                 }
                 return null;
             }
+
             document.getElementById("timeIsForWhat").onchange = () => {
                 const timeIsForWhat = document.getElementById("timeIsForWhat").value;
                 const timeInputElem = document.querySelector("label:has(> #timeInput)");
@@ -595,6 +649,7 @@
                     preferLateDepartureElem.disabled = true;
                 }
             };
+
             document.getElementById("searchButton").onclick = () => {
                 const from = fromInput.value.trim();
                 const to = toInput.value.trim();
@@ -628,90 +683,33 @@
                 renderResult(result, resultRenderMethod);
             };
 
-            function compressPath(path) {
-                if (!path || path.length <= 1) {
-                    return path;
-                }
+            function processPath(path) {
+                if (!path || path.length === 0) return path;
 
-                const result = [
-                    {
-                        stop: path[0].stop,
-                    },
-                ];
+                const result = path.map((item) => ({ ...item }));
 
                 let currentTrip = null;
-                let segmentStart = null;
-                let segmentEnd = null;
+                let startIndex = -1;
 
-                function flushTrip() {
-                    if (!segmentStart || !segmentEnd) {
-                        return;
-                    }
-
-                    result.push({
-                        stop: segmentEnd.stop,
-
-                        trip_id: currentTrip,
-
-                        from: segmentStart.from,
-                        to: segmentEnd.stop,
-
-                        departure_time: segmentStart.departure_time,
-                        arrival_time: segmentEnd.arrival_time,
-                    });
-
-                    currentTrip = null;
-                    segmentStart = null;
-                    segmentEnd = null;
-                }
-
-                for (let i = 1; i < path.length; i++) {
-                    const item = path[i];
-
-                    // 徒歩
-                    if (item.type === "walk") {
-                        flushTrip();
-
-                        result.push({
-                            type: "walk",
-
-                            stop: item.stop,
-
-                            from: item.from,
-                            to: item.to,
-
-                            duration: item.duration,
-                        });
-
+                for (let i = 0; i < result.length; i++) {
+                    const item = result[i];
+                    if (item.type === "walk" || !item.trip_id) {
+                        currentTrip = null;
+                        startIndex = -1;
                         continue;
                     }
-
-                    // 新しい乗車区間開始
                     if (currentTrip === null) {
                         currentTrip = item.trip_id;
-                        segmentStart = item;
-                        segmentEnd = item;
-
+                        startIndex = i;
                         continue;
                     }
-
-                    // 同じ便なら延長
                     if (item.trip_id === currentTrip) {
-                        segmentEnd = item;
-
+                        if (i - startIndex > 1) result[i - 1].hidden = true;
                         continue;
                     }
-
-                    // 別の便になった
-                    flushTrip();
-
                     currentTrip = item.trip_id;
-                    segmentStart = item;
-                    segmentEnd = item;
+                    startIndex = i;
                 }
-
-                flushTrip();
-
                 return result;
             }
 
@@ -721,8 +719,8 @@
                     resultElem.textContent = "No route found for specified criteria.";
                     return;
                 }
-                const path = compressPath(originalPath);
-                console.log("Compressed path:", path);
+                const path = processPath(originalPath);
+                console.log("Processed path:", path);
 
                 let depOverall = path.find((p) => p.departure_time)?.departure_time;
                 let arrOverall = path
@@ -735,39 +733,29 @@
                     arrOverall = timeInput;
                 }
                 console.log(`Initial overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
-                // path[0] has always no type, path[1] ... path[length-1] may have "walk" or null
-                // if [1]...[length-1] are all walk
+
+                const depSec = timeToSeconds(depOverall);
+                const arrSec = timeToSeconds(arrOverall);
                 if (path.slice(1).every((p) => p.type === "walk")) {
                     const totalWalkDuration = path.reduce((sum, p) => sum + (p.duration || 0), 0);
                     if (renderMethod === "forward") {
-                        arrOverall = secondsToTime(timeToSeconds(depOverall) + totalWalkDuration * 60);
+                        arrOverall = secondsToTime(depSec + totalWalkDuration * 60);
                     } else {
-                        depOverall = secondsToTime(timeToSeconds(arrOverall) - totalWalkDuration * 60);
+                        depOverall = secondsToTime(arrSec - totalWalkDuration * 60);
                     }
                 } else {
                     if (path[1].type === "walk") {
-                        const walkDuration = path[1].duration * 60;
-                        depOverall = secondsToTime(timeToSeconds(depOverall) - walkDuration);
+                        depOverall = secondsToTime(depSec - path[1].duration * 60);
                     }
                     if (path[path.length - 1].type === "walk") {
-                        const walkDuration = path[path.length - 1].duration * 60;
-                        arrOverall = secondsToTime(timeToSeconds(arrOverall) + walkDuration);
+                        arrOverall = secondsToTime(arrSec + path[path.length - 1].duration * 60);
                     }
                 }
-                // fix time format displaying like "24:30"
-                depOverall = secondsToTime(timeToSeconds(depOverall));
-                arrOverall = secondsToTime(timeToSeconds(arrOverall));
+                depOverall = secondsToTime(depSec);
+                arrOverall = secondsToTime(arrSec);
                 console.log(`Adjusted overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
 
-                let transferCount = -2;
-                for (const p of path) {
-                    if (p.type !== "walk") {
-                        transferCount++;
-                    }
-                }
-
-                const transferString = transferCount == -1 ? "Walk Only" : `${transferCount ? transferCount : "No"} transfer${transferCount !== 1 ? "s" : ""}`;
-                resultElem.innerHTML = `<div style="font-weight: bold; font-size: 1.5em;">${depOverall}→${arrOverall} (${transferString})</div><br />`;
+                resultElem.innerHTML = `<div style="font-weight: bold; font-size: 1.5em;">${depOverall} > ${arrOverall}</div><br />`;
                 const routeContainerElem = document.createElement("div");
                 routeContainerElem.className = "routeContainer";
                 for (let i = 0; i < path.length; i++) {
@@ -779,7 +767,7 @@
                             routeContainerElem.innerHTML += `
                             <div class="stationBetween">
                                 <div class="walkLine"></div>
-                                <div class="walkInfo">Walk for ${path[i].duration} min</div>
+                                <div class="walkInfo"><b>Walk</b><br />${path[i].duration} min</div>
                             </div>
                             <div class="station"><a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a></div>`;
                         } else {
@@ -810,21 +798,71 @@
                             }
 
                             stationBetweenElem.innerHTML = `
-                                <div class="depTime">Dep. ${path[i].departure_time}</div>
+                                <div class="depTime">${path[i].departure_time}</div>
                                 <div class="rideIcon"></div>
                                 <div class="rideLine"></div>
                                 <div class="rideInfo">
-                                    <p class="line">${lineNameDisplay}</p>
-                                    <p class="dest">For ${destination}</p>
-                                </div>
-                                <!-- INSERT RIDE N STOPS HERE -->
-                                <div class="arrTime">Arr. ${path[i].arrival_time}</div>
-                            `;
-                            // TODO: add "Ride n stops" container, tap to expand and show all stop/times in between
-                            // original path is needed to get stops between
+                                    <div class="line">${lineNameDisplay}</div>
+                                    <div class="dest">For ${destination}</div>
+                                </div>`;
+
+                            if (i + 1 < path.length && path[i + 1].hidden) {
+                                let hiddenCount = 0;
+                                for (let j = i + 1; j < path.length; j++) {
+                                    if (path[j].hidden) {
+                                        hiddenCount++;
+                                    } else {
+                                        break;
+                                    }
+                                }
+                                if (hiddenCount > 0) {
+                                    const rideNstopsElem = document.createElement("div");
+                                    rideNstopsElem.className = "rideNstops";
+                                    rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops ▽`;
+                                    rideNstopsElem.style.cursor = "pointer";
+                                    const hiddenStationsContainer = document.createElement("div");
+                                    hiddenStationsContainer.className = "hiddenStationsContainer isHidde"; // DEBUG
+                                    for (let j = i; j <= i + hiddenCount; j++) {
+                                        const hiddenStationElem = document.createElement("div");
+                                        hiddenStationElem.className = "hiddenStation";
+                                        hiddenStationElem.style.position = "absolute";
+                                        hiddenStationElem.style.top = `${(j - i + 1) * 3}em`;
+                                        hiddenStationElem.style.width = "stretch";
+                                        hiddenStationElem.setAttribute("--route-color", `#${route_color}`);
+                                        hiddenStationElem.innerHTML = `
+                                    <div class="hiddenDepTime">${path[j].arrival_time}</div>
+                                    <div class="hiddenStaDot"></div>
+                                    <div class="hiddenStationName">
+                                        <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[j].stop)}&company=${encodeURIComponent(company)}">${path[j].stop}</a>
+                                    </div>`;
+                                        hiddenStationsContainer.appendChild(hiddenStationElem);
+                                    }
+                                    rideNstopsElem.addEventListener("click", () => {
+                                        if (hiddenStationsContainer.classList.contains("isHidden")) {
+                                            hiddenStationsContainer.classList.remove("isHidden");
+                                            rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops △`;
+                                        } else {
+                                            hiddenStationsContainer.classList.add("isHidden");
+                                            rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops ▽`;
+                                        }
+                                    });
+                                    stationBetweenElem.appendChild(rideNstopsElem);
+                                    stationBetweenElem.appendChild(hiddenStationsContainer);
+                                    i += hiddenCount + 1;
+                                    stationBetweenElem.style.setProperty("--hidden-count", hiddenCount + 2);
+                                }
+                            }
+
+                            const arrTimeElem = document.createElement("div");
+                            arrTimeElem.className = "arrTime";
+                            arrTimeElem.textContent = path[i].arrival_time;
+                            stationBetweenElem.appendChild(arrTimeElem);
                             routeContainerElem.appendChild(stationBetweenElem);
-                            routeContainerElem.innerHTML += `
-                            <div class="station"><a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a></div>`;
+
+                            const stationElem = document.createElement("div");
+                            stationElem.className = "station";
+                            stationElem.innerHTML = `<a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a>`;
+                            routeContainerElem.appendChild(stationElem);
                         }
                     }
                 }
