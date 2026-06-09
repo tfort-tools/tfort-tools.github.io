@@ -66,7 +66,21 @@
                         bottom: 0;
                         width: 0.5em;
                         background: var(--route-color);
-                        color: var(--route-text-color);
+                        z-index: 1;
+                    }
+                    .walkLine {
+                        position: absolute;
+                        left: 0.75em;
+                        top: 0.1em;
+                        bottom: 0;
+                        width: 0.5em;
+                        background: repeating-linear-gradient(
+                            to bottom,
+                            gray 0,
+                            gray 0.25em,
+                            transparent 0.25em,
+                            transparent 0.5em
+                        );
                         z-index: 1;
                     }
                     .depTime {
@@ -74,6 +88,11 @@
                         right: 0;
                     }
                     .rideInfo {
+                        position: absolute;
+                        left: 2.5em;
+                        top: 0;
+                    }
+                    .walkInfo {
                         position: absolute;
                         left: 2.5em;
                         top: 0;
@@ -735,6 +754,9 @@
                         arrOverall = secondsToTime(timeToSeconds(arrOverall) + walkDuration);
                     }
                 }
+                // fix time format displaying like "24:30"
+                depOverall = secondsToTime(timeToSeconds(depOverall));
+                arrOverall = secondsToTime(timeToSeconds(arrOverall));
                 console.log(`Adjusted overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
 
                 let transferCount = -2;
