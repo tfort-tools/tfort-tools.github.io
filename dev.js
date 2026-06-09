@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const directoryName = "transfort";
+const company = "rtd";
 
 function parseCsv(text) {
     const lines = text.trim().split(/\r?\n/);
@@ -58,8 +58,25 @@ function regularizeName(name) {
     name = name.replace(/\(WB\)+$/i, "(Westbound)");
     name = name.replace(/\(SB\)+$/i, "(Southbound)");
 
+    // in RTD, do special escaping
+    if (company === "rtd") {
+        // remove "Track n" if not "Union Station Track n"
+        if (!name.match(/\bUnion Station\b/i)) {
+            name = name.replace(/\bTrack\s*\d+\b/i, "");
+        } else {
+            // for Union Station, replace track 11-12 with "(Light Rail)", track 1-9 with "(Heavy Rail)"
+            name = name.replace(/\bTrack\s*(1|2|3|4|5|6|7|8|9)\b/i, "(Heavy Rail)");
+            name = name.replace(/\bTrack\s*(11|12)\b/i, "(Light Rail)");
+        }
+        // remove "N-Bound" "E-Bound" "W-Bound" "S-Bound", "Center Track"
+        name = name.replace(/\b(N|E|W|S)-Bound\b/i, "");
+        name = name.replace(/\bCenter Track\b/i, "");
+        // remove last space
+        name = name.replace(/\s+$/, "");
+    }
+
     // fix provider's mistake
-    if (directoryName === "transfort" && name.match(/\bcenter\b/i)) {
+    if (company === "transfort" && name.match(/\bcenter\b/i)) {
         // for some reason, street name "centre" is misspelled as "center" in the source data
         // test if it's likely a street name (matches "center &" or "& center")
         if (name.match(/\bcenter\s*&/i) || name.match(/&\s*center\b/i)) {
@@ -71,14 +88,37 @@ function regularizeName(name) {
     return name;
 }
 
-const routes = parseCsv(fs.readFileSync(`./gtfs/${directoryName}/routes.txt`, "utf8"));
-const trips = parseCsv(fs.readFileSync(`./gtfs/${directoryName}/trips.txt`, "utf8"));
-const stops = parseCsv(fs.readFileSync(`./gtfs/${directoryName}/stops.txt`, "utf8"));
-const stopTimes = parseCsv(fs.readFileSync(`./gtfs/${directoryName}/stop_times.txt`, "utf8"));
-const calendar = parseCsv(fs.readFileSync(`./gtfs/${directoryName}/calendar.txt`, "utf8"));
+const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
+const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));
+const stops = parseCsv(fs.readFileSync(`./gtfs/${company}/stops.txt`, "utf8"));
+const stopTimes = parseCsv(fs.readFileSync(`./gtfs/${company}/stop_times.txt`, "utf8"));
+const calendar = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar.txt`, "utf8"));
 let calendarDates = [];
-if (fs.existsSync(`./gtfs/${directoryName}/calendar_dates.txt`)) {
-    calendarDates = parseCsv(fs.readFileSync(`./gtfs/${directoryName}/calendar_dates.txt`, "utf8"));
+if (fs.existsSync(`./gtfs/${company}/calendar_dates.txt`)) {
+    calendarDates = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar_dates.txt`, "utf8"));
+}
+
+// if additionally directory present, load and concat them
+for (let i = 2; ; i++) {
+    if (!fs.existsSync(`./gtfs/${company}-${i}`)) {
+        break;
+    }
+    console.log(`loading additional directory: ${company}-${i}`);
+    const routes_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/routes.txt`, "utf8"));
+    const trips_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/trips.txt`, "utf8"));
+    const stops_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/stops.txt`, "utf8"));
+    const stopTimes_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/stop_times.txt`, "utf8"));
+    const calendar_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/calendar.txt`, "utf8"));
+    let calendarDates_add = [];
+    if (fs.existsSync(`./gtfs/${company}-${i}/calendar_dates.txt`)) {
+        calendarDates_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/calendar_dates.txt`, "utf8"));
+    }
+    routes.push(...routes_add);
+    trips.push(...trips_add);
+    stops.push(...stops_add);
+    stopTimes.push(...stopTimes_add);
+    calendar.push(...calendar_add);
+    calendarDates.push(...calendarDates_add);
 }
 
 const tripMap = new Map(trips.map((trip) => [trip.trip_id, trip]));
@@ -246,6 +286,12 @@ for (const route of routes) {
         }
     }
 
+    // in RTD, modify route_long_name
+    if (company === "rtd") {
+        const lineChar = route.route_id.match(/[A-Z]+/i)?.[0] || "";
+        route.route_long_name = `[${lineChar}] ${route.route_long_name}`;
+    }
+
     routeList.push({
         route_id: route.route_id,
         route_long_name: regularizeName(route.route_long_name) || regularizeName(route.route_short_name),
@@ -378,24 +424,24 @@ for (const tripId in tripStopTimes) {
 // write
 //
 
-if (!fs.existsSync(`./gtfs_parsed/${directoryName}`)) {
-    fs.mkdirSync(`./gtfs_parsed/${directoryName}`, { recursive: true });
+if (!fs.existsSync(`./gtfs_parsed/${company}`)) {
+    fs.mkdirSync(`./gtfs_parsed/${company}`, { recursive: true });
 }
 
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/route-list.json`, JSON.stringify(routeList, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/stop-patterns.json`, JSON.stringify(stopPatterns, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/stop-ids.json`, JSON.stringify(stopIds, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/patterns.json`, JSON.stringify(patterns, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/trip-times.json`, JSON.stringify(tripTimes, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/calendar.json`, JSON.stringify(calendarJson, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/connections.json`, JSON.stringify(connections, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/stop-connections.json`, JSON.stringify(output, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/trip-info.json`, JSON.stringify(tripInfo, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/station-list.json`, JSON.stringify(stationList, null, 2));
-fs.writeFileSync(`./gtfs_parsed/${directoryName}/trip-stop-times.json`, JSON.stringify(tripStopTimes, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/route-list.json`, JSON.stringify(routeList, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/stop-patterns.json`, JSON.stringify(stopPatterns, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/stop-ids.json`, JSON.stringify(stopIds, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/patterns.json`, JSON.stringify(patterns, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/trip-times.json`, JSON.stringify(tripTimes, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/calendar.json`, JSON.stringify(calendarJson, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/connections.json`, JSON.stringify(connections, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/stop-connections.json`, JSON.stringify(output, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/trip-info.json`, JSON.stringify(tripInfo, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/station-list.json`, JSON.stringify(stationList, null, 2));
+fs.writeFileSync(`./gtfs_parsed/${company}/trip-stop-times.json`, JSON.stringify(tripStopTimes, null, 2));
 
 if (Object.keys(calendarDatesJson).length) {
-    fs.writeFileSync(`./gtfs_parsed/${directoryName}/calendar-dates.json`, JSON.stringify(calendarDatesJson, null, 2));
+    fs.writeFileSync(`./gtfs_parsed/${company}/calendar-dates.json`, JSON.stringify(calendarDatesJson, null, 2));
 }
 
 console.log("done");

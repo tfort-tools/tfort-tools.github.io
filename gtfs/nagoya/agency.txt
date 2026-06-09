@@ -1,2 +1,0 @@
-agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone,agency_fare_url,agency_email
-3000020231002,名古屋市バス,https://www.kotsu.city.nagoya.jp/,Asia/Tokyo,ja,052-522-0111,,

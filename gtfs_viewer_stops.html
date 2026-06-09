@@ -67,7 +67,13 @@
             const contentElem = document.getElementById("content");
             const titleElem = document.getElementById("title");
 
-            document.getElementById("backButton").onclick = () => history.back();
+            document.getElementById("backButton").onclick = () => {
+                if (params.get("popup") === "1") {
+                    window.close();
+                } else {
+                    history.back();
+                }
+            };
 
             function isPrefix(longer, shorter) {
                 if (shorter.length > longer.length) {

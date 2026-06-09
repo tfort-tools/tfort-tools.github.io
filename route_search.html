@@ -20,13 +20,79 @@
             .routeRow {
                 margin-bottom: 0px;
             }
+            .routeContainer {
+                .station {
+                    font-weight: bold;
+                    a {
+                        color: unset;
+                        text-decoration: none;
+                    }
+                }
+                .stationBetween {
+                    position: relative;
+                    height: 6em;
+                    .rideIcon {
+                        position: absolute;
+                        left: 1em;
+                        top: 0.75em;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 2em;
+                        width: 2em;
+                        height: 2em;
+                        transform: translate(-50%, -50%);
+                        background: var(--route-color);
+                        color: black;
+                        z-index: 2;
+                        &::after {
+                            content: var(--route-id);
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            text-align: center;
+                            border-radius: 50%;
+                            width: 1.5em;
+                            height: 1.5em;
+                            line-height: 1.5em;
+                            background: white;
+                            transform: translate(-50%, -50%);
+                            z-index: 3;
+                        }
+                    }
+                    .rideLine {
+                        position: absolute;
+                        left: 0.75em;
+                        top: 0.1em;
+                        bottom: 0;
+                        width: 0.5em;
+                        background: var(--route-color);
+                        color: var(--route-text-color);
+                        z-index: 1;
+                    }
+                    .depTime {
+                        position: absolute;
+                        right: 0;
+                    }
+                    .rideInfo {
+                        position: absolute;
+                        left: 2.5em;
+                        top: 0;
+                    }
+                    .arrTime {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }
         </style>
     </head>
     <body>
         <div class="inputContainer">
-            <label>From: <input id="fromInput" list="stations" /></label>
+            <!-- add value for easier debug, remove before deployment -->
+            <label>From: <input id="fromInput" list="stations" value="Littleton / Mineral Ave Station" /></label>
             <button id="swapButton">Swap</button>
-            <label>To: <input id="toInput" list="stations" /> </label>
+            <label>To: <input id="toInput" list="stations" value="Denver Airport Station" /> </label>
             <datalist id="stations"></datalist>
             <br /><br />
             <label>
@@ -34,7 +100,7 @@
                     <option value="departure">Depart at</option>
                     <option value="arrival">Arrive by</option>
                     <option value="first">Use First Bus</option>
-                    <option value="last">Use Last Bus</option>
+                    <option value="last" selected>Use Last Bus</option>
                 </select>
             </label>
             <label>Date:<input id="dateInput" type="date" /></label>
@@ -51,6 +117,7 @@
     <script>
         const params = new URLSearchParams(location.search);
         const company = params.get("company");
+        if (!company) window.location.href = "index.html";
         const resultElem = document.getElementById("result");
         // fix midnight operation, user input 0:00 to 2:59 is considered as yesterday 24:00 to 26:59
         const dayBoundaryHour = 3;
@@ -129,7 +196,7 @@
             };
 
             // load
-            const [connections, calendar, calendarDates, tripInfo, tripStopTimes] = await Promise.all([
+            const [connections, calendar, calendarDates, tripInfo, tripStopTimes, routeList] = await Promise.all([
                 fetch(`./gtfs_parsed/${company}/connections.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/calendar.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/calendar-dates.json`)
@@ -137,8 +204,13 @@
                     .catch(() => ({})),
                 fetch(`./gtfs_parsed/${company}/trip-info.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/trip-stop-times.json`).then((r) => r.json()),
+                fetch(`./gtfs_parsed/${company}/route-list.json`).then((r) => r.json()),
             ]);
-            const walkingConnections = await fetch(`./gtfs_addon/${company}/walking-connections.json`).then((r) => r.json());
+
+            // load walking connections if exists
+            const walkingConnections = await fetch(`./gtfs_addon/${company}/walking-connections.json`)
+                .then((r) => r.json())
+                .catch(() => alert("No walking connection file."));
             // search
             const tripConnections = [];
             for (const conn of connections) {
@@ -624,56 +696,117 @@
                 return result;
             }
 
-            function renderResult(path, renderMethod) {
-                path = compressPath(path);
-
+            function renderResult(originalPath, renderMethod) {
+                console.log("Original path:", originalPath);
+                if (!originalPath) {
+                    resultElem.textContent = "No route found for specified criteria.";
+                    return;
+                }
+                const path = compressPath(originalPath);
                 console.log("Compressed path:", path);
+
                 let depOverall = path.find((p) => p.departure_time)?.departure_time;
                 let arrOverall = path
                     .slice()
                     .reverse()
                     .find((p) => p.arrival_time)?.arrival_time;
-                if (path[1].type === "walk") {
-                    const walkDuration = path[1].duration * 60;
-                    depOverall = secondsToTime(timeToSeconds(depOverall) - walkDuration);
+                if (!depOverall || !arrOverall) {
+                    const timeInput = document.getElementById("timeInput").value;
+                    depOverall = timeInput;
+                    arrOverall = timeInput;
                 }
-                if (path[path.length - 1].type === "walk") {
-                    const walkDuration = path[path.length - 1].duration * 60;
-                    arrOverall = secondsToTime(timeToSeconds(arrOverall) + walkDuration);
+                console.log(`Initial overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
+                // path[0] has always no type, path[1] ... path[length-1] may have "walk" or null
+                // if [1]...[length-1] are all walk
+                if (path.slice(1).every((p) => p.type === "walk")) {
+                    const totalWalkDuration = path.reduce((sum, p) => sum + (p.duration || 0), 0);
+                    if (renderMethod === "forward") {
+                        arrOverall = secondsToTime(timeToSeconds(depOverall) + totalWalkDuration * 60);
+                    } else {
+                        depOverall = secondsToTime(timeToSeconds(arrOverall) - totalWalkDuration * 60);
+                    }
+                } else {
+                    if (path[1].type === "walk") {
+                        const walkDuration = path[1].duration * 60;
+                        depOverall = secondsToTime(timeToSeconds(depOverall) - walkDuration);
+                    }
+                    if (path[path.length - 1].type === "walk") {
+                        const walkDuration = path[path.length - 1].duration * 60;
+                        arrOverall = secondsToTime(timeToSeconds(arrOverall) + walkDuration);
+                    }
                 }
+                console.log(`Adjusted overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
+
                 let transferCount = -2;
                 for (const p of path) {
                     if (p.type !== "walk") {
                         transferCount++;
                     }
                 }
-                resultElem.innerHTML = "";
-                if (!path) {
-                    resultElem.textContent = "No route found for specified criteria.";
-                    return;
-                }
-                const transferString = transferCount === 0 ? "No transfers" : transferCount === 1 ? "1 transfer" : `${transferCount} transfers`;
+
+                const transferString = transferCount == -1 ? "Walk Only" : `${transferCount ? transferCount : "No"} transfer${transferCount !== 1 ? "s" : ""}`;
                 resultElem.innerHTML = `<div style="font-weight: bold; font-size: 1.5em;">${depOverall}→${arrOverall} (${transferString})</div><br />`;
+                const routeContainerElem = document.createElement("div");
+                routeContainerElem.className = "routeContainer";
                 for (let i = 0; i < path.length; i++) {
-                    const row = document.createElement("div");
-                    row.className = "routeRow";
                     if (i === 0) {
-                        row.innerHTML = `<div>${path[i].stop}</div>`;
+                        routeContainerElem.innerHTML += `
+                            <div class="station"><a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a></div>`;
                     } else {
                         if (path[i].type === "walk") {
-                            row.innerHTML = `<div>&ensp;|&ensp;Walk for ${path[i].duration} min<br />${path[i].stop}</div>`;
-                            resultElem.appendChild(row);
-                            continue;
+                            routeContainerElem.innerHTML += `
+                            <div class="stationBetween">
+                                <div class="walkLine"></div>
+                                <div class="walkInfo">Walk for ${path[i].duration} min</div>
+                            </div>
+                            <div class="station"><a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a></div>`;
+                        } else {
+                            let { route_id, destination } = tripInfo[path[i].trip_id];
+                            const { route_color, route_text_color } = routeList.find((r) => r.route_id === route_id) || { route_color: "aaaaaa", route_text_color: "000000" };
+                            if (company == "rtd") route_id = route_id.match(/[A-Z]/)[0]; // RTD has like "101A", remove numbers not displayed in signs
+
+                            const stationBetweenElem = document.createElement("div");
+                            stationBetweenElem.className = "stationBetween";
+                            stationBetweenElem.style.setProperty("--route-color", `#${route_color}`);
+                            stationBetweenElem.style.setProperty("--route-text-color", `#${route_text_color}`);
+                            stationBetweenElem.style.setProperty("--route-id", `"${route_id}"`);
+
+                            let lineNameDisplay;
+                            if (company == "rtd") {
+                                if (["A", "B", "G", "N"].includes(route_id)) {
+                                    lineNameDisplay = `${route_id} Line Train`;
+                                } else {
+                                    lineNameDisplay = `${route_id} Line Tram`;
+                                }
+                            }
+                            if (company == "transfort") {
+                                if (route_id == "MAX") {
+                                    lineNameDisplay = `${route_id} Rapid Transit`;
+                                } else {
+                                    lineNameDisplay = `Route ${route_id} Bus`;
+                                }
+                            }
+
+                            stationBetweenElem.innerHTML = `
+                                <div class="depTime">Dep. ${path[i].departure_time}</div>
+                                <div class="rideIcon"></div>
+                                <div class="rideLine"></div>
+                                <div class="rideInfo">
+                                    <p class="line">${lineNameDisplay}</p>
+                                    <p class="dest">For ${destination}</p>
+                                </div>
+                                <!-- INSERT RIDE N STOPS HERE -->
+                                <div class="arrTime">Arr. ${path[i].arrival_time}</div>
+                            `;
+                            // TODO: add "Ride n stops" container, tap to expand and show all stop/times in between
+                            // original path is needed to get stops between
+                            routeContainerElem.appendChild(stationBetweenElem);
+                            routeContainerElem.innerHTML += `
+                            <div class="station"><a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a></div>`;
                         }
-                        const trip = tripInfo[path[i].trip_id];
-                        row.innerHTML = `
-                            <div>Dep. ${path[i].departure_time}<br />
-                                ↓&emsp;[${trip.route_id}] For ${trip.destination}<br />
-                                Arr. ${path[i].arrival_time}<br /> 
-                                ${path[i].stop}</div>`;
                     }
-                    resultElem.appendChild(row);
                 }
+                resultElem.appendChild(routeContainerElem);
             }
         })();
     </script>
