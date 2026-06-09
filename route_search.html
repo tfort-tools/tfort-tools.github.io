@@ -68,7 +68,7 @@
                             border-radius: 50%;
                             width: 1.5em;
                             height: 1.5em;
-                            line-height: 1.4em; /* somehow this is better than 1.5em */
+                            line-height: 1.5em; /* somehow this is better than 1.5em */
                             background: white;
                             transform: translate(-50%, -50%);
                             z-index: 3;
@@ -208,14 +208,17 @@
         // fix midnight operation, user input 0:00 to 2:59 is considered as yesterday 24:00 to 26:59
         const dayBoundaryHour = 3;
 
-        function getServiceDateAndSeconds(date, time) {
+        function getServiceDateAndSeconds(date, timeSeconds) {
             const [Y, M, D] = date.split("-").map(Number);
-            const [h, m] = time.split(":").map(Number);
             const serviceDate = new Date(Y, M - 1, D);
-            let serviceSeconds = h * 3600 + m * 60;
-            if (h < dayBoundaryHour) {
+
+            let serviceSeconds = timeSeconds;
+
+            const boundarySeconds = dayBoundaryHour * 3600;
+
+            if (serviceSeconds < boundarySeconds) {
                 serviceDate.setDate(serviceDate.getDate() - 1);
-                serviceSeconds += 86400;
+                serviceSeconds += 86400; // 翌日扱いとして24時間分の秒数を加算
             }
             return { serviceDate, serviceSeconds };
         }
@@ -266,14 +269,13 @@
             $("#decrementTime").onclick = () => changeTime(-1);
 
             // load
-            const [connections, calendar, calendarDates, tripInfo, tripStopTimes, routeList, walkingConnections] = await Promise.all([
+            const [connections, calendar, calendarDates, tripInfo, routeList, walkingConnections] = await Promise.all([
                 fetch(`./gtfs_parsed/${company}/connections.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/calendar.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/calendar-dates.json`)
                     .then((r) => r.json())
                     .catch(() => ({})),
                 fetch(`./gtfs_parsed/${company}/trip-info.json`).then((r) => r.json()),
-                fetch(`./gtfs_parsed/${company}/trip-stop-times.json`).then((r) => r.json()),
                 fetch(`./gtfs_parsed/${company}/route-list.json`).then((r) => r.json()),
                 fetch(`./gtfs_addon/${company}/walking-connections.json`)
                     .then((r) => r.json())
@@ -281,7 +283,7 @@
             ]);
 
             // search
-            connections.sort((a, b) => timeToSeconds(a.departure_time) - timeToSeconds(b.departure_time));
+            connections.sort((a, b) => a.departure_time - b.departure_time);
             const departuresFrom = {};
             const arrivalsTo = {};
             for (const conn of connections) {
@@ -291,10 +293,10 @@
                 arrivalsTo[conn.to].push(conn);
             }
             for (const stop in departuresFrom) {
-                departuresFrom[stop].sort((a, b) => timeToSeconds(a.departure_time) - timeToSeconds(b.departure_time));
+                departuresFrom[stop].sort((a, b) => a.departure_time - b.departure_time);
             }
             for (const stop in arrivalsTo) {
-                arrivalsTo[stop].sort((a, b) => timeToSeconds(b.arrival_time) - timeToSeconds(a.arrival_time));
+                arrivalsTo[stop].sort((a, b) => b.arrival_time - a.arrival_time);
             }
             function isBetterForward(a, b, preferLateDeparture) {
                 if (!b) {
@@ -347,10 +349,83 @@
                 const weekday = weekdayNames[new Date(date).getDay()];
                 return service[weekday] === "1";
             }
+
             function searchRouteByDepTime(fromStop, toStop, date, depTime, noWalk, preferLateDeparture = false) {
+                class BinaryHeapPriorityQueue {
+                    constructor(preferLateDeparture) {
+                        this.heap = [];
+                        this.preferLateDeparture = preferLateDeparture;
+                    }
+
+                    get length() {
+                        return this.heap.length;
+                    }
+
+                    push(item) {
+                        this.heap.push(item);
+                        this.upHeap(this.heap.length - 1);
+                    }
+
+                    shift() {
+                        if (this.heap.length === 0) return undefined;
+                        const top = this.heap[0];
+                        const bottom = this.heap.pop();
+                        if (this.heap.length > 0) {
+                            this.heap[0] = bottom;
+                            this.downHeap(0);
+                        }
+                        return top;
+                    }
+
+                    compare(a, b) {
+                        if (a.arrivalTime !== b.arrivalTime) return a.arrivalTime - b.arrivalTime;
+                        if (a.transfers !== b.transfers) return a.transfers - b.transfers;
+                        if (a.walkCount !== b.walkCount) return a.walkCount - b.walkCount;
+                        if (a.firstDeparture != null && b.firstDeparture != null) {
+                            return this.preferLateDeparture ? b.firstDeparture - a.firstDeparture : a.firstDeparture - b.firstDeparture;
+                        }
+                        return 0;
+                    }
+
+                    upHeap(i) {
+                        while (i > 0) {
+                            const p = (i - 1) >> 1;
+                            if (this.compare(this.heap[i], this.heap[p]) < 0) {
+                                const tmp = this.heap[i];
+                                this.heap[i] = this.heap[p];
+                                this.heap[p] = tmp;
+                                i = p;
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+
+                    downHeap(i) {
+                        const len = this.heap.length;
+                        while ((i << 1) + 1 < len) {
+                            let left = (i << 1) + 1;
+                            let right = left + 1;
+                            let best = i;
+
+                            if (this.compare(this.heap[left], this.heap[best]) < 0) best = left;
+                            if (right < len && this.compare(this.heap[right], this.heap[best]) < 0) best = right;
+
+                            if (best !== i) {
+                                const tmp = this.heap[i];
+                                this.heap[i] = this.heap[best];
+                                this.heap[best] = tmp;
+                                i = best;
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                }
+
                 const { serviceDate, serviceSeconds } = getServiceDateAndSeconds(date, depTime);
                 const startSeconds = serviceSeconds;
-                const queue = [];
+                const queue = new BinaryHeapPriorityQueue(preferLateDeparture);
                 const startState = {
                     stop: fromStop,
                     arrivalTime: startSeconds,
@@ -365,26 +440,16 @@
                 const bestStates = new Map();
                 let loopCount = 0; // DEBUG
                 while (queue.length > 0) {
-                    queue.sort((a, b) => {
-                        loopCount++; // DEBUG
-                        if (loopCount % 10000 === 0) {
-                            console.log(`Progress - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
-                        }
-                        if (a.arrivalTime !== b.arrivalTime) {
-                            return a.arrivalTime - b.arrivalTime;
-                        }
-                        if (a.transfers !== b.transfers) {
-                            return a.transfers - b.transfers;
-                        }
-                        if (a.walkCount !== b.walkCount) {
-                            return a.walkCount - b.walkCount;
-                        }
-                        if (a.firstDeparture != null && b.firstDeparture != null) {
-                            return preferLateDeparture ? b.firstDeparture - a.firstDeparture : a.firstDeparture - b.firstDeparture;
-                        }
-                        return 0;
-                    });
+                    loopCount++; // DEBUG
+                    if (loopCount % 10000 === 0) {
+                        console.log(`Progress - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
+                    }
                     const state = queue.shift();
+
+                    if (state.arrivalTime > (dayBoundaryHour + 24) * 3600) {
+                        continue;
+                    }
+
                     const stateKey = `${state.stop}|${state.tripId ?? "none"}`;
                     const knownBest = bestStates.get(stateKey);
                     if (knownBest && !isBetterForward(state, knownBest, preferLateDeparture)) {
@@ -432,8 +497,8 @@
                         if (!isServiceRunning(conn.service_id, serviceDateStr)) {
                             continue;
                         }
-                        const dep = timeToSeconds(conn.departure_time);
-                        const arr = timeToSeconds(conn.arrival_time);
+                        const dep = conn.departure_time;
+                        const arr = conn.arrival_time;
                         const isTransfer = state.tripId !== null && state.tripId !== conn.trip_id;
                         const requiredTransferTime = isTransfer ? getTransferTime(state.stop) : 0;
                         if (dep < state.arrivalTime + requiredTransferTime) {
@@ -489,9 +554,76 @@
             }
 
             function searchRouteByArrTime(fromStop, toStop, date, arrTime, noWalk) {
+                class BinaryHeapPriorityQueue_Backward {
+                    constructor() {
+                        this.heap = [];
+                    }
+
+                    get length() {
+                        return this.heap.length;
+                    }
+
+                    push(item) {
+                        this.heap.push(item);
+                        this.upHeap(this.heap.length - 1);
+                    }
+
+                    shift() {
+                        if (this.heap.length === 0) return undefined;
+                        const top = this.heap[0];
+                        const bottom = this.heap.pop();
+                        if (this.heap.length > 0) {
+                            this.heap[0] = bottom;
+                            this.downHeap(0);
+                        }
+                        return top;
+                    }
+
+                    compare(a, b) {
+                        if (a.departureTime !== b.departureTime) return b.departureTime - a.departureTime;
+                        if (a.transfers !== b.transfers) return a.transfers - b.transfers;
+                        if (a.walkCount !== b.walkCount) return a.walkCount - b.walkCount;
+                        return 0;
+                    }
+
+                    upHeap(i) {
+                        while (i > 0) {
+                            const p = (i - 1) >> 1;
+                            if (this.compare(this.heap[i], this.heap[p]) < 0) {
+                                const tmp = this.heap[i];
+                                this.heap[i] = this.heap[p];
+                                this.heap[p] = tmp;
+                                i = p;
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+
+                    downHeap(i) {
+                        const len = this.heap.length;
+                        while ((i << 1) + 1 < len) {
+                            let left = (i << 1) + 1;
+                            let right = left + 1;
+                            let best = i;
+
+                            if (this.compare(this.heap[left], this.heap[best]) < 0) best = left;
+                            if (right < len && this.compare(this.heap[right], this.heap[best]) < 0) best = right;
+
+                            if (best !== i) {
+                                const tmp = this.heap[i];
+                                this.heap[i] = this.heap[best];
+                                this.heap[best] = tmp;
+                                i = best;
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                }
                 const { serviceDate, serviceSeconds } = getServiceDateAndSeconds(date, arrTime);
                 const targetSeconds = serviceSeconds;
-                const queue = [];
+                const queue = new BinaryHeapPriorityQueue_Backward();
                 queue.push({
                     stop: toStop,
                     departureTime: targetSeconds,
@@ -505,15 +637,9 @@
                 let loopCount = 0; // DEBUG
                 while (queue.length > 0) {
                     loopCount++; // DEBUG
-                    if (loopCount % 10000 === 0) {
+                    if (loopCount % 1000 === 0) {
                         console.log(`Progress - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
                     }
-                    queue.sort((a, b) => {
-                        if (a.departureTime !== b.departureTime) {
-                            return b.departureTime - a.departureTime;
-                        }
-                        return a.transfers - b.transfers;
-                    });
                     const state = queue.shift();
                     const stateKey = `${state.stop}|${state.tripId ?? "none"}`;
                     const knownBest = bestStates.get(stateKey);
@@ -560,8 +686,8 @@
                         if (!isServiceRunning(conn.service_id, serviceDateStr)) {
                             continue;
                         }
-                        const dep = timeToSeconds(conn.departure_time);
-                        const arr = timeToSeconds(conn.arrival_time);
+                        const dep = conn.departure_time;
+                        const arr = conn.arrival_time;
                         const isTransfer = state.tripId !== null && state.tripId !== conn.trip_id;
                         const requiredTransferTime = isTransfer ? getTransferTime(state.stop) : 0;
                         if (arr > state.departureTime - requiredTransferTime) {
@@ -637,7 +763,7 @@
                 const to = toInput.value.trim();
                 const timeIsForWhat = $("#timeIsForWhat").value;
                 const date = dateInput.value;
-                const time = timeInput.value;
+                const time = timeToSeconds(timeInput.value);
                 const preferLateDeparture = $("#preferLateDeparture").checked;
                 const noWalk = $("#noWalk").checked;
                 let result;
@@ -652,12 +778,12 @@
                         resultRenderMethod = "backward";
                         break;
                     case "first": {
-                        result = searchRouteByDepTime(from, to, date, `${dayBoundaryHour.toString().padStart(2, "0")}:00:00`, noWalk, preferLateDeparture);
+                        result = searchRouteByDepTime(from, to, date, dayBoundaryHour * 3600, noWalk, preferLateDeparture);
                         resultRenderMethod = "forward";
                         break;
                     }
                     case "last": {
-                        result = searchRouteByArrTime(from, to, date, `${(dayBoundaryHour + 23).toString().padStart(2, "0")}:59:00`, noWalk);
+                        result = searchRouteByArrTime(from, to, date, (dayBoundaryHour + 23) * 3600 + 59 * 60, noWalk);
                         resultRenderMethod = "backward";
                         break;
                     }
@@ -726,13 +852,13 @@
                     .find((p) => p.arrival_time)?.arrival_time;
                 if (!depOverall || !arrOverall) {
                     const timeInput = $("#timeInput").value;
-                    depOverall = timeInput;
-                    arrOverall = timeInput;
+                    depOverall = timeToSeconds(timeInput);
+                    arrOverall = timeToSeconds(timeInput);
                 }
                 console.log(`Initial overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
 
-                let depSec = timeToSeconds(depOverall);
-                let arrSec = timeToSeconds(arrOverall);
+                let depSec = depOverall;
+                let arrSec = arrOverall;
                 if (path.slice(1).every((p) => p.type === "walk")) {
                     const totalWalkDuration = path.reduce((sum, p) => sum + (p.duration || 0), 0);
                     console.log(`All connections are walks. Total walk duration: ${totalWalkDuration} minutes`);
@@ -809,7 +935,7 @@
 
                             // isOriginalは鉄道でのみ意味があるのでRTD以外では表示しない
                             stationBetweenElem.innerHTML = `
-                                <div class="depTime">${path[i].departure_time}</div>
+                                <div class="depTime">${secondsToTime(path[i].departure_time)}</div>
                                 <div class="isOriginal">${path[i].isOriginal && company == "rtd" ? "Dep." : ""}</div>
                                 <div class="rideIcon"></div>
                                 <div class="rideLine"></div>
@@ -845,7 +971,7 @@
                                         hiddenStationElem.style.width = "stretch";
                                         hiddenStationElem.setAttribute("--route-color", `#${route_color}`);
                                         hiddenStationElem.innerHTML = `
-                                    <div class="hiddenDepTime">${path[j].arrival_time}</div>
+                                    <div class="hiddenDepTime">${secondsToTime(path[j].arrival_time)}</div>
                                     <div class="hiddenStaDot"></div>
                                     <div class="hiddenStationName">
                                         <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[j].stop)}&company=${encodeURIComponent(company)}">${path[j].stop}</a>
@@ -870,7 +996,7 @@
 
                             const arrTimeElem = document.createElement("div");
                             arrTimeElem.className = "arrTime";
-                            arrTimeElem.textContent = path[i].arrival_time;
+                            arrTimeElem.textContent = secondsToTime(path[i].arrival_time);
                             stationBetweenElem.appendChild(arrTimeElem);
                             routeContainerElem.appendChild(stationBetweenElem);
 
