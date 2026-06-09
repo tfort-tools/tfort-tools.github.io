@@ -281,30 +281,13 @@
             ]);
 
             // search
-            const tripConnections = [];
-            for (const conn of connections) {
-                tripConnections.push({
-                    from: conn.from,
-                    to: conn.to,
-                    departure_time: conn.departure_time,
-                    arrival_time: conn.arrival_time,
-                    departure_sequence: conn.departure_sequence,
-                    arrival_sequence: conn.arrival_sequence,
-                    trip_id: conn.trip_id,
-                    service_id: conn.service_id,
-                });
-            }
-            tripConnections.sort((a, b) => timeToSeconds(a.departure_time) - timeToSeconds(b.departure_time));
+            connections.sort((a, b) => timeToSeconds(a.departure_time) - timeToSeconds(b.departure_time));
             const departuresFrom = {};
             const arrivalsTo = {};
-            for (const conn of tripConnections) {
-                if (!departuresFrom[conn.from]) {
-                    departuresFrom[conn.from] = [];
-                }
+            for (const conn of connections) {
+                departuresFrom[conn.from] ??= [];
                 departuresFrom[conn.from].push(conn);
-                if (!arrivalsTo[conn.to]) {
-                    arrivalsTo[conn.to] = [];
-                }
+                arrivalsTo[conn.to] ??= [];
                 arrivalsTo[conn.to].push(conn);
             }
             for (const stop in departuresFrom) {
@@ -380,8 +363,13 @@
                 };
                 queue.push(startState);
                 const bestStates = new Map();
+                let loopCount = 0; // DEBUG
                 while (queue.length > 0) {
                     queue.sort((a, b) => {
+                        loopCount++; // DEBUG
+                        if (loopCount % 10000 === 0) {
+                            console.log(`Progress - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
+                        }
                         if (a.arrivalTime !== b.arrivalTime) {
                             return a.arrivalTime - b.arrivalTime;
                         }
@@ -419,6 +407,7 @@
                                 continue;
                             }
                             path.push({
+                                type: "ride",
                                 stop: current.stop,
                                 trip_id: current.connection.trip_id,
                                 from: current.connection.from,
@@ -433,6 +422,8 @@
                             stop: fromStop,
                         });
                         path.reverse();
+
+                        console.log(`Success - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
                         return path;
                     }
                     const departures = departuresFrom[state.stop] ?? [];
@@ -493,8 +484,10 @@
                         }
                     }
                 }
+                console.log(`Failed - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
                 return null;
             }
+
             function searchRouteByArrTime(fromStop, toStop, date, arrTime, noWalk) {
                 const { serviceDate, serviceSeconds } = getServiceDateAndSeconds(date, arrTime);
                 const targetSeconds = serviceSeconds;
@@ -509,7 +502,12 @@
                     connection: null,
                 });
                 const bestStates = new Map();
+                let loopCount = 0; // DEBUG
                 while (queue.length > 0) {
+                    loopCount++; // DEBUG
+                    if (loopCount % 10000 === 0) {
+                        console.log(`Progress - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
+                    }
                     queue.sort((a, b) => {
                         if (a.departureTime !== b.departureTime) {
                             return b.departureTime - a.departureTime;
@@ -539,6 +537,7 @@
                                 continue;
                             }
                             path.push({
+                                type: "ride",
                                 stop: current.connection.to,
                                 trip_id: current.connection.trip_id,
                                 isOriginal: current.connection.departure_sequence === 1, // 当駅始発
@@ -552,6 +551,7 @@
                         path.unshift({
                             stop: fromStop,
                         });
+                        console.log(`Success - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
                         return path;
                     }
                     const arrivals = arrivalsTo[state.stop] ?? [];
@@ -584,32 +584,21 @@
                             for (const [fromStop, minutes] of Object.entries(walks)) {
                                 const nextState = {
                                     stop: fromStop,
-
                                     departureTime: state.departureTime - minutes * 60,
-
                                     tripId: state.tripId,
-
                                     transfers: state.transfers,
                                     walkCount: state.walkCount + 1,
-
                                     lastArrival: state.lastArrival,
-
                                     prev: state,
-
                                     connection: {
                                         type: "walk",
-
                                         from: fromStop,
                                         to: state.stop,
-
                                         duration: minutes,
                                     },
                                 };
-
                                 const nextKey = `${nextState.stop}|${nextState.tripId ?? "none"}`;
-
                                 const currentBest = bestStates.get(nextKey);
-
                                 if (isBetterBackward(nextState, currentBest, preferLateDeparture)) {
                                     queue.push(nextState);
                                 }
@@ -617,6 +606,7 @@
                         }
                     }
                 }
+                console.log(`Failed - Loop count: ${loopCount} Remaining queue size: ${queue.length}`); // DEBUG
                 return null;
             }
 
@@ -741,21 +731,24 @@
                 }
                 console.log(`Initial overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
 
-                const depSec = timeToSeconds(depOverall);
-                const arrSec = timeToSeconds(arrOverall);
+                let depSec = timeToSeconds(depOverall);
+                let arrSec = timeToSeconds(arrOverall);
                 if (path.slice(1).every((p) => p.type === "walk")) {
                     const totalWalkDuration = path.reduce((sum, p) => sum + (p.duration || 0), 0);
+                    console.log(`All connections are walks. Total walk duration: ${totalWalkDuration} minutes`);
                     if (renderMethod === "forward") {
-                        arrOverall = secondsToTime(depSec + totalWalkDuration * 60);
+                        arrSec = depSec + totalWalkDuration * 60;
                     } else {
-                        depOverall = secondsToTime(arrSec - totalWalkDuration * 60);
+                        depSec = arrSec - totalWalkDuration * 60;
                     }
                 } else {
                     if (path[1].type === "walk") {
-                        depOverall = secondsToTime(depSec - path[1].duration * 60);
+                        console.log(`Adjusting departure time for initial walk of ${path[1].duration} minutes`);
+                        depSec = depSec - path[1].duration * 60;
                     }
                     if (path[path.length - 1].type === "walk") {
-                        arrOverall = secondsToTime(arrSec + path[path.length - 1].duration * 60);
+                        console.log(`Adjusting arrival time for final walk of ${path[path.length - 1].duration} minutes`);
+                        arrSec = arrSec + path[path.length - 1].duration * 60;
                     }
                 }
                 depOverall = secondsToTime(depSec);

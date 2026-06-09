@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "D";
+    src: url("/DIN.ttf");
+}
+
 * {
-    font-family: "DIN 2014", sans-serif;
+    font-family: "D", sans-serif;
     box-sizing: border-box;
     scrollbar-width: none;
 }
