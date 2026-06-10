@@ -197,8 +197,11 @@
                     group.routeNames = [...group.routeIds]
                         .map((routeId) => {
                             const route = routeList.find((r) => r.route_id === routeId);
-
-                            return route?.route_id ?? routeId;
+                            if (company === "rtd") {
+                                console.log(route);
+                                return route?.route_short_name?.toUpperCase() ?? routeId;
+                            }
+                            return route?.route_id ?? routeId; //transfort
                         })
                         .sort()
                         .join(", ");

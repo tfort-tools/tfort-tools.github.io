@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-const company = "intercity";
+const company = "rtd";
 
-/*const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
+const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
 const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));
 const stops = parseCsv(fs.readFileSync(`./gtfs/${company}/stops.txt`, "utf8"));
 const stopTimes = parseCsv(fs.readFileSync(`./gtfs/${company}/stop_times.txt`, "utf8"));
@@ -10,25 +10,19 @@ const calendar = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar.txt`, "utf
 let calendarDates = [];
 if (fs.existsSync(`./gtfs/${company}/calendar_dates.txt`)) {
     calendarDates = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar_dates.txt`, "utf8"));
-}*/
+}
 
-const routes = [];
-const trips = [];
-const stops = [];
-const stopTimes = [];
-const calendar = [];
-const calendarDates = [];
-
-let failCount = 0;
-// WARNING: DO NOT APPLY THIS METHOD FOR OTHER COMPANIES, IDs MAY CONFLICT
-const dirs = [`./gtfs/rtdbus`, `./gtfs/transfort`, `./gtfs/rtd`, `./gtfs/rtd-2`, `./gtfs/rtd-3`];
+/*let failCount = 0;
 for (let i = 2; ; i++) {
-    //const dir = `./gtfs/${company}-${i}`; // if you wanna merge same company use this
-    const dir = dirs[i - 2]; // if you wanna merge different companies use this
+    const dir = `./gtfs/${company}-${i}`; // if you wanna merge same company use this
+    //const dir = dirs[i - 2]; // if you wanna merge different companies use this
 
     if (!dir) break;
-    if (!fs.existsSync(dir)) failCount++;
     if (failCount >= 3) break; // sometimes i is skipped, so allow 3 consecutive fails before giving up
+    if (!fs.existsSync(dir)) {
+        failCount++;
+        continue;
+    }
 
     console.log(`loading additional directory: ${dir}`);
     const routes_add = parseCsv(fs.readFileSync(`${dir}/routes.txt`, "utf8"));
@@ -43,10 +37,13 @@ for (let i = 2; ; i++) {
     routes.push(...routes_add);
     trips.push(...trips_add);
     stops.push(...stops_add);
-    stopTimes.push(...stopTimes_add);
+    for (const stopTime of stopTimes_add) {
+        stopTimes.push(stopTime);
+    }
+    //stopTimes.push(...stopTimes_add);
     calendar.push(...calendar_add);
     calendarDates.push(...calendarDates_add);
-}
+}*/
 
 // helper functions
 function parseCsv(text) {
@@ -95,6 +92,9 @@ function regularizeName(name) {
     name = name.replace(/\b([a-z])/g, (_, c) => c.toUpperCase());
     name = name.replace(uppercaseWordsRegex, (m) => m.toUpperCase());
 
+    // route like [16L] should be uppercase 
+    name = name.replace(/\[\d+[a-z]\]/g, (m) => m.toUpperCase());
+
     // replace suffix
     name = name.replace(/\(N\s+OF\)+$/i, "(North)");
     name = name.replace(/\(E\s+OF\)+$/i, "(East)");
@@ -115,6 +115,7 @@ function regularizeName(name) {
         }
         name = name.replace(/\b(N|E|W|S)-Bound\b/i, "");
         name = name.replace(/\bCenter Track\b/i, "");
+        name = name.replace(/\bGate [A-Z]\b/i, "");
         name = name.replace(/\s+$/, "");
     }
 
@@ -265,13 +266,16 @@ for (const route of routes) {
 
     // in RTD, modify route_long_name
     if (company === "rtd") {
-        const lineChar = route.route_id.match(/[A-Z]+/i)?.[0] || "";
-        route.route_long_name = `[${lineChar}] ${route.route_long_name}`;
+        const isTrain = route.route_short_name.match(/^[A-Z]$/);
+        route.route_long_name = `${isTrain ? "Train" : "Bus"} [${route.route_short_name.toUpperCase()}] ${route.route_long_name}`;
+        console.log(`route ${route.route_id} long name modified to: ${route.route_long_name}`);
     }
 
     routeList.push({
         route_id: route.route_id,
         route_long_name: regularizeName(route.route_long_name) || regularizeName(route.route_short_name),
+        route_short_name: regularizeName(route.route_short_name) || regularizeName(route.route_long_name),
+        // either long or short may be empty, so use the other one as fallback
         route_color: route.route_color,
         route_text_color: route.route_text_color,
         stops: routeStops,
