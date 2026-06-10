@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-const company = "transfort";
+const company = "intercity";
 
-const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
+/*const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
 const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));
 const stops = parseCsv(fs.readFileSync(`./gtfs/${company}/stops.txt`, "utf8"));
 const stopTimes = parseCsv(fs.readFileSync(`./gtfs/${company}/stop_times.txt`, "utf8"));
@@ -10,22 +10,35 @@ const calendar = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar.txt`, "utf
 let calendarDates = [];
 if (fs.existsSync(`./gtfs/${company}/calendar_dates.txt`)) {
     calendarDates = parseCsv(fs.readFileSync(`./gtfs/${company}/calendar_dates.txt`, "utf8"));
-}
+}*/
 
-// if additionally directory present, load and concat them
+const routes = [];
+const trips = [];
+const stops = [];
+const stopTimes = [];
+const calendar = [];
+const calendarDates = [];
+
+let failCount = 0;
+// WARNING: DO NOT APPLY THIS METHOD FOR OTHER COMPANIES, IDs MAY CONFLICT
+const dirs = [`./gtfs/rtdbus`, `./gtfs/transfort`, `./gtfs/rtd`, `./gtfs/rtd-2`, `./gtfs/rtd-3`];
 for (let i = 2; ; i++) {
-    if (!fs.existsSync(`./gtfs/${company}-${i}`)) {
-        break;
-    }
-    console.log(`loading additional directory: ${company}-${i}`);
-    const routes_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/routes.txt`, "utf8"));
-    const trips_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/trips.txt`, "utf8"));
-    const stops_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/stops.txt`, "utf8"));
-    const stopTimes_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/stop_times.txt`, "utf8"));
-    const calendar_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/calendar.txt`, "utf8"));
+    //const dir = `./gtfs/${company}-${i}`; // if you wanna merge same company use this
+    const dir = dirs[i - 2]; // if you wanna merge different companies use this
+
+    if (!dir) break;
+    if (!fs.existsSync(dir)) failCount++;
+    if (failCount >= 3) break; // sometimes i is skipped, so allow 3 consecutive fails before giving up
+
+    console.log(`loading additional directory: ${dir}`);
+    const routes_add = parseCsv(fs.readFileSync(`${dir}/routes.txt`, "utf8"));
+    const trips_add = parseCsv(fs.readFileSync(`${dir}/trips.txt`, "utf8"));
+    const stops_add = parseCsv(fs.readFileSync(`${dir}/stops.txt`, "utf8"));
+    const stopTimes_add = parseCsv(fs.readFileSync(`${dir}/stop_times.txt`, "utf8"));
+    const calendar_add = parseCsv(fs.readFileSync(`${dir}/calendar.txt`, "utf8"));
     let calendarDates_add = [];
-    if (fs.existsSync(`./gtfs/${company}-${i}/calendar_dates.txt`)) {
-        calendarDates_add = parseCsv(fs.readFileSync(`./gtfs/${company}-${i}/calendar_dates.txt`, "utf8"));
+    if (fs.existsSync(`${dir}/calendar_dates.txt`)) {
+        calendarDates_add = parseCsv(fs.readFileSync(`${dir}/calendar_dates.txt`, "utf8"));
     }
     routes.push(...routes_add);
     trips.push(...trips_add);
@@ -131,6 +144,22 @@ const routeMap = new Map(routes.map((route) => [route.route_id, route]));
 //
 // trip -> ordered stops
 //
+
+const stopKeyMap = new Map(); // this is not on file, but used in this section to generate other file
+
+const stopIds = {};
+
+for (const stop of stops) {
+    const stopKey = regularizeName(stop.stop_name);
+
+    stopKeyMap.set(stop.stop_id, stopKey);
+
+    if (!stopIds[stopKey]) {
+        stopIds[stopKey] = [];
+    }
+
+    stopIds[stopKey].push(stop.stop_id);
+}
 
 const tripStops = new Map();
 
