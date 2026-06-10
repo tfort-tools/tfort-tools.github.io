@@ -918,7 +918,8 @@
                             stationBetweenElem.style.setProperty("--route-id", `"${route_id.slice(0, 2)}"`);
 
                             let lineNameDisplay;
-                            if (company == "rtd") {
+                            lineNameDisplay = `${route_id} Line`;
+                            /*if (company == "rtd") {
                                 if (["A", "B", "G", "N"].includes(route_id)) {
                                     lineNameDisplay = `${route_id} Line Train`;
                                 } else {
@@ -931,7 +932,7 @@
                                 } else {
                                     lineNameDisplay = `Route ${route_id} Bus`;
                                 }
-                            }
+                            }*/
 
                             // isOriginalは鉄道でのみ意味があるのでRTD以外では表示しない
                             stationBetweenElem.innerHTML = `

@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const company = "rtd";
+const company = "transfort";
 
 const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
 const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));
@@ -92,8 +92,8 @@ function regularizeName(name) {
     name = name.replace(/\b([a-z])/g, (_, c) => c.toUpperCase());
     name = name.replace(uppercaseWordsRegex, (m) => m.toUpperCase());
 
-    // route like [16L] should be uppercase 
-    name = name.replace(/\[\d+[a-z]\]/g, (m) => m.toUpperCase());
+    // route like [16L] should be uppercase
+    name = name.replace(/\[.+\]/gi, (m) => m.toUpperCase());
 
     // replace suffix
     name = name.replace(/\(N\s+OF\)+$/i, "(North)");
@@ -109,13 +109,14 @@ function regularizeName(name) {
     if (company === "rtd") {
         if (!name.match(/\bUnion Station\b/i)) {
             name = name.replace(/\bTrack\s*\d+\b/i, "");
+            name = name.replace(/\bGate (\d+|[A-Z]|\d+[A-Z]|[A-Z]\d+)\b/i, "");
         } else {
             name = name.replace(/\bTrack\s*[1-9]\b/i, "(Heavy Rail)");
             name = name.replace(/\bTrack\s*1[1-9]\b/i, "(Light Rail)");
+            name = name.replace(/\bGate (\d+|[A-Z]|\d+[A-Z]|[A-Z]\d+)\b/i, "(Bus)");
         }
         name = name.replace(/\b(N|E|W|S)-Bound\b/i, "");
         name = name.replace(/\bCenter Track\b/i, "");
-        name = name.replace(/\bGate [A-Z]\b/i, "");
         name = name.replace(/\s+$/, "");
     }
 

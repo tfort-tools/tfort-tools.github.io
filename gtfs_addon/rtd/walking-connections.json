@@ -1,8 +1,14 @@
 {
     "Union Station (Light Rail)": {
-        "Union Station (Heavy Rail)": 7
+        "Union Station (Heavy Rail)": 7,
+        "Union Station (Bus)": 5
     },
     "Union Station (Heavy Rail)": {
-        "Union Station (Light Rail)": 7
+        "Union Station (Light Rail)": 7,
+        "Union Station (Bus)": 5
+    },
+    "Union Station (Bus)": {
+        "Union Station (Heavy Rail)": 5,
+        "Union Station (Light Rail)": 5
     }
 }
