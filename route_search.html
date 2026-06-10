@@ -14,6 +14,10 @@
                 padding: 5px 10px;
                 font-size: 16px;
             }
+            #searchNext,
+            #searchPrev {
+                display: none;
+            }
             #result {
                 margin: 2vw;
             }
@@ -185,18 +189,21 @@
                 <select id="timeIsForWhat">
                     <option value="departure">Depart at</option>
                     <option value="arrival">Arrive by</option>
-                    <option value="first">Use First Bus</option>
-                    <option value="last">Use Last Bus</option>
+                    <option value="first">First Departure of the Day</option>
+                    <option value="last">Last Arrival of the Day</option>
                 </select>
             </label>
             <label>Date:<input id="dateInput" type="date" /></label>
             <button id="decrementTime">- 1 min</button>
             <label>Time:<input id="timeInput" type="time" /></label>
             <button id="incrementTime">+ 1 min</button><br />
-            <label><input type="checkbox" id="preferLateDeparture" />Prefer late departure (If more than two routes arrive at the same time found, show the latest departure)</label><br />
+            <label><input type="checkbox" id="preferShortTravel" />Prefer shorter travel time</label><br />
             <label><input type="checkbox" id="noWalk" />Force bus (Don't walk to nearby bus stops, only use same-stop transfers)</label>
             <br /><br />
             <button id="searchButton">Search</button>
+            <br />
+            <button id="searchPrev">Search Previous</button>
+            <button id="searchNext">Search Next</button>
         </div>
         <div id="result"></div>
     </body>
@@ -218,7 +225,7 @@
 
             if (serviceSeconds < boundarySeconds) {
                 serviceDate.setDate(serviceDate.getDate() - 1);
-                serviceSeconds += 86400; // 翌日扱いとして24時間分の秒数を加算
+                serviceSeconds += 86400;
             }
             return { serviceDate, serviceSeconds };
         }
@@ -316,7 +323,7 @@
                 }
                 return a.firstDeparture < b.firstDeparture;
             }
-            function isBetterBackward(a, b) {
+            function isBetterBackward(a, b, preferEarlyArrival) {
                 if (!b) {
                     return true;
                 }
@@ -329,7 +336,10 @@
                 if (a.walkCount !== b.walkCount) {
                     return a.walkCount < b.walkCount;
                 }
-                return false;
+                if (preferEarlyArrival) {
+                    return a.lastArrival < b.lastArrival;
+                }
+                return a.lastArrival > b.lastArrival;
             }
             function getTransferTime(stop) {
                 const transferTimes = {
@@ -553,10 +563,11 @@
                 return null;
             }
 
-            function searchRouteByArrTime(fromStop, toStop, date, arrTime, noWalk) {
+            function searchRouteByArrTime(fromStop, toStop, date, arrTime, noWalk, preferEarlyArrival = false) {
                 class BinaryHeapPriorityQueue_Backward {
-                    constructor() {
+                    constructor(preferEarlyArrival) {
                         this.heap = [];
+                        this.preferEarlyArrival = preferEarlyArrival;
                     }
 
                     get length() {
@@ -583,6 +594,9 @@
                         if (a.departureTime !== b.departureTime) return b.departureTime - a.departureTime;
                         if (a.transfers !== b.transfers) return a.transfers - b.transfers;
                         if (a.walkCount !== b.walkCount) return a.walkCount - b.walkCount;
+                        if (a.lastArrival != null && b.lastArrival != null) {
+                            return this.preferEarlyArrival ? a.lastArrival - b.lastArrival : b.lastArrival - a.lastArrival;
+                        }
                         return 0;
                     }
 
@@ -623,16 +637,18 @@
                 }
                 const { serviceDate, serviceSeconds } = getServiceDateAndSeconds(date, arrTime);
                 const targetSeconds = serviceSeconds;
-                const queue = new BinaryHeapPriorityQueue_Backward();
-                queue.push({
+                const queue = new BinaryHeapPriorityQueue_Backward(preferEarlyArrival);
+                const startState = {
                     stop: toStop,
                     departureTime: targetSeconds,
                     tripId: null,
                     transfers: 0,
                     walkCount: 0,
+                    lastArrival: null,
                     prev: null,
                     connection: null,
-                });
+                };
+                queue.push(startState);
                 const bestStates = new Map();
                 let loopCount = 0; // DEBUG
                 while (queue.length > 0) {
@@ -643,7 +659,7 @@
                     const state = queue.shift();
                     const stateKey = `${state.stop}|${state.tripId ?? "none"}`;
                     const knownBest = bestStates.get(stateKey);
-                    if (knownBest && !isBetterBackward(state, knownBest)) {
+                    if (knownBest && !isBetterBackward(state, knownBest, preferEarlyArrival)) {
                         continue;
                     }
                     bestStates.set(stateKey, state);
@@ -693,19 +709,24 @@
                         if (arr > state.departureTime - requiredTransferTime) {
                             continue;
                         }
-                        queue.push({
+                       const nextState = {
                             stop: conn.from,
                             departureTime: dep,
                             tripId: conn.trip_id,
                             transfers: state.transfers + (isTransfer ? 1 : 0),
                             walkCount: state.walkCount,
+                            lastArrival: state.lastArrival ?? arr,
                             prev: state,
                             connection: conn,
-                        });
+                        };
+                        const nextKey = `${nextState.stop}|${nextState.tripId ?? "none"}`;
+                        const currentBest = bestStates.get(nextKey);
+                        if (isBetterBackward(nextState, currentBest, preferEarlyArrival)) {
+                            queue.push(nextState);
+                        }
                     }
                     if (!noWalk) {
                         const walks = walkingConnections[state.stop];
-
                         if (walks) {
                             for (const [fromStop, minutes] of Object.entries(walks)) {
                                 const nextState = {
@@ -725,7 +746,7 @@
                                 };
                                 const nextKey = `${nextState.stop}|${nextState.tripId ?? "none"}`;
                                 const currentBest = bestStates.get(nextKey);
-                                if (isBetterBackward(nextState, currentBest, preferLateDeparture)) {
+                                if (isBetterBackward(nextState, currentBest, preferEarlyArrival)) {
                                     queue.push(nextState);
                                 }
                             }
@@ -739,7 +760,7 @@
             $("#timeIsForWhat").onchange = () => {
                 const timeIsForWhat = $("#timeIsForWhat").value;
                 const timeInputElem = $("label:has(> #timeInput)");
-                const preferLateDepartureElem = $("label:has(> #preferLateDeparture)");
+                const preferShortTravel = $("label:has(> #preferShortTravel)");
                 const incrementElem = $("#incrementTime");
                 const decrementElem = $("#decrementTime");
                 if (timeIsForWhat === "first" || timeIsForWhat === "last") {
@@ -752,42 +773,88 @@
                     decrementElem.style.display = "inline-block";
                 }
                 if (timeIsForWhat === "departure" || timeIsForWhat === "first") {
-                    preferLateDepartureElem.style.display = "inline-block";
+                    preferShortTravel.style.display = "inline-block";
                 } else {
-                    preferLateDepartureElem.style.display = "none";
+                    preferShortTravel.style.display = "none";
                 }
             };
 
             $("#searchButton").onclick = () => {
                 const from = fromInput.value.trim();
                 const to = toInput.value.trim();
+                if (!from || !to) {
+                    alert("Please enter both From and To stations.");
+                    return;
+                }
                 const timeIsForWhat = $("#timeIsForWhat").value;
                 const date = dateInput.value;
                 const time = timeToSeconds(timeInput.value);
-                const preferLateDeparture = $("#preferLateDeparture").checked;
+                const preferShortTravel = $("#preferShortTravel").checked;
                 const noWalk = $("#noWalk").checked;
                 let result;
                 let resultRenderMethod;
                 switch (timeIsForWhat) {
                     case "departure":
-                        result = searchRouteByDepTime(from, to, date, time, noWalk, preferLateDeparture);
+                        result = searchRouteByDepTime(from, to, date, time, noWalk, preferShortTravel);
                         resultRenderMethod = "forward";
                         break;
                     case "arrival":
-                        result = searchRouteByArrTime(from, to, date, time, noWalk);
+                        result = searchRouteByArrTime(from, to, date, time, noWalk, preferShortTravel);
                         resultRenderMethod = "backward";
                         break;
                     case "first": {
-                        result = searchRouteByDepTime(from, to, date, dayBoundaryHour * 3600, noWalk, preferLateDeparture);
+                        result = searchRouteByDepTime(from, to, date, dayBoundaryHour * 3600, noWalk, preferShortTravel);
                         resultRenderMethod = "forward";
                         break;
                     }
                     case "last": {
-                        result = searchRouteByArrTime(from, to, date, (dayBoundaryHour + 23) * 3600 + 59 * 60, noWalk);
+                        result = searchRouteByArrTime(from, to, date, (dayBoundaryHour + 23) * 3600 + 59 * 60, noWalk, preferShortTravel);
                         resultRenderMethod = "backward";
                         break;
                     }
                 }
+                $("#searchNext").onclick = () => {
+                    $("#searchNext").disabled = true; // hide next button to prevent multiple clicks
+                    const overallTimes = $("#overallTimes").innerText;
+                    const timeMatch = overallTimes.match(/(\d{2}:\d{2}) > (\d{2}:\d{2})/);
+                    if (!timeMatch) {
+                        alert("Failed to extract departure time.");
+                        return;
+                    }
+                    const currentDepTime = timeToSeconds(timeMatch[1]);
+                    const nextDepTime = currentDepTime + 60;
+                    console.log(`searching departure time after ${secondsToTime(nextDepTime)}`);
+
+                    const result = searchRouteByDepTime(from, to, date, nextDepTime, noWalk, true);
+
+                    if (result === null) {
+                        alert("これ以上後の便はありません");
+                    } else {
+                        renderResult(result, resultRenderMethod);
+                    }
+                };
+
+                $("#searchPrev").onclick = () => {
+                    $("#searchPrev").disabled = true; // disable prev button to prevent multiple clicks
+                    const overallTimes = $("#overallTimes").innerText;
+                    const timeMatch = overallTimes.match(/(\d{2}:\d{2}) > (\d{2}:\d{2})/);
+                    if (!timeMatch) {
+                        alert("Failed to extract arrival time.");
+                        return;
+                    }
+                    const currentArrTime = timeToSeconds(timeMatch[2]);
+                    const prevArrTime = currentArrTime - 60;
+                    console.log(`searching arrival time before ${secondsToTime(prevArrTime)}`);
+
+                    const result = searchRouteByArrTime(from, to, date, prevArrTime, noWalk, true);
+
+                    if (result === null) {
+                        alert("これ以上前の便はありません");
+                    } else {
+                        renderResult(result, resultRenderMethod);
+                    }
+                };
+
                 renderResult(result, resultRenderMethod);
             };
 
@@ -877,11 +944,13 @@
                         arrSec = arrSec + path[path.length - 1].duration * 60;
                     }
                 }
+                elapseTime = arrSec - depSec;
                 depOverall = secondsToTime(depSec);
                 arrOverall = secondsToTime(arrSec);
+                const elapseTimeString = `${Math.floor(elapseTime / 3600)}hr ${Math.ceil((elapseTime % 3600) / 60)}min`;
                 console.log(`Adjusted overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
 
-                resultElem.innerHTML = `<div style="font-weight: bold; font-size: 1.5em;">${depOverall} > ${arrOverall}</div><br />`;
+                resultElem.innerHTML = `<div id="overallTimes" style="font-weight: bold; font-size: 1.5em;">${depOverall} > ${arrOverall} (${elapseTimeString})</div><br />`;
                 const routeContainerElem = document.createElement("div");
                 routeContainerElem.className = "routeContainer";
                 for (let i = 0; i < path.length; i++) {
@@ -907,32 +976,33 @@
                                 <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a>`;
                             routeContainerElem.appendChild(stationElem);
                         } else {
-                            let { route_id, destination } = tripInfo[path[i].trip_id];
+                            let { route_id, route_short_name, destination } = tripInfo[path[i].trip_id];
                             const { route_color, route_text_color } = routeList.find((r) => r.route_id === route_id) || { route_color: "aaaaaa", route_text_color: "000000" };
-                            if (company == "rtd") route_id = route_id.match(/[A-Z]/)[0]; // RTD has like "101A", remove numbers not displayed in signs
 
                             const stationBetweenElem = document.createElement("div");
                             stationBetweenElem.className = "stationBetween";
                             stationBetweenElem.style.setProperty("--route-color", `#${route_color}`);
                             stationBetweenElem.style.setProperty("--route-text-color", `#${route_text_color}`);
-                            stationBetweenElem.style.setProperty("--route-id", `"${route_id.slice(0, 2)}"`);
+                            console.log(route_short_name, route_id);
+                            stationBetweenElem.style.setProperty("--route-id", `"${route_short_name?.slice(0, 2)}"`);
 
                             let lineNameDisplay;
-                            lineNameDisplay = `${route_id} Line`;
-                            /*if (company == "rtd") {
-                                if (["A", "B", "G", "N"].includes(route_id)) {
-                                    lineNameDisplay = `${route_id} Line Train`;
-                                } else {
-                                    lineNameDisplay = `${route_id} Line Tram`;
-                                }
+                            lineNameDisplay = `${route_short_name} Line`;
+                            if (["A", "B", "G", "N"].includes(route_short_name)) {
+                                lineNameDisplay = `${route_short_name} Line Train`;
+                            } else if (["C", "E", "R", "T", "W"].includes(route_short_name)) {
+                                lineNameDisplay = `${route_short_name} Line Tram`;
+                            } else if (route_short_name.match(/FF/)) {
+                                lineNameDisplay = `Flatiron Flyer ${route_short_name == "FF1" ? "Local" : "Express"} (${route_short_name})`;
+                            } else if (route_short_name == "GS") {
+                                lineNameDisplay = `Golden-Boulder Shuttle (${route_short_name})`;
+                            } else if (route_short_name == "MAX") {
+                                lineNameDisplay = `${route_short_name} Rapid Transit`;
+                            } else if (route_short_name == "FLEX") {
+                                lineNameDisplay = `FLEX Regional Shuttle`;
+                            } else {
+                                lineNameDisplay = `Route ${route_short_name} Bus`;
                             }
-                            if (company == "transfort") {
-                                if (route_id == "MAX") {
-                                    lineNameDisplay = `${route_id} Rapid Transit`;
-                                } else {
-                                    lineNameDisplay = `Route ${route_id} Bus`;
-                                }
-                            }*/
 
                             // isOriginalは鉄道でのみ意味があるのでRTD以外では表示しない
                             stationBetweenElem.innerHTML = `
@@ -1009,6 +1079,10 @@
                     }
                 }
                 resultElem.appendChild(routeContainerElem);
+                $("#searchNext").style.display = "inline-block";
+                $("#searchPrev").style.display = "inline-block";
+                $("#searchNext").disabled = false;
+                $("#searchPrev").disabled = false;
             }
         })();
     </script>

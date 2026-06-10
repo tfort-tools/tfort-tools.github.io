@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const company = "transfort";
+const company = "rtd"; // "rtd" or "transfort"
 
 const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
 const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));
@@ -111,9 +111,16 @@ function regularizeName(name) {
             name = name.replace(/\bTrack\s*\d+\b/i, "");
             name = name.replace(/\bGate (\d+|[A-Z]|\d+[A-Z]|[A-Z]\d+)\b/i, "");
         } else {
+            // Track 1-9
             name = name.replace(/\bTrack\s*[1-9]\b/i, "(Heavy Rail)");
+            // Track 11-19
             name = name.replace(/\bTrack\s*1[1-9]\b/i, "(Light Rail)");
+            // Gate 1, Gate A, Gate 1A, Gate A1 etc
             name = name.replace(/\bGate (\d+|[A-Z]|\d+[A-Z]|[A-Z]\d+)\b/i, "(Bus)");
+            // If no suffix for Union Station, bus
+            if (name.match(/^Union Station\b/i) && !name.match(/\b(Heavy Rail|Light Rail|Bus)\b/i)) {
+                name = name.replace(/Union Station\b/i, "Union Station (Bus)");
+            }
         }
         name = name.replace(/\b(N|E|W|S)-Bound\b/i, "");
         name = name.replace(/\bCenter Track\b/i, "");
@@ -220,7 +227,7 @@ for (const trip of trips) {
     const signature = trip.route_id + "|" + stops.map((stop) => stop.stop_key).join(">");
     let patternId = signatureToPattern.get(signature);
     if (!patternId) {
-        patternId = "pattern_" + patternCounter++;
+        patternId = `p_${company}_${patternCounter++}`;
         signatureToPattern.set(signature, patternId);
         patterns[patternId] = {
             route_id: trip.route_id,
@@ -354,6 +361,7 @@ for (const [patternId, pattern] of Object.entries(patterns)) {
     for (const tripId of pattern.trip_ids) {
         tripInfo[tripId] = {
             route_id: pattern.route_id,
+            route_short_name: routeMap.get(pattern.route_id)?.route_short_name || null,
             pattern_id: patternId,
             destination: pattern.stops.at(-1),
         };
