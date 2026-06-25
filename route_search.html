@@ -9,6 +9,13 @@
             .inputContainer {
                 margin: 2vw;
                 align-items: center;
+                label.fromto {
+                    display: inline-block;
+                    width: 3em;
+                }
+                #swapButton {
+                    margin-left: 9em;
+                }
             }
             #searchButton {
                 padding: 5px 10px;
@@ -180,25 +187,33 @@
     </head>
     <body>
         <div class="inputContainer">
-            <label>From: <input id="fromInput" list="stations" /></label>
-            <button id="swapButton">Swap</button>
-            <label>To: <input id="toInput" list="stations" /> </label>
+            <label class="fromto" for="fromInput">From</label>
+            <input id="fromInput" list="stations" />
+            <br />
+            <button id="swapButton">↓↑</button>
+            <br />
+            <label class="fromto" for="toInput">To</label>
+            <input id="toInput" list="stations" />
             <datalist id="stations"></datalist>
             <br /><br />
             <label>
                 <select id="timeIsForWhat">
                     <option value="departure">Depart at</option>
                     <option value="arrival">Arrive by</option>
-                    <option value="first">First Departure of the Day</option>
-                    <option value="last">Last Arrival of the Day</option>
+                    <option value="first">First Dep. of the Day</option>
+                    <option value="last">Last Arr. of the Day</option>
                 </select>
             </label>
-            <label>Date:<input id="dateInput" type="date" /></label>
-            <button id="decrementTime">- 1 min</button>
-            <label>Time:<input id="timeInput" type="time" /></label>
-            <button id="incrementTime">+ 1 min</button><br />
+            <div id="timeInputContainer" style="display: inline-block;">
+                <button id="decrementTime">- 1 min</button>
+                <input id="timeInput" type="time" />
+                <button id="incrementTime">+ 1 min</button>
+            </div>
+            <!--<label for="dateInput">Date:</label>-->
+            <input id="dateInput" type="date" />
+            <br />
             <label><input type="checkbox" id="preferShortTravel" />Prefer shorter travel time</label><br />
-            <label><input type="checkbox" id="noWalk" />Force bus (Don't walk to nearby bus stops, only use same-stop transfers)</label>
+            <label><input type="checkbox" id="noWalk" />Don't walk to nearby stops</label>
             <br /><br />
             <button id="searchButton">Search</button>
             <br />
@@ -709,7 +724,7 @@
                         if (arr > state.departureTime - requiredTransferTime) {
                             continue;
                         }
-                       const nextState = {
+                        const nextState = {
                             stop: conn.from,
                             departureTime: dep,
                             tripId: conn.trip_id,
@@ -759,8 +774,7 @@
 
             $("#timeIsForWhat").onchange = () => {
                 const timeIsForWhat = $("#timeIsForWhat").value;
-                const timeInputElem = $("label:has(> #timeInput)");
-                const preferShortTravel = $("label:has(> #preferShortTravel)");
+                const timeInputElem = $("div#timeInputContainer");
                 const incrementElem = $("#incrementTime");
                 const decrementElem = $("#decrementTime");
                 if (timeIsForWhat === "first" || timeIsForWhat === "last") {
@@ -771,11 +785,6 @@
                     timeInputElem.style.display = "inline-block";
                     incrementElem.style.display = "inline-block";
                     decrementElem.style.display = "inline-block";
-                }
-                if (timeIsForWhat === "departure" || timeIsForWhat === "first") {
-                    preferShortTravel.style.display = "inline-block";
-                } else {
-                    preferShortTravel.style.display = "none";
                 }
             };
 
