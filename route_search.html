@@ -41,45 +41,6 @@
                         color: unset;
                         text-decoration: none;
                     }
-                    &.noTransfer {
-                        .depTime {
-                            position: absolute;
-                            left: 1.2em;
-                            top: -0.5em;
-                            font-size: 0.8em;
-                        }
-                        .staDot {
-                            position: absolute;
-                            left: 4.25em;
-                            top: 0.7em;
-                            transform: translate(-50%, -47%);
-                            z-index: 2;
-                            width: 1em;
-                            height: 1em;
-                            background: var(--route-color);
-                            border-radius: 50%;
-                            &:after {
-                                content: "";
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: translate(-50%, -50%);
-                                width: 0.5em;
-                                height: 0.5em;
-                                background: white;
-                                border-radius: 50%;
-                                z-index: 3;
-                            }
-                        }
-                        .staName {
-                            position: absolute;
-                            left: 6em;
-                            a {
-                                text-decoration: none;
-                                color: unset;
-                            }
-                        }
-                    }
                 }
                 .stationBetween {
                     position: relative;
@@ -90,7 +51,7 @@
                             min-height: 6em;
                         }
                         &:has(.hiddenStationsContainer:not(.isHidden)) {
-                            min-height: calc(6em + var(--hidden-count) * 3em);
+                            min-height: calc(6em + var(--accum-hidden-height));
                         }
                     }
                     &:has(.walkLine) {
@@ -100,13 +61,17 @@
                         position: absolute;
                         left: 4.25em;
                         top: 0.75em;
+                        background: var(--route-color);
+                        .hiddenStation & {
+                            top: 3.75em;
+                            background: var(--sta-route-color);
+                        }
                         border-radius: 50%;
                         text-align: center;
                         line-height: 2em;
                         width: 2em;
                         height: 2em;
                         transform: translate(-50%, -50%);
-                        background: var(--route-color);
                         color: black;
                         z-index: 2;
                         &::after {
@@ -130,6 +95,7 @@
                         left: 4em;
                         top: 0.1em;
                         bottom: 0;
+                        max-height: 8.25em;
                         width: 0.5em;
                         background: var(--route-color);
                         z-index: 1;
@@ -151,6 +117,9 @@
                         position: absolute;
                         left: 6em;
                         top: 0;
+                        .hiddenStation & {
+                            top: 3em;
+                        }
                         .line {
                             font-weight: bold;
                         }
@@ -179,8 +148,9 @@
                         .hiddenDepTime {
                             position: absolute;
                             left: 1.2em;
-                            top: -0.5em;
+                            top: 0.85em;
                             font-size: 0.8em;
+                            transform: translateY(-50%);
                         }
                         .hiddenStaDot {
                             position: absolute;
@@ -190,7 +160,7 @@
                             z-index: 2;
                             width: 1em;
                             height: 1em;
-                            background: var(--route-color);
+                            background: var(--sta-route-color);
                             border-radius: 50%;
                             &:after {
                                 content: "";
@@ -203,6 +173,19 @@
                                 background: white;
                                 border-radius: 50%;
                                 z-index: 3;
+                            }
+                        }
+                        .hiddenStaLine {
+                            position: absolute;
+                            left: 4em;
+                            top: 0.75em;
+                            bottom: 0;
+                            width: 0.5em;
+                            height: 3em;
+                            background: var(--sta-route-color);
+                            z-index: 1; /* debug */
+                            &.withRideIcon {
+                                height: 7em;
                             }
                         }
                         .hiddenStationName {
@@ -917,7 +900,7 @@
                     const item = result[i];
                     if (item.type === "walk" || !item.trip_id) {
                         if (currentTrip !== null && i - 1 > startIndex) {
-                            for (let k = startIndex + 1; k < i - 1; k++) {
+                            for (let k = startIndex; k < i - 1; k++) {
                                 result[k].hidden = true;
                             }
                         }
@@ -935,7 +918,7 @@
                     // hide intermediate stations on each trip, except for the first and last stations of that trip
                     if (item.trip_id !== currentTrip) {
                         if (i - 1 > startIndex) {
-                            for (let k = startIndex + 1; k < i - 1; k++) {
+                            for (let k = startIndex; k < i - 1; k++) {
                                 result[k].hidden = true;
                             }
                         }
@@ -947,14 +930,14 @@
                     const prevTripBlockid = tripInfo[result[i - 1].trip_id].block_id;
                     const currentTripBlockid = tripInfo[item.trip_id].block_id;
                     if (prevTripBlockid && currentTripBlockid && prevTripBlockid === currentTripBlockid) {
-                        if (!result[i - 1].hidden) {
+                        if (result[i - 1].trip_id !== item.trip_id) {
                             result[i - 1].noTransfer = true;
                         }
                     }
                 }
 
                 if (currentTrip !== null && result.length - 1 > startIndex) {
-                    for (let k = startIndex + 1; k < result.length - 1; k++) {
+                    for (let k = startIndex; k < result.length - 1; k++) {
                         result[k].hidden = true;
                     }
                 }
@@ -1001,7 +984,7 @@
                 elapseTime = arrSec - depSec;
                 depOverall = secondsToTime(depSec);
                 arrOverall = secondsToTime(arrSec);
-                const elapseTimeString = `${Math.floor(elapseTime / 3600)}hr ${Math.ceil((elapseTime % 3600) / 60)}min`;
+                const elapseTimeString = `${Math.floor(elapseTime / 3600) ? `${Math.floor(elapseTime / 3600)}hr ` : ""}${Math.ceil((elapseTime % 3600) / 60)}min`;
 
                 resultElem.innerHTML = `<div id="overallTimes" style="font-weight: bold; font-size: 1.5em;">${depOverall} > ${arrOverall} (${elapseTimeString})</div><br />`;
                 const routeContainerElem = document.createElement("div");
@@ -1053,33 +1036,71 @@
                                 // hiddenCount はルートごとではなく乗り換えごとで数える
                                 let hiddenCount = 0;
                                 for (let j = i + 1; j < path.length; j++) {
-                                    if (path[j].hidden) {
+                                    if (path[j].hidden || path[j].noTransfer) {
                                         hiddenCount++;
                                     } else {
                                         break;
                                     }
                                 }
 
-                                if (hiddenCount > 0 || path[i].trip_id === path[i + 1].trip_id) {
+                                if (hiddenCount > 0 || path[i].trip_id === path[i + 1].trip_id || path[i].noTransfer) {
                                     const rideNstopsElem = document.createElement("div");
                                     rideNstopsElem.className = "rideNstops";
                                     rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops ▽`;
                                     rideNstopsElem.style.cursor = "pointer";
                                     const hiddenStationsContainer = document.createElement("div");
                                     hiddenStationsContainer.className = "hiddenStationsContainer isHidden";
+                                    let accum_hidden_height = 3;
                                     for (let j = i; j <= i + hiddenCount; j++) {
                                         const hiddenStationElem = document.createElement("div");
                                         hiddenStationElem.className = "hiddenStation";
                                         hiddenStationElem.style.position = "absolute";
-                                        hiddenStationElem.style.top = `${(j - i + 1) * 3 - 1.2}em`;
+                                        hiddenStationElem.style.top = `${accum_hidden_height - 1.2}em`;
                                         hiddenStationElem.style.width = "stretch";
-                                        hiddenStationElem.setAttribute("--route-color", `#${route_color}`);
-                                        hiddenStationElem.innerHTML = `
-                                    <div class="hiddenDepTime">${secondsToTime(path[j].arrival_time)} A<br />${secondsToTime(path[j + 1].departure_time)} D</div>
-                                    <div class="hiddenStaDot"></div>
-                                    <div class="hiddenStationName">
-                                        <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[j].stop)}&company=${encodeURIComponent(company)}">${path[j].stop}</a>
-                                    </div>`;
+                                        const staRouteColor = routeList.find((r) => r.route_id === tripInfo[path[j + 1].trip_id]?.route_id)?.route_color || "aaaaaa";
+                                        hiddenStationElem.style.setProperty("--sta-route-color", `#${staRouteColor}`);
+                                        console.log(`set color #${staRouteColor} as line ${tripInfo[path[j + 1].trip_id]?.route_short_name}`);
+                                        accum_hidden_height += 3;
+                                        if (path[j].noTransfer) {
+                                            accum_hidden_height += 4;
+                                            let { route_id, route_short_name, destination } = tripInfo[path[j + 1].trip_id];
+                                            hiddenStationElem.style.setProperty("--route-id", `"${route_short_name?.slice(0, 2)}"`);
+                                                                        let lineNameDisplay = regularizeLineName(route_short_name);
+                                            hiddenStationElem.innerHTML = `
+                                                <div class="hiddenDepTime">
+                                                    ${
+                                                        // 出発時刻と到着時刻が同じ場合は、片方のみ表示する
+                                                        path[j].arrival_time === path[j + 1].departure_time
+                                                            ? `${secondsToTime(path[j].arrival_time)}`
+                                                            : `${secondsToTime(path[j].arrival_time)} A<br />${secondsToTime(path[j + 1].departure_time)} D`
+                                                    }
+                                                </div>
+                                                <div class="hiddenStaDot"></div>
+                                                <div class="hiddenStaLine withRideIcon"></div>
+                                                <div class="rideIcon"></div>
+                                                <div class="rideInfo">
+                                                    <div class="line">Remain on board for ${lineNameDisplay}</div>
+                                                    <div class="dest">For ${destination}</div>
+                                                </div>
+                                                <div class="hiddenStationName">
+                                                    <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[j].stop)}&company=${encodeURIComponent(company)}">${path[j].stop}</a>
+                                                </div>`;
+                                        } else {
+                                            hiddenStationElem.innerHTML = `
+                                                <div class="hiddenDepTime">
+                                                    ${
+                                                        // 出発時刻と到着時刻が同じ場合は、片方のみ表示する
+                                                        path[j].arrival_time === path[j + 1].departure_time
+                                                            ? `${secondsToTime(path[j].arrival_time)}`
+                                                            : `${secondsToTime(path[j].arrival_time)} A<br />${secondsToTime(path[j + 1].departure_time)} D`
+                                                    }
+                                                </div>
+                                                <div class="hiddenStaDot"></div>
+                                                <div class="hiddenStaLine"></div>
+                                                <div class="hiddenStationName">
+                                                    <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[j].stop)}&company=${encodeURIComponent(company)}">${path[j].stop}</a>
+                                                </div>`;
+                                        }
                                         hiddenStationsContainer.appendChild(hiddenStationElem);
                                     }
                                     rideNstopsElem.addEventListener("click", () => {
@@ -1091,6 +1112,7 @@
                                             rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops ▽`;
                                         }
                                     });
+                                    stationBetweenElem.style.setProperty("--accum-hidden-height", `${accum_hidden_height}em`);
                                     stationBetweenElem.appendChild(rideNstopsElem);
                                     stationBetweenElem.appendChild(hiddenStationsContainer);
                                     i += hiddenCount + 1;
@@ -1109,7 +1131,7 @@
                             console.log(`Rendering station: #${i}, ${path[i].stop}, trip_id: ${path[i].trip_id}, noTransfer: ${path[i].noTransfer}`);
 
                             stationElem.className = "station";
-                            stationElem.innerHTML = `<a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop} ${path[i].noTransfer ? "(Continue Riding)" : ""}</a>`;
+                            stationElem.innerHTML = `<a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a>`;
 
                             routeContainerElem.appendChild(stationElem);
                         }
