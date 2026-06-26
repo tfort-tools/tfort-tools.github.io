@@ -1,6 +1,6 @@
 @font-face {
     font-family: "D";
-    src: url("/DIN.ttf");
+    src: url("./DIN.ttf");
 }
 
 * {
