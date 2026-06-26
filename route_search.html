@@ -45,10 +45,10 @@
                 .stationBetween {
                     position: relative;
                     &:has(.rideLine) {
-                        transition: min-height 0.3s;
+                        transition: min-height 0s; /* temporary disable, return if solution is found */
                         &:has(.hiddenStationsContainer.isHidden),
                         &:not(:has(.hiddenStationsContainer)) {
-                            min-height: 6em;
+                            min-height: calc(6em + var(--accum-compressed-hidden-height));
                         }
                         &:has(.hiddenStationsContainer:not(.isHidden)) {
                             min-height: calc(6em + var(--accum-hidden-height));
@@ -142,8 +142,14 @@
                         transform-origin: top;
                         transition: all 0.3s;
                         &.isHidden {
-                            max-height: 0;
-                            transform: scaleY(0);
+                            ax-height: 0;
+                            ransform: scaleY(0);
+                            .hiddenStation:not(.dontHide) {
+                                display: none;
+                            }
+                            .hiddenStation.dontHide {
+                                top: 1.75em !important;
+                            }
                         }
                         .hiddenDepTime {
                             position: absolute;
@@ -299,8 +305,10 @@
             }
             const now = new Date();
             const localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-            $("#dateInput").value = localDate;
-            $("#timeInput").value = now.toTimeString().slice(0, 5);
+            //$("#dateInput").value = localDate;
+            //$("#timeInput").value = now.toTimeString().slice(0, 5);
+            $("#dateInput").value = "2026-06-26";
+            $("#timeInput").value = "07:00"; // DEBUG
             $("#swapButton").onclick = () => {
                 [$("#fromInput").value, $("#toInput").value] = [$("#toInput").value, $("#fromInput").value];
             };
@@ -1051,6 +1059,7 @@
                                     const hiddenStationsContainer = document.createElement("div");
                                     hiddenStationsContainer.className = "hiddenStationsContainer isHidden";
                                     let accum_hidden_height = 3;
+                                    let accum_compressed_hidden_height = 0;
                                     for (let j = i; j <= i + hiddenCount; j++) {
                                         const hiddenStationElem = document.createElement("div");
                                         hiddenStationElem.className = "hiddenStation";
@@ -1063,9 +1072,11 @@
                                         accum_hidden_height += 3;
                                         if (path[j].noTransfer) {
                                             accum_hidden_height += 4;
+                                            accum_compressed_hidden_height += 9.75;
                                             let { route_id, route_short_name, destination } = tripInfo[path[j + 1].trip_id];
                                             hiddenStationElem.style.setProperty("--route-id", `"${route_short_name?.slice(0, 2)}"`);
-                                                                        let lineNameDisplay = regularizeLineName(route_short_name);
+                                            let lineNameDisplay = regularizeLineName(route_short_name);
+                                            hiddenStationElem.classList.add("dontHide");
                                             hiddenStationElem.innerHTML = `
                                                 <div class="hiddenDepTime">
                                                     ${
@@ -1113,6 +1124,7 @@
                                         }
                                     });
                                     stationBetweenElem.style.setProperty("--accum-hidden-height", `${accum_hidden_height}em`);
+                                    stationBetweenElem.style.setProperty("--accum-compressed-hidden-height", `${accum_compressed_hidden_height}em`);
                                     stationBetweenElem.appendChild(rideNstopsElem);
                                     stationBetweenElem.appendChild(hiddenStationsContainer);
                                     i += hiddenCount + 1;
