@@ -1060,7 +1060,7 @@
                                     }
                                 }
 
-                                if (hiddenCount > 0 || path[i].trip_id === path[i + 1].trip_id || path[i]?.noTransfer) {
+                                if (hiddenCount > 0 || path[i].trip_id === path[i + 1].trip_id) {
                                     const rideNstopsElem = document.createElement("div");
                                     rideNstopsElem.className = "rideNstops";
                                     rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops ▽`;
@@ -1105,10 +1105,11 @@
                             routeContainerElem.appendChild(stationBetweenElem);
 
                             const stationElem = document.createElement("div");
+
                             console.log(`Rendering station: #${i}, ${path[i].stop}, trip_id: ${path[i].trip_id}, noTransfer: ${path[i].noTransfer}`);
 
                             stationElem.className = "station";
-                            stationElem.innerHTML = `<a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a>`;
+                            stationElem.innerHTML = `<a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop} ${path[i].noTransfer ? "(Continue Riding)" : ""}</a>`;
 
                             routeContainerElem.appendChild(stationElem);
                         }
