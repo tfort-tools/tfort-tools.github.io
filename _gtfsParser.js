@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const company = "rtd"; // "rtd" or "transfort"
+const company = "transfort"; // "rtd" or "transfort"
 
 const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
 const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));
@@ -364,6 +364,7 @@ for (const [patternId, pattern] of Object.entries(patterns)) {
             route_short_name: routeMap.get(pattern.route_id)?.route_short_name || null,
             pattern_id: patternId,
             destination: pattern.stops.at(-1),
+            block_id: tripMap.get(tripId)?.block_id || null,
         };
     }
 }

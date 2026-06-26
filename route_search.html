@@ -41,6 +41,45 @@
                         color: unset;
                         text-decoration: none;
                     }
+                    &.noTransfer {
+                        .depTime {
+                            position: absolute;
+                            left: 1.2em;
+                            top: -0.5em;
+                            font-size: 0.8em;
+                        }
+                        .staDot {
+                            position: absolute;
+                            left: 4.25em;
+                            top: 0.7em;
+                            transform: translate(-50%, -47%);
+                            z-index: 2;
+                            width: 1em;
+                            height: 1em;
+                            background: var(--route-color);
+                            border-radius: 50%;
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 0.5em;
+                                height: 0.5em;
+                                background: white;
+                                border-radius: 50%;
+                                z-index: 3;
+                            }
+                        }
+                        .staName {
+                            position: absolute;
+                            left: 6em;
+                            a {
+                                text-decoration: none;
+                                color: unset;
+                            }
+                        }
+                    }
                 }
                 .stationBetween {
                     position: relative;
@@ -79,7 +118,7 @@
                             border-radius: 50%;
                             width: 1.5em;
                             height: 1.5em;
-                            line-height: 1.5em; /* somehow this is better than 1.5em */
+                            line-height: 1.5em;
                             background: white;
                             transform: translate(-50%, -50%);
                             z-index: 3;
@@ -103,12 +142,6 @@
                         position: absolute;
                         font-weight: bold;
                         left: 0.5em;
-                    }
-                    .isOriginal {
-                        position: absolute;
-                        font-size: 0.8em;
-                        left: 1.4em;
-                        top: 1.5em;
                     }
                     .arrTime {
                         bottom: 0;
@@ -146,7 +179,7 @@
                         .hiddenDepTime {
                             position: absolute;
                             left: 1.2em;
-                            top: 0.25em;
+                            top: -0.5em;
                             font-size: 0.8em;
                         }
                         .hiddenStaDot {
@@ -188,12 +221,12 @@
     <body>
         <div class="inputContainer">
             <label class="fromto" for="fromInput">From</label>
-            <input id="fromInput" list="stations" />
+            <input id="fromInput" list="stations" value="Elizabeth & Constitution" />
             <br />
             <button id="swapButton">↓↑</button>
             <br />
             <label class="fromto" for="toInput">To</label>
-            <input id="toInput" list="stations" />
+            <input id="toInput" list="stations" value="South Transit Center" />
             <datalist id="stations"></datalist>
             <br /><br />
             <label>
@@ -204,7 +237,7 @@
                     <option value="last">Last Arr. of the Day</option>
                 </select>
             </label>
-            <div id="timeInputContainer" style="display: inline-block;">
+            <div id="timeInputContainer" style="display: inline-block">
                 <button id="decrementTime">- 1 min</button>
                 <input id="timeInput" type="time" />
                 <button id="incrementTime">+ 1 min</button>
@@ -213,7 +246,8 @@
             <input id="dateInput" type="date" />
             <br />
             <label><input type="checkbox" id="preferShortTravel" />Prefer shorter travel time</label><br />
-            <label><input type="checkbox" id="noWalk" />Don't walk to nearby stops</label>
+            <label><input type="checkbox" id="noWalk" />Don't walk to nearby stops</label><br />
+            <label><input type="checkbox" id="asap" />Show transfers under 1 min (may be impossible)</label>
             <br /><br />
             <button id="searchButton">Search</button>
             <br />
@@ -262,6 +296,15 @@
             const h = Math.floor(sec / 3600);
             const m = Math.floor((sec % 3600) / 60);
             return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
+        }
+        function regularizeLineName(route_short_name) {
+            if (["A", "B", "G", "N"].includes(route_short_name)) return `${route_short_name} Line Train`;
+            if (["C", "E", "R", "T", "W"].includes(route_short_name)) return `${route_short_name} Line Tram`;
+            if (route_short_name.match(/FF/)) return `Flatiron Flyer ${route_short_name == "FF1" ? "Local" : "Express"} (${route_short_name})`;
+            if (route_short_name == "GS") return `Golden-Boulder Shuttle (${route_short_name})`;
+            if (route_short_name == "MAX") return `${route_short_name} Rapid Transit`;
+            if (route_short_name == "FLEX") return `FLEX Regional Shuttle`;
+            return `Route ${route_short_name} Bus`;
         }
         (async () => {
             const stationList = await fetch(`./gtfs_parsed/${company}/station-list.json`).then((r) => r.json());
@@ -358,8 +401,7 @@
             }
             function getTransferTime(stop) {
                 const transferTimes = {
-                    // add specific transfer times for certain stops if needed like this:
-                    // "South Transit Center": 180
+                    // add specific transfer times for certain stops if needed like "oneMinStop": 60
                 };
                 return transferTimes[stop] ?? 60;
             }
@@ -502,7 +544,6 @@
                                 trip_id: current.connection.trip_id,
                                 from: current.connection.from,
                                 to: current.connection.to,
-                                isOriginal: current.connection.departure_sequence === 1, // 当駅始発
                                 departure_time: current.connection.departure_time,
                                 arrival_time: current.connection.arrival_time,
                             });
@@ -697,7 +738,6 @@
                                 type: "ride",
                                 stop: current.connection.to,
                                 trip_id: current.connection.trip_id,
-                                isOriginal: current.connection.departure_sequence === 1, // 当駅始発
                                 from: current.connection.from,
                                 to: current.connection.to,
                                 departure_time: current.connection.departure_time,
@@ -892,6 +932,7 @@
                         continue;
                     }
 
+                    // hide intermediate stations on each trip, except for the first and last stations of that trip
                     if (item.trip_id !== currentTrip) {
                         if (i - 1 > startIndex) {
                             for (let k = startIndex + 1; k < i - 1; k++) {
@@ -901,6 +942,15 @@
                         currentTrip = item.trip_id;
                         startIndex = i;
                     }
+
+                    // if tripInfo[trip_id].block_id does not change between consecutive trips, it's not transfer
+                    const prevTripBlockid = tripInfo[result[i - 1].trip_id].block_id;
+                    const currentTripBlockid = tripInfo[item.trip_id].block_id;
+                    if (prevTripBlockid && currentTripBlockid && prevTripBlockid === currentTripBlockid) {
+                        if (!result[i - 1].hidden) {
+                            result[i - 1].noTransfer = true;
+                        }
+                    }
                 }
 
                 if (currentTrip !== null && result.length - 1 > startIndex) {
@@ -908,7 +958,6 @@
                         result[k].hidden = true;
                     }
                 }
-
                 return result;
             }
 
@@ -931,13 +980,11 @@
                     depOverall = timeToSeconds(timeInput);
                     arrOverall = timeToSeconds(timeInput);
                 }
-                console.log(`Initial overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
 
                 let depSec = depOverall;
                 let arrSec = arrOverall;
                 if (path.slice(1).every((p) => p.type === "walk")) {
                     const totalWalkDuration = path.reduce((sum, p) => sum + (p.duration || 0), 0);
-                    console.log(`All connections are walks. Total walk duration: ${totalWalkDuration} minutes`);
                     if (renderMethod === "forward") {
                         arrSec = depSec + totalWalkDuration * 60;
                     } else {
@@ -945,11 +992,9 @@
                     }
                 } else {
                     if (path[1].type === "walk") {
-                        console.log(`Adjusting departure time for initial walk of ${path[1].duration} minutes`);
                         depSec = depSec - path[1].duration * 60;
                     }
                     if (path[path.length - 1].type === "walk") {
-                        console.log(`Adjusting arrival time for final walk of ${path[path.length - 1].duration} minutes`);
                         arrSec = arrSec + path[path.length - 1].duration * 60;
                     }
                 }
@@ -957,7 +1002,6 @@
                 depOverall = secondsToTime(depSec);
                 arrOverall = secondsToTime(arrSec);
                 const elapseTimeString = `${Math.floor(elapseTime / 3600)}hr ${Math.ceil((elapseTime % 3600) / 60)}min`;
-                console.log(`Adjusted overall departure time: ${depOverall}, arrival time: ${arrOverall}`);
 
                 resultElem.innerHTML = `<div id="overallTimes" style="font-weight: bold; font-size: 1.5em;">${depOverall} > ${arrOverall} (${elapseTimeString})</div><br />`;
                 const routeContainerElem = document.createElement("div");
@@ -992,31 +1036,12 @@
                             stationBetweenElem.className = "stationBetween";
                             stationBetweenElem.style.setProperty("--route-color", `#${route_color}`);
                             stationBetweenElem.style.setProperty("--route-text-color", `#${route_text_color}`);
-                            console.log(route_short_name, route_id);
                             stationBetweenElem.style.setProperty("--route-id", `"${route_short_name?.slice(0, 2)}"`);
 
-                            let lineNameDisplay;
-                            lineNameDisplay = `${route_short_name} Line`;
-                            if (["A", "B", "G", "N"].includes(route_short_name)) {
-                                lineNameDisplay = `${route_short_name} Line Train`;
-                            } else if (["C", "E", "R", "T", "W"].includes(route_short_name)) {
-                                lineNameDisplay = `${route_short_name} Line Tram`;
-                            } else if (route_short_name.match(/FF/)) {
-                                lineNameDisplay = `Flatiron Flyer ${route_short_name == "FF1" ? "Local" : "Express"} (${route_short_name})`;
-                            } else if (route_short_name == "GS") {
-                                lineNameDisplay = `Golden-Boulder Shuttle (${route_short_name})`;
-                            } else if (route_short_name == "MAX") {
-                                lineNameDisplay = `${route_short_name} Rapid Transit`;
-                            } else if (route_short_name == "FLEX") {
-                                lineNameDisplay = `FLEX Regional Shuttle`;
-                            } else {
-                                lineNameDisplay = `Route ${route_short_name} Bus`;
-                            }
+                            let lineNameDisplay = regularizeLineName(route_short_name);
 
-                            // isOriginalは鉄道でのみ意味があるのでRTD以外では表示しない
                             stationBetweenElem.innerHTML = `
                                 <div class="depTime">${secondsToTime(path[i].departure_time)}</div>
-                                <div class="isOriginal">${path[i].isOriginal && company == "rtd" ? "Dep." : ""}</div>
                                 <div class="rideIcon"></div>
                                 <div class="rideLine"></div>
                                 <div class="rideInfo">
@@ -1025,6 +1050,7 @@
                                 </div>`;
 
                             if ((i + 1 < path.length && path[i + 1].hidden) || path[i]?.trip_id === path[i + 1]?.trip_id) {
+                                // hiddenCount はルートごとではなく乗り換えごとで数える
                                 let hiddenCount = 0;
                                 for (let j = i + 1; j < path.length; j++) {
                                     if (path[j].hidden) {
@@ -1034,9 +1060,7 @@
                                     }
                                 }
 
-                                // hiddenCountでは2駅以上の通過しか判定できないのでtrip_idを評価する
-                                if (hiddenCount > 0 || path[i].trip_id === path[i + 1].trip_id) {
-                                    // 通過駅2個以上
+                                if (hiddenCount > 0 || path[i].trip_id === path[i + 1].trip_id || path[i]?.noTransfer) {
                                     const rideNstopsElem = document.createElement("div");
                                     rideNstopsElem.className = "rideNstops";
                                     rideNstopsElem.textContent = `Ride ${hiddenCount + 2} stops ▽`;
@@ -1051,7 +1075,7 @@
                                         hiddenStationElem.style.width = "stretch";
                                         hiddenStationElem.setAttribute("--route-color", `#${route_color}`);
                                         hiddenStationElem.innerHTML = `
-                                    <div class="hiddenDepTime">${secondsToTime(path[j].arrival_time)}</div>
+                                    <div class="hiddenDepTime">${secondsToTime(path[j].arrival_time)} A<br />${secondsToTime(path[j + 1].departure_time)} D</div>
                                     <div class="hiddenStaDot"></div>
                                     <div class="hiddenStationName">
                                         <a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[j].stop)}&company=${encodeURIComponent(company)}">${path[j].stop}</a>
@@ -1081,8 +1105,11 @@
                             routeContainerElem.appendChild(stationBetweenElem);
 
                             const stationElem = document.createElement("div");
+                            console.log(`Rendering station: #${i}, ${path[i].stop}, trip_id: ${path[i].trip_id}, noTransfer: ${path[i].noTransfer}`);
+
                             stationElem.className = "station";
                             stationElem.innerHTML = `<a target="_blank" href="/gtfs_viewer_stops.html?popup=1&stop_key=${encodeURIComponent(path[i].stop)}&company=${encodeURIComponent(company)}">${path[i].stop}</a>`;
+
                             routeContainerElem.appendChild(stationElem);
                         }
                     }
