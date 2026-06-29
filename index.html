@@ -1,32 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTFS Timetable</title>
-    <style>
-        @font-face {
-            font-family: "D";
-            src: url("./DIN.ttf");
-        }
-        * {
-            font-family: "D", sans-serif;
-        }
-    </style>
-</head>
-<body>
-    <h1>Select Company</h1>
-    <p>Timetable Viewer</p>
-    <ul>
-        <li><a href="gtfs_viewer_routes.html?company=rtd">RTD</a></li>
-        <li><a href="gtfs_viewer_routes.html?company=transfort">Transfort</a></li>
-        <li><a href="gtfs_viewer_routes.html?company=merged">Merged</a></li>
-    </ul>
-    <p>Route Search</p>
-    <ul>
-        <li><a href="route_search.html?company=rtd">RTD</a></li>
-        <li><a href="route_search.html?company=transfort">Transfort</a></li>
-        <li><a href="route_search.html?company=merged">Merged</a></li>
-    </ul>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Transfort & RTD Timetable</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            .list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .item {
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                padding: 14px;
+                border: none;
+                text-align: left;
+                cursor: pointer;
+                font-size: 1rem;
+                &:hover {
+                    filter: brightness(0.95);
+                }
+                text-decoration: none;
+                color: black;
+                background: #c2c0e1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">Transfort & RTD Timetable</div>
+
+        <div id="container">
+            <h2 id="title">View Timetable</h2>
+            <div id="content" class="list">
+                <div class="item"><a class="btn" href="gtfs_viewer_routes.html?company=transfort">Transfort</a></div>
+                <div class="item"><a class="btn" href="gtfs_viewer_routes.html?company=rtd">RTD</a></div>
+                <div class="item"><a class="btn" href="gtfs_viewer_routes.html?company=merged">Merged</a></div>
+            </div>
+            <br />
+            <h2 id="title">Route Search</h2>
+            <div id="content" class="list">
+                <div class="item"><a class="btn" href="route_search.html?company=transfort">Transfort</a></div>
+                <div class="item"><a class="btn" href="route_search.html?company=rtd">RTD</a></div>
+                <div class="item"><a class="btn" href="route_search.html?company=merged">Merged</a></div>
+            </div>
+        </div>
+    </body>
 </html>

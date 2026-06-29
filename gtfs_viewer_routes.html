@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Transfort Timetable</title>
+        <title>Transfort & RTD Timetable</title>
         <link rel="stylesheet" href="style.css" />
         <style>
             .list {
@@ -45,7 +45,7 @@
         </style>
     </head>
     <body>
-        <div id="header">Transfort Timetable</div>
+        <div id="header">Transfort & RTD Timetable</div>
 
         <div id="container">
             <button id="backButton">← Back</button>
@@ -85,7 +85,6 @@
 
             function showRoutes() {
                 titleElem.textContent = "Select a Route";
-                backButton.style.display = "none";
 
                 contentElem.innerHTML = "";
 
@@ -161,7 +160,7 @@
             }
 
             backButton.addEventListener("click", () => {
-                location.href = `./gtfs_viewer_routes.html?company=${encodeURIComponent(company)}`;
+                history.back();
             });
 
             loadData();
