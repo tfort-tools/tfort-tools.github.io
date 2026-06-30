@@ -75,6 +75,29 @@
             .timeCell:hover {
                 background: #eee;
             }
+
+            .type-local {
+                color: inherit; /* 通常の色（黒） */
+            }
+
+            .type-semi-express {
+                color: #4caf50; /* 黄緑 */
+            }
+
+            .type-express-blue {
+                color: #1976d2; /* 青 */
+                font-weight: bold;
+            }
+
+            .type-express-red {
+                color: #d32f2f; /* 赤 */
+                font-weight: bold;
+            }
+
+            .type-limited-express {
+                color: #c2185b; /* 濃い赤/ワインレッド（Expressの赤と区別する場合） */
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -156,37 +179,64 @@
                 contentElem.innerHTML = "";
 
                 const tripSet = new Set();
-
                 const tripDestination = new Map();
+                const tripServiceType = new Map();
 
+                let selectedPatterns = [];
                 if (allPatterns) {
-                    for (const pattern of Object.values(patterns)) {
+                    selectedPatterns = Object.values(patterns);
+                } else {
+                    selectedPatterns = patternIds.map((id) => patterns[id]).filter(Boolean);
+                }
+
+                let activeConfig = [];
+
+                // 種別判定したい路線を書く temporary disabled
+                if (label.includes("fooooooooo")) {
+                    const stopCounts = [...new Set(selectedPatterns.map((p) => p.stops.length))].sort((a, b) => b - a);
+                    const totalTypes = stopCounts.length;
+
+                    const serviceConfigs = {
+                        1: [{ className: "type-local", label: "Local" }],
+                        2: [
+                            { className: "type-local", label: "Local" },
+                            { className: "type-semi-express", label: "Semi Express" },
+                        ],
+                        4: [
+                            { className: "type-local", label: "Local" },
+                            { className: "type-semi-express", label: "Semi Express" },
+                            { className: "type-express-blue", label: "Express" },
+                            { className: "type-limited-express", label: "Limited Express" },
+                        ],
+                    };
+
+                    activeConfig = serviceConfigs[totalTypes];
+                    if (!activeConfig) return console.error(`No service configuration for ${totalTypes} types`);
+
+                    for (const pattern of selectedPatterns) {
                         const destination = pattern.stops.at(-1);
+
+                        const rank = stopCounts.indexOf(pattern.stops.length);
+
+                        const typeInfo = activeConfig[Math.min(rank, activeConfig.length - 1)];
 
                         for (const tripId of pattern.trip_ids) {
                             tripSet.add(tripId);
-
                             tripDestination.set(tripId, destination);
+                            tripServiceType.set(tripId, typeInfo);
                         }
                     }
                 } else {
-                    for (const patternId of patternIds) {
-                        const pattern = patterns[patternId];
-
-                        if (!pattern) {
-                            continue;
-                        }
-
+                    const defaultType = { className: "type-local", label: "Local" };
+                    for (const pattern of selectedPatterns) {
                         const destination = pattern.stops.at(-1);
-
                         for (const tripId of pattern.trip_ids) {
                             tripSet.add(tripId);
-
                             tripDestination.set(tripId, destination);
+                            tripServiceType.set(tripId, defaultType);
                         }
                     }
                 }
-
                 const tripMaxSequence = new Map();
 
                 for (const entry of tripTimes) {
@@ -270,12 +320,10 @@
 
                     hourMap[hour].push({
                         minute,
-
                         trip_id: dep.trip_id,
-
                         stop_sequence: dep.stop_sequence,
-
                         code: destinationCodes.get(tripDestination.get(dep.trip_id)) || "",
+                        typeInfo: tripServiceType.get(dep.trip_id), // 種別情報を引き継ぐ
                     });
                 }
 
@@ -298,6 +346,10 @@
                         const span = document.createElement("span");
 
                         span.className = "timeCell";
+
+                        if (entry.typeInfo && entry.typeInfo.className !== "type-local") {
+                            span.classList.add(entry.typeInfo.className);
+                        }
 
                         span.innerHTML = `${entry.minute}<span style="font-size: 0.75em;">${entry.code || "&ensp;"}</span>`;
 
@@ -325,13 +377,22 @@
 
                 legend.className = "legend";
 
-                legend.innerHTML = destinations
+                let legendHTML = destinations
                     .map((destination) => {
                         const code = destinationCodes.get(destination);
                         return `<div>${code || "Unmarked"} : ${destination}</div>`;
                     })
                     .join("");
 
+                // Local以外があれば、全種別凡例を表示
+                if (activeConfig.some((type) => type.className !== "type-local")) {
+                    const typeLegendHTML = activeConfig.map((type) => `<div class="${type.className}" style="margin-top: 4px;">■ ${type.label}</div>`).join("");
+                    if (typeLegendHTML) {
+                        legendHTML += `<div style="margin-top: 12px; font-size: 0.9em;">${typeLegendHTML}</div>`;
+                    }
+                }
+
+                legend.innerHTML = legendHTML;
                 contentElem.appendChild(legend);
             }
 

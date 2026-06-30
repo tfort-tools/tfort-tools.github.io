@@ -207,6 +207,38 @@
                         .join(", ");
                 }
 
+                const mergedGroups = {};
+
+                for (const group of groups) {
+                    let modifiedRouteName = group.routeNames;
+                    // まとめたいルートと結合後の名称をここで定義
+                    /*if (modifiedRouteName === "FF1") {
+                        modifiedRouteName = "FF1";
+                    }*/
+
+                    // 異なる行先も統合したい場合はlabelを除く
+                    const key = `${modifiedRouteName}::${group.label}`;
+
+                    if (!mergedGroups[key]) {
+                        mergedGroups[key] = {
+                            suffix: group.suffix,
+                            patternIds: [...group.patternIds],
+                            routeIds: new Set(group.routeIds),
+                            label: group.label,
+                            routeNames: modifiedRouteName,
+                        };
+                    } else {
+                        mergedGroups[key].patternIds.push(...group.patternIds);
+                        for (const id of group.routeIds) {
+                            mergedGroups[key].routeIds.add(id);
+                        }
+                    }
+                }
+
+                // groups の上書き
+                groups.length = 0;
+                groups.push(...Object.values(mergedGroups));
+
                 groups.sort((a, b) => {
                     const regex = /^(\d+)$/;
                     const matchA = a.routeNames.match(regex);
