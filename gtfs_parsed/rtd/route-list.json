@@ -1,0 +1,926 @@
+[
+  {
+    "route_id": "101C",
+    "route_long_name": "Train [C] Union Station To Mineral Station",
+    "route_short_name": "C",
+    "route_color": "F79239",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Littleton / Mineral Ave Station",
+        "stop_name": "Littleton / Mineral Ave Station"
+      },
+      {
+        "stop_key": "Littleton / Downtown Station",
+        "stop_name": "Littleton / Downtown Station"
+      },
+      {
+        "stop_key": "Oxford - City Of Sheridan Station",
+        "stop_name": "Oxford - City Of Sheridan Station"
+      },
+      {
+        "stop_key": "Englewood Station",
+        "stop_name": "Englewood Station"
+      },
+      {
+        "stop_key": "Evans Station",
+        "stop_name": "Evans Station"
+      },
+      {
+        "stop_key": "I-25 & Broadway Station",
+        "stop_name": "I-25 & Broadway Station"
+      },
+      {
+        "stop_key": "Alameda Station",
+        "stop_name": "Alameda Station"
+      },
+      {
+        "stop_key": "10th & Osage Station",
+        "stop_name": "10th & Osage Station"
+      },
+      {
+        "stop_key": "Auraria West Station",
+        "stop_name": "Auraria West Station"
+      },
+      {
+        "stop_key": "Empower Field At Mile High Station",
+        "stop_name": "Empower Field At Mile High Station"
+      },
+      {
+        "stop_key": "Ball Arena / Elitch Gardens Station",
+        "stop_name": "Ball Arena / Elitch Gardens Station"
+      },
+      {
+        "stop_key": "Union Station (Light Rail)",
+        "stop_name": "Union Station (Light Rail)"
+      }
+    ]
+  },
+  {
+    "route_id": "101E",
+    "route_long_name": "Train [E] Union Station To Ridgegate Parkway Station",
+    "route_short_name": "E",
+    "route_color": "552683",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Ridgegate Parkway Station",
+        "stop_name": "Ridgegate Parkway Station"
+      },
+      {
+        "stop_key": "Lone Tree City Center Station",
+        "stop_name": "Lone Tree City Center Station"
+      },
+      {
+        "stop_key": "Sky Ridge Station",
+        "stop_name": "Sky Ridge Station"
+      },
+      {
+        "stop_key": "Lincoln Station",
+        "stop_name": "Lincoln Station"
+      },
+      {
+        "stop_key": "County Line Station",
+        "stop_name": "County Line Station"
+      },
+      {
+        "stop_key": "Dry Creek Station",
+        "stop_name": "Dry Creek Station"
+      },
+      {
+        "stop_key": "Arapahoe At Village Center Station",
+        "stop_name": "Arapahoe At Village Center Station"
+      },
+      {
+        "stop_key": "Orchard Station",
+        "stop_name": "Orchard Station"
+      },
+      {
+        "stop_key": "Belleview Station",
+        "stop_name": "Belleview Station"
+      },
+      {
+        "stop_key": "Southmoor Station",
+        "stop_name": "Southmoor Station"
+      },
+      {
+        "stop_key": "Yale Station",
+        "stop_name": "Yale Station"
+      },
+      {
+        "stop_key": "Colorado Station",
+        "stop_name": "Colorado Station"
+      },
+      {
+        "stop_key": "University Of Denver Station",
+        "stop_name": "University Of Denver Station"
+      },
+      {
+        "stop_key": "Louisiana & Pearl Station",
+        "stop_name": "Louisiana & Pearl Station"
+      },
+      {
+        "stop_key": "I-25 & Broadway Station",
+        "stop_name": "I-25 & Broadway Station"
+      },
+      {
+        "stop_key": "Alameda Station",
+        "stop_name": "Alameda Station"
+      },
+      {
+        "stop_key": "10th & Osage Station",
+        "stop_name": "10th & Osage Station"
+      },
+      {
+        "stop_key": "Auraria West Station",
+        "stop_name": "Auraria West Station"
+      },
+      {
+        "stop_key": "Empower Field At Mile High Station",
+        "stop_name": "Empower Field At Mile High Station"
+      },
+      {
+        "stop_key": "Ball Arena / Elitch Gardens Station",
+        "stop_name": "Ball Arena / Elitch Gardens Station"
+      },
+      {
+        "stop_key": "Union Station (Light Rail)",
+        "stop_name": "Union Station (Light Rail)"
+      },
+      {
+        "stop_key": "Evans Station",
+        "stop_name": "Evans Station"
+      }
+    ]
+  },
+  {
+    "route_id": "101T",
+    "route_long_name": "Train [T] Lincoln Station To I-25/Broadway Station",
+    "route_short_name": "T",
+    "route_color": "B71318",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Lincoln Station",
+        "stop_name": "Lincoln Station"
+      },
+      {
+        "stop_key": "County Line Station",
+        "stop_name": "County Line Station"
+      },
+      {
+        "stop_key": "Dry Creek Station",
+        "stop_name": "Dry Creek Station"
+      },
+      {
+        "stop_key": "Arapahoe At Village Center Station",
+        "stop_name": "Arapahoe At Village Center Station"
+      },
+      {
+        "stop_key": "Orchard Station",
+        "stop_name": "Orchard Station"
+      },
+      {
+        "stop_key": "Belleview Station",
+        "stop_name": "Belleview Station"
+      },
+      {
+        "stop_key": "Southmoor Station",
+        "stop_name": "Southmoor Station"
+      },
+      {
+        "stop_key": "Yale Station",
+        "stop_name": "Yale Station"
+      },
+      {
+        "stop_key": "Colorado Station",
+        "stop_name": "Colorado Station"
+      },
+      {
+        "stop_key": "University Of Denver Station",
+        "stop_name": "University Of Denver Station"
+      },
+      {
+        "stop_key": "Louisiana & Pearl Station",
+        "stop_name": "Louisiana & Pearl Station"
+      },
+      {
+        "stop_key": "I-25 & Broadway Station",
+        "stop_name": "I-25 & Broadway Station"
+      }
+    ]
+  },
+  {
+    "route_id": "103W",
+    "route_long_name": "Train [W] Union Station To Jefferson County Government Center-Golden Station",
+    "route_short_name": "W",
+    "route_color": "009DAA",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Jeffco Government Center Station",
+        "stop_name": "Jeffco Government Center Station"
+      },
+      {
+        "stop_key": "Red Rocks Community College Station",
+        "stop_name": "Red Rocks Community College Station"
+      },
+      {
+        "stop_key": "Federal Center Station",
+        "stop_name": "Federal Center Station"
+      },
+      {
+        "stop_key": "Oak Station",
+        "stop_name": "Oak Station"
+      },
+      {
+        "stop_key": "Garrison Station",
+        "stop_name": "Garrison Station"
+      },
+      {
+        "stop_key": "Wadsworth Station",
+        "stop_name": "Wadsworth Station"
+      },
+      {
+        "stop_key": "Lamar Station",
+        "stop_name": "Lamar Station"
+      },
+      {
+        "stop_key": "Sheridan Station",
+        "stop_name": "Sheridan Station"
+      },
+      {
+        "stop_key": "Perry Station",
+        "stop_name": "Perry Station"
+      },
+      {
+        "stop_key": "Knox Station",
+        "stop_name": "Knox Station"
+      },
+      {
+        "stop_key": "Decatur / Federal Station",
+        "stop_name": "Decatur / Federal Station"
+      },
+      {
+        "stop_key": "Auraria West Station",
+        "stop_name": "Auraria West Station"
+      },
+      {
+        "stop_key": "Empower Field At Mile High Station",
+        "stop_name": "Empower Field At Mile High Station"
+      },
+      {
+        "stop_key": "Ball Arena / Elitch Gardens Station",
+        "stop_name": "Ball Arena / Elitch Gardens Station"
+      },
+      {
+        "stop_key": "Union Station (Light Rail)",
+        "stop_name": "Union Station (Light Rail)"
+      }
+    ]
+  },
+  {
+    "route_id": "107R",
+    "route_long_name": "Train [R] Lincoln Station To Peoria Station",
+    "route_short_name": "R",
+    "route_color": "C4D600",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Ridgegate Parkway Station",
+        "stop_name": "Ridgegate Parkway Station"
+      },
+      {
+        "stop_key": "Lone Tree City Center Station",
+        "stop_name": "Lone Tree City Center Station"
+      },
+      {
+        "stop_key": "Sky Ridge Station",
+        "stop_name": "Sky Ridge Station"
+      },
+      {
+        "stop_key": "Lincoln Station",
+        "stop_name": "Lincoln Station"
+      },
+      {
+        "stop_key": "County Line Station",
+        "stop_name": "County Line Station"
+      },
+      {
+        "stop_key": "Dry Creek Station",
+        "stop_name": "Dry Creek Station"
+      },
+      {
+        "stop_key": "Arapahoe At Village Center Station",
+        "stop_name": "Arapahoe At Village Center Station"
+      },
+      {
+        "stop_key": "Orchard Station",
+        "stop_name": "Orchard Station"
+      },
+      {
+        "stop_key": "Belleview Station",
+        "stop_name": "Belleview Station"
+      },
+      {
+        "stop_key": "Dayton Station",
+        "stop_name": "Dayton Station"
+      },
+      {
+        "stop_key": "Nine Mile Station",
+        "stop_name": "Nine Mile Station"
+      },
+      {
+        "stop_key": "Iliff Station",
+        "stop_name": "Iliff Station"
+      },
+      {
+        "stop_key": "Florida Station",
+        "stop_name": "Florida Station"
+      },
+      {
+        "stop_key": "Aurora Metro Center Station",
+        "stop_name": "Aurora Metro Center Station"
+      },
+      {
+        "stop_key": "2nd & Abilene Station",
+        "stop_name": "2nd & Abilene Station"
+      },
+      {
+        "stop_key": "13th Ave Station",
+        "stop_name": "13th Ave Station"
+      },
+      {
+        "stop_key": "Colfax Station",
+        "stop_name": "Colfax Station"
+      },
+      {
+        "stop_key": "Fitzsimons Station",
+        "stop_name": "Fitzsimons Station"
+      },
+      {
+        "stop_key": "Peoria Station",
+        "stop_name": "Peoria Station"
+      }
+    ]
+  },
+  {
+    "route_id": "113B",
+    "route_long_name": "Train [B] Union Station To Westminster Station",
+    "route_short_name": "B",
+    "route_color": "4E9D2D",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Westminster Station",
+        "stop_name": "Westminster Station"
+      },
+      {
+        "stop_key": "Pecos Junction Station",
+        "stop_name": "Pecos Junction Station"
+      },
+      {
+        "stop_key": "41st & Fox Station",
+        "stop_name": "41st & Fox Station"
+      },
+      {
+        "stop_key": "Union Station (Heavy Rail)",
+        "stop_name": "Union Station (Heavy Rail)"
+      }
+    ]
+  },
+  {
+    "route_id": "113G",
+    "route_long_name": "Train [G] Union Station To Wheat Ridge Ward Station",
+    "route_short_name": "G",
+    "route_color": "F6B221",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Wheat Ridge - Ward Station",
+        "stop_name": "Wheat Ridge - Ward Station"
+      },
+      {
+        "stop_key": "Arvada Ridge Station",
+        "stop_name": "Arvada Ridge Station"
+      },
+      {
+        "stop_key": "Olde Town Arvada",
+        "stop_name": "Olde Town Arvada"
+      },
+      {
+        "stop_key": "60th & Sheridan - Arvada Gold Strike Station",
+        "stop_name": "60th & Sheridan - Arvada Gold Strike Station"
+      },
+      {
+        "stop_key": "Clear Creek - Federal Station",
+        "stop_name": "Clear Creek - Federal Station"
+      },
+      {
+        "stop_key": "Pecos Junction Station",
+        "stop_name": "Pecos Junction Station"
+      },
+      {
+        "stop_key": "41st & Fox Station",
+        "stop_name": "41st & Fox Station"
+      },
+      {
+        "stop_key": "Union Station (Heavy Rail)",
+        "stop_name": "Union Station (Heavy Rail)"
+      }
+    ]
+  },
+  {
+    "route_id": "117N",
+    "route_long_name": "Train [N] Union Station To Eastlake & 124th Station",
+    "route_short_name": "N",
+    "route_color": "9F26B5",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Union Station (Heavy Rail)",
+        "stop_name": "Union Station (Heavy Rail)"
+      },
+      {
+        "stop_key": "48th & Brighton-National Western Station",
+        "stop_name": "48th & Brighton-National Western Station"
+      },
+      {
+        "stop_key": "Commerce City - 72nd Station",
+        "stop_name": "Commerce City - 72nd Station"
+      },
+      {
+        "stop_key": "Original Thornton - 88th Station",
+        "stop_name": "Original Thornton - 88th Station"
+      },
+      {
+        "stop_key": "Thornton Crossroads - 104th Station",
+        "stop_name": "Thornton Crossroads - 104th Station"
+      },
+      {
+        "stop_key": "Northglenn - 112th Station",
+        "stop_name": "Northglenn - 112th Station"
+      },
+      {
+        "stop_key": "Eastlake - 124th Station",
+        "stop_name": "Eastlake - 124th Station"
+      }
+    ]
+  },
+  {
+    "route_id": "A",
+    "route_long_name": "Train [A] Union Station To Denver Airport Station",
+    "route_short_name": "A",
+    "route_color": "57C1E9",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Union Station (Heavy Rail)",
+        "stop_name": "Union Station (Heavy Rail)"
+      },
+      {
+        "stop_key": "38th & Blake Station",
+        "stop_name": "38th & Blake Station"
+      },
+      {
+        "stop_key": "40th & Colorado Station",
+        "stop_name": "40th & Colorado Station"
+      },
+      {
+        "stop_key": "Central Park Station",
+        "stop_name": "Central Park Station"
+      },
+      {
+        "stop_key": "Peoria Station",
+        "stop_name": "Peoria Station"
+      },
+      {
+        "stop_key": "40th Ave & Airport Blvd - Gateway Park Station",
+        "stop_name": "40th Ave & Airport Blvd - Gateway Park Station"
+      },
+      {
+        "stop_key": "61st & Pena Station",
+        "stop_name": "61st & Pena Station"
+      },
+      {
+        "stop_key": "Denver Airport Station",
+        "stop_name": "Denver Airport Station"
+      }
+    ]
+  },
+  {
+    "route_id": "FF1",
+    "route_long_name": "Bus [FF1] Flatiron Flyer",
+    "route_short_name": "Ff1",
+    "route_color": "1E4286",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Downtown Boulder Station",
+        "stop_name": "Downtown Boulder Station"
+      },
+      {
+        "stop_key": "Broadway & Euclid Ave",
+        "stop_name": "Broadway & Euclid Ave"
+      },
+      {
+        "stop_key": "Broadway & 20th St",
+        "stop_name": "Broadway & 20th St"
+      },
+      {
+        "stop_key": "Broadway & Baseline Rd",
+        "stop_name": "Broadway & Baseline Rd"
+      },
+      {
+        "stop_key": "S Broadway & Dartmouth Ave",
+        "stop_name": "S Broadway & Dartmouth Ave"
+      },
+      {
+        "stop_key": "Table Mesa Dr & 39th St",
+        "stop_name": "Table Mesa Dr & 39th St"
+      },
+      {
+        "stop_key": "US 36 & Table Mesa Station",
+        "stop_name": "US 36 & Table Mesa Station"
+      },
+      {
+        "stop_key": "US 36 & Mccaslin Station",
+        "stop_name": "US 36 & Mccaslin Station"
+      },
+      {
+        "stop_key": "US 36 & Flatiron Station",
+        "stop_name": "US 36 & Flatiron Station"
+      },
+      {
+        "stop_key": "US 36 & Broomfield Station",
+        "stop_name": "US 36 & Broomfield Station"
+      },
+      {
+        "stop_key": "US 36 & Church Ranch Station",
+        "stop_name": "US 36 & Church Ranch Station"
+      },
+      {
+        "stop_key": "US 36 & Sheridan Station",
+        "stop_name": "US 36 & Sheridan Station"
+      },
+      {
+        "stop_key": "Park Ave West & Wewatta St",
+        "stop_name": "Park Ave West & Wewatta St"
+      },
+      {
+        "stop_key": "Union Station (Bus)",
+        "stop_name": "Union Station (Bus)"
+      },
+      {
+        "stop_key": "S Broadway & Table Mesa Dr",
+        "stop_name": "S Broadway & Table Mesa Dr"
+      },
+      {
+        "stop_key": "Broadway & Dartmouth Pnr",
+        "stop_name": "Broadway & Dartmouth Pnr"
+      },
+      {
+        "stop_key": "Broadway & Regent Dr",
+        "stop_name": "Broadway & Regent Dr"
+      },
+      {
+        "stop_key": "Downtown Boulder Station (Ar)",
+        "stop_name": "Downtown Boulder Station (Ar)"
+      },
+      {
+        "stop_key": "Park Ave W & Delgany St",
+        "stop_name": "Park Ave W & Delgany St"
+      }
+    ]
+  },
+  {
+    "route_id": "FF2",
+    "route_long_name": "Bus [FF2] Flatiron Flyer",
+    "route_short_name": "Ff2",
+    "route_color": "1E4286",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Downtown Boulder Station",
+        "stop_name": "Downtown Boulder Station"
+      },
+      {
+        "stop_key": "Broadway & Euclid Ave",
+        "stop_name": "Broadway & Euclid Ave"
+      },
+      {
+        "stop_key": "Broadway & 20th St",
+        "stop_name": "Broadway & 20th St"
+      },
+      {
+        "stop_key": "Broadway & Baseline Rd",
+        "stop_name": "Broadway & Baseline Rd"
+      },
+      {
+        "stop_key": "S Broadway & Dartmouth Ave",
+        "stop_name": "S Broadway & Dartmouth Ave"
+      },
+      {
+        "stop_key": "Table Mesa Dr & 39th St",
+        "stop_name": "Table Mesa Dr & 39th St"
+      },
+      {
+        "stop_key": "US 36 & Table Mesa Station",
+        "stop_name": "US 36 & Table Mesa Station"
+      },
+      {
+        "stop_key": "US 36 & Mccaslin Station",
+        "stop_name": "US 36 & Mccaslin Station"
+      },
+      {
+        "stop_key": "Union Station (Bus)",
+        "stop_name": "Union Station (Bus)"
+      },
+      {
+        "stop_key": "Park Ave West & Wewatta St",
+        "stop_name": "Park Ave West & Wewatta St"
+      },
+      {
+        "stop_key": "S Broadway & Table Mesa Dr",
+        "stop_name": "S Broadway & Table Mesa Dr"
+      },
+      {
+        "stop_key": "Broadway & Dartmouth Pnr",
+        "stop_name": "Broadway & Dartmouth Pnr"
+      },
+      {
+        "stop_key": "Broadway & Regent Dr",
+        "stop_name": "Broadway & Regent Dr"
+      },
+      {
+        "stop_key": "Downtown Boulder Station (Ar)",
+        "stop_name": "Downtown Boulder Station (Ar)"
+      },
+      {
+        "stop_key": "Park Ave W & Delgany St",
+        "stop_name": "Park Ave W & Delgany St"
+      }
+    ]
+  },
+  {
+    "route_id": "GS",
+    "route_long_name": "Bus [GS] Golden / Boulder",
+    "route_short_name": "Gs",
+    "route_color": "64A70B",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Federal Center Station",
+        "stop_name": "Federal Center Station"
+      },
+      {
+        "stop_key": "Union Blvd & W 4th Ave",
+        "stop_name": "Union Blvd & W 4th Ave"
+      },
+      {
+        "stop_key": "Simms St & W 6th Ave North Frontage Rd",
+        "stop_name": "Simms St & W 6th Ave North Frontage Rd"
+      },
+      {
+        "stop_key": "Simms St & W Collins Ave",
+        "stop_name": "Simms St & W Collins Ave"
+      },
+      {
+        "stop_key": "W Colfax Ave & Simms St",
+        "stop_name": "W Colfax Ave & Simms St"
+      },
+      {
+        "stop_key": "W Colfax Ave & Welch St",
+        "stop_name": "W Colfax Ave & Welch St"
+      },
+      {
+        "stop_key": "W Colfax Ave & Youngfield St",
+        "stop_name": "W Colfax Ave & Youngfield St"
+      },
+      {
+        "stop_key": "W Colfax Ave & Cole Blvd",
+        "stop_name": "W Colfax Ave & Cole Blvd"
+      },
+      {
+        "stop_key": "W Colfax Ave & Denver West Blvd",
+        "stop_name": "W Colfax Ave & Denver West Blvd"
+      },
+      {
+        "stop_key": "W Colfax Ave & Colorado Mills",
+        "stop_name": "W Colfax Ave & Colorado Mills"
+      },
+      {
+        "stop_key": "W Colfax Ave & Indiana St",
+        "stop_name": "W Colfax Ave & Indiana St"
+      },
+      {
+        "stop_key": "Indiana St & S Golden Rd",
+        "stop_name": "Indiana St & S Golden Rd"
+      },
+      {
+        "stop_key": "South Golden Rd & Camp George West",
+        "stop_name": "South Golden Rd & Camp George West"
+      },
+      {
+        "stop_key": "National Renewable Energy Lab",
+        "stop_name": "National Renewable Energy Lab"
+      },
+      {
+        "stop_key": "South Golden Rd & Quaker St",
+        "stop_name": "South Golden Rd & Quaker St"
+      },
+      {
+        "stop_key": "South Golden Rd & Ulysses St",
+        "stop_name": "South Golden Rd & Ulysses St"
+      },
+      {
+        "stop_key": "South Golden Rd & Lunnonhaus Dr",
+        "stop_name": "South Golden Rd & Lunnonhaus Dr"
+      },
+      {
+        "stop_key": "Ford St & 24th St",
+        "stop_name": "Ford St & 24th St"
+      },
+      {
+        "stop_key": "Washington Ave & 16th St",
+        "stop_name": "Washington Ave & 16th St"
+      },
+      {
+        "stop_key": "Washington Ave & 10th St",
+        "stop_name": "Washington Ave & 10th St"
+      },
+      {
+        "stop_key": "Washington Ave & 6th St",
+        "stop_name": "Washington Ave & 6th St"
+      },
+      {
+        "stop_key": "Washington Ave & Iowa St",
+        "stop_name": "Washington Ave & Iowa St"
+      },
+      {
+        "stop_key": "Co 93 & Pine Ridge Rd",
+        "stop_name": "Co 93 & Pine Ridge Rd"
+      },
+      {
+        "stop_key": "Co 93 & W. 58th Ave",
+        "stop_name": "Co 93 & W. 58th Ave"
+      },
+      {
+        "stop_key": "Co 93 & Co 72",
+        "stop_name": "Co 93 & Co 72"
+      },
+      {
+        "stop_key": "Co 93 & Mile Post 9",
+        "stop_name": "Co 93 & Mile Post 9"
+      },
+      {
+        "stop_key": "Co 93 & Mile Post 10",
+        "stop_name": "Co 93 & Mile Post 10"
+      },
+      {
+        "stop_key": "Co 93 & Mile Post 11",
+        "stop_name": "Co 93 & Mile Post 11"
+      },
+      {
+        "stop_key": "Co 93 & Co 128",
+        "stop_name": "Co 93 & Co 128"
+      },
+      {
+        "stop_key": "Co 93 & Eldorado Springs Rd",
+        "stop_name": "Co 93 & Eldorado Springs Rd"
+      },
+      {
+        "stop_key": "S Broadway & Darley Ave",
+        "stop_name": "S Broadway & Darley Ave"
+      },
+      {
+        "stop_key": "S Broadway & Table Mesa Dr",
+        "stop_name": "S Broadway & Table Mesa Dr"
+      },
+      {
+        "stop_key": "Broadway & Dartmouth Pnr",
+        "stop_name": "Broadway & Dartmouth Pnr"
+      },
+      {
+        "stop_key": "Broadway & Rayleigh Rd",
+        "stop_name": "Broadway & Rayleigh Rd"
+      },
+      {
+        "stop_key": "27th Way & Broadway Pnr",
+        "stop_name": "27th Way & Broadway Pnr"
+      },
+      {
+        "stop_key": "Broadway & Baseline Rd",
+        "stop_name": "Broadway & Baseline Rd"
+      },
+      {
+        "stop_key": "Broadway & Regent Dr",
+        "stop_name": "Broadway & Regent Dr"
+      },
+      {
+        "stop_key": "Broadway & Euclid Ave",
+        "stop_name": "Broadway & Euclid Ave"
+      },
+      {
+        "stop_key": "Broadway & Pleasant St",
+        "stop_name": "Broadway & Pleasant St"
+      },
+      {
+        "stop_key": "Broadway & Canyon Blvd",
+        "stop_name": "Broadway & Canyon Blvd"
+      },
+      {
+        "stop_key": "Downtown Boulder Station (Ar)",
+        "stop_name": "Downtown Boulder Station (Ar)"
+      },
+      {
+        "stop_key": "Downtown Boulder Station",
+        "stop_name": "Downtown Boulder Station"
+      },
+      {
+        "stop_key": "Broadway & University Ave",
+        "stop_name": "Broadway & University Ave"
+      },
+      {
+        "stop_key": "Broadway & College Ave",
+        "stop_name": "Broadway & College Ave"
+      },
+      {
+        "stop_key": "Broadway & 20th St",
+        "stop_name": "Broadway & 20th St"
+      },
+      {
+        "stop_key": "Broadway & 27th Way",
+        "stop_name": "Broadway & 27th Way"
+      },
+      {
+        "stop_key": "S Broadway & Dartmouth Ave",
+        "stop_name": "S Broadway & Dartmouth Ave"
+      },
+      {
+        "stop_key": "S Broadway & Greenbriar Blvd",
+        "stop_name": "S Broadway & Greenbriar Blvd"
+      },
+      {
+        "stop_key": "Co 93 & W 58th Ave",
+        "stop_name": "Co 93 & W 58th Ave"
+      },
+      {
+        "stop_key": "Washington St & Iowa St",
+        "stop_name": "Washington St & Iowa St"
+      },
+      {
+        "stop_key": "Washington St & 6th St",
+        "stop_name": "Washington St & 6th St"
+      },
+      {
+        "stop_key": "10th St & Washington Ave",
+        "stop_name": "10th St & Washington Ave"
+      },
+      {
+        "stop_key": "Ford St & 12th St",
+        "stop_name": "Ford St & 12th St"
+      },
+      {
+        "stop_key": "Ford St & 13th St",
+        "stop_name": "Ford St & 13th St"
+      },
+      {
+        "stop_key": "Jackson St & 17th St",
+        "stop_name": "Jackson St & 17th St"
+      },
+      {
+        "stop_key": "Jackson St & 24th St",
+        "stop_name": "Jackson St & 24th St"
+      },
+      {
+        "stop_key": "South Golden Rd & Johnson Rd",
+        "stop_name": "South Golden Rd & Johnson Rd"
+      },
+      {
+        "stop_key": "W Colfax Ave & Colorado Mills Blvd",
+        "stop_name": "W Colfax Ave & Colorado Mills Blvd"
+      },
+      {
+        "stop_key": "W Colfax Ave & Colorado Mills Pkwy",
+        "stop_name": "W Colfax Ave & Colorado Mills Pkwy"
+      },
+      {
+        "stop_key": "W Colfax Ave & Hawthorne Rd",
+        "stop_name": "W Colfax Ave & Hawthorne Rd"
+      },
+      {
+        "stop_key": "Simms St & W Colfax Ave",
+        "stop_name": "Simms St & W Colfax Ave"
+      },
+      {
+        "stop_key": "Simms St & W Katherine Ave",
+        "stop_name": "Simms St & W Katherine Ave"
+      },
+      {
+        "stop_key": "Simms St & W 8th Ave",
+        "stop_name": "Simms St & W 8th Ave"
+      }
+    ]
+  }
+]

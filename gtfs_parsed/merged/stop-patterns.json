@@ -1,0 +1,2027 @@
+{
+  "Littleton / Mineral Ave Station": [
+    "p_rtd_1",
+    "p_rtd_2",
+    "p_rtd_3"
+  ],
+  "Littleton / Downtown Station": [
+    "p_rtd_1",
+    "p_rtd_2",
+    "p_rtd_3"
+  ],
+  "Oxford - City Of Sheridan Station": [
+    "p_rtd_1",
+    "p_rtd_2",
+    "p_rtd_3"
+  ],
+  "Englewood Station": [
+    "p_rtd_1",
+    "p_rtd_2",
+    "p_rtd_3"
+  ],
+  "Evans Station": [
+    "p_rtd_1",
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_8"
+  ],
+  "I-25 & Broadway Station": [
+    "p_rtd_1",
+    "p_rtd_3",
+    "p_rtd_4",
+    "p_rtd_5",
+    "p_rtd_7",
+    "p_rtd_9",
+    "p_rtd_10"
+  ],
+  "Alameda Station": [
+    "p_rtd_1",
+    "p_rtd_3",
+    "p_rtd_4",
+    "p_rtd_5",
+    "p_rtd_7"
+  ],
+  "10th & Osage Station": [
+    "p_rtd_1",
+    "p_rtd_3",
+    "p_rtd_4",
+    "p_rtd_5",
+    "p_rtd_7"
+  ],
+  "Auraria West Station": [
+    "p_rtd_1",
+    "p_rtd_3",
+    "p_rtd_4",
+    "p_rtd_5",
+    "p_rtd_7",
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Empower Field At Mile High Station": [
+    "p_rtd_1",
+    "p_rtd_3",
+    "p_rtd_4",
+    "p_rtd_5",
+    "p_rtd_7",
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14"
+  ],
+  "Ball Arena / Elitch Gardens Station": [
+    "p_rtd_1",
+    "p_rtd_3",
+    "p_rtd_4",
+    "p_rtd_5",
+    "p_rtd_7",
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14"
+  ],
+  "Union Station (Light Rail)": [
+    "p_rtd_1",
+    "p_rtd_3",
+    "p_rtd_4",
+    "p_rtd_5",
+    "p_rtd_7",
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14"
+  ],
+  "Ridgegate Parkway Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_16",
+    "p_rtd_18"
+  ],
+  "Lone Tree City Center Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_16",
+    "p_rtd_18"
+  ],
+  "Sky Ridge Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_16",
+    "p_rtd_18"
+  ],
+  "Lincoln Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10",
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "County Line Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10",
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Dry Creek Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10",
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Arapahoe At Village Center Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10",
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Orchard Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10",
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Belleview Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10",
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Southmoor Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10"
+  ],
+  "Yale Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10"
+  ],
+  "Colorado Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10"
+  ],
+  "University Of Denver Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10"
+  ],
+  "Louisiana & Pearl Station": [
+    "p_rtd_4",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_10"
+  ],
+  "Jeffco Government Center Station": [
+    "p_rtd_11",
+    "p_rtd_13",
+    "p_rtd_15"
+  ],
+  "Red Rocks Community College Station": [
+    "p_rtd_11",
+    "p_rtd_13",
+    "p_rtd_15"
+  ],
+  "Federal Center Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15",
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Oak Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Garrison Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Wadsworth Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Lamar Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Sheridan Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Perry Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Knox Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Decatur / Federal Station": [
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_15"
+  ],
+  "Dayton Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Nine Mile Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Iliff Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Florida Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Aurora Metro Center Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "2nd & Abilene Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "13th Ave Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Colfax Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Fitzsimons Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18"
+  ],
+  "Peoria Station": [
+    "p_rtd_16",
+    "p_rtd_17",
+    "p_rtd_18",
+    "p_rtd_25",
+    "p_rtd_26"
+  ],
+  "Westminster Station": [
+    "p_rtd_19",
+    "p_rtd_20"
+  ],
+  "Pecos Junction Station": [
+    "p_rtd_19",
+    "p_rtd_20",
+    "p_rtd_21",
+    "p_rtd_22"
+  ],
+  "41st & Fox Station": [
+    "p_rtd_19",
+    "p_rtd_20",
+    "p_rtd_21",
+    "p_rtd_22"
+  ],
+  "Union Station (Heavy Rail)": [
+    "p_rtd_19",
+    "p_rtd_20",
+    "p_rtd_21",
+    "p_rtd_22",
+    "p_rtd_23",
+    "p_rtd_24",
+    "p_rtd_25",
+    "p_rtd_26"
+  ],
+  "Wheat Ridge - Ward Station": [
+    "p_rtd_21",
+    "p_rtd_22"
+  ],
+  "Arvada Ridge Station": [
+    "p_rtd_21",
+    "p_rtd_22"
+  ],
+  "Olde Town Arvada": [
+    "p_rtd_21",
+    "p_rtd_22"
+  ],
+  "60th & Sheridan - Arvada Gold Strike Station": [
+    "p_rtd_21",
+    "p_rtd_22"
+  ],
+  "Clear Creek - Federal Station": [
+    "p_rtd_21",
+    "p_rtd_22"
+  ],
+  "48th & Brighton-National Western Station": [
+    "p_rtd_23",
+    "p_rtd_24"
+  ],
+  "Commerce City - 72nd Station": [
+    "p_rtd_23",
+    "p_rtd_24"
+  ],
+  "Original Thornton - 88th Station": [
+    "p_rtd_23",
+    "p_rtd_24"
+  ],
+  "Thornton Crossroads - 104th Station": [
+    "p_rtd_23",
+    "p_rtd_24"
+  ],
+  "Northglenn - 112th Station": [
+    "p_rtd_23",
+    "p_rtd_24"
+  ],
+  "Eastlake - 124th Station": [
+    "p_rtd_23",
+    "p_rtd_24"
+  ],
+  "38th & Blake Station": [
+    "p_rtd_25",
+    "p_rtd_26"
+  ],
+  "40th & Colorado Station": [
+    "p_rtd_25",
+    "p_rtd_26"
+  ],
+  "Central Park Station": [
+    "p_rtd_25",
+    "p_rtd_26"
+  ],
+  "40th Ave & Airport Blvd - Gateway Park Station": [
+    "p_rtd_25",
+    "p_rtd_26"
+  ],
+  "61st & Pena Station": [
+    "p_rtd_25",
+    "p_rtd_26"
+  ],
+  "Denver Airport Station": [
+    "p_rtd_25",
+    "p_rtd_26"
+  ],
+  "Downtown Boulder Station": [
+    "p_rtd_27",
+    "p_rtd_29",
+    "p_rtd_31",
+    "p_rtd_32",
+    "p_rtd_36"
+  ],
+  "Broadway & Euclid Ave": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30",
+    "p_rtd_31",
+    "p_rtd_32",
+    "p_rtd_33",
+    "p_rtd_34",
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Broadway & 20th St": [
+    "p_rtd_27",
+    "p_rtd_29",
+    "p_rtd_31",
+    "p_rtd_32",
+    "p_rtd_36"
+  ],
+  "Broadway & Baseline Rd": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30",
+    "p_rtd_31",
+    "p_rtd_32",
+    "p_rtd_33",
+    "p_rtd_34",
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "S Broadway & Dartmouth Ave": [
+    "p_rtd_27",
+    "p_rtd_29",
+    "p_rtd_31",
+    "p_rtd_32",
+    "p_rtd_36"
+  ],
+  "Table Mesa Dr & 39th St": [
+    "p_rtd_27",
+    "p_rtd_29",
+    "p_rtd_31",
+    "p_rtd_32"
+  ],
+  "US 36 & Table Mesa Station": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30",
+    "p_rtd_31",
+    "p_rtd_32",
+    "p_rtd_33",
+    "p_rtd_34"
+  ],
+  "US 36 & Mccaslin Station": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30",
+    "p_rtd_31",
+    "p_rtd_32",
+    "p_rtd_33",
+    "p_rtd_34"
+  ],
+  "US 36 & Flatiron Station": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30"
+  ],
+  "US 36 & Broomfield Station": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30"
+  ],
+  "US 36 & Church Ranch Station": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30"
+  ],
+  "US 36 & Sheridan Station": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30"
+  ],
+  "Park Ave West & Wewatta St": [
+    "p_rtd_27",
+    "p_rtd_32"
+  ],
+  "Union Station (Bus)": [
+    "p_rtd_27",
+    "p_rtd_28",
+    "p_rtd_29",
+    "p_rtd_30",
+    "p_rtd_31",
+    "p_rtd_32",
+    "p_rtd_33",
+    "p_rtd_34"
+  ],
+  "S Broadway & Table Mesa Dr": [
+    "p_rtd_28",
+    "p_rtd_30",
+    "p_rtd_33",
+    "p_rtd_34",
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Broadway & Dartmouth Pnr": [
+    "p_rtd_28",
+    "p_rtd_30",
+    "p_rtd_33",
+    "p_rtd_34",
+    "p_rtd_35"
+  ],
+  "Broadway & Regent Dr": [
+    "p_rtd_28",
+    "p_rtd_30",
+    "p_rtd_33",
+    "p_rtd_34",
+    "p_rtd_35"
+  ],
+  "Downtown Boulder Station (Ar)": [
+    "p_rtd_28",
+    "p_rtd_30",
+    "p_rtd_33",
+    "p_rtd_34",
+    "p_rtd_35"
+  ],
+  "Park Ave W & Delgany St": [
+    "p_rtd_30",
+    "p_rtd_34"
+  ],
+  "Union Blvd & W 4th Ave": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Simms St & W 6th Ave North Frontage Rd": [
+    "p_rtd_35"
+  ],
+  "Simms St & W Collins Ave": [
+    "p_rtd_35"
+  ],
+  "W Colfax Ave & Simms St": [
+    "p_rtd_35"
+  ],
+  "W Colfax Ave & Welch St": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "W Colfax Ave & Youngfield St": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "W Colfax Ave & Cole Blvd": [
+    "p_rtd_35"
+  ],
+  "W Colfax Ave & Denver West Blvd": [
+    "p_rtd_35"
+  ],
+  "W Colfax Ave & Colorado Mills": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "W Colfax Ave & Indiana St": [
+    "p_rtd_35"
+  ],
+  "Indiana St & S Golden Rd": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "South Golden Rd & Camp George West": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "National Renewable Energy Lab": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "South Golden Rd & Quaker St": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "South Golden Rd & Ulysses St": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "South Golden Rd & Lunnonhaus Dr": [
+    "p_rtd_35"
+  ],
+  "Ford St & 24th St": [
+    "p_rtd_35"
+  ],
+  "Washington Ave & 16th St": [
+    "p_rtd_35"
+  ],
+  "Washington Ave & 10th St": [
+    "p_rtd_35"
+  ],
+  "Washington Ave & 6th St": [
+    "p_rtd_35"
+  ],
+  "Washington Ave & Iowa St": [
+    "p_rtd_35"
+  ],
+  "Co 93 & Pine Ridge Rd": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Co 93 & W. 58th Ave": [
+    "p_rtd_35"
+  ],
+  "Co 93 & Co 72": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Co 93 & Mile Post 9": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Co 93 & Mile Post 10": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Co 93 & Mile Post 11": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Co 93 & Co 128": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Co 93 & Eldorado Springs Rd": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "S Broadway & Darley Ave": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Broadway & Rayleigh Rd": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "27th Way & Broadway Pnr": [
+    "p_rtd_35"
+  ],
+  "Broadway & Pleasant St": [
+    "p_rtd_35"
+  ],
+  "Broadway & Canyon Blvd": [
+    "p_rtd_35",
+    "p_rtd_36"
+  ],
+  "Broadway & University Ave": [
+    "p_rtd_36"
+  ],
+  "Broadway & College Ave": [
+    "p_rtd_36"
+  ],
+  "Broadway & 27th Way": [
+    "p_rtd_36"
+  ],
+  "S Broadway & Greenbriar Blvd": [
+    "p_rtd_36"
+  ],
+  "Co 93 & W 58th Ave": [
+    "p_rtd_36"
+  ],
+  "Washington St & Iowa St": [
+    "p_rtd_36"
+  ],
+  "Washington St & 6th St": [
+    "p_rtd_36"
+  ],
+  "10th St & Washington Ave": [
+    "p_rtd_36"
+  ],
+  "Ford St & 12th St": [
+    "p_rtd_36"
+  ],
+  "Ford St & 13th St": [
+    "p_rtd_36"
+  ],
+  "Jackson St & 17th St": [
+    "p_rtd_36"
+  ],
+  "Jackson St & 24th St": [
+    "p_rtd_36"
+  ],
+  "South Golden Rd & Johnson Rd": [
+    "p_rtd_36"
+  ],
+  "W Colfax Ave & Colorado Mills Blvd": [
+    "p_rtd_36"
+  ],
+  "W Colfax Ave & Colorado Mills Pkwy": [
+    "p_rtd_36"
+  ],
+  "W Colfax Ave & Hawthorne Rd": [
+    "p_rtd_36"
+  ],
+  "Simms St & W Colfax Ave": [
+    "p_rtd_36"
+  ],
+  "Simms St & W Katherine Ave": [
+    "p_rtd_36"
+  ],
+  "Simms St & W 8th Ave": [
+    "p_rtd_36"
+  ],
+  "CSU Transit Center": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_3",
+    "p_transfort_4",
+    "p_transfort_8",
+    "p_transfort_9",
+    "p_transfort_10",
+    "p_transfort_11",
+    "p_transfort_20",
+    "p_transfort_21",
+    "p_transfort_30",
+    "p_transfort_31"
+  ],
+  "Meridian & REC Center": [
+    "p_transfort_1",
+    "p_transfort_11",
+    "p_transfort_30"
+  ],
+  "Meridian & Pitkin": [
+    "p_transfort_1",
+    "p_transfort_11"
+  ],
+  "Prospect & Whitcomb": [
+    "p_transfort_1",
+    "p_transfort_11"
+  ],
+  "Prospect & Sheely": [
+    "p_transfort_1",
+    "p_transfort_10",
+    "p_transfort_11",
+    "p_transfort_28"
+  ],
+  "Prospect & Shields": [
+    "p_transfort_1",
+    "p_transfort_28"
+  ],
+  "Prospect & Heatheridge": [
+    "p_transfort_1",
+    "p_transfort_28"
+  ],
+  "Prospect & Brentwood": [
+    "p_transfort_1"
+  ],
+  "Prospect & Taft Hill": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_28"
+  ],
+  "Prospect & Fuqua": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_28"
+  ],
+  "Prospect & Larch": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_28"
+  ],
+  "Prospect & Overland": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_28"
+  ],
+  "Overland & Wells Fargo": [
+    "p_transfort_1",
+    "p_transfort_2"
+  ],
+  "Elizabeth & Overland": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_25",
+    "p_transfort_28"
+  ],
+  "Elizabeth & Azuro": [
+    "p_transfort_1",
+    "p_transfort_2"
+  ],
+  "Elizabeth & Timber": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_28"
+  ],
+  "Elizabeth & King Soopers": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_3",
+    "p_transfort_4"
+  ],
+  "Elizabeth & Glenmoor": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_3",
+    "p_transfort_4",
+    "p_transfort_28"
+  ],
+  "Elizabeth & Skyline": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_3",
+    "p_transfort_4",
+    "p_transfort_28"
+  ],
+  "Elizabeth & Constitution": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_4"
+  ],
+  "Elizabeth & City Park": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_4"
+  ],
+  "Plum & Moby Arena (Eastbound)": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_3"
+  ],
+  "Plum & REC Center": [
+    "p_transfort_1",
+    "p_transfort_2",
+    "p_transfort_3"
+  ],
+  "Constitution & Elizabeth": [
+    "p_transfort_3",
+    "p_transfort_28"
+  ],
+  "Rams Village West": [
+    "p_transfort_3"
+  ],
+  "Rams Village East": [
+    "p_transfort_3"
+  ],
+  "Plum & Scott": [
+    "p_transfort_3"
+  ],
+  "Plum & Laurel Village": [
+    "p_transfort_4"
+  ],
+  "Plum & Moby Arena (Westbound)": [
+    "p_transfort_4"
+  ],
+  "Plum & Bluebell": [
+    "p_transfort_4",
+    "p_transfort_28"
+  ],
+  "City Park & Plum": [
+    "p_transfort_4"
+  ],
+  "Elizabeth & Taft Hill": [
+    "p_transfort_4",
+    "p_transfort_28"
+  ],
+  "Swallow Station": [
+    "p_transfort_5",
+    "p_transfort_6",
+    "p_transfort_7",
+    "p_transfort_8",
+    "p_transfort_9",
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Horsetooth & Mason": [
+    "p_transfort_5"
+  ],
+  "Horsetooth & JFK": [
+    "p_transfort_5"
+  ],
+  "Stanford & Horsetooth": [
+    "p_transfort_5"
+  ],
+  "Stanford & Monroe": [
+    "p_transfort_5"
+  ],
+  "Swallow & Stanford (East)": [
+    "p_transfort_5"
+  ],
+  "Swallow & Camelot": [
+    "p_transfort_5"
+  ],
+  "Lemay & Swallow": [
+    "p_transfort_5"
+  ],
+  "Lemay & Oxford": [
+    "p_transfort_5",
+    "p_transfort_6"
+  ],
+  "Lemay & Drake": [
+    "p_transfort_5",
+    "p_transfort_6"
+  ],
+  "Lemay & Kirkwood": [
+    "p_transfort_5"
+  ],
+  "Lemay & Stuart": [
+    "p_transfort_5",
+    "p_transfort_6"
+  ],
+  "Lemay & Prospect": [
+    "p_transfort_5",
+    "p_transfort_6"
+  ],
+  "Lemay & Poudre Valley Hospital": [
+    "p_transfort_5",
+    "p_transfort_6"
+  ],
+  "Lemay & Elizabeth": [
+    "p_transfort_5"
+  ],
+  "Lemay & Poudre River Dr": [
+    "p_transfort_5"
+  ],
+  "Lemay & Magnolia": [
+    "p_transfort_5"
+  ],
+  "Lincoln & Lemay": [
+    "p_transfort_5",
+    "p_transfort_14",
+    "p_transfort_15"
+  ],
+  "Lincoln & Woodward": [
+    "p_transfort_5",
+    "p_transfort_6",
+    "p_transfort_14",
+    "p_transfort_15"
+  ],
+  "Lincoln & 1st": [
+    "p_transfort_5",
+    "p_transfort_15"
+  ],
+  "Lincoln & Willow": [
+    "p_transfort_5",
+    "p_transfort_6",
+    "p_transfort_14",
+    "p_transfort_15"
+  ],
+  "Jefferson & Linden": [
+    "p_transfort_5",
+    "p_transfort_6",
+    "p_transfort_14"
+  ],
+  "Downtown Transit Center": [
+    "p_transfort_5",
+    "p_transfort_6",
+    "p_transfort_12",
+    "p_transfort_13",
+    "p_transfort_14",
+    "p_transfort_15",
+    "p_transfort_18",
+    "p_transfort_19",
+    "p_transfort_22",
+    "p_transfort_23",
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Lincoln & 2nd": [
+    "p_transfort_6",
+    "p_transfort_14"
+  ],
+  "Lincoln & Lemay (West)": [
+    "p_transfort_6",
+    "p_transfort_14"
+  ],
+  "Lemay & Woodward": [
+    "p_transfort_6"
+  ],
+  "Lemay & Mulberry": [
+    "p_transfort_6"
+  ],
+  "Lemay & Pennock": [
+    "p_transfort_6"
+  ],
+  "Lemay & Columbia": [
+    "p_transfort_6"
+  ],
+  "Swallow & Lemay": [
+    "p_transfort_6",
+    "p_transfort_7"
+  ],
+  "Swallow & Stover": [
+    "p_transfort_6",
+    "p_transfort_7"
+  ],
+  "Swallow & Stanford": [
+    "p_transfort_6",
+    "p_transfort_7"
+  ],
+  "Swallow & College": [
+    "p_transfort_6",
+    "p_transfort_7"
+  ],
+  "Horsetooth & Meadowlark": [
+    "p_transfort_8"
+  ],
+  "Horsetooth & Colony": [
+    "p_transfort_8"
+  ],
+  "Horsetooth & Windmill (West)": [
+    "p_transfort_8"
+  ],
+  "Horsetooth & Shields": [
+    "p_transfort_8"
+  ],
+  "Horsetooth & Seneca": [
+    "p_transfort_8"
+  ],
+  "Horsetooth & Dunbar": [
+    "p_transfort_8"
+  ],
+  "Taft Hill & Horsetooth": [
+    "p_transfort_8"
+  ],
+  "Taft Hill & Devonshire": [
+    "p_transfort_8"
+  ],
+  "Taft Hill & Fisch": [
+    "p_transfort_8"
+  ],
+  "Taft Hill & Drake": [
+    "p_transfort_8"
+  ],
+  "Taft Hill & Manchester": [
+    "p_transfort_8",
+    "p_transfort_9"
+  ],
+  "Taft Hill & Stuart": [
+    "p_transfort_8"
+  ],
+  "Taft Hill & Prospect (South)": [
+    "p_transfort_8"
+  ],
+  "Taft Hill & Clearview": [
+    "p_transfort_8"
+  ],
+  "Taft Hill & Elizabeth": [
+    "p_transfort_8",
+    "p_transfort_9"
+  ],
+  "Taft Hill & Raven View": [
+    "p_transfort_8"
+  ],
+  "Mulberry & Taft Hill": [
+    "p_transfort_8"
+  ],
+  "Mulberry & Cook": [
+    "p_transfort_8"
+  ],
+  "Mulberry & City Park": [
+    "p_transfort_8",
+    "p_transfort_9"
+  ],
+  "Mulberry & Shields": [
+    "p_transfort_8"
+  ],
+  "Mulberry & Washington": [
+    "p_transfort_8",
+    "p_transfort_9"
+  ],
+  "Meldrum & Mulberry": [
+    "p_transfort_8"
+  ],
+  "Meldrum & Myrtle (South)": [
+    "p_transfort_9"
+  ],
+  "Mulberry & Meldrum": [
+    "p_transfort_9"
+  ],
+  "Mulberry & Scott": [
+    "p_transfort_9"
+  ],
+  "Mulberry & Bryan": [
+    "p_transfort_9"
+  ],
+  "Taft Hill & Mulberry": [
+    "p_transfort_9"
+  ],
+  "Taft Hill & Orchard": [
+    "p_transfort_9"
+  ],
+  "Taft Hill & Prospect": [
+    "p_transfort_9"
+  ],
+  "Taft Hill & Blevins": [
+    "p_transfort_9"
+  ],
+  "Taft Hill & Valley Forge": [
+    "p_transfort_9"
+  ],
+  "Drake & Taft Hill": [
+    "p_transfort_9"
+  ],
+  "Drake & Constitution": [
+    "p_transfort_9"
+  ],
+  "Drake & Dunbar": [
+    "p_transfort_9"
+  ],
+  "Drake & Raintree": [
+    "p_transfort_9"
+  ],
+  "Drake & Shields": [
+    "p_transfort_9",
+    "p_transfort_11"
+  ],
+  "Drake & Davidson": [
+    "p_transfort_9",
+    "p_transfort_10",
+    "p_transfort_11"
+  ],
+  "Drake & Worthington": [
+    "p_transfort_9",
+    "p_transfort_10",
+    "p_transfort_11"
+  ],
+  "Drake & Meadowlark": [
+    "p_transfort_9",
+    "p_transfort_11"
+  ],
+  "Kansas & Limon": [
+    "p_transfort_10",
+    "p_transfort_11"
+  ],
+  "Custer & Illinois": [
+    "p_transfort_10"
+  ],
+  "Drake & Timberline": [
+    "p_transfort_10"
+  ],
+  "Drake & Power Trail": [
+    "p_transfort_10"
+  ],
+  "Drake & Eastwood": [
+    "p_transfort_10"
+  ],
+  "Drake & Brookwood": [
+    "p_transfort_10"
+  ],
+  "Drake & Lemay": [
+    "p_transfort_10",
+    "p_transfort_11"
+  ],
+  "Drake & Governors Park": [
+    "p_transfort_10"
+  ],
+  "Drake & Stover": [
+    "p_transfort_10"
+  ],
+  "Drake & Tulane (West)": [
+    "p_transfort_10"
+  ],
+  "Drake & College (Westbound)": [
+    "p_transfort_10"
+  ],
+  "Drake & MAX Guideway (Westbound)": [
+    "p_transfort_10"
+  ],
+  "Drake & CSU Vet School": [
+    "p_transfort_10"
+  ],
+  "Drake & Research": [
+    "p_transfort_10"
+  ],
+  "Raintree & Drake": [
+    "p_transfort_10"
+  ],
+  "Raintree & Senior Center": [
+    "p_transfort_10"
+  ],
+  "Shields & Centre": [
+    "p_transfort_10",
+    "p_transfort_20"
+  ],
+  "Shields & Rolland Moore": [
+    "p_transfort_10",
+    "p_transfort_20"
+  ],
+  "Shields & Hill Pond": [
+    "p_transfort_10",
+    "p_transfort_20"
+  ],
+  "Shields & Stuart": [
+    "p_transfort_10",
+    "p_transfort_11",
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Meridian & Lake": [
+    "p_transfort_10"
+  ],
+  "Meridian & University": [
+    "p_transfort_10"
+  ],
+  "Shields & Prospect": [
+    "p_transfort_11",
+    "p_transfort_21"
+  ],
+  "Shields & Shire": [
+    "p_transfort_11",
+    "p_transfort_21"
+  ],
+  "Shields & Raintree": [
+    "p_transfort_11",
+    "p_transfort_21"
+  ],
+  "Drake & Redwing": [
+    "p_transfort_11"
+  ],
+  "Drake & MAX Guideway (Eastbound)": [
+    "p_transfort_11"
+  ],
+  "Drake & College (Eastbound)": [
+    "p_transfort_11"
+  ],
+  "Drake & Stanford": [
+    "p_transfort_11"
+  ],
+  "Drake & Scotch Pines": [
+    "p_transfort_11"
+  ],
+  "Drake & Edinburgh": [
+    "p_transfort_11"
+  ],
+  "Drake & Dorado": [
+    "p_transfort_11"
+  ],
+  "Drake & Parklake": [
+    "p_transfort_11"
+  ],
+  "Drake & Illinois": [
+    "p_transfort_11"
+  ],
+  "Drake & Kansas": [
+    "p_transfort_11"
+  ],
+  "Willow & College": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "Linden & Bridge": [
+    "p_transfort_12"
+  ],
+  "Linden & Vine": [
+    "p_transfort_12"
+  ],
+  "Redwood & Cajetan": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "Conifer & Redwood": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "Blue Spruce & Conifer": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "Blue Spruce & Bristlecone": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "Blue Spruce & Butch Cassidy": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "Willox & Blue Spruce": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "College & Willox": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "Poudre Valley Mobile Home Park": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "College & Willox (North)": [
+    "p_transfort_12"
+  ],
+  "College & Willox (South)": [
+    "p_transfort_12"
+  ],
+  "College & Bristlecone": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "College & Conifer": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "College & Alpine": [
+    "p_transfort_12"
+  ],
+  "College & Poudre River Trail": [
+    "p_transfort_12",
+    "p_transfort_22"
+  ],
+  "Cherry & Loomis": [
+    "p_transfort_13"
+  ],
+  "Wood & Cherry": [
+    "p_transfort_13"
+  ],
+  "Wood & Elm": [
+    "p_transfort_13"
+  ],
+  "Vine & Wood": [
+    "p_transfort_13"
+  ],
+  "Vine & Hanna (West)": [
+    "p_transfort_13"
+  ],
+  "Lincoln Middle School": [
+    "p_transfort_13"
+  ],
+  "Lancer & Vine (North)": [
+    "p_transfort_13"
+  ],
+  "Vine & Taft Hill": [
+    "p_transfort_13"
+  ],
+  "Vine & Irish": [
+    "p_transfort_13"
+  ],
+  "Vine & Sunset": [
+    "p_transfort_13"
+  ],
+  "Vine & Hollywood": [
+    "p_transfort_13"
+  ],
+  "Overland & Vine": [
+    "p_transfort_13"
+  ],
+  "Overland & High": [
+    "p_transfort_13"
+  ],
+  "Laporte & Overland": [
+    "p_transfort_13"
+  ],
+  "Laporte & Hollywood": [
+    "p_transfort_13"
+  ],
+  "Laporte & Sunset": [
+    "p_transfort_13"
+  ],
+  "Laporte & Impala": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Laporte & Grandview": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Laporte & Bryan": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Laporte & Lyons": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Laporte & Jamith": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Laporte & Shields": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Laporte & Washington": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Laporte & Loomis": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Laporte & Sherwood": [
+    "p_transfort_13",
+    "p_transfort_23"
+  ],
+  "Lincoln & Link Lane": [
+    "p_transfort_14",
+    "p_transfort_15"
+  ],
+  "Lincoln & Lincoln Ct": [
+    "p_transfort_14",
+    "p_transfort_15"
+  ],
+  "Lincoln & Airpark": [
+    "p_transfort_14",
+    "p_transfort_15"
+  ],
+  "Lincoln & Airway": [
+    "p_transfort_14",
+    "p_transfort_15"
+  ],
+  "Highway 14 & Timberline": [
+    "p_transfort_14"
+  ],
+  "South Frontage & Summit View": [
+    "p_transfort_14"
+  ],
+  "South Frontage & Dawn": [
+    "p_transfort_14"
+  ],
+  "Centro & North Frontage": [
+    "p_transfort_14",
+    "p_transfort_15"
+  ],
+  "Vine & Waterglen": [
+    "p_transfort_15"
+  ],
+  "Vine & Campfire": [
+    "p_transfort_15"
+  ],
+  "Vine & Three Forks": [
+    "p_transfort_15"
+  ],
+  "Timberline & Vine": [
+    "p_transfort_15"
+  ],
+  "Timberline & Annabel": [
+    "p_transfort_15"
+  ],
+  "Timberline & Donella": [
+    "p_transfort_15"
+  ],
+  "Lincoln & Lemay (East)": [
+    "p_transfort_15"
+  ],
+  "Mountain & Old Town Square": [
+    "p_transfort_15"
+  ],
+  "South Transit Center": [
+    "p_transfort_16",
+    "p_transfort_17",
+    "p_transfort_20",
+    "p_transfort_21",
+    "p_transfort_26",
+    "p_transfort_27",
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Harmony & College": [
+    "p_transfort_16"
+  ],
+  "Harmony & Boardwalk (West)": [
+    "p_transfort_16"
+  ],
+  "Harmony & Lemay (West)": [
+    "p_transfort_16"
+  ],
+  "Harmony & Wheaton (East)": [
+    "p_transfort_16"
+  ],
+  "Harmony & Delany": [
+    "p_transfort_16"
+  ],
+  "Harmony & UC Health Harmony Campus": [
+    "p_transfort_16"
+  ],
+  "Harmony & Snow Mesa": [
+    "p_transfort_16",
+    "p_transfort_17"
+  ],
+  "Harmony & Corbett (Eastbound)": [
+    "p_transfort_16"
+  ],
+  "Ziegler & Harmony": [
+    "p_transfort_16"
+  ],
+  "Rock Creek & Ziegler": [
+    "p_transfort_16"
+  ],
+  "Rock Creek & Fossil Ridge HS": [
+    "p_transfort_16"
+  ],
+  "Lady Moon & Rock Creek": [
+    "p_transfort_16"
+  ],
+  "Lady Moon & Harmony": [
+    "p_transfort_16"
+  ],
+  "Harmony & Lady Moon": [
+    "p_transfort_16"
+  ],
+  "Harmony Transfer Center": [
+    "p_transfort_16",
+    "p_transfort_17"
+  ],
+  "Harmony & Technology": [
+    "p_transfort_17"
+  ],
+  "Harmony & Ziegler": [
+    "p_transfort_17"
+  ],
+  "Harmony & Corbett": [
+    "p_transfort_17"
+  ],
+  "Harmony & Timberline (East)": [
+    "p_transfort_17"
+  ],
+  "Harmony & Timberline (West)": [
+    "p_transfort_17"
+  ],
+  "Harmony & Innovation": [
+    "p_transfort_17"
+  ],
+  "Harmony & Mcmurry (West)": [
+    "p_transfort_17"
+  ],
+  "Harmony & Lemay": [
+    "p_transfort_17"
+  ],
+  "Harmony & Boardwalk": [
+    "p_transfort_17"
+  ],
+  "College & Harmony (South)": [
+    "p_transfort_17",
+    "p_transfort_21"
+  ],
+  "Prospect Pkwy & Midpoint": [
+    "p_transfort_18",
+    "p_transfort_19"
+  ],
+  "Prospect & Academy": [
+    "p_transfort_18"
+  ],
+  "Prospect & Riverside": [
+    "p_transfort_18",
+    "p_transfort_19"
+  ],
+  "Prospect & Welch": [
+    "p_transfort_18",
+    "p_transfort_19"
+  ],
+  "Prospect & Lake": [
+    "p_transfort_18"
+  ],
+  "Stover & Prospect": [
+    "p_transfort_18"
+  ],
+  "Stover & Elizabeth": [
+    "p_transfort_18"
+  ],
+  "Whedbee & Elizabeth": [
+    "p_transfort_18"
+  ],
+  "Whedbee & Laurel": [
+    "p_transfort_18",
+    "p_transfort_19"
+  ],
+  "Whedbee & Mulberry": [
+    "p_transfort_18",
+    "p_transfort_19"
+  ],
+  "Olive & Peterson": [
+    "p_transfort_18",
+    "p_transfort_19"
+  ],
+  "Olive & Remington": [
+    "p_transfort_18",
+    "p_transfort_28",
+    "p_transfort_29"
+  ],
+  "Olive & Mason": [
+    "p_transfort_18"
+  ],
+  "Olive & Mathews": [
+    "p_transfort_19"
+  ],
+  "Elizabeth & Whedbee": [
+    "p_transfort_19"
+  ],
+  "Stover & Garfield": [
+    "p_transfort_19"
+  ],
+  "Prospect & Stover": [
+    "p_transfort_19"
+  ],
+  "Prospect & Robertson": [
+    "p_transfort_19"
+  ],
+  "Prospect & Lemay": [
+    "p_transfort_19"
+  ],
+  "Prospect & Prospect Pkwy": [
+    "p_transfort_19"
+  ],
+  "Sharp Point & Prospect": [
+    "p_transfort_19"
+  ],
+  "Sharp Point & March": [
+    "p_transfort_19"
+  ],
+  "Midpoint & Larimer County": [
+    "p_transfort_19"
+  ],
+  "Midpoint & Prospect Pkwy": [
+    "p_transfort_19"
+  ],
+  "Harmony & Mason": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Harmony & Larkbunting": [
+    "p_transfort_20"
+  ],
+  "Harmony & Hinsdale": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Harmony & Starflower": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Shields & Harmony": [
+    "p_transfort_20"
+  ],
+  "Shields & Troutman": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Shields & Wabash": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Shields & Horsetooth": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Shields & Casa Grande": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Shields & Swallow": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Shields & Drake": [
+    "p_transfort_20",
+    "p_transfort_21"
+  ],
+  "Shields & Lake": [
+    "p_transfort_20"
+  ],
+  "Shields & Elizabeth": [
+    "p_transfort_20",
+    "p_transfort_30"
+  ],
+  "Laurel & Shields": [
+    "p_transfort_20"
+  ],
+  "Laurel & Washington": [
+    "p_transfort_20",
+    "p_transfort_21",
+    "p_transfort_28",
+    "p_transfort_29"
+  ],
+  "Shields & University": [
+    "p_transfort_21"
+  ],
+  "Shields & Springfield": [
+    "p_transfort_21"
+  ],
+  "Shields & Rocky Mountain": [
+    "p_transfort_21"
+  ],
+  "Harmony & Shields": [
+    "p_transfort_21"
+  ],
+  "College & Vine": [
+    "p_transfort_22"
+  ],
+  "College & Conifer (North)": [
+    "p_transfort_22"
+  ],
+  "Linden & Linden Center": [
+    "p_transfort_22"
+  ],
+  "Linden & Willow": [
+    "p_transfort_22"
+  ],
+  "Laporte & Howes": [
+    "p_transfort_23"
+  ],
+  "Laporte & Wood": [
+    "p_transfort_23"
+  ],
+  "Laporte & Mckinley": [
+    "p_transfort_23"
+  ],
+  "Laporte & Fishback": [
+    "p_transfort_23"
+  ],
+  "Laporte & Forney": [
+    "p_transfort_23"
+  ],
+  "Laporte & Taft Hill": [
+    "p_transfort_23"
+  ],
+  "Lake & Mason (Lot #575)": [
+    "p_transfort_24"
+  ],
+  "Lake & Centre": [
+    "p_transfort_24",
+    "p_transfort_31"
+  ],
+  "Canvas Stadium": [
+    "p_transfort_24"
+  ],
+  "Pitkin & Meridian": [
+    "p_transfort_24",
+    "p_transfort_30"
+  ],
+  "Lake & Meridian": [
+    "p_transfort_24"
+  ],
+  "Lake & Centre (Lot #573)": [
+    "p_transfort_24"
+  ],
+  "Equine Center": [
+    "p_transfort_25"
+  ],
+  "Laporte & Forest Service": [
+    "p_transfort_25"
+  ],
+  "CSU - Engineering Research Center": [
+    "p_transfort_25"
+  ],
+  "CSU - Atmospheric Science": [
+    "p_transfort_25"
+  ],
+  "Rampart & Equine": [
+    "p_transfort_25"
+  ],
+  "Rampart & Arbl": [
+    "p_transfort_25"
+  ],
+  "CSU - Judson Harper Complex": [
+    "p_transfort_25"
+  ],
+  "College & Cameron": [
+    "p_transfort_26"
+  ],
+  "College & Skyway": [
+    "p_transfort_26",
+    "p_transfort_27"
+  ],
+  "College & Trilby": [
+    "p_transfort_26",
+    "p_transfort_27"
+  ],
+  "US 287 & Carpenter": [
+    "p_transfort_26"
+  ],
+  "65th & US 287": [
+    "p_transfort_26"
+  ],
+  "Loveland North Transit Center (NTC)": [
+    "p_transfort_26",
+    "p_transfort_27"
+  ],
+  "Cleveland & 8th": [
+    "p_transfort_26"
+  ],
+  "US 287 & 14th": [
+    "p_transfort_26",
+    "p_transfort_27"
+  ],
+  "Mountain & 3rd": [
+    "p_transfort_26"
+  ],
+  "Main & 21st": [
+    "p_transfort_26",
+    "p_transfort_27"
+  ],
+  "Coffman & 8th (Roosevelt Park)": [
+    "p_transfort_26",
+    "p_transfort_27"
+  ],
+  "Hover & Village At The Peaks Mall": [
+    "p_transfort_26",
+    "p_transfort_27"
+  ],
+  "Pearl & Junction": [
+    "p_transfort_26"
+  ],
+  "Canyon & 14th (Downtown Boulder Station Gate K)": [
+    "p_transfort_26"
+  ],
+  "18th & Euclid": [
+    "p_transfort_26",
+    "p_transfort_27"
+  ],
+  "Canyon & 15th (Downtown Boulder Station Gate L)": [
+    "p_transfort_27"
+  ],
+  "Pearl & 30th (Boulder Junction)": [
+    "p_transfort_27"
+  ],
+  "Mountain & 2nd": [
+    "p_transfort_27"
+  ],
+  "Lincoln & 8th": [
+    "p_transfort_27"
+  ],
+  "US 287 & 65th": [
+    "p_transfort_27"
+  ],
+  "US 287 & Carpenter (South)": [
+    "p_transfort_27"
+  ],
+  "College & Fossil Creek": [
+    "p_transfort_27"
+  ],
+  "Mountain & Remington": [
+    "p_transfort_28",
+    "p_transfort_29"
+  ],
+  "College & Mulberry": [
+    "p_transfort_28",
+    "p_transfort_29"
+  ],
+  "Laurel & Howes": [
+    "p_transfort_28",
+    "p_transfort_29"
+  ],
+  "Laurel & Sherwood": [
+    "p_transfort_28",
+    "p_transfort_29"
+  ],
+  "Rams Village": [
+    "p_transfort_28"
+  ],
+  "Overland & Golden Currant": [
+    "p_transfort_28"
+  ],
+  "Prospect & Underhill": [
+    "p_transfort_28"
+  ],
+  "Prospect & Foxbrook": [
+    "p_transfort_28"
+  ],
+  "Prospect & Centre": [
+    "p_transfort_28"
+  ],
+  "Prospect & Mason": [
+    "p_transfort_28"
+  ],
+  "College & Lake": [
+    "p_transfort_28"
+  ],
+  "College & Elizabeth": [
+    "p_transfort_28"
+  ],
+  "College & Laurel": [
+    "p_transfort_28"
+  ],
+  "College & Mulberry (North)": [
+    "p_transfort_28"
+  ],
+  "VTH / Tennis Center": [
+    "p_transfort_30",
+    "p_transfort_31"
+  ],
+  "Centre & Research": [
+    "p_transfort_30"
+  ],
+  "Centre & Botanical": [
+    "p_transfort_30",
+    "p_transfort_31"
+  ],
+  "Centre & Bay": [
+    "p_transfort_30",
+    "p_transfort_31"
+  ],
+  "Lake Street Garage": [
+    "p_transfort_30"
+  ],
+  "Pitkin & Libbie Coy": [
+    "p_transfort_30"
+  ],
+  "University & Mason": [
+    "p_transfort_30"
+  ],
+  "Libbie Coy & Admin": [
+    "p_transfort_30"
+  ],
+  "Oval & Ammons": [
+    "p_transfort_30"
+  ],
+  "Pitkin & Ingersoll": [
+    "p_transfort_30"
+  ],
+  "Moby Arena": [
+    "p_transfort_30",
+    "p_transfort_31"
+  ],
+  "Plum & H.E.S.": [
+    "p_transfort_31"
+  ],
+  "Tilt & Oval": [
+    "p_transfort_31"
+  ],
+  "Oval & Isotope": [
+    "p_transfort_31"
+  ],
+  "University & Libbie Coy": [
+    "p_transfort_31"
+  ],
+  "Libbie Coy & A": [
+    "p_transfort_31"
+  ],
+  "Libbie Coy & Pitkin": [
+    "p_transfort_31"
+  ],
+  "Harmony Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Troutman Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Horsetooth Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Drake Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Spring Creek Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Prospect Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "University Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Laurel Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Mulberry Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Olive Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ],
+  "Mountain Station": [
+    "p_transfort_32",
+    "p_transfort_33"
+  ]
+}

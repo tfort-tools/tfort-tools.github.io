@@ -1,0 +1,2905 @@
+[
+  {
+    "route_id": "101C",
+    "route_long_name": "Train [C] Union Station To Mineral Station",
+    "route_short_name": "C",
+    "route_color": "F79239",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Littleton / Mineral Ave Station",
+        "stop_name": "Littleton / Mineral Ave Station"
+      },
+      {
+        "stop_key": "Littleton / Downtown Station",
+        "stop_name": "Littleton / Downtown Station"
+      },
+      {
+        "stop_key": "Oxford - City Of Sheridan Station",
+        "stop_name": "Oxford - City Of Sheridan Station"
+      },
+      {
+        "stop_key": "Englewood Station",
+        "stop_name": "Englewood Station"
+      },
+      {
+        "stop_key": "Evans Station",
+        "stop_name": "Evans Station"
+      },
+      {
+        "stop_key": "I-25 & Broadway Station",
+        "stop_name": "I-25 & Broadway Station"
+      },
+      {
+        "stop_key": "Alameda Station",
+        "stop_name": "Alameda Station"
+      },
+      {
+        "stop_key": "10th & Osage Station",
+        "stop_name": "10th & Osage Station"
+      },
+      {
+        "stop_key": "Auraria West Station",
+        "stop_name": "Auraria West Station"
+      },
+      {
+        "stop_key": "Empower Field At Mile High Station",
+        "stop_name": "Empower Field At Mile High Station"
+      },
+      {
+        "stop_key": "Ball Arena / Elitch Gardens Station",
+        "stop_name": "Ball Arena / Elitch Gardens Station"
+      },
+      {
+        "stop_key": "Union Station (Light Rail)",
+        "stop_name": "Union Station (Light Rail)"
+      }
+    ]
+  },
+  {
+    "route_id": "101E",
+    "route_long_name": "Train [E] Union Station To Ridgegate Parkway Station",
+    "route_short_name": "E",
+    "route_color": "552683",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Ridgegate Parkway Station",
+        "stop_name": "Ridgegate Parkway Station"
+      },
+      {
+        "stop_key": "Lone Tree City Center Station",
+        "stop_name": "Lone Tree City Center Station"
+      },
+      {
+        "stop_key": "Sky Ridge Station",
+        "stop_name": "Sky Ridge Station"
+      },
+      {
+        "stop_key": "Lincoln Station",
+        "stop_name": "Lincoln Station"
+      },
+      {
+        "stop_key": "County Line Station",
+        "stop_name": "County Line Station"
+      },
+      {
+        "stop_key": "Dry Creek Station",
+        "stop_name": "Dry Creek Station"
+      },
+      {
+        "stop_key": "Arapahoe At Village Center Station",
+        "stop_name": "Arapahoe At Village Center Station"
+      },
+      {
+        "stop_key": "Orchard Station",
+        "stop_name": "Orchard Station"
+      },
+      {
+        "stop_key": "Belleview Station",
+        "stop_name": "Belleview Station"
+      },
+      {
+        "stop_key": "Southmoor Station",
+        "stop_name": "Southmoor Station"
+      },
+      {
+        "stop_key": "Yale Station",
+        "stop_name": "Yale Station"
+      },
+      {
+        "stop_key": "Colorado Station",
+        "stop_name": "Colorado Station"
+      },
+      {
+        "stop_key": "University Of Denver Station",
+        "stop_name": "University Of Denver Station"
+      },
+      {
+        "stop_key": "Louisiana & Pearl Station",
+        "stop_name": "Louisiana & Pearl Station"
+      },
+      {
+        "stop_key": "I-25 & Broadway Station",
+        "stop_name": "I-25 & Broadway Station"
+      },
+      {
+        "stop_key": "Alameda Station",
+        "stop_name": "Alameda Station"
+      },
+      {
+        "stop_key": "10th & Osage Station",
+        "stop_name": "10th & Osage Station"
+      },
+      {
+        "stop_key": "Auraria West Station",
+        "stop_name": "Auraria West Station"
+      },
+      {
+        "stop_key": "Empower Field At Mile High Station",
+        "stop_name": "Empower Field At Mile High Station"
+      },
+      {
+        "stop_key": "Ball Arena / Elitch Gardens Station",
+        "stop_name": "Ball Arena / Elitch Gardens Station"
+      },
+      {
+        "stop_key": "Union Station (Light Rail)",
+        "stop_name": "Union Station (Light Rail)"
+      },
+      {
+        "stop_key": "Evans Station",
+        "stop_name": "Evans Station"
+      }
+    ]
+  },
+  {
+    "route_id": "101T",
+    "route_long_name": "Train [T] Lincoln Station To I-25/Broadway Station",
+    "route_short_name": "T",
+    "route_color": "B71318",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Lincoln Station",
+        "stop_name": "Lincoln Station"
+      },
+      {
+        "stop_key": "County Line Station",
+        "stop_name": "County Line Station"
+      },
+      {
+        "stop_key": "Dry Creek Station",
+        "stop_name": "Dry Creek Station"
+      },
+      {
+        "stop_key": "Arapahoe At Village Center Station",
+        "stop_name": "Arapahoe At Village Center Station"
+      },
+      {
+        "stop_key": "Orchard Station",
+        "stop_name": "Orchard Station"
+      },
+      {
+        "stop_key": "Belleview Station",
+        "stop_name": "Belleview Station"
+      },
+      {
+        "stop_key": "Southmoor Station",
+        "stop_name": "Southmoor Station"
+      },
+      {
+        "stop_key": "Yale Station",
+        "stop_name": "Yale Station"
+      },
+      {
+        "stop_key": "Colorado Station",
+        "stop_name": "Colorado Station"
+      },
+      {
+        "stop_key": "University Of Denver Station",
+        "stop_name": "University Of Denver Station"
+      },
+      {
+        "stop_key": "Louisiana & Pearl Station",
+        "stop_name": "Louisiana & Pearl Station"
+      },
+      {
+        "stop_key": "I-25 & Broadway Station",
+        "stop_name": "I-25 & Broadway Station"
+      }
+    ]
+  },
+  {
+    "route_id": "103W",
+    "route_long_name": "Train [W] Union Station To Jefferson County Government Center-Golden Station",
+    "route_short_name": "W",
+    "route_color": "009DAA",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Jeffco Government Center Station",
+        "stop_name": "Jeffco Government Center Station"
+      },
+      {
+        "stop_key": "Red Rocks Community College Station",
+        "stop_name": "Red Rocks Community College Station"
+      },
+      {
+        "stop_key": "Federal Center Station",
+        "stop_name": "Federal Center Station"
+      },
+      {
+        "stop_key": "Oak Station",
+        "stop_name": "Oak Station"
+      },
+      {
+        "stop_key": "Garrison Station",
+        "stop_name": "Garrison Station"
+      },
+      {
+        "stop_key": "Wadsworth Station",
+        "stop_name": "Wadsworth Station"
+      },
+      {
+        "stop_key": "Lamar Station",
+        "stop_name": "Lamar Station"
+      },
+      {
+        "stop_key": "Sheridan Station",
+        "stop_name": "Sheridan Station"
+      },
+      {
+        "stop_key": "Perry Station",
+        "stop_name": "Perry Station"
+      },
+      {
+        "stop_key": "Knox Station",
+        "stop_name": "Knox Station"
+      },
+      {
+        "stop_key": "Decatur / Federal Station",
+        "stop_name": "Decatur / Federal Station"
+      },
+      {
+        "stop_key": "Auraria West Station",
+        "stop_name": "Auraria West Station"
+      },
+      {
+        "stop_key": "Empower Field At Mile High Station",
+        "stop_name": "Empower Field At Mile High Station"
+      },
+      {
+        "stop_key": "Ball Arena / Elitch Gardens Station",
+        "stop_name": "Ball Arena / Elitch Gardens Station"
+      },
+      {
+        "stop_key": "Union Station (Light Rail)",
+        "stop_name": "Union Station (Light Rail)"
+      }
+    ]
+  },
+  {
+    "route_id": "107R",
+    "route_long_name": "Train [R] Lincoln Station To Peoria Station",
+    "route_short_name": "R",
+    "route_color": "C4D600",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Ridgegate Parkway Station",
+        "stop_name": "Ridgegate Parkway Station"
+      },
+      {
+        "stop_key": "Lone Tree City Center Station",
+        "stop_name": "Lone Tree City Center Station"
+      },
+      {
+        "stop_key": "Sky Ridge Station",
+        "stop_name": "Sky Ridge Station"
+      },
+      {
+        "stop_key": "Lincoln Station",
+        "stop_name": "Lincoln Station"
+      },
+      {
+        "stop_key": "County Line Station",
+        "stop_name": "County Line Station"
+      },
+      {
+        "stop_key": "Dry Creek Station",
+        "stop_name": "Dry Creek Station"
+      },
+      {
+        "stop_key": "Arapahoe At Village Center Station",
+        "stop_name": "Arapahoe At Village Center Station"
+      },
+      {
+        "stop_key": "Orchard Station",
+        "stop_name": "Orchard Station"
+      },
+      {
+        "stop_key": "Belleview Station",
+        "stop_name": "Belleview Station"
+      },
+      {
+        "stop_key": "Dayton Station",
+        "stop_name": "Dayton Station"
+      },
+      {
+        "stop_key": "Nine Mile Station",
+        "stop_name": "Nine Mile Station"
+      },
+      {
+        "stop_key": "Iliff Station",
+        "stop_name": "Iliff Station"
+      },
+      {
+        "stop_key": "Florida Station",
+        "stop_name": "Florida Station"
+      },
+      {
+        "stop_key": "Aurora Metro Center Station",
+        "stop_name": "Aurora Metro Center Station"
+      },
+      {
+        "stop_key": "2nd & Abilene Station",
+        "stop_name": "2nd & Abilene Station"
+      },
+      {
+        "stop_key": "13th Ave Station",
+        "stop_name": "13th Ave Station"
+      },
+      {
+        "stop_key": "Colfax Station",
+        "stop_name": "Colfax Station"
+      },
+      {
+        "stop_key": "Fitzsimons Station",
+        "stop_name": "Fitzsimons Station"
+      },
+      {
+        "stop_key": "Peoria Station",
+        "stop_name": "Peoria Station"
+      }
+    ]
+  },
+  {
+    "route_id": "113B",
+    "route_long_name": "Train [B] Union Station To Westminster Station",
+    "route_short_name": "B",
+    "route_color": "4E9D2D",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Westminster Station",
+        "stop_name": "Westminster Station"
+      },
+      {
+        "stop_key": "Pecos Junction Station",
+        "stop_name": "Pecos Junction Station"
+      },
+      {
+        "stop_key": "41st & Fox Station",
+        "stop_name": "41st & Fox Station"
+      },
+      {
+        "stop_key": "Union Station (Heavy Rail)",
+        "stop_name": "Union Station (Heavy Rail)"
+      }
+    ]
+  },
+  {
+    "route_id": "113G",
+    "route_long_name": "Train [G] Union Station To Wheat Ridge Ward Station",
+    "route_short_name": "G",
+    "route_color": "F6B221",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Wheat Ridge - Ward Station",
+        "stop_name": "Wheat Ridge - Ward Station"
+      },
+      {
+        "stop_key": "Arvada Ridge Station",
+        "stop_name": "Arvada Ridge Station"
+      },
+      {
+        "stop_key": "Olde Town Arvada",
+        "stop_name": "Olde Town Arvada"
+      },
+      {
+        "stop_key": "60th & Sheridan - Arvada Gold Strike Station",
+        "stop_name": "60th & Sheridan - Arvada Gold Strike Station"
+      },
+      {
+        "stop_key": "Clear Creek - Federal Station",
+        "stop_name": "Clear Creek - Federal Station"
+      },
+      {
+        "stop_key": "Pecos Junction Station",
+        "stop_name": "Pecos Junction Station"
+      },
+      {
+        "stop_key": "41st & Fox Station",
+        "stop_name": "41st & Fox Station"
+      },
+      {
+        "stop_key": "Union Station (Heavy Rail)",
+        "stop_name": "Union Station (Heavy Rail)"
+      }
+    ]
+  },
+  {
+    "route_id": "117N",
+    "route_long_name": "Train [N] Union Station To Eastlake & 124th Station",
+    "route_short_name": "N",
+    "route_color": "9F26B5",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Union Station (Heavy Rail)",
+        "stop_name": "Union Station (Heavy Rail)"
+      },
+      {
+        "stop_key": "48th & Brighton-National Western Station",
+        "stop_name": "48th & Brighton-National Western Station"
+      },
+      {
+        "stop_key": "Commerce City - 72nd Station",
+        "stop_name": "Commerce City - 72nd Station"
+      },
+      {
+        "stop_key": "Original Thornton - 88th Station",
+        "stop_name": "Original Thornton - 88th Station"
+      },
+      {
+        "stop_key": "Thornton Crossroads - 104th Station",
+        "stop_name": "Thornton Crossroads - 104th Station"
+      },
+      {
+        "stop_key": "Northglenn - 112th Station",
+        "stop_name": "Northglenn - 112th Station"
+      },
+      {
+        "stop_key": "Eastlake - 124th Station",
+        "stop_name": "Eastlake - 124th Station"
+      }
+    ]
+  },
+  {
+    "route_id": "A",
+    "route_long_name": "Train [A] Union Station To Denver Airport Station",
+    "route_short_name": "A",
+    "route_color": "57C1E9",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Union Station (Heavy Rail)",
+        "stop_name": "Union Station (Heavy Rail)"
+      },
+      {
+        "stop_key": "38th & Blake Station",
+        "stop_name": "38th & Blake Station"
+      },
+      {
+        "stop_key": "40th & Colorado Station",
+        "stop_name": "40th & Colorado Station"
+      },
+      {
+        "stop_key": "Central Park Station",
+        "stop_name": "Central Park Station"
+      },
+      {
+        "stop_key": "Peoria Station",
+        "stop_name": "Peoria Station"
+      },
+      {
+        "stop_key": "40th Ave & Airport Blvd - Gateway Park Station",
+        "stop_name": "40th Ave & Airport Blvd - Gateway Park Station"
+      },
+      {
+        "stop_key": "61st & Pena Station",
+        "stop_name": "61st & Pena Station"
+      },
+      {
+        "stop_key": "Denver Airport Station",
+        "stop_name": "Denver Airport Station"
+      }
+    ]
+  },
+  {
+    "route_id": "FF1",
+    "route_long_name": "Bus [FF1] Flatiron Flyer",
+    "route_short_name": "Ff1",
+    "route_color": "1E4286",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Downtown Boulder Station",
+        "stop_name": "Downtown Boulder Station"
+      },
+      {
+        "stop_key": "Broadway & Euclid Ave",
+        "stop_name": "Broadway & Euclid Ave"
+      },
+      {
+        "stop_key": "Broadway & 20th St",
+        "stop_name": "Broadway & 20th St"
+      },
+      {
+        "stop_key": "Broadway & Baseline Rd",
+        "stop_name": "Broadway & Baseline Rd"
+      },
+      {
+        "stop_key": "S Broadway & Dartmouth Ave",
+        "stop_name": "S Broadway & Dartmouth Ave"
+      },
+      {
+        "stop_key": "Table Mesa Dr & 39th St",
+        "stop_name": "Table Mesa Dr & 39th St"
+      },
+      {
+        "stop_key": "US 36 & Table Mesa Station",
+        "stop_name": "US 36 & Table Mesa Station"
+      },
+      {
+        "stop_key": "US 36 & Mccaslin Station",
+        "stop_name": "US 36 & Mccaslin Station"
+      },
+      {
+        "stop_key": "US 36 & Flatiron Station",
+        "stop_name": "US 36 & Flatiron Station"
+      },
+      {
+        "stop_key": "US 36 & Broomfield Station",
+        "stop_name": "US 36 & Broomfield Station"
+      },
+      {
+        "stop_key": "US 36 & Church Ranch Station",
+        "stop_name": "US 36 & Church Ranch Station"
+      },
+      {
+        "stop_key": "US 36 & Sheridan Station",
+        "stop_name": "US 36 & Sheridan Station"
+      },
+      {
+        "stop_key": "Park Ave West & Wewatta St",
+        "stop_name": "Park Ave West & Wewatta St"
+      },
+      {
+        "stop_key": "Union Station (Bus)",
+        "stop_name": "Union Station (Bus)"
+      },
+      {
+        "stop_key": "S Broadway & Table Mesa Dr",
+        "stop_name": "S Broadway & Table Mesa Dr"
+      },
+      {
+        "stop_key": "Broadway & Dartmouth Pnr",
+        "stop_name": "Broadway & Dartmouth Pnr"
+      },
+      {
+        "stop_key": "Broadway & Regent Dr",
+        "stop_name": "Broadway & Regent Dr"
+      },
+      {
+        "stop_key": "Downtown Boulder Station (Ar)",
+        "stop_name": "Downtown Boulder Station (Ar)"
+      },
+      {
+        "stop_key": "Park Ave W & Delgany St",
+        "stop_name": "Park Ave W & Delgany St"
+      }
+    ]
+  },
+  {
+    "route_id": "FF2",
+    "route_long_name": "Bus [FF2] Flatiron Flyer",
+    "route_short_name": "Ff2",
+    "route_color": "1E4286",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Downtown Boulder Station",
+        "stop_name": "Downtown Boulder Station"
+      },
+      {
+        "stop_key": "Broadway & Euclid Ave",
+        "stop_name": "Broadway & Euclid Ave"
+      },
+      {
+        "stop_key": "Broadway & 20th St",
+        "stop_name": "Broadway & 20th St"
+      },
+      {
+        "stop_key": "Broadway & Baseline Rd",
+        "stop_name": "Broadway & Baseline Rd"
+      },
+      {
+        "stop_key": "S Broadway & Dartmouth Ave",
+        "stop_name": "S Broadway & Dartmouth Ave"
+      },
+      {
+        "stop_key": "Table Mesa Dr & 39th St",
+        "stop_name": "Table Mesa Dr & 39th St"
+      },
+      {
+        "stop_key": "US 36 & Table Mesa Station",
+        "stop_name": "US 36 & Table Mesa Station"
+      },
+      {
+        "stop_key": "US 36 & Mccaslin Station",
+        "stop_name": "US 36 & Mccaslin Station"
+      },
+      {
+        "stop_key": "Union Station (Bus)",
+        "stop_name": "Union Station (Bus)"
+      },
+      {
+        "stop_key": "Park Ave West & Wewatta St",
+        "stop_name": "Park Ave West & Wewatta St"
+      },
+      {
+        "stop_key": "S Broadway & Table Mesa Dr",
+        "stop_name": "S Broadway & Table Mesa Dr"
+      },
+      {
+        "stop_key": "Broadway & Dartmouth Pnr",
+        "stop_name": "Broadway & Dartmouth Pnr"
+      },
+      {
+        "stop_key": "Broadway & Regent Dr",
+        "stop_name": "Broadway & Regent Dr"
+      },
+      {
+        "stop_key": "Downtown Boulder Station (Ar)",
+        "stop_name": "Downtown Boulder Station (Ar)"
+      },
+      {
+        "stop_key": "Park Ave W & Delgany St",
+        "stop_name": "Park Ave W & Delgany St"
+      }
+    ]
+  },
+  {
+    "route_id": "GS",
+    "route_long_name": "Bus [GS] Golden / Boulder",
+    "route_short_name": "Gs",
+    "route_color": "64A70B",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Federal Center Station",
+        "stop_name": "Federal Center Station"
+      },
+      {
+        "stop_key": "Union Blvd & W 4th Ave",
+        "stop_name": "Union Blvd & W 4th Ave"
+      },
+      {
+        "stop_key": "Simms St & W 6th Ave North Frontage Rd",
+        "stop_name": "Simms St & W 6th Ave North Frontage Rd"
+      },
+      {
+        "stop_key": "Simms St & W Collins Ave",
+        "stop_name": "Simms St & W Collins Ave"
+      },
+      {
+        "stop_key": "W Colfax Ave & Simms St",
+        "stop_name": "W Colfax Ave & Simms St"
+      },
+      {
+        "stop_key": "W Colfax Ave & Welch St",
+        "stop_name": "W Colfax Ave & Welch St"
+      },
+      {
+        "stop_key": "W Colfax Ave & Youngfield St",
+        "stop_name": "W Colfax Ave & Youngfield St"
+      },
+      {
+        "stop_key": "W Colfax Ave & Cole Blvd",
+        "stop_name": "W Colfax Ave & Cole Blvd"
+      },
+      {
+        "stop_key": "W Colfax Ave & Denver West Blvd",
+        "stop_name": "W Colfax Ave & Denver West Blvd"
+      },
+      {
+        "stop_key": "W Colfax Ave & Colorado Mills",
+        "stop_name": "W Colfax Ave & Colorado Mills"
+      },
+      {
+        "stop_key": "W Colfax Ave & Indiana St",
+        "stop_name": "W Colfax Ave & Indiana St"
+      },
+      {
+        "stop_key": "Indiana St & S Golden Rd",
+        "stop_name": "Indiana St & S Golden Rd"
+      },
+      {
+        "stop_key": "South Golden Rd & Camp George West",
+        "stop_name": "South Golden Rd & Camp George West"
+      },
+      {
+        "stop_key": "National Renewable Energy Lab",
+        "stop_name": "National Renewable Energy Lab"
+      },
+      {
+        "stop_key": "South Golden Rd & Quaker St",
+        "stop_name": "South Golden Rd & Quaker St"
+      },
+      {
+        "stop_key": "South Golden Rd & Ulysses St",
+        "stop_name": "South Golden Rd & Ulysses St"
+      },
+      {
+        "stop_key": "South Golden Rd & Lunnonhaus Dr",
+        "stop_name": "South Golden Rd & Lunnonhaus Dr"
+      },
+      {
+        "stop_key": "Ford St & 24th St",
+        "stop_name": "Ford St & 24th St"
+      },
+      {
+        "stop_key": "Washington Ave & 16th St",
+        "stop_name": "Washington Ave & 16th St"
+      },
+      {
+        "stop_key": "Washington Ave & 10th St",
+        "stop_name": "Washington Ave & 10th St"
+      },
+      {
+        "stop_key": "Washington Ave & 6th St",
+        "stop_name": "Washington Ave & 6th St"
+      },
+      {
+        "stop_key": "Washington Ave & Iowa St",
+        "stop_name": "Washington Ave & Iowa St"
+      },
+      {
+        "stop_key": "Co 93 & Pine Ridge Rd",
+        "stop_name": "Co 93 & Pine Ridge Rd"
+      },
+      {
+        "stop_key": "Co 93 & W. 58th Ave",
+        "stop_name": "Co 93 & W. 58th Ave"
+      },
+      {
+        "stop_key": "Co 93 & Co 72",
+        "stop_name": "Co 93 & Co 72"
+      },
+      {
+        "stop_key": "Co 93 & Mile Post 9",
+        "stop_name": "Co 93 & Mile Post 9"
+      },
+      {
+        "stop_key": "Co 93 & Mile Post 10",
+        "stop_name": "Co 93 & Mile Post 10"
+      },
+      {
+        "stop_key": "Co 93 & Mile Post 11",
+        "stop_name": "Co 93 & Mile Post 11"
+      },
+      {
+        "stop_key": "Co 93 & Co 128",
+        "stop_name": "Co 93 & Co 128"
+      },
+      {
+        "stop_key": "Co 93 & Eldorado Springs Rd",
+        "stop_name": "Co 93 & Eldorado Springs Rd"
+      },
+      {
+        "stop_key": "S Broadway & Darley Ave",
+        "stop_name": "S Broadway & Darley Ave"
+      },
+      {
+        "stop_key": "S Broadway & Table Mesa Dr",
+        "stop_name": "S Broadway & Table Mesa Dr"
+      },
+      {
+        "stop_key": "Broadway & Dartmouth Pnr",
+        "stop_name": "Broadway & Dartmouth Pnr"
+      },
+      {
+        "stop_key": "Broadway & Rayleigh Rd",
+        "stop_name": "Broadway & Rayleigh Rd"
+      },
+      {
+        "stop_key": "27th Way & Broadway Pnr",
+        "stop_name": "27th Way & Broadway Pnr"
+      },
+      {
+        "stop_key": "Broadway & Baseline Rd",
+        "stop_name": "Broadway & Baseline Rd"
+      },
+      {
+        "stop_key": "Broadway & Regent Dr",
+        "stop_name": "Broadway & Regent Dr"
+      },
+      {
+        "stop_key": "Broadway & Euclid Ave",
+        "stop_name": "Broadway & Euclid Ave"
+      },
+      {
+        "stop_key": "Broadway & Pleasant St",
+        "stop_name": "Broadway & Pleasant St"
+      },
+      {
+        "stop_key": "Broadway & Canyon Blvd",
+        "stop_name": "Broadway & Canyon Blvd"
+      },
+      {
+        "stop_key": "Downtown Boulder Station (Ar)",
+        "stop_name": "Downtown Boulder Station (Ar)"
+      },
+      {
+        "stop_key": "Downtown Boulder Station",
+        "stop_name": "Downtown Boulder Station"
+      },
+      {
+        "stop_key": "Broadway & University Ave",
+        "stop_name": "Broadway & University Ave"
+      },
+      {
+        "stop_key": "Broadway & College Ave",
+        "stop_name": "Broadway & College Ave"
+      },
+      {
+        "stop_key": "Broadway & 20th St",
+        "stop_name": "Broadway & 20th St"
+      },
+      {
+        "stop_key": "Broadway & 27th Way",
+        "stop_name": "Broadway & 27th Way"
+      },
+      {
+        "stop_key": "S Broadway & Dartmouth Ave",
+        "stop_name": "S Broadway & Dartmouth Ave"
+      },
+      {
+        "stop_key": "S Broadway & Greenbriar Blvd",
+        "stop_name": "S Broadway & Greenbriar Blvd"
+      },
+      {
+        "stop_key": "Co 93 & W 58th Ave",
+        "stop_name": "Co 93 & W 58th Ave"
+      },
+      {
+        "stop_key": "Washington St & Iowa St",
+        "stop_name": "Washington St & Iowa St"
+      },
+      {
+        "stop_key": "Washington St & 6th St",
+        "stop_name": "Washington St & 6th St"
+      },
+      {
+        "stop_key": "10th St & Washington Ave",
+        "stop_name": "10th St & Washington Ave"
+      },
+      {
+        "stop_key": "Ford St & 12th St",
+        "stop_name": "Ford St & 12th St"
+      },
+      {
+        "stop_key": "Ford St & 13th St",
+        "stop_name": "Ford St & 13th St"
+      },
+      {
+        "stop_key": "Jackson St & 17th St",
+        "stop_name": "Jackson St & 17th St"
+      },
+      {
+        "stop_key": "Jackson St & 24th St",
+        "stop_name": "Jackson St & 24th St"
+      },
+      {
+        "stop_key": "South Golden Rd & Johnson Rd",
+        "stop_name": "South Golden Rd & Johnson Rd"
+      },
+      {
+        "stop_key": "W Colfax Ave & Colorado Mills Blvd",
+        "stop_name": "W Colfax Ave & Colorado Mills Blvd"
+      },
+      {
+        "stop_key": "W Colfax Ave & Colorado Mills Pkwy",
+        "stop_name": "W Colfax Ave & Colorado Mills Pkwy"
+      },
+      {
+        "stop_key": "W Colfax Ave & Hawthorne Rd",
+        "stop_name": "W Colfax Ave & Hawthorne Rd"
+      },
+      {
+        "stop_key": "Simms St & W Colfax Ave",
+        "stop_name": "Simms St & W Colfax Ave"
+      },
+      {
+        "stop_key": "Simms St & W Katherine Ave",
+        "stop_name": "Simms St & W Katherine Ave"
+      },
+      {
+        "stop_key": "Simms St & W 8th Ave",
+        "stop_name": "Simms St & W 8th Ave"
+      }
+    ]
+  },
+  {
+    "route_id": "10",
+    "route_long_name": "Route 10",
+    "route_short_name": "10",
+    "route_color": "665d1e",
+    "route_text_color": "FFFFFF",
+    "stops": []
+  },
+  {
+    "route_id": "11",
+    "route_long_name": "Route 11",
+    "route_short_name": "11",
+    "route_color": "665d1e",
+    "route_text_color": "FFFFFF",
+    "stops": []
+  },
+  {
+    "route_id": "12",
+    "route_long_name": "Route 12",
+    "route_short_name": "12",
+    "route_color": "ab274f",
+    "route_text_color": "FFFFFF",
+    "stops": []
+  },
+  {
+    "route_id": "14",
+    "route_long_name": "Route 14",
+    "route_short_name": "14",
+    "route_color": "a4c639",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Downtown Transit Center",
+        "stop_name": "Downtown Transit Center"
+      },
+      {
+        "stop_key": "Jefferson & Linden",
+        "stop_name": "Jefferson & Linden"
+      },
+      {
+        "stop_key": "Lincoln & Willow",
+        "stop_name": "Lincoln & Willow"
+      },
+      {
+        "stop_key": "Lincoln & 2nd",
+        "stop_name": "Lincoln & 2nd"
+      },
+      {
+        "stop_key": "Lincoln & Woodward",
+        "stop_name": "Lincoln & Woodward"
+      },
+      {
+        "stop_key": "Lincoln & Lemay (West)",
+        "stop_name": "Lincoln & Lemay (West)"
+      },
+      {
+        "stop_key": "Lincoln & Lemay",
+        "stop_name": "Lincoln & Lemay"
+      },
+      {
+        "stop_key": "Lincoln & Link Lane",
+        "stop_name": "Lincoln & Link Lane"
+      },
+      {
+        "stop_key": "Lincoln & Lincoln Ct",
+        "stop_name": "Lincoln & Lincoln Ct"
+      },
+      {
+        "stop_key": "Lincoln & Airpark",
+        "stop_name": "Lincoln & Airpark"
+      },
+      {
+        "stop_key": "Lincoln & Airway",
+        "stop_name": "Lincoln & Airway"
+      },
+      {
+        "stop_key": "Highway 14 & Timberline",
+        "stop_name": "Highway 14 & Timberline"
+      },
+      {
+        "stop_key": "South Frontage & Summit View",
+        "stop_name": "South Frontage & Summit View"
+      },
+      {
+        "stop_key": "South Frontage & Dawn",
+        "stop_name": "South Frontage & Dawn"
+      },
+      {
+        "stop_key": "Centro & North Frontage",
+        "stop_name": "Centro & North Frontage"
+      },
+      {
+        "stop_key": "Vine & Waterglen",
+        "stop_name": "Vine & Waterglen"
+      },
+      {
+        "stop_key": "Vine & Campfire",
+        "stop_name": "Vine & Campfire"
+      },
+      {
+        "stop_key": "Vine & Three Forks",
+        "stop_name": "Vine & Three Forks"
+      },
+      {
+        "stop_key": "Timberline & Vine",
+        "stop_name": "Timberline & Vine"
+      },
+      {
+        "stop_key": "Timberline & Annabel",
+        "stop_name": "Timberline & Annabel"
+      },
+      {
+        "stop_key": "Timberline & Donella",
+        "stop_name": "Timberline & Donella"
+      },
+      {
+        "stop_key": "Lincoln & Lemay (East)",
+        "stop_name": "Lincoln & Lemay (East)"
+      },
+      {
+        "stop_key": "Lincoln & 1st",
+        "stop_name": "Lincoln & 1st"
+      },
+      {
+        "stop_key": "Mountain & Old Town Square",
+        "stop_name": "Mountain & Old Town Square"
+      }
+    ]
+  },
+  {
+    "route_id": "16",
+    "route_long_name": "Route 16",
+    "route_short_name": "16",
+    "route_color": "7cb9e8",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "South Transit Center",
+        "stop_name": "South Transit Center"
+      },
+      {
+        "stop_key": "Harmony & College",
+        "stop_name": "Harmony & College"
+      },
+      {
+        "stop_key": "Harmony & Boardwalk (West)",
+        "stop_name": "Harmony & Boardwalk (West)"
+      },
+      {
+        "stop_key": "Harmony & Lemay (West)",
+        "stop_name": "Harmony & Lemay (West)"
+      },
+      {
+        "stop_key": "Harmony & Wheaton (East)",
+        "stop_name": "Harmony & Wheaton (East)"
+      },
+      {
+        "stop_key": "Harmony & Delany",
+        "stop_name": "Harmony & Delany"
+      },
+      {
+        "stop_key": "Harmony & UC Health Harmony Campus",
+        "stop_name": "Harmony & UC Health Harmony Campus"
+      },
+      {
+        "stop_key": "Harmony & Snow Mesa",
+        "stop_name": "Harmony & Snow Mesa"
+      },
+      {
+        "stop_key": "Harmony & Corbett (Eastbound)",
+        "stop_name": "Harmony & Corbett (Eastbound)"
+      },
+      {
+        "stop_key": "Ziegler & Harmony",
+        "stop_name": "Ziegler & Harmony"
+      },
+      {
+        "stop_key": "Rock Creek & Ziegler",
+        "stop_name": "Rock Creek & Ziegler"
+      },
+      {
+        "stop_key": "Rock Creek & Fossil Ridge HS",
+        "stop_name": "Rock Creek & Fossil Ridge HS"
+      },
+      {
+        "stop_key": "Lady Moon & Rock Creek",
+        "stop_name": "Lady Moon & Rock Creek"
+      },
+      {
+        "stop_key": "Lady Moon & Harmony",
+        "stop_name": "Lady Moon & Harmony"
+      },
+      {
+        "stop_key": "Harmony & Lady Moon",
+        "stop_name": "Harmony & Lady Moon"
+      },
+      {
+        "stop_key": "Harmony Transfer Center",
+        "stop_name": "Harmony Transfer Center"
+      },
+      {
+        "stop_key": "Harmony & Technology",
+        "stop_name": "Harmony & Technology"
+      },
+      {
+        "stop_key": "Harmony & Ziegler",
+        "stop_name": "Harmony & Ziegler"
+      },
+      {
+        "stop_key": "Harmony & Corbett",
+        "stop_name": "Harmony & Corbett"
+      },
+      {
+        "stop_key": "Harmony & Timberline (East)",
+        "stop_name": "Harmony & Timberline (East)"
+      },
+      {
+        "stop_key": "Harmony & Timberline (West)",
+        "stop_name": "Harmony & Timberline (West)"
+      },
+      {
+        "stop_key": "Harmony & Innovation",
+        "stop_name": "Harmony & Innovation"
+      },
+      {
+        "stop_key": "Harmony & Mcmurry (West)",
+        "stop_name": "Harmony & Mcmurry (West)"
+      },
+      {
+        "stop_key": "Harmony & Lemay",
+        "stop_name": "Harmony & Lemay"
+      },
+      {
+        "stop_key": "Harmony & Boardwalk",
+        "stop_name": "Harmony & Boardwalk"
+      },
+      {
+        "stop_key": "College & Harmony (South)",
+        "stop_name": "College & Harmony (South)"
+      }
+    ]
+  },
+  {
+    "route_id": "18",
+    "route_long_name": "Route 18",
+    "route_short_name": "18",
+    "route_color": "c9ffe5",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Prospect Pkwy & Midpoint",
+        "stop_name": "Prospect Pkwy & Midpoint"
+      },
+      {
+        "stop_key": "Prospect & Academy",
+        "stop_name": "Prospect & Academy"
+      },
+      {
+        "stop_key": "Prospect & Riverside",
+        "stop_name": "Prospect & Riverside"
+      },
+      {
+        "stop_key": "Prospect & Welch",
+        "stop_name": "Prospect & Welch"
+      },
+      {
+        "stop_key": "Prospect & Lake",
+        "stop_name": "Prospect & Lake"
+      },
+      {
+        "stop_key": "Stover & Prospect",
+        "stop_name": "Stover & Prospect"
+      },
+      {
+        "stop_key": "Stover & Elizabeth",
+        "stop_name": "Stover & Elizabeth"
+      },
+      {
+        "stop_key": "Whedbee & Elizabeth",
+        "stop_name": "Whedbee & Elizabeth"
+      },
+      {
+        "stop_key": "Whedbee & Laurel",
+        "stop_name": "Whedbee & Laurel"
+      },
+      {
+        "stop_key": "Whedbee & Mulberry",
+        "stop_name": "Whedbee & Mulberry"
+      },
+      {
+        "stop_key": "Olive & Peterson",
+        "stop_name": "Olive & Peterson"
+      },
+      {
+        "stop_key": "Olive & Remington",
+        "stop_name": "Olive & Remington"
+      },
+      {
+        "stop_key": "Olive & Mason",
+        "stop_name": "Olive & Mason"
+      },
+      {
+        "stop_key": "Downtown Transit Center",
+        "stop_name": "Downtown Transit Center"
+      },
+      {
+        "stop_key": "Olive & Mathews",
+        "stop_name": "Olive & Mathews"
+      },
+      {
+        "stop_key": "Elizabeth & Whedbee",
+        "stop_name": "Elizabeth & Whedbee"
+      },
+      {
+        "stop_key": "Stover & Garfield",
+        "stop_name": "Stover & Garfield"
+      },
+      {
+        "stop_key": "Prospect & Stover",
+        "stop_name": "Prospect & Stover"
+      },
+      {
+        "stop_key": "Prospect & Robertson",
+        "stop_name": "Prospect & Robertson"
+      },
+      {
+        "stop_key": "Prospect & Lemay",
+        "stop_name": "Prospect & Lemay"
+      },
+      {
+        "stop_key": "Prospect & Prospect Pkwy",
+        "stop_name": "Prospect & Prospect Pkwy"
+      },
+      {
+        "stop_key": "Sharp Point & Prospect",
+        "stop_name": "Sharp Point & Prospect"
+      },
+      {
+        "stop_key": "Sharp Point & March",
+        "stop_name": "Sharp Point & March"
+      },
+      {
+        "stop_key": "Midpoint & Larimer County",
+        "stop_name": "Midpoint & Larimer County"
+      },
+      {
+        "stop_key": "Midpoint & Prospect Pkwy",
+        "stop_name": "Midpoint & Prospect Pkwy"
+      }
+    ]
+  },
+  {
+    "route_id": "19",
+    "route_long_name": "Route 19",
+    "route_short_name": "19",
+    "route_color": "a8bb19",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "South Transit Center",
+        "stop_name": "South Transit Center"
+      },
+      {
+        "stop_key": "Harmony & Mason",
+        "stop_name": "Harmony & Mason"
+      },
+      {
+        "stop_key": "Harmony & Larkbunting",
+        "stop_name": "Harmony & Larkbunting"
+      },
+      {
+        "stop_key": "Harmony & Hinsdale",
+        "stop_name": "Harmony & Hinsdale"
+      },
+      {
+        "stop_key": "Harmony & Starflower",
+        "stop_name": "Harmony & Starflower"
+      },
+      {
+        "stop_key": "Shields & Harmony",
+        "stop_name": "Shields & Harmony"
+      },
+      {
+        "stop_key": "Shields & Troutman",
+        "stop_name": "Shields & Troutman"
+      },
+      {
+        "stop_key": "Shields & Wabash",
+        "stop_name": "Shields & Wabash"
+      },
+      {
+        "stop_key": "Shields & Horsetooth",
+        "stop_name": "Shields & Horsetooth"
+      },
+      {
+        "stop_key": "Shields & Casa Grande",
+        "stop_name": "Shields & Casa Grande"
+      },
+      {
+        "stop_key": "Shields & Swallow",
+        "stop_name": "Shields & Swallow"
+      },
+      {
+        "stop_key": "Shields & Drake",
+        "stop_name": "Shields & Drake"
+      },
+      {
+        "stop_key": "Shields & Centre",
+        "stop_name": "Shields & Centre"
+      },
+      {
+        "stop_key": "Shields & Rolland Moore",
+        "stop_name": "Shields & Rolland Moore"
+      },
+      {
+        "stop_key": "Shields & Hill Pond",
+        "stop_name": "Shields & Hill Pond"
+      },
+      {
+        "stop_key": "Shields & Stuart",
+        "stop_name": "Shields & Stuart"
+      },
+      {
+        "stop_key": "Shields & Lake",
+        "stop_name": "Shields & Lake"
+      },
+      {
+        "stop_key": "Shields & Elizabeth",
+        "stop_name": "Shields & Elizabeth"
+      },
+      {
+        "stop_key": "Laurel & Shields",
+        "stop_name": "Laurel & Shields"
+      },
+      {
+        "stop_key": "Laurel & Washington",
+        "stop_name": "Laurel & Washington"
+      },
+      {
+        "stop_key": "CSU Transit Center",
+        "stop_name": "CSU Transit Center"
+      },
+      {
+        "stop_key": "Shields & University",
+        "stop_name": "Shields & University"
+      },
+      {
+        "stop_key": "Shields & Springfield",
+        "stop_name": "Shields & Springfield"
+      },
+      {
+        "stop_key": "Shields & Prospect",
+        "stop_name": "Shields & Prospect"
+      },
+      {
+        "stop_key": "Shields & Shire",
+        "stop_name": "Shields & Shire"
+      },
+      {
+        "stop_key": "Shields & Raintree",
+        "stop_name": "Shields & Raintree"
+      },
+      {
+        "stop_key": "Shields & Rocky Mountain",
+        "stop_name": "Shields & Rocky Mountain"
+      },
+      {
+        "stop_key": "Harmony & Shields",
+        "stop_name": "Harmony & Shields"
+      },
+      {
+        "stop_key": "College & Harmony (South)",
+        "stop_name": "College & Harmony (South)"
+      }
+    ]
+  },
+  {
+    "route_id": "2",
+    "route_long_name": "Route 2",
+    "route_short_name": "2",
+    "route_color": "00ffff",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "CSU Transit Center",
+        "stop_name": "CSU Transit Center"
+      },
+      {
+        "stop_key": "Meridian & REC Center",
+        "stop_name": "Meridian & REC Center"
+      },
+      {
+        "stop_key": "Meridian & Pitkin",
+        "stop_name": "Meridian & Pitkin"
+      },
+      {
+        "stop_key": "Prospect & Whitcomb",
+        "stop_name": "Prospect & Whitcomb"
+      },
+      {
+        "stop_key": "Prospect & Sheely",
+        "stop_name": "Prospect & Sheely"
+      },
+      {
+        "stop_key": "Prospect & Shields",
+        "stop_name": "Prospect & Shields"
+      },
+      {
+        "stop_key": "Prospect & Heatheridge",
+        "stop_name": "Prospect & Heatheridge"
+      },
+      {
+        "stop_key": "Prospect & Brentwood",
+        "stop_name": "Prospect & Brentwood"
+      },
+      {
+        "stop_key": "Prospect & Taft Hill",
+        "stop_name": "Prospect & Taft Hill"
+      },
+      {
+        "stop_key": "Prospect & Fuqua",
+        "stop_name": "Prospect & Fuqua"
+      },
+      {
+        "stop_key": "Prospect & Larch",
+        "stop_name": "Prospect & Larch"
+      },
+      {
+        "stop_key": "Prospect & Overland",
+        "stop_name": "Prospect & Overland"
+      },
+      {
+        "stop_key": "Overland & Wells Fargo",
+        "stop_name": "Overland & Wells Fargo"
+      },
+      {
+        "stop_key": "Elizabeth & Overland",
+        "stop_name": "Elizabeth & Overland"
+      },
+      {
+        "stop_key": "Elizabeth & Azuro",
+        "stop_name": "Elizabeth & Azuro"
+      },
+      {
+        "stop_key": "Elizabeth & Timber",
+        "stop_name": "Elizabeth & Timber"
+      },
+      {
+        "stop_key": "Elizabeth & King Soopers",
+        "stop_name": "Elizabeth & King Soopers"
+      },
+      {
+        "stop_key": "Elizabeth & Glenmoor",
+        "stop_name": "Elizabeth & Glenmoor"
+      },
+      {
+        "stop_key": "Elizabeth & Skyline",
+        "stop_name": "Elizabeth & Skyline"
+      },
+      {
+        "stop_key": "Elizabeth & Constitution",
+        "stop_name": "Elizabeth & Constitution"
+      },
+      {
+        "stop_key": "Elizabeth & City Park",
+        "stop_name": "Elizabeth & City Park"
+      },
+      {
+        "stop_key": "Plum & Moby Arena (Eastbound)",
+        "stop_name": "Plum & Moby Arena (Eastbound)"
+      },
+      {
+        "stop_key": "Plum & REC Center",
+        "stop_name": "Plum & REC Center"
+      }
+    ]
+  },
+  {
+    "route_id": "3",
+    "route_long_name": "Route 3",
+    "route_short_name": "3",
+    "route_color": "72a0c1",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Elizabeth & King Soopers",
+        "stop_name": "Elizabeth & King Soopers"
+      },
+      {
+        "stop_key": "Elizabeth & Glenmoor",
+        "stop_name": "Elizabeth & Glenmoor"
+      },
+      {
+        "stop_key": "Elizabeth & Skyline",
+        "stop_name": "Elizabeth & Skyline"
+      },
+      {
+        "stop_key": "Constitution & Elizabeth",
+        "stop_name": "Constitution & Elizabeth"
+      },
+      {
+        "stop_key": "Rams Village West",
+        "stop_name": "Rams Village West"
+      },
+      {
+        "stop_key": "Rams Village East",
+        "stop_name": "Rams Village East"
+      },
+      {
+        "stop_key": "Plum & Scott",
+        "stop_name": "Plum & Scott"
+      },
+      {
+        "stop_key": "Plum & Moby Arena (Eastbound)",
+        "stop_name": "Plum & Moby Arena (Eastbound)"
+      },
+      {
+        "stop_key": "Plum & REC Center",
+        "stop_name": "Plum & REC Center"
+      },
+      {
+        "stop_key": "CSU Transit Center",
+        "stop_name": "CSU Transit Center"
+      },
+      {
+        "stop_key": "Plum & Laurel Village",
+        "stop_name": "Plum & Laurel Village"
+      },
+      {
+        "stop_key": "Plum & Moby Arena (Westbound)",
+        "stop_name": "Plum & Moby Arena (Westbound)"
+      },
+      {
+        "stop_key": "Plum & Bluebell",
+        "stop_name": "Plum & Bluebell"
+      },
+      {
+        "stop_key": "City Park & Plum",
+        "stop_name": "City Park & Plum"
+      },
+      {
+        "stop_key": "Elizabeth & City Park",
+        "stop_name": "Elizabeth & City Park"
+      },
+      {
+        "stop_key": "Elizabeth & Constitution",
+        "stop_name": "Elizabeth & Constitution"
+      },
+      {
+        "stop_key": "Elizabeth & Taft Hill",
+        "stop_name": "Elizabeth & Taft Hill"
+      }
+    ]
+  },
+  {
+    "route_id": "31",
+    "route_long_name": "Route 31",
+    "route_short_name": "31",
+    "route_color": "762210",
+    "route_text_color": "FFFFFF",
+    "stops": []
+  },
+  {
+    "route_id": "32",
+    "route_long_name": "Route 32",
+    "route_short_name": "32",
+    "route_color": "2f1bc4",
+    "route_text_color": "FFFFFF",
+    "stops": []
+  },
+  {
+    "route_id": "FHS",
+    "route_long_name": "Foothills Shuttle",
+    "route_short_name": "Fhs",
+    "route_color": "496745",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Equine Center",
+        "stop_name": "Equine Center"
+      },
+      {
+        "stop_key": "Elizabeth & Overland",
+        "stop_name": "Elizabeth & Overland"
+      },
+      {
+        "stop_key": "Laporte & Forest Service",
+        "stop_name": "Laporte & Forest Service"
+      },
+      {
+        "stop_key": "CSU - Engineering Research Center",
+        "stop_name": "CSU - Engineering Research Center"
+      },
+      {
+        "stop_key": "CSU - Atmospheric Science",
+        "stop_name": "CSU - Atmospheric Science"
+      },
+      {
+        "stop_key": "Rampart & Equine",
+        "stop_name": "Rampart & Equine"
+      },
+      {
+        "stop_key": "Rampart & Arbl",
+        "stop_name": "Rampart & Arbl"
+      },
+      {
+        "stop_key": "CSU - Judson Harper Complex",
+        "stop_name": "CSU - Judson Harper Complex"
+      }
+    ]
+  },
+  {
+    "route_id": "5",
+    "route_long_name": "Route 5",
+    "route_short_name": "5",
+    "route_color": "ffbf00",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Swallow Station",
+        "stop_name": "Swallow Station"
+      },
+      {
+        "stop_key": "Horsetooth & Mason",
+        "stop_name": "Horsetooth & Mason"
+      },
+      {
+        "stop_key": "Horsetooth & JFK",
+        "stop_name": "Horsetooth & JFK"
+      },
+      {
+        "stop_key": "Stanford & Horsetooth",
+        "stop_name": "Stanford & Horsetooth"
+      },
+      {
+        "stop_key": "Stanford & Monroe",
+        "stop_name": "Stanford & Monroe"
+      },
+      {
+        "stop_key": "Swallow & Stanford (East)",
+        "stop_name": "Swallow & Stanford (East)"
+      },
+      {
+        "stop_key": "Swallow & Camelot",
+        "stop_name": "Swallow & Camelot"
+      },
+      {
+        "stop_key": "Lemay & Swallow",
+        "stop_name": "Lemay & Swallow"
+      },
+      {
+        "stop_key": "Lemay & Oxford",
+        "stop_name": "Lemay & Oxford"
+      },
+      {
+        "stop_key": "Lemay & Drake",
+        "stop_name": "Lemay & Drake"
+      },
+      {
+        "stop_key": "Lemay & Kirkwood",
+        "stop_name": "Lemay & Kirkwood"
+      },
+      {
+        "stop_key": "Lemay & Stuart",
+        "stop_name": "Lemay & Stuart"
+      },
+      {
+        "stop_key": "Lemay & Prospect",
+        "stop_name": "Lemay & Prospect"
+      },
+      {
+        "stop_key": "Lemay & Poudre Valley Hospital",
+        "stop_name": "Lemay & Poudre Valley Hospital"
+      },
+      {
+        "stop_key": "Lemay & Elizabeth",
+        "stop_name": "Lemay & Elizabeth"
+      },
+      {
+        "stop_key": "Lemay & Poudre River Dr",
+        "stop_name": "Lemay & Poudre River Dr"
+      },
+      {
+        "stop_key": "Lemay & Magnolia",
+        "stop_name": "Lemay & Magnolia"
+      },
+      {
+        "stop_key": "Lincoln & Lemay",
+        "stop_name": "Lincoln & Lemay"
+      },
+      {
+        "stop_key": "Lincoln & Woodward",
+        "stop_name": "Lincoln & Woodward"
+      },
+      {
+        "stop_key": "Lincoln & 1st",
+        "stop_name": "Lincoln & 1st"
+      },
+      {
+        "stop_key": "Lincoln & Willow",
+        "stop_name": "Lincoln & Willow"
+      },
+      {
+        "stop_key": "Jefferson & Linden",
+        "stop_name": "Jefferson & Linden"
+      },
+      {
+        "stop_key": "Downtown Transit Center",
+        "stop_name": "Downtown Transit Center"
+      },
+      {
+        "stop_key": "Lincoln & 2nd",
+        "stop_name": "Lincoln & 2nd"
+      },
+      {
+        "stop_key": "Lincoln & Lemay (West)",
+        "stop_name": "Lincoln & Lemay (West)"
+      },
+      {
+        "stop_key": "Lemay & Woodward",
+        "stop_name": "Lemay & Woodward"
+      },
+      {
+        "stop_key": "Lemay & Mulberry",
+        "stop_name": "Lemay & Mulberry"
+      },
+      {
+        "stop_key": "Lemay & Pennock",
+        "stop_name": "Lemay & Pennock"
+      },
+      {
+        "stop_key": "Lemay & Columbia",
+        "stop_name": "Lemay & Columbia"
+      },
+      {
+        "stop_key": "Swallow & Lemay",
+        "stop_name": "Swallow & Lemay"
+      },
+      {
+        "stop_key": "Swallow & Stover",
+        "stop_name": "Swallow & Stover"
+      },
+      {
+        "stop_key": "Swallow & Stanford",
+        "stop_name": "Swallow & Stanford"
+      },
+      {
+        "stop_key": "Swallow & College",
+        "stop_name": "Swallow & College"
+      }
+    ]
+  },
+  {
+    "route_id": "6",
+    "route_long_name": "Route 6",
+    "route_short_name": "6",
+    "route_color": "9966cc",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Swallow Station",
+        "stop_name": "Swallow Station"
+      },
+      {
+        "stop_key": "Horsetooth & Meadowlark",
+        "stop_name": "Horsetooth & Meadowlark"
+      },
+      {
+        "stop_key": "Horsetooth & Colony",
+        "stop_name": "Horsetooth & Colony"
+      },
+      {
+        "stop_key": "Horsetooth & Windmill (West)",
+        "stop_name": "Horsetooth & Windmill (West)"
+      },
+      {
+        "stop_key": "Horsetooth & Shields",
+        "stop_name": "Horsetooth & Shields"
+      },
+      {
+        "stop_key": "Horsetooth & Seneca",
+        "stop_name": "Horsetooth & Seneca"
+      },
+      {
+        "stop_key": "Horsetooth & Dunbar",
+        "stop_name": "Horsetooth & Dunbar"
+      },
+      {
+        "stop_key": "Taft Hill & Horsetooth",
+        "stop_name": "Taft Hill & Horsetooth"
+      },
+      {
+        "stop_key": "Taft Hill & Devonshire",
+        "stop_name": "Taft Hill & Devonshire"
+      },
+      {
+        "stop_key": "Taft Hill & Fisch",
+        "stop_name": "Taft Hill & Fisch"
+      },
+      {
+        "stop_key": "Taft Hill & Drake",
+        "stop_name": "Taft Hill & Drake"
+      },
+      {
+        "stop_key": "Taft Hill & Manchester",
+        "stop_name": "Taft Hill & Manchester"
+      },
+      {
+        "stop_key": "Taft Hill & Stuart",
+        "stop_name": "Taft Hill & Stuart"
+      },
+      {
+        "stop_key": "Taft Hill & Prospect (South)",
+        "stop_name": "Taft Hill & Prospect (South)"
+      },
+      {
+        "stop_key": "Taft Hill & Clearview",
+        "stop_name": "Taft Hill & Clearview"
+      },
+      {
+        "stop_key": "Taft Hill & Elizabeth",
+        "stop_name": "Taft Hill & Elizabeth"
+      },
+      {
+        "stop_key": "Taft Hill & Raven View",
+        "stop_name": "Taft Hill & Raven View"
+      },
+      {
+        "stop_key": "Mulberry & Taft Hill",
+        "stop_name": "Mulberry & Taft Hill"
+      },
+      {
+        "stop_key": "Mulberry & Cook",
+        "stop_name": "Mulberry & Cook"
+      },
+      {
+        "stop_key": "Mulberry & City Park",
+        "stop_name": "Mulberry & City Park"
+      },
+      {
+        "stop_key": "Mulberry & Shields",
+        "stop_name": "Mulberry & Shields"
+      },
+      {
+        "stop_key": "Mulberry & Washington",
+        "stop_name": "Mulberry & Washington"
+      },
+      {
+        "stop_key": "Meldrum & Mulberry",
+        "stop_name": "Meldrum & Mulberry"
+      },
+      {
+        "stop_key": "CSU Transit Center",
+        "stop_name": "CSU Transit Center"
+      },
+      {
+        "stop_key": "Meldrum & Myrtle (South)",
+        "stop_name": "Meldrum & Myrtle (South)"
+      },
+      {
+        "stop_key": "Mulberry & Meldrum",
+        "stop_name": "Mulberry & Meldrum"
+      },
+      {
+        "stop_key": "Mulberry & Scott",
+        "stop_name": "Mulberry & Scott"
+      },
+      {
+        "stop_key": "Mulberry & Bryan",
+        "stop_name": "Mulberry & Bryan"
+      },
+      {
+        "stop_key": "Taft Hill & Mulberry",
+        "stop_name": "Taft Hill & Mulberry"
+      },
+      {
+        "stop_key": "Taft Hill & Orchard",
+        "stop_name": "Taft Hill & Orchard"
+      },
+      {
+        "stop_key": "Taft Hill & Prospect",
+        "stop_name": "Taft Hill & Prospect"
+      },
+      {
+        "stop_key": "Taft Hill & Blevins",
+        "stop_name": "Taft Hill & Blevins"
+      },
+      {
+        "stop_key": "Taft Hill & Valley Forge",
+        "stop_name": "Taft Hill & Valley Forge"
+      },
+      {
+        "stop_key": "Drake & Taft Hill",
+        "stop_name": "Drake & Taft Hill"
+      },
+      {
+        "stop_key": "Drake & Constitution",
+        "stop_name": "Drake & Constitution"
+      },
+      {
+        "stop_key": "Drake & Dunbar",
+        "stop_name": "Drake & Dunbar"
+      },
+      {
+        "stop_key": "Drake & Raintree",
+        "stop_name": "Drake & Raintree"
+      },
+      {
+        "stop_key": "Drake & Shields",
+        "stop_name": "Drake & Shields"
+      },
+      {
+        "stop_key": "Drake & Davidson",
+        "stop_name": "Drake & Davidson"
+      },
+      {
+        "stop_key": "Drake & Worthington",
+        "stop_name": "Drake & Worthington"
+      },
+      {
+        "stop_key": "Drake & Meadowlark",
+        "stop_name": "Drake & Meadowlark"
+      }
+    ]
+  },
+  {
+    "route_id": "7",
+    "route_long_name": "Route 7",
+    "route_short_name": "7",
+    "route_color": "e32636",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Kansas & Limon",
+        "stop_name": "Kansas & Limon"
+      },
+      {
+        "stop_key": "Custer & Illinois",
+        "stop_name": "Custer & Illinois"
+      },
+      {
+        "stop_key": "Drake & Timberline",
+        "stop_name": "Drake & Timberline"
+      },
+      {
+        "stop_key": "Drake & Power Trail",
+        "stop_name": "Drake & Power Trail"
+      },
+      {
+        "stop_key": "Drake & Eastwood",
+        "stop_name": "Drake & Eastwood"
+      },
+      {
+        "stop_key": "Drake & Brookwood",
+        "stop_name": "Drake & Brookwood"
+      },
+      {
+        "stop_key": "Drake & Lemay",
+        "stop_name": "Drake & Lemay"
+      },
+      {
+        "stop_key": "Drake & Governors Park",
+        "stop_name": "Drake & Governors Park"
+      },
+      {
+        "stop_key": "Drake & Stover",
+        "stop_name": "Drake & Stover"
+      },
+      {
+        "stop_key": "Drake & Tulane (West)",
+        "stop_name": "Drake & Tulane (West)"
+      },
+      {
+        "stop_key": "Drake & College (Westbound)",
+        "stop_name": "Drake & College (Westbound)"
+      },
+      {
+        "stop_key": "Drake & MAX Guideway (Westbound)",
+        "stop_name": "Drake & MAX Guideway (Westbound)"
+      },
+      {
+        "stop_key": "Drake & CSU Vet School",
+        "stop_name": "Drake & CSU Vet School"
+      },
+      {
+        "stop_key": "Drake & Research",
+        "stop_name": "Drake & Research"
+      },
+      {
+        "stop_key": "Drake & Worthington",
+        "stop_name": "Drake & Worthington"
+      },
+      {
+        "stop_key": "Drake & Davidson",
+        "stop_name": "Drake & Davidson"
+      },
+      {
+        "stop_key": "Raintree & Drake",
+        "stop_name": "Raintree & Drake"
+      },
+      {
+        "stop_key": "Raintree & Senior Center",
+        "stop_name": "Raintree & Senior Center"
+      },
+      {
+        "stop_key": "Shields & Centre",
+        "stop_name": "Shields & Centre"
+      },
+      {
+        "stop_key": "Shields & Rolland Moore",
+        "stop_name": "Shields & Rolland Moore"
+      },
+      {
+        "stop_key": "Shields & Hill Pond",
+        "stop_name": "Shields & Hill Pond"
+      },
+      {
+        "stop_key": "Shields & Stuart",
+        "stop_name": "Shields & Stuart"
+      },
+      {
+        "stop_key": "Prospect & Sheely",
+        "stop_name": "Prospect & Sheely"
+      },
+      {
+        "stop_key": "Meridian & Lake",
+        "stop_name": "Meridian & Lake"
+      },
+      {
+        "stop_key": "Meridian & University",
+        "stop_name": "Meridian & University"
+      },
+      {
+        "stop_key": "CSU Transit Center",
+        "stop_name": "CSU Transit Center"
+      },
+      {
+        "stop_key": "Meridian & REC Center",
+        "stop_name": "Meridian & REC Center"
+      },
+      {
+        "stop_key": "Meridian & Pitkin",
+        "stop_name": "Meridian & Pitkin"
+      },
+      {
+        "stop_key": "Prospect & Whitcomb",
+        "stop_name": "Prospect & Whitcomb"
+      },
+      {
+        "stop_key": "Shields & Prospect",
+        "stop_name": "Shields & Prospect"
+      },
+      {
+        "stop_key": "Shields & Shire",
+        "stop_name": "Shields & Shire"
+      },
+      {
+        "stop_key": "Shields & Raintree",
+        "stop_name": "Shields & Raintree"
+      },
+      {
+        "stop_key": "Drake & Shields",
+        "stop_name": "Drake & Shields"
+      },
+      {
+        "stop_key": "Drake & Meadowlark",
+        "stop_name": "Drake & Meadowlark"
+      },
+      {
+        "stop_key": "Drake & Redwing",
+        "stop_name": "Drake & Redwing"
+      },
+      {
+        "stop_key": "Drake & MAX Guideway (Eastbound)",
+        "stop_name": "Drake & MAX Guideway (Eastbound)"
+      },
+      {
+        "stop_key": "Drake & College (Eastbound)",
+        "stop_name": "Drake & College (Eastbound)"
+      },
+      {
+        "stop_key": "Drake & Stanford",
+        "stop_name": "Drake & Stanford"
+      },
+      {
+        "stop_key": "Drake & Scotch Pines",
+        "stop_name": "Drake & Scotch Pines"
+      },
+      {
+        "stop_key": "Drake & Edinburgh",
+        "stop_name": "Drake & Edinburgh"
+      },
+      {
+        "stop_key": "Drake & Dorado",
+        "stop_name": "Drake & Dorado"
+      },
+      {
+        "stop_key": "Drake & Parklake",
+        "stop_name": "Drake & Parklake"
+      },
+      {
+        "stop_key": "Drake & Illinois",
+        "stop_name": "Drake & Illinois"
+      },
+      {
+        "stop_key": "Drake & Kansas",
+        "stop_name": "Drake & Kansas"
+      }
+    ]
+  },
+  {
+    "route_id": "8",
+    "route_long_name": "Route 8",
+    "route_short_name": "8",
+    "route_color": "568203",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "Downtown Transit Center",
+        "stop_name": "Downtown Transit Center"
+      },
+      {
+        "stop_key": "Willow & College",
+        "stop_name": "Willow & College"
+      },
+      {
+        "stop_key": "Linden & Bridge",
+        "stop_name": "Linden & Bridge"
+      },
+      {
+        "stop_key": "Linden & Vine",
+        "stop_name": "Linden & Vine"
+      },
+      {
+        "stop_key": "Redwood & Cajetan",
+        "stop_name": "Redwood & Cajetan"
+      },
+      {
+        "stop_key": "Conifer & Redwood",
+        "stop_name": "Conifer & Redwood"
+      },
+      {
+        "stop_key": "Blue Spruce & Conifer",
+        "stop_name": "Blue Spruce & Conifer"
+      },
+      {
+        "stop_key": "Blue Spruce & Bristlecone",
+        "stop_name": "Blue Spruce & Bristlecone"
+      },
+      {
+        "stop_key": "Blue Spruce & Butch Cassidy",
+        "stop_name": "Blue Spruce & Butch Cassidy"
+      },
+      {
+        "stop_key": "Willox & Blue Spruce",
+        "stop_name": "Willox & Blue Spruce"
+      },
+      {
+        "stop_key": "College & Willox",
+        "stop_name": "College & Willox"
+      },
+      {
+        "stop_key": "Poudre Valley Mobile Home Park",
+        "stop_name": "Poudre Valley Mobile Home Park"
+      },
+      {
+        "stop_key": "College & Willox (North)",
+        "stop_name": "College & Willox (North)"
+      },
+      {
+        "stop_key": "College & Willox (South)",
+        "stop_name": "College & Willox (South)"
+      },
+      {
+        "stop_key": "College & Bristlecone",
+        "stop_name": "College & Bristlecone"
+      },
+      {
+        "stop_key": "College & Conifer",
+        "stop_name": "College & Conifer"
+      },
+      {
+        "stop_key": "College & Alpine",
+        "stop_name": "College & Alpine"
+      },
+      {
+        "stop_key": "College & Poudre River Trail",
+        "stop_name": "College & Poudre River Trail"
+      }
+    ]
+  },
+  {
+    "route_id": "81",
+    "route_long_name": "Route 81",
+    "route_short_name": "81",
+    "route_color": "007fff",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Downtown Transit Center",
+        "stop_name": "Downtown Transit Center"
+      },
+      {
+        "stop_key": "College & Poudre River Trail",
+        "stop_name": "College & Poudre River Trail"
+      },
+      {
+        "stop_key": "College & Vine",
+        "stop_name": "College & Vine"
+      },
+      {
+        "stop_key": "College & Conifer",
+        "stop_name": "College & Conifer"
+      },
+      {
+        "stop_key": "College & Conifer (North)",
+        "stop_name": "College & Conifer (North)"
+      },
+      {
+        "stop_key": "College & Bristlecone",
+        "stop_name": "College & Bristlecone"
+      },
+      {
+        "stop_key": "College & Willox",
+        "stop_name": "College & Willox"
+      },
+      {
+        "stop_key": "Poudre Valley Mobile Home Park",
+        "stop_name": "Poudre Valley Mobile Home Park"
+      },
+      {
+        "stop_key": "Willox & Blue Spruce",
+        "stop_name": "Willox & Blue Spruce"
+      },
+      {
+        "stop_key": "Blue Spruce & Butch Cassidy",
+        "stop_name": "Blue Spruce & Butch Cassidy"
+      },
+      {
+        "stop_key": "Blue Spruce & Bristlecone",
+        "stop_name": "Blue Spruce & Bristlecone"
+      },
+      {
+        "stop_key": "Blue Spruce & Conifer",
+        "stop_name": "Blue Spruce & Conifer"
+      },
+      {
+        "stop_key": "Conifer & Redwood",
+        "stop_name": "Conifer & Redwood"
+      },
+      {
+        "stop_key": "Redwood & Cajetan",
+        "stop_name": "Redwood & Cajetan"
+      },
+      {
+        "stop_key": "Linden & Linden Center",
+        "stop_name": "Linden & Linden Center"
+      },
+      {
+        "stop_key": "Linden & Willow",
+        "stop_name": "Linden & Willow"
+      },
+      {
+        "stop_key": "Willow & College",
+        "stop_name": "Willow & College"
+      }
+    ]
+  },
+  {
+    "route_id": "9",
+    "route_long_name": "Route 9",
+    "route_short_name": "9",
+    "route_color": "b284be",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Downtown Transit Center",
+        "stop_name": "Downtown Transit Center"
+      },
+      {
+        "stop_key": "Cherry & Loomis",
+        "stop_name": "Cherry & Loomis"
+      },
+      {
+        "stop_key": "Wood & Cherry",
+        "stop_name": "Wood & Cherry"
+      },
+      {
+        "stop_key": "Wood & Elm",
+        "stop_name": "Wood & Elm"
+      },
+      {
+        "stop_key": "Vine & Wood",
+        "stop_name": "Vine & Wood"
+      },
+      {
+        "stop_key": "Vine & Hanna (West)",
+        "stop_name": "Vine & Hanna (West)"
+      },
+      {
+        "stop_key": "Lincoln Middle School",
+        "stop_name": "Lincoln Middle School"
+      },
+      {
+        "stop_key": "Lancer & Vine (North)",
+        "stop_name": "Lancer & Vine (North)"
+      },
+      {
+        "stop_key": "Vine & Taft Hill",
+        "stop_name": "Vine & Taft Hill"
+      },
+      {
+        "stop_key": "Vine & Irish",
+        "stop_name": "Vine & Irish"
+      },
+      {
+        "stop_key": "Vine & Sunset",
+        "stop_name": "Vine & Sunset"
+      },
+      {
+        "stop_key": "Vine & Hollywood",
+        "stop_name": "Vine & Hollywood"
+      },
+      {
+        "stop_key": "Overland & Vine",
+        "stop_name": "Overland & Vine"
+      },
+      {
+        "stop_key": "Overland & High",
+        "stop_name": "Overland & High"
+      },
+      {
+        "stop_key": "Laporte & Overland",
+        "stop_name": "Laporte & Overland"
+      },
+      {
+        "stop_key": "Laporte & Hollywood",
+        "stop_name": "Laporte & Hollywood"
+      },
+      {
+        "stop_key": "Laporte & Sunset",
+        "stop_name": "Laporte & Sunset"
+      },
+      {
+        "stop_key": "Laporte & Impala",
+        "stop_name": "Laporte & Impala"
+      },
+      {
+        "stop_key": "Laporte & Grandview",
+        "stop_name": "Laporte & Grandview"
+      },
+      {
+        "stop_key": "Laporte & Bryan",
+        "stop_name": "Laporte & Bryan"
+      },
+      {
+        "stop_key": "Laporte & Lyons",
+        "stop_name": "Laporte & Lyons"
+      },
+      {
+        "stop_key": "Laporte & Jamith",
+        "stop_name": "Laporte & Jamith"
+      },
+      {
+        "stop_key": "Laporte & Shields",
+        "stop_name": "Laporte & Shields"
+      },
+      {
+        "stop_key": "Laporte & Washington",
+        "stop_name": "Laporte & Washington"
+      },
+      {
+        "stop_key": "Laporte & Loomis",
+        "stop_name": "Laporte & Loomis"
+      },
+      {
+        "stop_key": "Laporte & Sherwood",
+        "stop_name": "Laporte & Sherwood"
+      }
+    ]
+  },
+  {
+    "route_id": "92",
+    "route_long_name": "Route 92",
+    "route_short_name": "92",
+    "route_color": "c46210",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Downtown Transit Center",
+        "stop_name": "Downtown Transit Center"
+      },
+      {
+        "stop_key": "Laporte & Howes",
+        "stop_name": "Laporte & Howes"
+      },
+      {
+        "stop_key": "Laporte & Sherwood",
+        "stop_name": "Laporte & Sherwood"
+      },
+      {
+        "stop_key": "Laporte & Loomis",
+        "stop_name": "Laporte & Loomis"
+      },
+      {
+        "stop_key": "Laporte & Wood",
+        "stop_name": "Laporte & Wood"
+      },
+      {
+        "stop_key": "Laporte & Shields",
+        "stop_name": "Laporte & Shields"
+      },
+      {
+        "stop_key": "Laporte & Mckinley",
+        "stop_name": "Laporte & Mckinley"
+      },
+      {
+        "stop_key": "Laporte & Fishback",
+        "stop_name": "Laporte & Fishback"
+      },
+      {
+        "stop_key": "Laporte & Forney",
+        "stop_name": "Laporte & Forney"
+      },
+      {
+        "stop_key": "Laporte & Grandview",
+        "stop_name": "Laporte & Grandview"
+      },
+      {
+        "stop_key": "Laporte & Taft Hill",
+        "stop_name": "Laporte & Taft Hill"
+      },
+      {
+        "stop_key": "Laporte & Impala",
+        "stop_name": "Laporte & Impala"
+      },
+      {
+        "stop_key": "Laporte & Bryan",
+        "stop_name": "Laporte & Bryan"
+      },
+      {
+        "stop_key": "Laporte & Lyons",
+        "stop_name": "Laporte & Lyons"
+      },
+      {
+        "stop_key": "Laporte & Jamith",
+        "stop_name": "Laporte & Jamith"
+      },
+      {
+        "stop_key": "Laporte & Washington",
+        "stop_name": "Laporte & Washington"
+      }
+    ]
+  },
+  {
+    "route_id": "ADA",
+    "route_long_name": "ADA Shuttle",
+    "route_short_name": "ADA",
+    "route_color": "cd9575",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Lake & Mason (Lot #575)",
+        "stop_name": "Lake & Mason (Lot #575)"
+      },
+      {
+        "stop_key": "Lake & Centre",
+        "stop_name": "Lake & Centre"
+      },
+      {
+        "stop_key": "Canvas Stadium",
+        "stop_name": "Canvas Stadium"
+      },
+      {
+        "stop_key": "Pitkin & Meridian",
+        "stop_name": "Pitkin & Meridian"
+      },
+      {
+        "stop_key": "Lake & Meridian",
+        "stop_name": "Lake & Meridian"
+      },
+      {
+        "stop_key": "Lake & Centre (Lot #573)",
+        "stop_name": "Lake & Centre (Lot #573)"
+      }
+    ]
+  },
+  {
+    "route_id": "FLEX",
+    "route_long_name": "FLEX Route",
+    "route_short_name": "FLEX",
+    "route_color": "00308f",
+    "route_text_color": "FFFFFF",
+    "stops": [
+      {
+        "stop_key": "South Transit Center",
+        "stop_name": "South Transit Center"
+      },
+      {
+        "stop_key": "College & Cameron",
+        "stop_name": "College & Cameron"
+      },
+      {
+        "stop_key": "College & Skyway",
+        "stop_name": "College & Skyway"
+      },
+      {
+        "stop_key": "College & Trilby",
+        "stop_name": "College & Trilby"
+      },
+      {
+        "stop_key": "US 287 & Carpenter",
+        "stop_name": "US 287 & Carpenter"
+      },
+      {
+        "stop_key": "65th & US 287",
+        "stop_name": "65th & US 287"
+      },
+      {
+        "stop_key": "Loveland North Transit Center (NTC)",
+        "stop_name": "Loveland North Transit Center (NTC)"
+      },
+      {
+        "stop_key": "Cleveland & 8th",
+        "stop_name": "Cleveland & 8th"
+      },
+      {
+        "stop_key": "US 287 & 14th",
+        "stop_name": "US 287 & 14th"
+      },
+      {
+        "stop_key": "Mountain & 3rd",
+        "stop_name": "Mountain & 3rd"
+      },
+      {
+        "stop_key": "Main & 21st",
+        "stop_name": "Main & 21st"
+      },
+      {
+        "stop_key": "Coffman & 8th (Roosevelt Park)",
+        "stop_name": "Coffman & 8th (Roosevelt Park)"
+      },
+      {
+        "stop_key": "Hover & Village At The Peaks Mall",
+        "stop_name": "Hover & Village At The Peaks Mall"
+      },
+      {
+        "stop_key": "Pearl & Junction",
+        "stop_name": "Pearl & Junction"
+      },
+      {
+        "stop_key": "Canyon & 14th (Downtown Boulder Station Gate K)",
+        "stop_name": "Canyon & 14th (Downtown Boulder Station Gate K)"
+      },
+      {
+        "stop_key": "18th & Euclid",
+        "stop_name": "18th & Euclid"
+      },
+      {
+        "stop_key": "Canyon & 15th (Downtown Boulder Station Gate L)",
+        "stop_name": "Canyon & 15th (Downtown Boulder Station Gate L)"
+      },
+      {
+        "stop_key": "Pearl & 30th (Boulder Junction)",
+        "stop_name": "Pearl & 30th (Boulder Junction)"
+      },
+      {
+        "stop_key": "Mountain & 2nd",
+        "stop_name": "Mountain & 2nd"
+      },
+      {
+        "stop_key": "Lincoln & 8th",
+        "stop_name": "Lincoln & 8th"
+      },
+      {
+        "stop_key": "US 287 & 65th",
+        "stop_name": "US 287 & 65th"
+      },
+      {
+        "stop_key": "US 287 & Carpenter (South)",
+        "stop_name": "US 287 & Carpenter (South)"
+      },
+      {
+        "stop_key": "College & Fossil Creek",
+        "stop_name": "College & Fossil Creek"
+      }
+    ]
+  },
+  {
+    "route_id": "GOLD",
+    "route_long_name": "Gold Route",
+    "route_short_name": "Gold",
+    "route_color": "e9d66b",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "Mountain & Remington",
+        "stop_name": "Mountain & Remington"
+      },
+      {
+        "stop_key": "Olive & Remington",
+        "stop_name": "Olive & Remington"
+      },
+      {
+        "stop_key": "College & Mulberry",
+        "stop_name": "College & Mulberry"
+      },
+      {
+        "stop_key": "Laurel & Howes",
+        "stop_name": "Laurel & Howes"
+      },
+      {
+        "stop_key": "Laurel & Sherwood",
+        "stop_name": "Laurel & Sherwood"
+      },
+      {
+        "stop_key": "Laurel & Washington",
+        "stop_name": "Laurel & Washington"
+      },
+      {
+        "stop_key": "Plum & Bluebell",
+        "stop_name": "Plum & Bluebell"
+      },
+      {
+        "stop_key": "Rams Village",
+        "stop_name": "Rams Village"
+      },
+      {
+        "stop_key": "Constitution & Elizabeth",
+        "stop_name": "Constitution & Elizabeth"
+      },
+      {
+        "stop_key": "Elizabeth & Skyline",
+        "stop_name": "Elizabeth & Skyline"
+      },
+      {
+        "stop_key": "Elizabeth & Glenmoor",
+        "stop_name": "Elizabeth & Glenmoor"
+      },
+      {
+        "stop_key": "Elizabeth & Taft Hill",
+        "stop_name": "Elizabeth & Taft Hill"
+      },
+      {
+        "stop_key": "Elizabeth & Timber",
+        "stop_name": "Elizabeth & Timber"
+      },
+      {
+        "stop_key": "Elizabeth & Overland",
+        "stop_name": "Elizabeth & Overland"
+      },
+      {
+        "stop_key": "Overland & Golden Currant",
+        "stop_name": "Overland & Golden Currant"
+      },
+      {
+        "stop_key": "Prospect & Overland",
+        "stop_name": "Prospect & Overland"
+      },
+      {
+        "stop_key": "Prospect & Larch",
+        "stop_name": "Prospect & Larch"
+      },
+      {
+        "stop_key": "Prospect & Fuqua",
+        "stop_name": "Prospect & Fuqua"
+      },
+      {
+        "stop_key": "Prospect & Taft Hill",
+        "stop_name": "Prospect & Taft Hill"
+      },
+      {
+        "stop_key": "Prospect & Underhill",
+        "stop_name": "Prospect & Underhill"
+      },
+      {
+        "stop_key": "Prospect & Foxbrook",
+        "stop_name": "Prospect & Foxbrook"
+      },
+      {
+        "stop_key": "Prospect & Heatheridge",
+        "stop_name": "Prospect & Heatheridge"
+      },
+      {
+        "stop_key": "Prospect & Shields",
+        "stop_name": "Prospect & Shields"
+      },
+      {
+        "stop_key": "Prospect & Sheely",
+        "stop_name": "Prospect & Sheely"
+      },
+      {
+        "stop_key": "Prospect & Centre",
+        "stop_name": "Prospect & Centre"
+      },
+      {
+        "stop_key": "Prospect & Mason",
+        "stop_name": "Prospect & Mason"
+      },
+      {
+        "stop_key": "College & Lake",
+        "stop_name": "College & Lake"
+      },
+      {
+        "stop_key": "College & Elizabeth",
+        "stop_name": "College & Elizabeth"
+      },
+      {
+        "stop_key": "College & Laurel",
+        "stop_name": "College & Laurel"
+      },
+      {
+        "stop_key": "College & Mulberry (North)",
+        "stop_name": "College & Mulberry (North)"
+      }
+    ]
+  },
+  {
+    "route_id": "HORN",
+    "route_long_name": "The HORN",
+    "route_short_name": "HORN",
+    "route_color": "cd9575",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "VTH / Tennis Center",
+        "stop_name": "VTH / Tennis Center"
+      },
+      {
+        "stop_key": "Centre & Research",
+        "stop_name": "Centre & Research"
+      },
+      {
+        "stop_key": "Centre & Botanical",
+        "stop_name": "Centre & Botanical"
+      },
+      {
+        "stop_key": "Centre & Bay",
+        "stop_name": "Centre & Bay"
+      },
+      {
+        "stop_key": "Lake Street Garage",
+        "stop_name": "Lake Street Garage"
+      },
+      {
+        "stop_key": "Pitkin & Libbie Coy",
+        "stop_name": "Pitkin & Libbie Coy"
+      },
+      {
+        "stop_key": "University & Mason",
+        "stop_name": "University & Mason"
+      },
+      {
+        "stop_key": "Libbie Coy & Admin",
+        "stop_name": "Libbie Coy & Admin"
+      },
+      {
+        "stop_key": "Oval & Ammons",
+        "stop_name": "Oval & Ammons"
+      },
+      {
+        "stop_key": "CSU Transit Center",
+        "stop_name": "CSU Transit Center"
+      },
+      {
+        "stop_key": "Meridian & REC Center",
+        "stop_name": "Meridian & REC Center"
+      },
+      {
+        "stop_key": "Pitkin & Meridian",
+        "stop_name": "Pitkin & Meridian"
+      },
+      {
+        "stop_key": "Pitkin & Ingersoll",
+        "stop_name": "Pitkin & Ingersoll"
+      },
+      {
+        "stop_key": "Shields & Elizabeth",
+        "stop_name": "Shields & Elizabeth"
+      },
+      {
+        "stop_key": "Moby Arena",
+        "stop_name": "Moby Arena"
+      },
+      {
+        "stop_key": "Plum & H.E.S.",
+        "stop_name": "Plum & H.E.S."
+      },
+      {
+        "stop_key": "Tilt & Oval",
+        "stop_name": "Tilt & Oval"
+      },
+      {
+        "stop_key": "Oval & Isotope",
+        "stop_name": "Oval & Isotope"
+      },
+      {
+        "stop_key": "University & Libbie Coy",
+        "stop_name": "University & Libbie Coy"
+      },
+      {
+        "stop_key": "Libbie Coy & A",
+        "stop_name": "Libbie Coy & A"
+      },
+      {
+        "stop_key": "Libbie Coy & Pitkin",
+        "stop_name": "Libbie Coy & Pitkin"
+      },
+      {
+        "stop_key": "Lake & Centre",
+        "stop_name": "Lake & Centre"
+      }
+    ]
+  },
+  {
+    "route_id": "MAX",
+    "route_long_name": "MAX Route",
+    "route_short_name": "MAX",
+    "route_color": "3bb14a",
+    "route_text_color": "000000",
+    "stops": [
+      {
+        "stop_key": "South Transit Center",
+        "stop_name": "South Transit Center"
+      },
+      {
+        "stop_key": "Harmony Station",
+        "stop_name": "Harmony Station"
+      },
+      {
+        "stop_key": "Troutman Station",
+        "stop_name": "Troutman Station"
+      },
+      {
+        "stop_key": "Horsetooth Station",
+        "stop_name": "Horsetooth Station"
+      },
+      {
+        "stop_key": "Swallow Station",
+        "stop_name": "Swallow Station"
+      },
+      {
+        "stop_key": "Drake Station",
+        "stop_name": "Drake Station"
+      },
+      {
+        "stop_key": "Spring Creek Station",
+        "stop_name": "Spring Creek Station"
+      },
+      {
+        "stop_key": "Prospect Station",
+        "stop_name": "Prospect Station"
+      },
+      {
+        "stop_key": "University Station",
+        "stop_name": "University Station"
+      },
+      {
+        "stop_key": "Laurel Station",
+        "stop_name": "Laurel Station"
+      },
+      {
+        "stop_key": "Mulberry Station",
+        "stop_name": "Mulberry Station"
+      },
+      {
+        "stop_key": "Olive Station",
+        "stop_name": "Olive Station"
+      },
+      {
+        "stop_key": "Mountain Station",
+        "stop_name": "Mountain Station"
+      },
+      {
+        "stop_key": "Downtown Transit Center",
+        "stop_name": "Downtown Transit Center"
+      }
+    ]
+  }
+]
