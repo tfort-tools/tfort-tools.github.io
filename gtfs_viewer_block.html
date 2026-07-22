@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Transfort & RTD Timetable</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                text-align: center;
+            }
+            th {
+                background-color: #cce5e0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">Transfort & RTD Timetable</div>
+
+        <div id="container">
+            <button id="backButton">← Back</button>
+
+            <h2 id="title"></h2>
+
+            <div style="margin-bottom: 16px">
+                <input type="date" id="dateInput" />
+            </div>
+
+            <div id="content"></div>
+        </div>
+        <script>
+            document.getElementById("dateInput").valueAsDate = new Date();
+            document.getElementById("backButton").onclick = () => history.back();
+
+            const params = new URLSearchParams(location.search);
+            const company = params.get("company");
+            const blockId = params.get("block_id");
+
+            (async () => {
+                const [tripInfo, calendar, calendarDates, routeList] = await Promise.all([
+                    fetch(`./gtfs_parsed/${company}/trip-info.json`).then((r) => r.json()),
+                    fetch(`./gtfs_parsed/${company}/calendar.json`).then((r) => r.json()),
+                    fetch(`./gtfs_parsed/${company}/calendar-dates.json`).then((r) => r.json()),
+                    fetch(`./gtfs_parsed/${company}/route-list.json`).then((r) => r.json()),
+                ]);
+
+                function isServiceRunning(serviceId, date) {
+                    const service = calendar[serviceId];
+                    if (!service) return false;
+
+                    const yyyymmdd = date.replaceAll("-", "");
+                    const exceptions = calendarDates[serviceId] || [];
+                    const exception = exceptions.find((entry) => entry.date === yyyymmdd);
+
+                    if (exception) {
+                        if (exception.exception_type === "1") return true;
+                        if (exception.exception_type === "2") return false;
+                    }
+                    if (yyyymmdd < service.start_date) return false;
+                    if (yyyymmdd > service.end_date) return false;
+
+                    const weekdayNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+                    const weekday = weekdayNames[new Date(date).getDay()];
+                    return service[weekday] === "1";
+                }
+
+                // blockIdを持つtripを取得
+                const trips = Object.entries(tripInfo)
+                    .map(([key, value]) => ({ ...value, trip_id: key }))
+                    .filter((trip) => trip.block_id === blockId);
+
+                const dateInput = document.getElementById("dateInput");
+                function updateContent() {
+                    // タイトルを更新
+                    const title = document.getElementById("title");
+                    title.textContent = `All trips for Block Number ${blockId}`;
+
+                    // tripsを日付で絞り込み
+                    const selectedDate = dateInput.value;
+                    const filteredTrips = trips.filter((trip) => isServiceRunning(trip.service_id, selectedDate));
+                    console.log("filteredTrips", filteredTrips);
+
+                    // filteredTripsを出発時刻でソート
+                    filteredTrips.sort((a, b) => {
+                        const timeA = a.origin_time || "99:99:99";
+                        const timeB = b.origin_time || "99:99:99";
+                        return timeA.localeCompare(timeB);
+                    });
+
+                    // 既存のテーブルをクリア
+                    const contentDiv = document.getElementById("content");
+                    contentDiv.innerHTML = "";
+
+                    // 「列車番号 / 出発時刻 HHMM → 到着時刻 HHMM」という行を持ったテーブルを作成
+                    const table = document.createElement("table");
+                    const headerRow = document.createElement("tr");
+                    ["Trip ID", "Route", "Origin", "Departure Time", "Destination", "Arrival Time"].forEach((headerText) => {
+                        const th = document.createElement("th");
+                        th.textContent = headerText;
+                        headerRow.appendChild(th);
+                    });
+                    table.appendChild(headerRow);
+                    filteredTrips.forEach((trip) => {
+                        const row = document.createElement("tr");
+                        const routeName = routeList.find((route) => route.route_id === trip.route_id)?.route_short_name ?? trip.route_id;
+                        const departureTime = trip.origin_time ? trip.origin_time.replace(/:/g, "") : "N/A";
+                        const arrivalTime = trip.destination_time ? trip.destination_time.replace(/:/g, "") : "N/A";
+                        [trip.trip_id, routeName, trip.origin, departureTime, trip.destination, arrivalTime].forEach((cellText) => {
+                            const td = document.createElement("td");
+                            td.textContent = cellText;
+                            row.appendChild(td);
+                        });
+                        table.appendChild(row);
+                    });
+                    contentDiv.appendChild(table);
+                }
+
+                dateInput.addEventListener("change", updateContent);
+                updateContent();
+            })();
+        </script>
+    </body>
+</html>

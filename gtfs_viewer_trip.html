@@ -89,6 +89,8 @@
                 <div id="depTime"></div>
                 <div id="dest"></div>
             </h2>
+            <div id="tripId"></div>
+            <br />
 
             <div class="stationListContainer">
                 <div id="stationList" class="stationList"></div>
@@ -105,15 +107,22 @@
 
                 const depTimeElem = document.getElementById("depTime");
                 const destElem = document.getElementById("dest");
+                const tripIdElem = document.getElementById("tripId");
                 const stationListElem = document.getElementById("stationList");
 
                 document.getElementById("backButton").onclick = () => history.back();
 
-                const [tripTimes, patterns, routeList] = await Promise.all([
+                const [tripTimes, patterns, routeList, tripInfo] = await Promise.all([
                     fetch(`./gtfs_parsed/${company}/trip-times.json`).then((r) => r.json()),
                     fetch(`./gtfs_parsed/${company}/patterns.json`).then((r) => r.json()),
                     fetch(`./gtfs_parsed/${company}/route-list.json`).then((r) => r.json()),
+                    fetch(`./gtfs_parsed/${company}/trip-info.json`).then((r) => r.json()),
                 ]);
+
+                const blockLink = tripInfo[tripId]?.block_id
+                    ? `<a style="text-decoration: none; color: inherit;" href="./gtfs_viewer_block.html?company=${encodeURIComponent(company)}&block_id=${encodeURIComponent(tripInfo[tripId].block_id)}">Block Number: ${tripInfo[tripId].block_id}</a>`
+                    : "Block Number: Not Set";
+                tripIdElem.innerHTML = `Trip Number: ${tripId} / ${blockLink}`;
 
                 let route = null;
                 for (const pattern of Object.values(patterns)) {
@@ -154,7 +163,7 @@
                 if (currentStopElem) {
                     const container = document.querySelector(".stationListContainer");
                     container.scrollTo({
-                        top: currentStopElem.offsetTop - 250,
+                        top: currentStopElem.offsetTop - 290,
                         behavior: "smooth",
                     });
                 }

@@ -362,8 +362,12 @@ for (const [patternId, pattern] of Object.entries(patterns)) {
         tripInfo[tripId] = {
             route_id: pattern.route_id,
             route_short_name: routeMap.get(pattern.route_id)?.route_short_name || null,
+            service_id: tripMap.get(tripId)?.service_id || null,
             pattern_id: patternId,
+            origin: pattern.stops[0],
             destination: pattern.stops.at(-1),
+            origin_time: tripMap2.get(tripId)?.[0]?.departure_time || null,
+            destination_time: tripMap2.get(tripId)?.at(-1)?.departure_time || null,
             block_id: tripMap.get(tripId)?.block_id || null,
         };
     }

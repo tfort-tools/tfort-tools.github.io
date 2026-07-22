@@ -101,9 +101,7 @@
             (async () => {
                 const [stopPatterns, patterns, routeList] = await Promise.all([
                     fetch(`./gtfs_parsed/${company}/stop-patterns.json`).then((r) => r.json()),
-
                     fetch(`./gtfs_parsed/${company}/patterns.json`).then((r) => r.json()),
-
                     fetch(`./gtfs_parsed/${company}/route-list.json`).then((r) => r.json()),
                 ]);
 
