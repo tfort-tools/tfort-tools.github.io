@@ -10,15 +10,32 @@
             table {
                 border-collapse: collapse;
                 width: 100%;
+                font-size: min(1em, 2.5vw);
             }
-            th, td {
-                border: 1px solid #ddd;
-                padding: 8px;
+            tr {
+                border: 1px solid black;
+                cursor: pointer;
+                &:hover {
+                    background-color: #ddd;
+                }
+                &.current {
+                    background-color: #8dffc877;
+                    &:hover {
+                        background-color: #8dffc8;
+                    }
+                }
+            }
+            .route-icon {
+                width: 3em;
+                height: 1.4em;
+                line-height: 1.4em;
+                border-radius: 0.2em;
+                display: inline-block;
+            }
+            td {
+                padding: 8px 0;
                 text-align: left;
                 text-align: center;
-            }
-            th {
-                background-color: #cce5e0;
             }
         </style>
     </head>
@@ -43,6 +60,7 @@
             const params = new URLSearchParams(location.search);
             const company = params.get("company");
             const blockId = params.get("block_id");
+            const tripId = params.get("trip_id");
 
             (async () => {
                 const [tripInfo, calendar, calendarDates, routeList] = await Promise.all([
@@ -99,25 +117,41 @@
                     const contentDiv = document.getElementById("content");
                     contentDiv.innerHTML = "";
 
-                    // 「列車番号 / 出発時刻 HHMM → 到着時刻 HHMM」という行を持ったテーブルを作成
+                    // 運用内のtripを順に行として表示
                     const table = document.createElement("table");
-                    const headerRow = document.createElement("tr");
-                    ["Trip ID", "Route", "Origin", "Departure Time", "Destination", "Arrival Time"].forEach((headerText) => {
-                        const th = document.createElement("th");
-                        th.textContent = headerText;
-                        headerRow.appendChild(th);
-                    });
-                    table.appendChild(headerRow);
                     filteredTrips.forEach((trip) => {
                         const row = document.createElement("tr");
-                        const routeName = routeList.find((route) => route.route_id === trip.route_id)?.route_short_name ?? trip.route_id;
-                        const departureTime = trip.origin_time ? trip.origin_time.replace(/:/g, "") : "N/A";
-                        const arrivalTime = trip.destination_time ? trip.destination_time.replace(/:/g, "") : "N/A";
-                        [trip.trip_id, routeName, trip.origin, departureTime, trip.destination, arrivalTime].forEach((cellText) => {
-                            const td = document.createElement("td");
-                            td.textContent = cellText;
-                            row.appendChild(td);
+                        row.addEventListener("click", () => {
+                            const url = `./gtfs_viewer_trip.html?company=${encodeURIComponent(company)}&trip_id=${encodeURIComponent(trip.trip_id)}&stop_sequence=1`;
+                            window.location.href = url;
                         });
+                        if (trip.trip_id === tripId) row.classList.add("current"); // リンク元のtripをハイライト
+
+                        const tripIdCell = document.createElement("td");
+                        tripIdCell.innerHTML = `${trip.trip_id}`;
+                        row.appendChild(tripIdCell);
+
+                        const routeNameCell = document.createElement("td");
+                        const routeIcon = document.createElement("div");
+                        routeIcon.className = "route-icon";
+                        routeIcon.innerHTML = routeList.find((route) => route.route_id === trip.route_id)?.route_short_name?.toUpperCase() ?? "null";
+                        routeIcon.style.backgroundColor = "#" + routeList.find((route) => route.route_id === trip.route_id)?.route_color ?? "000000";
+                        routeIcon.style.color = "#" + routeList.find((route) => route.route_id === trip.route_id)?.route_text_color ?? "FFFFFF";
+                        routeNameCell.appendChild(routeIcon);
+                        row.appendChild(routeNameCell);
+
+                        const originNameCell = document.createElement("td");
+                        originNameCell.innerHTML = trip.origin;
+                        row.appendChild(originNameCell);
+
+                        const timeCell = document.createElement("td");
+                        timeCell.innerHTML = `${trip.origin_time?.replace(/:/g, "") || "????"} > ${trip.destination_time?.replace(/:/g, "") || "????"}`;
+                        row.appendChild(timeCell);
+
+                        const destinationNameCell = document.createElement("td");
+                        destinationNameCell.innerHTML = trip.destination;
+                        row.appendChild(destinationNameCell);
+
                         table.appendChild(row);
                     });
                     contentDiv.appendChild(table);

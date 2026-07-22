@@ -120,7 +120,7 @@
                 ]);
 
                 const blockLink = tripInfo[tripId]?.block_id
-                    ? `<a style="text-decoration: none; color: inherit;" href="./gtfs_viewer_block.html?company=${encodeURIComponent(company)}&block_id=${encodeURIComponent(tripInfo[tripId].block_id)}">Block Number: ${tripInfo[tripId].block_id}</a>`
+                    ? `<a style="text-decoration: none; color: inherit;" href="./gtfs_viewer_block.html?company=${encodeURIComponent(company)}&block_id=${encodeURIComponent(tripInfo[tripId].block_id)}&trip_id=${encodeURIComponent(tripId)}">Block Number: ${tripInfo[tripId].block_id}</a>`
                     : "Block Number: Not Set";
                 tripIdElem.innerHTML = `Trip Number: ${tripId} / ${blockLink}`;
 
