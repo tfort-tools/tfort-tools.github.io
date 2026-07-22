@@ -584,10 +584,6 @@
         "stop_name": "Broadway & Regent Dr"
       },
       {
-        "stop_key": "Downtown Boulder Station (Ar)",
-        "stop_name": "Downtown Boulder Station (Ar)"
-      },
-      {
         "stop_key": "Park Ave W & Delgany St",
         "stop_name": "Park Ave W & Delgany St"
       }
@@ -651,10 +647,6 @@
       {
         "stop_key": "Broadway & Regent Dr",
         "stop_name": "Broadway & Regent Dr"
-      },
-      {
-        "stop_key": "Downtown Boulder Station (Ar)",
-        "stop_name": "Downtown Boulder Station (Ar)"
       },
       {
         "stop_key": "Park Ave W & Delgany St",
@@ -828,10 +820,6 @@
       {
         "stop_key": "Broadway & Canyon Blvd",
         "stop_name": "Broadway & Canyon Blvd"
-      },
-      {
-        "stop_key": "Downtown Boulder Station (Ar)",
-        "stop_name": "Downtown Boulder Station (Ar)"
       },
       {
         "stop_key": "Downtown Boulder Station",

@@ -62,6 +62,18 @@
             const blockId = params.get("block_id");
             const tripId = params.get("trip_id");
 
+            function regularizeStopName(name) {
+                name = name.replace(/Transit Center/g, "Transit");
+                name = name.replace(/Station/g, "Stn");
+                name = name.replace(/Parkway/g, "Pkwy");
+                name = name.replace(/Boulevard/g, "Blvd");
+                name = name.replace(/Avenue/g, "Ave");
+                name = name.replace(/Street/g, "St");
+                name = name.replace(/Government/g, "Gov");
+                name = name.replace(/\(((Light|Heavy) Rail|Bus)\)/g, "");
+                return name;
+            }
+
             (async () => {
                 const [tripInfo, calendar, calendarDates, routeList] = await Promise.all([
                     fetch(`./gtfs_parsed/${company}/trip-info.json`).then((r) => r.json()),
@@ -99,12 +111,11 @@
                 function updateContent() {
                     // タイトルを更新
                     const title = document.getElementById("title");
-                    title.textContent = `All trips for Block Number ${blockId}`;
+                    title.textContent = `All trips for Block Number ${blockId?.trim().replace(/\s+/g, "-")}`;
 
                     // tripsを日付で絞り込み
                     const selectedDate = dateInput.value;
                     const filteredTrips = trips.filter((trip) => isServiceRunning(trip.service_id, selectedDate));
-                    console.log("filteredTrips", filteredTrips);
 
                     // filteredTripsを出発時刻でソート
                     filteredTrips.sort((a, b) => {
@@ -141,7 +152,7 @@
                         row.appendChild(routeNameCell);
 
                         const originNameCell = document.createElement("td");
-                        originNameCell.innerHTML = trip.origin;
+                        originNameCell.innerHTML = regularizeStopName(trip.origin);
                         row.appendChild(originNameCell);
 
                         const timeCell = document.createElement("td");
@@ -149,7 +160,7 @@
                         row.appendChild(timeCell);
 
                         const destinationNameCell = document.createElement("td");
-                        destinationNameCell.innerHTML = trip.destination;
+                        destinationNameCell.innerHTML = regularizeStopName(trip.destination);
                         row.appendChild(destinationNameCell);
 
                         table.appendChild(row);

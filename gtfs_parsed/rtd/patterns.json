@@ -4836,7 +4836,7 @@
   "p_rtd_28": {
     "route_id": "FF1",
     "trip_name": null,
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "stops": [
       "Union Station (Bus)",
       "US 36 & Sheridan Station",
@@ -4850,7 +4850,7 @@
       "Broadway & Baseline Rd",
       "Broadway & Regent Dr",
       "Broadway & Euclid Ave",
-      "Downtown Boulder Station (Ar)"
+      "Downtown Boulder Station"
     ],
     "trip_ids": [
       "115892230",
@@ -5021,7 +5021,7 @@
   "p_rtd_30": {
     "route_id": "FF1",
     "trip_name": null,
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "stops": [
       "Union Station (Bus)",
       "Park Ave W & Delgany St",
@@ -5036,7 +5036,7 @@
       "Broadway & Baseline Rd",
       "Broadway & Regent Dr",
       "Broadway & Euclid Ave",
-      "Downtown Boulder Station (Ar)"
+      "Downtown Boulder Station"
     ],
     "trip_ids": [
       "115892437",
@@ -5114,7 +5114,7 @@
   "p_rtd_33": {
     "route_id": "FF2",
     "trip_name": null,
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "stops": [
       "Union Station (Bus)",
       "US 36 & Mccaslin Station",
@@ -5124,7 +5124,7 @@
       "Broadway & Baseline Rd",
       "Broadway & Regent Dr",
       "Broadway & Euclid Ave",
-      "Downtown Boulder Station (Ar)"
+      "Downtown Boulder Station"
     ],
     "trip_ids": [
       "115892452",
@@ -5136,7 +5136,7 @@
   "p_rtd_34": {
     "route_id": "FF2",
     "trip_name": null,
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "stops": [
       "Union Station (Bus)",
       "Park Ave W & Delgany St",
@@ -5147,7 +5147,7 @@
       "Broadway & Baseline Rd",
       "Broadway & Regent Dr",
       "Broadway & Euclid Ave",
-      "Downtown Boulder Station (Ar)"
+      "Downtown Boulder Station"
     ],
     "trip_ids": [
       "115892454",
@@ -5159,7 +5159,7 @@
   "p_rtd_35": {
     "route_id": "GS",
     "trip_name": null,
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "stops": [
       "Federal Center Station",
       "Union Blvd & W 4th Ave",
@@ -5201,7 +5201,7 @@
       "Broadway & Euclid Ave",
       "Broadway & Pleasant St",
       "Broadway & Canyon Blvd",
-      "Downtown Boulder Station (Ar)"
+      "Downtown Boulder Station"
     ],
     "trip_ids": [
       "115893709",

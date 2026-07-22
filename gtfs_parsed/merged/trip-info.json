@@ -70262,7 +70262,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:55",
     "destination_time": "08:51",
     "block_id": "  FF  5"
@@ -70273,7 +70273,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:10",
     "destination_time": "09:06",
     "block_id": "  FF  3"
@@ -70284,7 +70284,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:25",
     "destination_time": "09:21",
     "block_id": "  FF  7"
@@ -70295,7 +70295,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:40",
     "destination_time": "09:36",
     "block_id": "  FF  2"
@@ -70306,7 +70306,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:55",
     "destination_time": "09:51",
     "block_id": "  FF  9"
@@ -70317,7 +70317,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:10",
     "destination_time": "10:06",
     "block_id": "  FF 12"
@@ -70328,7 +70328,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:25",
     "destination_time": "10:21",
     "block_id": "  FF  6"
@@ -70339,7 +70339,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:40",
     "destination_time": "10:36",
     "block_id": "  FF  4"
@@ -70350,7 +70350,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:55",
     "destination_time": "10:51",
     "block_id": "  FF  8"
@@ -70361,7 +70361,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:10",
     "destination_time": "11:06",
     "block_id": "  FF  5"
@@ -70372,7 +70372,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:25",
     "destination_time": "11:21",
     "block_id": "  FF  3"
@@ -70383,7 +70383,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:40",
     "destination_time": "11:36",
     "block_id": "  FF  7"
@@ -70394,7 +70394,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:55",
     "destination_time": "11:51",
     "block_id": "  FF  2"
@@ -70405,7 +70405,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:10",
     "destination_time": "12:06",
     "block_id": "  FF  9"
@@ -70416,7 +70416,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:25",
     "destination_time": "12:21",
     "block_id": "  FF 12"
@@ -70427,7 +70427,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:40",
     "destination_time": "12:36",
     "block_id": "  FF  6"
@@ -70438,7 +70438,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:55",
     "destination_time": "12:51",
     "block_id": "  FF  4"
@@ -70449,7 +70449,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:10",
     "destination_time": "13:06",
     "block_id": "  FF  8"
@@ -70460,7 +70460,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:25",
     "destination_time": "13:21",
     "block_id": "  FF  5"
@@ -70471,7 +70471,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:40",
     "destination_time": "13:36",
     "block_id": "  FF  3"
@@ -70482,7 +70482,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:55",
     "destination_time": "13:51",
     "block_id": "  FF  7"
@@ -70493,7 +70493,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:10",
     "destination_time": "14:06",
     "block_id": "  FF  2"
@@ -70504,7 +70504,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:25",
     "destination_time": "14:21",
     "block_id": "  FF  9"
@@ -70515,7 +70515,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:40",
     "destination_time": "14:36",
     "block_id": "  FF 12"
@@ -70526,7 +70526,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:55",
     "destination_time": "14:48",
     "block_id": "  FF  6"
@@ -70537,7 +70537,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:10",
     "destination_time": "15:03",
     "block_id": "  FF  4"
@@ -70548,7 +70548,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:25",
     "destination_time": "15:18",
     "block_id": "  FF  8"
@@ -70559,7 +70559,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:40",
     "destination_time": "15:33",
     "block_id": "  FF  5"
@@ -70570,7 +70570,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:55",
     "destination_time": "15:48",
     "block_id": "  FF  3"
@@ -70581,7 +70581,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:10",
     "destination_time": "16:03",
     "block_id": "  FF  7"
@@ -70592,7 +70592,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:25",
     "destination_time": "16:18",
     "block_id": "  FF  2"
@@ -70603,7 +70603,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:40",
     "destination_time": "16:33",
     "block_id": "  FF  9"
@@ -70614,7 +70614,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:55",
     "destination_time": "16:48",
     "block_id": "  FF 12"
@@ -70625,7 +70625,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:10",
     "destination_time": "17:03",
     "block_id": "  FF  6"
@@ -70636,7 +70636,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:25",
     "destination_time": "17:18",
     "block_id": "  FF  4"
@@ -70647,7 +70647,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:40",
     "destination_time": "17:33",
     "block_id": "  FF  8"
@@ -70658,7 +70658,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:55",
     "destination_time": "17:48",
     "block_id": "  FF 10"
@@ -70669,7 +70669,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:10",
     "destination_time": "18:03",
     "block_id": "  FF  5"
@@ -70680,7 +70680,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:25",
     "destination_time": "18:18",
     "block_id": "  FF  3"
@@ -70691,7 +70691,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:40",
     "destination_time": "18:33",
     "block_id": "  FF  7"
@@ -70702,7 +70702,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:55",
     "destination_time": "18:46",
     "block_id": "  FF  2"
@@ -70713,7 +70713,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "18:25",
     "destination_time": "19:16",
     "block_id": "  FF 12"
@@ -70724,7 +70724,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "18:55",
     "destination_time": "19:46",
     "block_id": "  FF  4"
@@ -70735,7 +70735,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "19:25",
     "destination_time": "20:16",
     "block_id": "  FF 10"
@@ -70746,7 +70746,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "19:55",
     "destination_time": "20:48",
     "block_id": "  FF  3"
@@ -70757,7 +70757,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "20:25",
     "destination_time": "21:18",
     "block_id": "  FF  2"
@@ -70768,7 +70768,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "20:55",
     "destination_time": "21:48",
     "block_id": "  FF 12"
@@ -70779,7 +70779,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "21:25",
     "destination_time": "22:18",
     "block_id": "  FF  4"
@@ -70790,7 +70790,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "21:55",
     "destination_time": "22:48",
     "block_id": "  FF 10"
@@ -70801,7 +70801,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "22:25",
     "destination_time": "23:18",
     "block_id": "  FF  3"
@@ -70812,7 +70812,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "22:55",
     "destination_time": "23:48",
     "block_id": "  FF  2"
@@ -70823,7 +70823,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "23:25",
     "destination_time": "24:18",
     "block_id": "  FF 12"
@@ -70834,7 +70834,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "23:55",
     "destination_time": "24:48",
     "block_id": "  FF  4"
@@ -70845,7 +70845,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "05:56",
     "destination_time": "06:48",
     "block_id": "  FF  3"
@@ -70856,7 +70856,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "06:26",
     "destination_time": "07:18",
     "block_id": "  FF  2"
@@ -70867,7 +70867,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "06:55",
     "destination_time": "07:51",
     "block_id": "  FF 12"
@@ -70878,7 +70878,7 @@
     "service_id": "SA",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:25",
     "destination_time": "08:21",
     "block_id": "  FF  4"
@@ -71208,7 +71208,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:19",
     "destination_time": "09:09",
     "block_id": "  FF  3"
@@ -71219,7 +71219,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:19",
     "destination_time": "08:09",
     "block_id": "  FF  2"
@@ -71230,7 +71230,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "21:19",
     "destination_time": "22:12",
     "block_id": "  FF  5"
@@ -71241,7 +71241,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "18:49",
     "destination_time": "19:42",
     "block_id": "  FF  5"
@@ -71252,7 +71252,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:49",
     "destination_time": "11:43",
     "block_id": "  FF  3"
@@ -71263,7 +71263,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:49",
     "destination_time": "18:40",
     "block_id": "  FF  2"
@@ -71274,7 +71274,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:49",
     "destination_time": "17:40",
     "block_id": "  FF  4"
@@ -71285,7 +71285,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:49",
     "destination_time": "16:44",
     "block_id": "  FF  3"
@@ -71296,7 +71296,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:49",
     "destination_time": "15:44",
     "block_id": "  FF  6"
@@ -71307,7 +71307,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:49",
     "destination_time": "14:43",
     "block_id": "  FF  5"
@@ -71318,7 +71318,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:49",
     "destination_time": "13:43",
     "block_id": "  FF  2"
@@ -71329,7 +71329,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "20:49",
     "destination_time": "21:42",
     "block_id": "  FF  4"
@@ -71340,7 +71340,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "19:49",
     "destination_time": "20:42",
     "block_id": "  FF  6"
@@ -71351,7 +71351,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:49",
     "destination_time": "12:43",
     "block_id": "  FF  4"
@@ -71362,7 +71362,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "24:04",
     "destination_time": "24:50",
     "block_id": "  FF  2"
@@ -71373,7 +71373,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "23:04",
     "destination_time": "23:50",
     "block_id": "  FF  4"
@@ -71384,7 +71384,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "21:49",
     "destination_time": "22:42",
     "block_id": "  FF  2"
@@ -71395,7 +71395,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "22:19",
     "destination_time": "23:05",
     "block_id": "  FF  6"
@@ -71406,7 +71406,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "18:19",
     "destination_time": "19:12",
     "block_id": "  FF  3"
@@ -71417,7 +71417,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:19",
     "destination_time": "18:10",
     "block_id": "  FF  6"
@@ -71428,7 +71428,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:19",
     "destination_time": "17:10",
     "block_id": "  FF  5"
@@ -71439,7 +71439,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:19",
     "destination_time": "16:14",
     "block_id": "  FF  2"
@@ -71450,7 +71450,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:19",
     "destination_time": "15:14",
     "block_id": "  FF  4"
@@ -71461,7 +71461,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:19",
     "destination_time": "14:13",
     "block_id": "  FF  3"
@@ -71472,7 +71472,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:19",
     "destination_time": "13:13",
     "block_id": "  FF  6"
@@ -71483,7 +71483,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:19",
     "destination_time": "12:13",
     "block_id": "  FF  5"
@@ -71494,7 +71494,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:19",
     "destination_time": "11:13",
     "block_id": "  FF  2"
@@ -71505,7 +71505,7 @@
     "service_id": "SU",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:19",
     "destination_time": "10:09",
     "block_id": "  FF  4"
@@ -72308,7 +72308,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "05:51",
     "destination_time": "06:46",
     "block_id": "  FF  6"
@@ -72319,7 +72319,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:22",
     "destination_time": "11:19",
     "block_id": "  FF 13"
@@ -72330,7 +72330,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:07",
     "destination_time": "11:04",
     "block_id": "  FF 11"
@@ -72341,7 +72341,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:52",
     "destination_time": "10:49",
     "block_id": "  FF  8"
@@ -72352,7 +72352,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:37",
     "destination_time": "10:36",
     "block_id": "  FF  7"
@@ -72363,7 +72363,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:22",
     "destination_time": "10:21",
     "block_id": "  FF 24"
@@ -72374,7 +72374,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "09:07",
     "destination_time": "10:06",
     "block_id": "  FF 16"
@@ -72385,7 +72385,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:52",
     "destination_time": "09:51",
     "block_id": "  FF 56"
@@ -72396,7 +72396,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:37",
     "destination_time": "09:36",
     "block_id": "  FF  1"
@@ -72407,7 +72407,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:22",
     "destination_time": "09:21",
     "block_id": "  FF  9"
@@ -72418,7 +72418,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:07",
     "destination_time": "09:06",
     "block_id": "  FF 14"
@@ -72429,7 +72429,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:52",
     "destination_time": "08:51",
     "block_id": "  FF 13"
@@ -72440,7 +72440,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:22",
     "destination_time": "08:21",
     "block_id": "  FF  8"
@@ -72451,7 +72451,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "06:52",
     "destination_time": "07:51",
     "block_id": "  FF  4"
@@ -72462,7 +72462,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "06:21",
     "destination_time": "07:16",
     "block_id": "  FF 15"
@@ -72473,7 +72473,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_33",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:16",
     "destination_time": "18:06",
     "block_id": "  FF 53"
@@ -72484,7 +72484,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_33",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:43",
     "destination_time": "17:33",
     "block_id": "  FF  1"
@@ -72495,7 +72495,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_34",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:40",
     "destination_time": "08:28",
     "block_id": "  FF  5"
@@ -72506,7 +72506,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "06:36",
     "destination_time": "07:31",
     "block_id": "  FF  3"
@@ -72517,7 +72517,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:07",
     "destination_time": "08:06",
     "block_id": "  FF  7"
@@ -72528,7 +72528,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:37",
     "destination_time": "08:36",
     "block_id": "  FF 11"
@@ -72539,7 +72539,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "23:55",
     "destination_time": "24:45",
     "block_id": "  FF 25"
@@ -72550,7 +72550,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "23:25",
     "destination_time": "24:15",
     "block_id": "  FF 58"
@@ -72561,7 +72561,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "22:55",
     "destination_time": "23:45",
     "block_id": "  FF 11"
@@ -72572,7 +72572,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "22:25",
     "destination_time": "23:15",
     "block_id": "  FF 53"
@@ -72583,7 +72583,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "21:55",
     "destination_time": "22:45",
     "block_id": "  FF 25"
@@ -72594,7 +72594,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "21:25",
     "destination_time": "22:15",
     "block_id": "  FF 54"
@@ -72605,7 +72605,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "20:55",
     "destination_time": "21:45",
     "block_id": "  FF 58"
@@ -72616,7 +72616,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "20:25",
     "destination_time": "21:15",
     "block_id": "  FF 11"
@@ -72627,7 +72627,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "19:55",
     "destination_time": "20:45",
     "block_id": "  FF 53"
@@ -72638,7 +72638,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "19:24",
     "destination_time": "20:18",
     "block_id": "  FF 25"
@@ -72649,7 +72649,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "18:54",
     "destination_time": "19:48",
     "block_id": "  FF 54"
@@ -72660,7 +72660,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "18:24",
     "destination_time": "19:18",
     "block_id": "  FF 58"
@@ -72671,7 +72671,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:54",
     "destination_time": "18:48",
     "block_id": "  FF 11"
@@ -72682,7 +72682,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:38",
     "destination_time": "18:36",
     "block_id": "  FF  8"
@@ -72693,7 +72693,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:23",
     "destination_time": "18:21",
     "block_id": "  FF  7"
@@ -72704,7 +72704,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:08",
     "destination_time": "18:06",
     "block_id": "  FF 24"
@@ -72715,7 +72715,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:53",
     "destination_time": "17:51",
     "block_id": "  FF 16"
@@ -72726,7 +72726,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:23",
     "destination_time": "17:21",
     "block_id": "  FF 25"
@@ -72737,7 +72737,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:08",
     "destination_time": "17:06",
     "block_id": "  FF 14"
@@ -72748,7 +72748,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:53",
     "destination_time": "16:51",
     "block_id": "  FF 13"
@@ -72759,7 +72759,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:38",
     "destination_time": "16:34",
     "block_id": "  FF 54"
@@ -72770,7 +72770,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:23",
     "destination_time": "16:19",
     "block_id": "  FF 11"
@@ -72781,7 +72781,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:08",
     "destination_time": "16:04",
     "block_id": "  FF  8"
@@ -72792,7 +72792,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:53",
     "destination_time": "15:49",
     "block_id": "  FF  7"
@@ -72803,7 +72803,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:38",
     "destination_time": "15:34",
     "block_id": "  FF 24"
@@ -72814,7 +72814,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:23",
     "destination_time": "15:19",
     "block_id": "  FF 16"
@@ -72825,7 +72825,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "14:08",
     "destination_time": "15:04",
     "block_id": "  FF 56"
@@ -72836,7 +72836,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:51",
     "destination_time": "14:48",
     "block_id": "  FF  1"
@@ -72847,7 +72847,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:38",
     "destination_time": "14:35",
     "block_id": "  FF  9"
@@ -72858,7 +72858,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:23",
     "destination_time": "14:20",
     "block_id": "  FF 14"
@@ -72869,7 +72869,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "13:08",
     "destination_time": "14:05",
     "block_id": "  FF 55"
@@ -72880,7 +72880,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:53",
     "destination_time": "13:50",
     "block_id": "  FF 13"
@@ -72891,7 +72891,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:38",
     "destination_time": "13:35",
     "block_id": "  FF  8"
@@ -72902,7 +72902,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:23",
     "destination_time": "13:20",
     "block_id": "  FF 11"
@@ -72913,7 +72913,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "12:08",
     "destination_time": "13:05",
     "block_id": "  FF  7"
@@ -72924,7 +72924,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_28",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:38",
     "destination_time": "17:36",
     "block_id": "  FF 56"
@@ -72935,7 +72935,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:53",
     "destination_time": "12:50",
     "block_id": "  FF 24"
@@ -72946,7 +72946,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:37",
     "destination_time": "12:34",
     "block_id": "  FF 16"
@@ -72957,7 +72957,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:22",
     "destination_time": "12:19",
     "block_id": "  FF 56"
@@ -72968,7 +72968,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "11:07",
     "destination_time": "12:04",
     "block_id": "  FF  1"
@@ -72979,7 +72979,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:52",
     "destination_time": "11:49",
     "block_id": "  FF  9"
@@ -72990,7 +72990,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_30",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "10:37",
     "destination_time": "11:34",
     "block_id": "  FF 14"
@@ -73001,7 +73001,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_34",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "06:47",
     "destination_time": "07:34",
     "block_id": "  FF 21"
@@ -73012,7 +73012,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_34",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:47",
     "destination_time": "08:35",
     "block_id": "  FF 23"
@@ -73023,7 +73023,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_33",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "16:51",
     "destination_time": "17:41",
     "block_id": "  FF  9"
@@ -73034,7 +73034,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_33",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:31",
     "destination_time": "18:21",
     "block_id": "  FF 26"
@@ -73045,7 +73045,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_34",
     "origin": "Union Station (Bus)",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "07:15",
     "destination_time": "08:03",
     "block_id": "  LX  2"
@@ -73056,7 +73056,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_35",
     "origin": "Federal Center Station",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "15:48",
     "destination_time": "17:05",
     "block_id": "  GS  4"
@@ -73067,7 +73067,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_35",
     "origin": "Federal Center Station",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "08:22",
     "destination_time": "09:34",
     "block_id": "  GS  5"
@@ -73078,7 +73078,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_35",
     "origin": "Federal Center Station",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "17:14",
     "destination_time": "18:31",
     "block_id": "  GS  3"
@@ -73089,7 +73089,7 @@
     "service_id": "WK",
     "pattern_id": "p_rtd_35",
     "origin": "Federal Center Station",
-    "destination": "Downtown Boulder Station (Ar)",
+    "destination": "Downtown Boulder Station",
     "origin_time": "06:52",
     "destination_time": "08:04",
     "block_id": "  GS  1"

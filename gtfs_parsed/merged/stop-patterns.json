@@ -444,9 +444,14 @@
   ],
   "Downtown Boulder Station": [
     "p_rtd_27",
+    "p_rtd_28",
     "p_rtd_29",
+    "p_rtd_30",
     "p_rtd_31",
     "p_rtd_32",
+    "p_rtd_33",
+    "p_rtd_34",
+    "p_rtd_35",
     "p_rtd_36"
   ],
   "Broadway & Euclid Ave": [
@@ -567,13 +572,6 @@
     "p_rtd_35"
   ],
   "Broadway & Regent Dr": [
-    "p_rtd_28",
-    "p_rtd_30",
-    "p_rtd_33",
-    "p_rtd_34",
-    "p_rtd_35"
-  ],
-  "Downtown Boulder Station (Ar)": [
     "p_rtd_28",
     "p_rtd_30",
     "p_rtd_33",
