@@ -1,0 +1,2060 @@
+{
+  "1": [
+    {
+      "date": "20260822",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260829",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260905",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260912",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260919",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260926",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261003",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261010",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261017",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261024",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261031",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261107",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261114",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261121",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261128",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261205",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261212",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261219",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261226",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270102",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270109",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270116",
+      "exception_type": "2"
+    }
+  ],
+  "2": [
+    {
+      "date": "20260822",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260829",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260905",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260912",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260919",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260926",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261003",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261010",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261017",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261024",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261031",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261107",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261114",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261121",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261128",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261205",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261212",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261219",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261226",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270102",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270109",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270116",
+      "exception_type": "2"
+    }
+  ],
+  "3": [
+    {
+      "date": "20260817",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260818",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260819",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260820",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260824",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260825",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260826",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260827",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260831",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260901",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260902",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260903",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260907",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260908",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260909",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260910",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260914",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260915",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260916",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260917",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260921",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260922",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260923",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260924",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260928",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260929",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260930",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261001",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261005",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261006",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261007",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261008",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261012",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261013",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261014",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261015",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261019",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261020",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261021",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261022",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261026",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261027",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261028",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261029",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261102",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261103",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261104",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261105",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261109",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261110",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261111",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261112",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261116",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261117",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261118",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261119",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261123",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261124",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261125",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261126",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261130",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261201",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261202",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261203",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261207",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261208",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261209",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261210",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261214",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261215",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261216",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261217",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261221",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261222",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261223",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261224",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261228",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261229",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261230",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261231",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270104",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270105",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270106",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270107",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270111",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270112",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270113",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270114",
+      "exception_type": "1"
+    }
+  ],
+  "4": [
+    {
+      "date": "20260817",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260818",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260819",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260820",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260907",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261123",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261124",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261125",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261126",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261221",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261222",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261223",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261224",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261228",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261229",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261230",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261231",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270104",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270105",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270106",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270107",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270111",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270112",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270113",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270114",
+      "exception_type": "2"
+    }
+  ],
+  "5": [
+    {
+      "date": "20260821",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261127",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261225",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270101",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270108",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270115",
+      "exception_type": "2"
+    }
+  ],
+  "6": [
+    {
+      "date": "20260821",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260828",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260904",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260911",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260918",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260925",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261002",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261009",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261016",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261023",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261030",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261106",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261113",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261120",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261127",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261204",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261211",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261218",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261225",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270101",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270108",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270115",
+      "exception_type": "2"
+    }
+  ],
+  "7": [
+    {
+      "date": "20260822",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260829",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260905",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260912",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260919",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260926",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261003",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261010",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261017",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261024",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261031",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261107",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261114",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261121",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261128",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261205",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261212",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261219",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261226",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270102",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270109",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270116",
+      "exception_type": "2"
+    }
+  ],
+  "8": [
+    {
+      "date": "20260905",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260912",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260919",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261003",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261024",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261107",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261128",
+      "exception_type": "2"
+    }
+  ],
+  "9": [
+    {
+      "date": "20260817",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260818",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260819",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260820",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260824",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260825",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260826",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260827",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260831",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260901",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260902",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260903",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260907",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260908",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260909",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260910",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260914",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260915",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260916",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260917",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260921",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260922",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260923",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260924",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260928",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260929",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260930",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261001",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261005",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261006",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261007",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261008",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261012",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261013",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261014",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261015",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261019",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261020",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261021",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261022",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261026",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261027",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261028",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261029",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261102",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261103",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261104",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261105",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261109",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261110",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261111",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261112",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261116",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261117",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261118",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261119",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261123",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261124",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261125",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261126",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261130",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261201",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261202",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261203",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261207",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261208",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261209",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261210",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261214",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261215",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261216",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261217",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261221",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261222",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261223",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261224",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261228",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261229",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261230",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261231",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270104",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270105",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270106",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270107",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270111",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270112",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270113",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270114",
+      "exception_type": "2"
+    }
+  ],
+  "10": [
+    {
+      "date": "20260823",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260830",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260906",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260913",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260920",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260927",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261004",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261011",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261018",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261025",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261101",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261108",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261115",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261122",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261129",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261206",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261213",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261220",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261227",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270103",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270110",
+      "exception_type": "2"
+    }
+  ],
+  "11": [
+    {
+      "date": "20260821",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260828",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260904",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260911",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260918",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260925",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261002",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261009",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261016",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261023",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261030",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261106",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261113",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261120",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261127",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261204",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261211",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261218",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261225",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270101",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270108",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270115",
+      "exception_type": "1"
+    }
+  ],
+  "12": [
+    {
+      "date": "20260817",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260820",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260821",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260824",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260827",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260828",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260831",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260903",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260904",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260907",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260910",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260911",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260914",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260917",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260918",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260921",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260924",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260925",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260928",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261001",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261002",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261005",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261008",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261009",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261012",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261015",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261016",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261019",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261022",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261023",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261026",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261029",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261030",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261102",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261105",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261106",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261109",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261112",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261113",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261116",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261119",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261120",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261123",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261126",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261127",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261130",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261203",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261204",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261207",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261210",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261211",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261214",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261217",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261218",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261221",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261224",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261225",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261228",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261231",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270101",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270104",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270107",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270108",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270111",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270114",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270115",
+      "exception_type": "2"
+    }
+  ],
+  "13": [
+    {
+      "date": "20260819",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260820",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260826",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260827",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260902",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260903",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260909",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260910",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260916",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260917",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260923",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260924",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260930",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261001",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261007",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261008",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261014",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261015",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261021",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261022",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261028",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261029",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261104",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261105",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261111",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261112",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261118",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261119",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261125",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261126",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261202",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261203",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261209",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261210",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261216",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261217",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261223",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261224",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261230",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261231",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270106",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270107",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270113",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270114",
+      "exception_type": "2"
+    }
+  ],
+  "14": [
+    {
+      "date": "20260822",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260829",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260905",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260912",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260919",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260926",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261003",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261010",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261017",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261024",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261031",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261107",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261114",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261121",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261128",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261205",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261212",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261219",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261226",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270102",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270109",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270116",
+      "exception_type": "2"
+    }
+  ],
+  "15": [
+    {
+      "date": "20260821",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260828",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260904",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260911",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260918",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260925",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261002",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261009",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261016",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261023",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261030",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261106",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261113",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261120",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261127",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261204",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261211",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261218",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261225",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270101",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270108",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270115",
+      "exception_type": "2"
+    }
+  ],
+  "FR": [
+    {
+      "date": "20260703",
+      "exception_type": "2"
+    }
+  ],
+  "SU": [
+    {
+      "date": "20260703",
+      "exception_type": "1"
+    },
+    {
+      "date": "20260907",
+      "exception_type": "1"
+    }
+  ],
+  "WK": [
+    {
+      "date": "20260703",
+      "exception_type": "2"
+    },
+    {
+      "date": "20260907",
+      "exception_type": "2"
+    }
+  ],
+  "MT": [
+    {
+      "date": "20260907",
+      "exception_type": "2"
+    }
+  ]
+}

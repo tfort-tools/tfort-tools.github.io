@@ -1,0 +1,13 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+101C,RTD,C,Union Station to Mineral Station,This Route Travels Northbound & Southbound,0,http://www.rtd-denver.com/Schedules.shtml,F79239,FFFFFF
+101E,RTD,E,Union Station to RidgeGate Parkway Station,This Route Travels Northbound & Southbound,0,http://www.rtd-denver.com/Schedules.shtml,552683,FFFFFF
+101T,RTD,T,Lincoln Station to I-25/Broadway Station,This Route Travels Northbound & Southbound,0,http://www.rtd-denver.com/Schedules.shtml,B71318,FFFFFF
+103W,RTD,W,Union Station to Jefferson County Government Center-Golden Station,This Route Travels Eastbound & Westbound,0,http://www.rtd-denver.com/Schedules.shtml,009DAA,FFFFFF
+107R,RTD,R,Lincoln Station to Peoria Station,This Route Travels Northbound & Southbound,0,http://www.rtd-denver.com/Schedules.shtml,C4D600,000000
+113B,RTD,B,Union Station to Westminster Station,This Route Travels Eastbound & Westbound,2,http://www.rtd-denver.com/Schedules.shtml,4E9D2D,FFFFFF
+113G,RTD,G,Union Station to Wheat Ridge Ward Station,This Route Travels Eastbound & Westbound,2,http://www.rtd-denver.com/Schedules.shtml,F6B221,FFFFFF
+117N,RTD,N,Union Station to Eastlake & 124th Station,This Route Travels Northbound & Southbound,2,http://www.rtd-denver.com/Schedules.shtml,9F26B5,FFFFFF
+A,RTD,A,Union Station to Denver Airport Station,This Route Travels Eastbound & Westbound,2,http://www.rtd-denver.com/Schedules.shtml,57C1E9,FFFFFF
+FF1,RTD,FF1,Flatiron Flyer,This Route Travels Eastbound & Westbound,3,http://www.rtd-denver.com/Schedules.shtml,1E4286,FFFFFF
+FF2,RTD,FF2,Flatiron Flyer,This Route Travels Eastbound & Westbound,3,http://www.rtd-denver.com/Schedules.shtml,1E4286,FFFFFF
+GS,RTD,GS,Golden / Boulder,This Route Travels Northbound & Southbound,3,http://www.rtd-denver.com/Schedules.shtml,64A70B,FFFFFF

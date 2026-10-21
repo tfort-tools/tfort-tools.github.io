@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- GoogleTag Add here -->
+        <meta name="google-site-verification" content="NuF6riIoRXpsvCDCXbQKRadrIbF6mi1v-O0dBFuLDV8" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+
+        <meta property="og:site_name" content="tfort-tools" />
+        <title>Transfort & RTD Timetable</title>
+        <meta property="og:title" content="Transfort & RTD Timetable" />
+        <meta name="description" content="You can view timetables of Transfort Lines and some RTD Lines, and search routes between stops." />
+        <meta property="og:description" content="You can view timetables of Transfort Lines and some RTD Lines, and search routes between stops." />
+        <style>
+            .list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .item {
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                padding: 14px;
+                border: none;
+                text-align: left;
+                cursor: pointer;
+                font-size: 1rem;
+                &:hover {
+                    filter: brightness(0.95);
+                }
+                text-decoration: none;
+                color: black;
+                background: #c2c0e1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">Transfort & RTD Timetable</div>
+        <h2 style="color: blue; text-align: center; margin-bottom: 0">This website is UNOFFICIAL</h2>
+        <div style="color: blue; text-align: center">We cannot guarantee the accuracy of any information shown.</div>
+        <p style="text-align: center">
+            RTD data is filtered for better performance. All trains and FF1, FF2, GS buses are only included.<br />
+            Route search on Merged data considers walking transfer between Transfort & RTD stop.
+        </p>
+
+        <div id="container">
+            <h2 id="title">View Timetable</h2>
+            <div id="content" class="list">
+                <div class="item"><a class="btn" href="gtfs_viewer_routes.html?company=transfort">Transfort</a></div>
+                <div class="item"><a class="btn" href="gtfs_viewer_routes.html?company=rtd">RTD (Trains & Boulder-Denver Buses)</a></div>
+                <div class="item"><a class="btn" href="gtfs_viewer_routes.html?company=merged">Transfort & RTD Merged</a></div>
+            </div>
+            <br />
+            <h2 id="title">Route Search</h2>
+            <div id="content" class="list">
+                <div class="item"><a class="btn" href="route_search.html?company=transfort">Transfort</a></div>
+                <div class="item"><a class="btn" href="route_search.html?company=rtd">RTD (Trains & Boulder-Denver Buses)</a></div>
+                <div class="item"><a class="btn" href="route_search.html?company=merged">Transfort & RTD Merged</a></div>
+            </div>
+        </div>
+    </body>
+</html>
