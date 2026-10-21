@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const company = "transfort"; // "rtd" or "transfort"
+const company = "rtd"; // "rtd" or "transfort"
 
 const routes = parseCsv(fs.readFileSync(`./gtfs/${company}/routes.txt`, "utf8"));
 const trips = parseCsv(fs.readFileSync(`./gtfs/${company}/trips.txt`, "utf8"));

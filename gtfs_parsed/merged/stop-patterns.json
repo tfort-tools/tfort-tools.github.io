@@ -1,448 +1,449 @@
 {
   "Littleton / Mineral Ave Station": [
     "p_rtd_1",
-    "p_rtd_2",
-    "p_rtd_3"
+    "p_rtd_2"
   ],
   "Littleton / Downtown Station": [
     "p_rtd_1",
-    "p_rtd_2",
-    "p_rtd_3"
+    "p_rtd_2"
   ],
   "Oxford - City Of Sheridan Station": [
     "p_rtd_1",
-    "p_rtd_2",
-    "p_rtd_3"
+    "p_rtd_2"
   ],
   "Englewood Station": [
     "p_rtd_1",
-    "p_rtd_2",
-    "p_rtd_3"
+    "p_rtd_2"
   ],
   "Evans Station": [
     "p_rtd_1",
-    "p_rtd_3",
+    "p_rtd_2",
+    "p_rtd_4",
     "p_rtd_5",
-    "p_rtd_6",
-    "p_rtd_8"
+    "p_rtd_7"
   ],
   "I-25 & Broadway Station": [
     "p_rtd_1",
+    "p_rtd_2",
     "p_rtd_3",
     "p_rtd_4",
-    "p_rtd_5",
-    "p_rtd_7",
-    "p_rtd_9",
-    "p_rtd_10"
+    "p_rtd_6",
+    "p_rtd_8",
+    "p_rtd_9"
   ],
   "Alameda Station": [
     "p_rtd_1",
+    "p_rtd_2",
     "p_rtd_3",
     "p_rtd_4",
-    "p_rtd_5",
-    "p_rtd_7"
+    "p_rtd_6",
+    "p_rtd_8",
+    "p_rtd_9"
   ],
   "10th & Osage Station": [
     "p_rtd_1",
+    "p_rtd_2",
     "p_rtd_3",
     "p_rtd_4",
-    "p_rtd_5",
-    "p_rtd_7"
+    "p_rtd_6"
   ],
   "Auraria West Station": [
     "p_rtd_1",
+    "p_rtd_2",
     "p_rtd_3",
     "p_rtd_4",
-    "p_rtd_5",
-    "p_rtd_7",
+    "p_rtd_6",
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
+    "p_rtd_14"
   ],
   "Empower Field At Mile High Station": [
     "p_rtd_1",
+    "p_rtd_2",
     "p_rtd_3",
     "p_rtd_4",
-    "p_rtd_5",
-    "p_rtd_7",
+    "p_rtd_6",
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
-    "p_rtd_13",
     "p_rtd_14"
   ],
   "Ball Arena / Elitch Gardens Station": [
     "p_rtd_1",
+    "p_rtd_2",
     "p_rtd_3",
     "p_rtd_4",
-    "p_rtd_5",
-    "p_rtd_7",
+    "p_rtd_6",
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
-    "p_rtd_13",
     "p_rtd_14"
   ],
   "Union Station (Light Rail)": [
     "p_rtd_1",
+    "p_rtd_2",
     "p_rtd_3",
     "p_rtd_4",
-    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_10",
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_14"
+  ],
+  "Ridgegate Parkway Station": [
+    "p_rtd_3",
+    "p_rtd_6",
     "p_rtd_7",
+    "p_rtd_15",
+    "p_rtd_17"
+  ],
+  "Lone Tree City Center Station": [
+    "p_rtd_3",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_15",
+    "p_rtd_17"
+  ],
+  "Sky Ridge Station": [
+    "p_rtd_3",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_15",
+    "p_rtd_17"
+  ],
+  "Lincoln Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_15",
+    "p_rtd_16",
+    "p_rtd_17"
+  ],
+  "County Line Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_15",
+    "p_rtd_16",
+    "p_rtd_17"
+  ],
+  "Dry Creek Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_15",
+    "p_rtd_16",
+    "p_rtd_17"
+  ],
+  "Arapahoe At Village Center Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_15",
+    "p_rtd_16",
+    "p_rtd_17"
+  ],
+  "Orchard Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_15",
+    "p_rtd_16",
+    "p_rtd_17"
+  ],
+  "Belleview Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9",
+    "p_rtd_15",
+    "p_rtd_16",
+    "p_rtd_17"
+  ],
+  "Southmoor Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9"
+  ],
+  "Yale Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9"
+  ],
+  "Colorado Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9"
+  ],
+  "University Of Denver Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9"
+  ],
+  "Louisiana & Pearl Station": [
+    "p_rtd_3",
+    "p_rtd_5",
+    "p_rtd_6",
+    "p_rtd_7",
+    "p_rtd_8",
+    "p_rtd_9"
+  ],
+  "Jeffco Government Center Station": [
+    "p_rtd_10",
+    "p_rtd_12",
+    "p_rtd_13"
+  ],
+  "Red Rocks Community College Station": [
+    "p_rtd_10",
+    "p_rtd_12",
+    "p_rtd_13"
+  ],
+  "Federal Center Station": [
+    "p_rtd_10",
+    "p_rtd_11",
+    "p_rtd_12",
+    "p_rtd_13",
+    "p_rtd_14",
+    "p_rtd_34",
+    "p_rtd_35"
+  ],
+  "Oak Station": [
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
     "p_rtd_14"
   ],
-  "Ridgegate Parkway Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_16",
-    "p_rtd_18"
-  ],
-  "Lone Tree City Center Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_16",
-    "p_rtd_18"
-  ],
-  "Sky Ridge Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_16",
-    "p_rtd_18"
-  ],
-  "Lincoln Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10",
-    "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
-  ],
-  "County Line Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10",
-    "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
-  ],
-  "Dry Creek Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10",
-    "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
-  ],
-  "Arapahoe At Village Center Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10",
-    "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
-  ],
-  "Orchard Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10",
-    "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
-  ],
-  "Belleview Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10",
-    "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
-  ],
-  "Southmoor Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10"
-  ],
-  "Yale Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10"
-  ],
-  "Colorado Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10"
-  ],
-  "University Of Denver Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10"
-  ],
-  "Louisiana & Pearl Station": [
-    "p_rtd_4",
-    "p_rtd_6",
-    "p_rtd_7",
-    "p_rtd_8",
-    "p_rtd_9",
-    "p_rtd_10"
-  ],
-  "Jeffco Government Center Station": [
-    "p_rtd_11",
-    "p_rtd_13",
-    "p_rtd_15"
-  ],
-  "Red Rocks Community College Station": [
-    "p_rtd_11",
-    "p_rtd_13",
-    "p_rtd_15"
-  ],
-  "Federal Center Station": [
-    "p_rtd_11",
-    "p_rtd_12",
-    "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15",
-    "p_rtd_35",
-    "p_rtd_36"
-  ],
-  "Oak Station": [
-    "p_rtd_11",
-    "p_rtd_12",
-    "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
-  ],
   "Garrison Station": [
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
+    "p_rtd_14"
   ],
   "Wadsworth Station": [
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
+    "p_rtd_14"
   ],
   "Lamar Station": [
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
+    "p_rtd_14"
   ],
   "Sheridan Station": [
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
+    "p_rtd_14"
   ],
   "Perry Station": [
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
+    "p_rtd_14"
   ],
   "Knox Station": [
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
+    "p_rtd_14"
   ],
   "Decatur / Federal Station": [
+    "p_rtd_10",
     "p_rtd_11",
     "p_rtd_12",
     "p_rtd_13",
-    "p_rtd_14",
-    "p_rtd_15"
+    "p_rtd_14"
   ],
   "Dayton Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "Nine Mile Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "Iliff Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "Florida Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "Aurora Metro Center Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "2nd & Abilene Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "13th Ave Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "Colfax Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "Fitzsimons Station": [
+    "p_rtd_15",
     "p_rtd_16",
-    "p_rtd_17",
-    "p_rtd_18"
+    "p_rtd_17"
   ],
   "Peoria Station": [
+    "p_rtd_15",
     "p_rtd_16",
     "p_rtd_17",
-    "p_rtd_18",
-    "p_rtd_25",
-    "p_rtd_26"
+    "p_rtd_24",
+    "p_rtd_25"
   ],
   "Westminster Station": [
-    "p_rtd_19",
-    "p_rtd_20"
+    "p_rtd_18",
+    "p_rtd_19"
   ],
   "Pecos Junction Station": [
+    "p_rtd_18",
     "p_rtd_19",
     "p_rtd_20",
-    "p_rtd_21",
-    "p_rtd_22"
+    "p_rtd_21"
   ],
   "41st & Fox Station": [
+    "p_rtd_18",
     "p_rtd_19",
     "p_rtd_20",
-    "p_rtd_21",
-    "p_rtd_22"
+    "p_rtd_21"
   ],
   "Union Station (Heavy Rail)": [
+    "p_rtd_18",
     "p_rtd_19",
     "p_rtd_20",
     "p_rtd_21",
     "p_rtd_22",
     "p_rtd_23",
     "p_rtd_24",
-    "p_rtd_25",
-    "p_rtd_26"
+    "p_rtd_25"
   ],
   "Wheat Ridge - Ward Station": [
-    "p_rtd_21",
-    "p_rtd_22"
+    "p_rtd_20",
+    "p_rtd_21"
   ],
   "Arvada Ridge Station": [
-    "p_rtd_21",
-    "p_rtd_22"
+    "p_rtd_20",
+    "p_rtd_21"
   ],
   "Olde Town Arvada": [
-    "p_rtd_21",
-    "p_rtd_22"
+    "p_rtd_20",
+    "p_rtd_21"
   ],
   "60th & Sheridan - Arvada Gold Strike Station": [
-    "p_rtd_21",
-    "p_rtd_22"
+    "p_rtd_20",
+    "p_rtd_21"
   ],
   "Clear Creek - Federal Station": [
-    "p_rtd_21",
-    "p_rtd_22"
+    "p_rtd_20",
+    "p_rtd_21"
   ],
   "48th & Brighton-National Western Station": [
-    "p_rtd_23",
-    "p_rtd_24"
+    "p_rtd_22"
   ],
   "Commerce City - 72nd Station": [
-    "p_rtd_23",
-    "p_rtd_24"
+    "p_rtd_22",
+    "p_rtd_23"
   ],
   "Original Thornton - 88th Station": [
-    "p_rtd_23",
-    "p_rtd_24"
+    "p_rtd_22",
+    "p_rtd_23"
   ],
   "Thornton Crossroads - 104th Station": [
-    "p_rtd_23",
-    "p_rtd_24"
+    "p_rtd_22",
+    "p_rtd_23"
   ],
   "Northglenn - 112th Station": [
-    "p_rtd_23",
-    "p_rtd_24"
+    "p_rtd_22",
+    "p_rtd_23"
   ],
   "Eastlake - 124th Station": [
-    "p_rtd_23",
-    "p_rtd_24"
+    "p_rtd_22",
+    "p_rtd_23"
+  ],
+  "48th & Brighton-National Western Stn": [
+    "p_rtd_23"
   ],
   "38th & Blake Station": [
-    "p_rtd_25",
-    "p_rtd_26"
+    "p_rtd_24",
+    "p_rtd_25"
   ],
   "40th & Colorado Station": [
-    "p_rtd_25",
-    "p_rtd_26"
+    "p_rtd_24",
+    "p_rtd_25"
   ],
   "Central Park Station": [
-    "p_rtd_25",
-    "p_rtd_26"
+    "p_rtd_24",
+    "p_rtd_25"
   ],
   "40th Ave & Airport Blvd - Gateway Park Station": [
-    "p_rtd_25",
-    "p_rtd_26"
+    "p_rtd_24",
+    "p_rtd_25"
   ],
   "61st & Pena Station": [
-    "p_rtd_25",
-    "p_rtd_26"
+    "p_rtd_24",
+    "p_rtd_25"
   ],
   "Denver Airport Station": [
-    "p_rtd_25",
-    "p_rtd_26"
+    "p_rtd_24",
+    "p_rtd_25"
   ],
   "Downtown Boulder Station": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
     "p_rtd_29",
@@ -451,10 +452,10 @@
     "p_rtd_32",
     "p_rtd_33",
     "p_rtd_34",
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Broadway & Euclid Ave": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
     "p_rtd_29",
@@ -463,17 +464,17 @@
     "p_rtd_32",
     "p_rtd_33",
     "p_rtd_34",
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Broadway & 20th St": [
-    "p_rtd_27",
-    "p_rtd_29",
+    "p_rtd_26",
+    "p_rtd_28",
+    "p_rtd_30",
     "p_rtd_31",
-    "p_rtd_32",
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Broadway & Baseline Rd": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
     "p_rtd_29",
@@ -482,283 +483,282 @@
     "p_rtd_32",
     "p_rtd_33",
     "p_rtd_34",
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "S Broadway & Dartmouth Ave": [
-    "p_rtd_27",
-    "p_rtd_29",
+    "p_rtd_26",
+    "p_rtd_28",
+    "p_rtd_30",
     "p_rtd_31",
-    "p_rtd_32",
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Table Mesa Dr & 39th St": [
-    "p_rtd_27",
-    "p_rtd_29",
-    "p_rtd_31",
-    "p_rtd_32"
+    "p_rtd_26",
+    "p_rtd_28",
+    "p_rtd_30",
+    "p_rtd_31"
   ],
   "US 36 & Table Mesa Station": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
     "p_rtd_29",
     "p_rtd_30",
     "p_rtd_31",
     "p_rtd_32",
-    "p_rtd_33",
-    "p_rtd_34"
+    "p_rtd_33"
   ],
   "US 36 & Mccaslin Station": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
     "p_rtd_29",
     "p_rtd_30",
     "p_rtd_31",
     "p_rtd_32",
-    "p_rtd_33",
-    "p_rtd_34"
+    "p_rtd_33"
   ],
   "US 36 & Flatiron Station": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
-    "p_rtd_29",
-    "p_rtd_30"
+    "p_rtd_29"
   ],
   "US 36 & Broomfield Station": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
-    "p_rtd_29",
-    "p_rtd_30"
+    "p_rtd_29"
   ],
   "US 36 & Church Ranch Station": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
-    "p_rtd_29",
-    "p_rtd_30"
+    "p_rtd_29"
   ],
   "US 36 & Sheridan Station": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
-    "p_rtd_29",
-    "p_rtd_30"
+    "p_rtd_29"
   ],
   "Park Ave West & Wewatta St": [
-    "p_rtd_27",
-    "p_rtd_32"
+    "p_rtd_26",
+    "p_rtd_31"
   ],
   "Union Station (Bus)": [
+    "p_rtd_26",
     "p_rtd_27",
     "p_rtd_28",
     "p_rtd_29",
     "p_rtd_30",
     "p_rtd_31",
     "p_rtd_32",
-    "p_rtd_33",
-    "p_rtd_34"
+    "p_rtd_33"
   ],
   "S Broadway & Table Mesa Dr": [
-    "p_rtd_28",
-    "p_rtd_30",
+    "p_rtd_27",
+    "p_rtd_29",
+    "p_rtd_32",
     "p_rtd_33",
     "p_rtd_34",
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Broadway & Dartmouth Pnr": [
-    "p_rtd_28",
-    "p_rtd_30",
+    "p_rtd_27",
+    "p_rtd_29",
+    "p_rtd_32",
     "p_rtd_33",
-    "p_rtd_34",
-    "p_rtd_35"
-  ],
-  "Broadway & Regent Dr": [
-    "p_rtd_28",
-    "p_rtd_30",
-    "p_rtd_33",
-    "p_rtd_34",
-    "p_rtd_35"
-  ],
-  "Park Ave W & Delgany St": [
-    "p_rtd_30",
     "p_rtd_34"
   ],
+  "Broadway & Regent Dr": [
+    "p_rtd_27",
+    "p_rtd_29",
+    "p_rtd_32",
+    "p_rtd_33",
+    "p_rtd_34"
+  ],
+  "Park Ave W & Delgany St": [
+    "p_rtd_29",
+    "p_rtd_33"
+  ],
   "Union Blvd & W 4th Ave": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Simms St & W 6th Ave North Frontage Rd": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Simms St & W Collins Ave": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "W Colfax Ave & Simms St": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "W Colfax Ave & Welch St": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "W Colfax Ave & Youngfield St": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "W Colfax Ave & Cole Blvd": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "W Colfax Ave & Denver West Blvd": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "W Colfax Ave & Colorado Mills": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "W Colfax Ave & Indiana St": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Indiana St & S Golden Rd": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "South Golden Rd & Camp George West": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "National Renewable Energy Lab": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "South Golden Rd & Quaker St": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "South Golden Rd & Ulysses St": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "South Golden Rd & Lunnonhaus Dr": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Ford St & 24th St": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Washington Ave & 16th St": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Washington Ave & 10th St": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Washington Ave & 6th St": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Washington Ave & Iowa St": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Co 93 & Pine Ridge Rd": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Co 93 & W. 58th Ave": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Co 93 & Co 72": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Co 93 & Mile Post 9": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Co 93 & Mile Post 10": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Co 93 & Mile Post 11": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Co 93 & Co 128": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Co 93 & Eldorado Springs Rd": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "S Broadway & Darley Ave": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Broadway & Rayleigh Rd": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "27th Way & Broadway Pnr": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Broadway & Pleasant St": [
-    "p_rtd_35"
+    "p_rtd_34"
   ],
   "Broadway & Canyon Blvd": [
-    "p_rtd_35",
-    "p_rtd_36"
+    "p_rtd_34",
+    "p_rtd_35"
   ],
   "Broadway & University Ave": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Broadway & College Ave": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Broadway & 27th Way": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "S Broadway & Greenbriar Blvd": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Co 93 & W 58th Ave": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Washington St & Iowa St": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Washington St & 6th St": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "10th St & Washington Ave": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Ford St & 12th St": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Ford St & 13th St": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Jackson St & 17th St": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Jackson St & 24th St": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "South Golden Rd & Johnson Rd": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "W Colfax Ave & Colorado Mills Blvd": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "W Colfax Ave & Colorado Mills Pkwy": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "W Colfax Ave & Hawthorne Rd": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Simms St & W Colfax Ave": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Simms St & W Katherine Ave": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Simms St & W 8th Ave": [
-    "p_rtd_36"
+    "p_rtd_35"
   ],
   "Prospect Pkwy & Midpoint": [
     "p_transfort_1",

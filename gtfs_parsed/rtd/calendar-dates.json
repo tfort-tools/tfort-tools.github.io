@@ -1,33 +1,57 @@
 {
-  "FR": [
+  "MT": [
     {
-      "date": "20260703",
+      "date": "20261126",
       "exception_type": "2"
     }
   ],
   "SU": [
     {
-      "date": "20260703",
+      "date": "20261126",
       "exception_type": "1"
     },
     {
-      "date": "20260907",
+      "date": "20261127",
+      "exception_type": "1"
+    },
+    {
+      "date": "20261225",
+      "exception_type": "1"
+    },
+    {
+      "date": "20270101",
       "exception_type": "1"
     }
   ],
   "WK": [
     {
-      "date": "20260703",
+      "date": "20261126",
       "exception_type": "2"
     },
     {
-      "date": "20260907",
+      "date": "20261127",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261225",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270101",
       "exception_type": "2"
     }
   ],
-  "MT": [
+  "FR": [
     {
-      "date": "20260907",
+      "date": "20261127",
+      "exception_type": "2"
+    },
+    {
+      "date": "20261225",
+      "exception_type": "2"
+    },
+    {
+      "date": "20270101",
       "exception_type": "2"
     }
   ]

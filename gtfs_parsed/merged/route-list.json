@@ -155,7 +155,7 @@
   },
   {
     "route_id": "101T",
-    "route_long_name": "Train [T] Lincoln Station To I-25/Broadway Station",
+    "route_long_name": "Train [T] Lincoln Station To Alameda Station",
     "route_short_name": "T",
     "route_color": "B71318",
     "route_text_color": "FFFFFF",
@@ -207,6 +207,10 @@
       {
         "stop_key": "I-25 & Broadway Station",
         "stop_name": "I-25 & Broadway Station"
+      },
+      {
+        "stop_key": "Alameda Station",
+        "stop_name": "Alameda Station"
       }
     ]
   },
@@ -281,7 +285,7 @@
   },
   {
     "route_id": "107R",
-    "route_long_name": "Train [R] Lincoln Station To Peoria Station",
+    "route_long_name": "Train [R] Ridgegate Parkway Station To Peoria Station",
     "route_short_name": "R",
     "route_color": "C4D600",
     "route_text_color": "000000",
@@ -464,6 +468,10 @@
       {
         "stop_key": "Eastlake - 124th Station",
         "stop_name": "Eastlake - 124th Station"
+      },
+      {
+        "stop_key": "48th & Brighton-National Western Stn",
+        "stop_name": "48th & Brighton-National Western Stn"
       }
     ]
   },

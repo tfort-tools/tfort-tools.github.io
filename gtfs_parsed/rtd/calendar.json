@@ -7,8 +7,8 @@
     "friday": "1",
     "saturday": "0",
     "sunday": "0",
-    "start_date": "20260607",
-    "end_date": "20260926"
+    "start_date": "20260927",
+    "end_date": "20270102"
   },
   "MT": {
     "monday": "1",
@@ -18,19 +18,8 @@
     "friday": "0",
     "saturday": "0",
     "sunday": "0",
-    "start_date": "20260607",
-    "end_date": "20260926"
-  },
-  "SU": {
-    "monday": "0",
-    "tuesday": "0",
-    "wednesday": "0",
-    "thursday": "0",
-    "friday": "0",
-    "saturday": "0",
-    "sunday": "1",
-    "start_date": "20260607",
-    "end_date": "20260926"
+    "start_date": "20260927",
+    "end_date": "20270102"
   },
   "SA": {
     "monday": "0",
@@ -40,8 +29,19 @@
     "friday": "0",
     "saturday": "1",
     "sunday": "0",
-    "start_date": "20260607",
-    "end_date": "20260926"
+    "start_date": "20260927",
+    "end_date": "20270102"
+  },
+  "SU": {
+    "monday": "0",
+    "tuesday": "0",
+    "wednesday": "0",
+    "thursday": "0",
+    "friday": "0",
+    "saturday": "0",
+    "sunday": "1",
+    "start_date": "20260927",
+    "end_date": "20270102"
   },
   "WK": {
     "monday": "1",
@@ -51,7 +51,7 @@
     "friday": "1",
     "saturday": "0",
     "sunday": "0",
-    "start_date": "20260607",
-    "end_date": "20260926"
+    "start_date": "20260927",
+    "end_date": "20270102"
   }
 }
